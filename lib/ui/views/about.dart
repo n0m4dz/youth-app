@@ -1,0 +1,103 @@
+import 'dart:convert';
+
+import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_html/style.dart';
+import 'package:flutter_icons/flutter_icons.dart';
+import 'package:lambda/modules/network_util.dart';
+import 'package:youth/core/contants/values.dart';
+import 'package:youth/core/models/faq.dart';
+import 'package:youth/core/viewmodels/faq_model.dart';
+import 'package:youth/ui/styles/_colors.dart';
+import '../components/loader.dart';
+import 'package:youth/ui/views/base_view.dart';
+
+class AboutScreen extends StatefulWidget {
+  @override
+  AboutScreenState createState() => AboutScreenState();
+}
+
+class AboutScreenState extends State<AboutScreen> {
+
+  Map<String, dynamic>  item;
+  NetworkUtil _http = new NetworkUtil();
+  // final DateFormat formatter = DateFormat('yyyy-MM-dd');
+
+  Future getItemList() async {
+    var url  = baseUrl + '/mobile/api/getOtherPage/1';
+    var response = await _http.get(url);
+    item = jsonDecode(response.toString());
+
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getItemList();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        titleSpacing: 0,
+        backgroundColor: primaryColor,
+        centerTitle: false,
+        title: Text(
+          item == null ? '' : item['title'].toUpperCase(),
+          textAlign: TextAlign.start,
+          style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.w600,
+              fontSize: 18
+          ),
+        ),
+        leading: FlatButton(
+          padding: EdgeInsets.all(0),
+          onPressed: () {
+            print('working back btn');
+            Navigator.pop(context);
+          },
+          child: Container(
+            height: 30,
+            width: 30,
+            child: Icon(
+              Ionicons.getIconData('ios-arrow-back'),
+              color: Colors.white,
+            ),
+          ),
+        ),
+        elevation: 0,
+      ),
+      body: ListView(
+        scrollDirection: Axis.vertical,
+        children: <Widget>[
+          Container(
+            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            margin: EdgeInsets.only(top: 20, bottom: 20),
+            child: Html(
+              data: item == null ? '' : item['body'],
+              style: {
+                "h1": Style(
+                    color: textColor,
+                    fontSize: FontSize.larger
+                ),
+                "p": Style(
+                    color: textColor
+                ),
+                "li": Style(
+                    color: textColor,
+                    fontSize: FontSize.large
+                ),
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

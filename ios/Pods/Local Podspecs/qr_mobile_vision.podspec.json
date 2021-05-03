@@ -1,0 +1,30 @@
+{
+  "name": "qr_mobile_vision",
+  "version": "0.0.1",
+  "summary": "Plugin for reading QR codes using Google&#x27;s Mobile Vision API.",
+  "description": "Plugin for reading QR codes using Google&#x27;s Mobile Vision API.",
+  "homepage": "https://github.com/rmtmckenzie/flutter_qr_mobile_vision",
+  "license": {
+    "file": "../LICENSE"
+  },
+  "authors": {
+    "Morgan McKenzie": "rmtmckenzie@gmail.com"
+  },
+  "source": {
+    "path": "."
+  },
+  "source_files": "Classes/**/*",
+  "public_header_files": "Classes/**/*.h",
+  "dependencies": {
+    "Flutter": [
+
+    ],
+    "GoogleMobileVision/BarcodeDetector": [
+
+    ]
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "static_framework": true
+}

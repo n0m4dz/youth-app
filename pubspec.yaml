@@ -1,0 +1,89 @@
+name: youth
+description: youth application
+
+version: 1.0.2+5
+
+environment:
+  sdk: ">=2.2.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  lambda:
+    path: ./lambda
+  flutter_launcher_icons: ^0.7.2
+  dio: ^3.0.10
+  provider: ^3.0.0+1
+  get_it: ^1.0.3+2
+  shared_preferences: ^0.5.12
+  url_launcher: ^5.0.2
+  flutter_svg: ^0.18.0
+  cached_network_image: ^2.3.2+1
+  page_transition: ^1.1.4
+  toast: ^0.1.5
+  flutter_icons: ^0.1.4
+  flutter_spinkit: ^3.1.0
+  bubble_tab_indicator: ^0.1.4
+  flutter_html: ^1.0.2
+  datetime_picker_formfield: ^0.4.1
+  pull_to_refresh: ^1.5.4
+  table_calendar: ^2.0.1
+  show_more_text_popup: ^0.2.0
+  webview_flutter: ^0.3.14+1
+  flutter_webview_plugin: ^0.3.10+1
+  flutter_plugin_android_lifecycle: ^1.0.11
+
+
+dev_dependencies:
+  flutter_stetho: ^0.3.0
+  flutter_test:
+    sdk: flutter
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/icon.png"
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/login-bg.jpg
+    - assets/images/homebg.svg
+    - assets/images/logo.png
+    - assets/images/avatar2.png
+    - assets/images/wallet.png
+    - assets/images/settings.png
+    - assets/images/placeholder.jpg
+    - assets/images/register.png
+    - assets/images/password.png
+    - assets/images/faq.png
+    - assets/images/online.png
+    - assets/images/lock.png
+    - assets/images/scholarship.png
+    - assets/images/volunteer.png
+    - assets/images/training.png
+    - assets/images/other.png
+    - assets/images/leaf.png
+    - assets/images/law.png
+    - assets/images/job.png
+    - assets/images/svg/page-heading-part-time.svg
+    - assets/images/svg/icon-part-time.svg
+    - assets/images/svg/page-heading-legal.svg
+    - assets/images/svg/page-heading-law.svg
+    - assets/images/svg/page-heading-knowledge.svg
+    - assets/images/svg/page-heading-event.svg
+
+  # custom fonts
+  fonts:
+    - family: Roboto-Condensed
+      fonts:
+        - asset: assets/fonts/Roboto_Condensed/RobotoCondensed-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Roboto_Condensed/RobotoCondensed-BoldItalic.ttf
+          weight: 700
+          style: italic
