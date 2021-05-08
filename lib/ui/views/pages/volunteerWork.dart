@@ -13,8 +13,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:youth/ui/views/pages/partTimeJobDetail.dart';
 import 'package:youth/ui/views/pages/volunteerWorkDetail.dart';
 
-class VolunteerWorkPage extends StatefulWidget{
-
+class VolunteerWorkPage extends StatefulWidget {
   final title;
 
   const VolunteerWorkPage({Key key, this.title}) : super(key: key);
@@ -23,24 +22,25 @@ class VolunteerWorkPage extends StatefulWidget{
   VolunteerWorkPageState createState() => VolunteerWorkPageState();
 }
 
-class VolunteerWorkPageState extends State<VolunteerWorkPage>{
-
+class VolunteerWorkPageState extends State<VolunteerWorkPage> {
   RefreshController _refreshController =
-  RefreshController(initialRefresh: false);
+      RefreshController(initialRefresh: false);
   List<dynamic> jobs = new List();
   NetworkUtil _http = new NetworkUtil();
   int page = 1;
   // final DateFormat formatter = DateFormat('yyyy-MM-dd');
 
   Future getItemList() async {
-    var url  = baseUrl + '/mobile/api/getVolunteers/null?page=' + page.toString();
+    var url =
+        baseUrl + '/mobile/api/getVolunteers/null?page=' + page.toString();
     var response = await _http.get(url);
     var response_data = response.data['data'];
     var totalPage;
 
-    totalPage = (response_data['total'] / response_data['per_page']).round() + 1;
+    totalPage =
+        (response_data['total'] / response_data['per_page']).round() + 1;
 
-    if (totalPage>= page) {
+    if (totalPage >= page) {
       var parsed = response_data['data'] as List<dynamic>;
       for (var item in parsed) {
         jobs.add(item);
@@ -56,7 +56,6 @@ class VolunteerWorkPageState extends State<VolunteerWorkPage>{
 
   @override
   Widget build(BuildContext context) {
-
     Size size = MediaQuery.of(context).size;
     int index = 0;
 
@@ -72,7 +71,7 @@ class VolunteerWorkPageState extends State<VolunteerWorkPage>{
               left: 0,
               child: Container(
                 height: size.height * 0.7,
-                child:  SmartRefresher(
+                child: SmartRefresher(
                   enablePullDown: true,
                   enablePullUp: true,
                   header: WaterDropHeader(
@@ -84,7 +83,9 @@ class VolunteerWorkPageState extends State<VolunteerWorkPage>{
                     idleText: "Цааш үзэх",
                     loadingText: "Түр хүлээнэ үү",
                     noDataText: "Цааш мэдээлэл байхгүй",
-                    textStyle: TextStyle(color: Color(0xff666666)),
+                    textStyle: TextStyle(
+                      color: Color(0xff666666),
+                    ),
                   ),
                   controller: _refreshController,
                   onRefresh: () async {
@@ -93,7 +94,9 @@ class VolunteerWorkPageState extends State<VolunteerWorkPage>{
                       this.jobs = new List();
                     });
                     await this.getItemList();
-                    await Future.delayed(Duration(milliseconds: 1000));
+                    await Future.delayed(
+                      Duration(milliseconds: 1000),
+                    );
                     _refreshController.refreshCompleted();
                   },
                   onLoading: () async {
@@ -101,96 +104,139 @@ class VolunteerWorkPageState extends State<VolunteerWorkPage>{
                       this.page = this.page + 1;
                     });
                     await this.getItemList();
-                    await Future.delayed(Duration(milliseconds: 1000));
+                    await Future.delayed(
+                      Duration(milliseconds: 1000),
+                    );
                     _refreshController.loadComplete();
                   },
-                  child:  ListView(
+                  child: ListView(
                     controller: new ScrollController(keepScrollOffset: false),
                     shrinkWrap: true,
                     children: jobs.map(
-                          (item) {
+                      (item) {
                         index = index + 1;
                         return Container(
                             width: size.width - 40,
-                            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                            margin: EdgeInsets.symmetric(
+                              horizontal: 20,
+                              vertical: 20,
+                            ),
                             decoration: BoxDecoration(
-                                border: Border.all(color: Color.fromRGBO(67, 35, 167, 0.3), width: 1, style: BorderStyle.solid),
-                                borderRadius: BorderRadius.circular(8)
+                              border: Border.all(
+                                color: Color.fromRGBO(67, 35, 167, 0.3),
+                                width: 1,
+                                style: BorderStyle.solid,
+                              ),
+                              borderRadius: BorderRadius.circular(8),
                             ),
                             child: Stack(
                               children: [
                                 Column(
                                   children: [
                                     Container(
-                                        width: size.width - 40,
-                                        height: 150,
-                                        decoration: BoxDecoration(
-                                            border: Border(
-                                                bottom: BorderSide(
-                                                    color: Color.fromRGBO(67, 35, 167, 0.3),
-                                                    width: 1
-                                                )
-                                            )
-                                        ),
-                                        child: ClipRRect(
-                                          borderRadius: BorderRadius.only(topRight: Radius.circular(8), topLeft: Radius.circular(8)),
-                                          child: Image.network(
-                                            item['image'] == null ? baseUrl + "/assets/youth/images/noImage.jpg" :  baseUrl + item['image'].toString(),
-                                            height: MediaQuery.of(context).size.height,
-                                            width: size.width,
-                                            fit:BoxFit.fitWidth,
+                                      width: size.width - 40,
+                                      height: 150,
+                                      decoration: BoxDecoration(
+                                        border: Border(
+                                          bottom: BorderSide(
+                                            color: Color.fromRGBO(
+                                              67,
+                                              35,
+                                              167,
+                                              0.3,
+                                            ),
+                                            width: 1,
                                           ),
-                                        )
+                                        ),
+                                      ),
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.only(
+                                            topRight: Radius.circular(8),
+                                            topLeft: Radius.circular(8)),
+                                        child: Image.network(
+                                          item['image'] == null
+                                              ? baseUrl +
+                                                  "/assets/youth/images/noImage.jpg"
+                                              : baseUrl +
+                                                  item['image'].toString(),
+                                          height: MediaQuery.of(context)
+                                              .size
+                                              .height,
+                                          width: size.width,
+                                          fit: BoxFit.fitWidth,
+                                        ),
+                                      ),
                                     ),
                                     Container(
                                       width: size.width - 40,
                                       height: 200,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
-                                        borderRadius: BorderRadius.only(bottomRight: Radius.circular(8), bottomLeft: Radius.circular(8)),
+                                        borderRadius: BorderRadius.only(
+                                          bottomRight: Radius.circular(8),
+                                          bottomLeft: Radius.circular(8),
+                                        ),
                                       ),
                                       child: Column(
                                         children: [
                                           Container(
-                                            padding: EdgeInsets.only(left: 10, top: 10, right: 10),
+                                            padding: EdgeInsets.only(
+                                              left: 10,
+                                              top: 10,
+                                              right: 10,
+                                            ),
                                             alignment: Alignment.centerLeft,
                                             child: Flex(
                                               direction: Axis.horizontal,
                                               children: [
                                                 Flexible(
                                                   child: Text(
-                                                    item['works'] == null ? '' : item['works'],
-                                                    overflow: TextOverflow.ellipsis,
+                                                    item['works'] == null
+                                                        ? ''
+                                                        : item['works'],
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
                                                     maxLines: 1,
                                                     softWrap: false,
-                                                    style: TextStyle(color: volunteerColor, fontWeight: FontWeight.bold, fontSize: 18),
+                                                    style: TextStyle(
+                                                        color: volunteerColor,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontSize: 18),
                                                   ),
                                                 ),
                                               ],
                                             ),
                                           ),
                                           Container(
-                                            padding: EdgeInsets.only(left: 10,),
-                                            margin: EdgeInsets.only(left: 10, top: 10, right: 10),
+                                            padding: EdgeInsets.only(
+                                              left: 10,
+                                            ),
+                                            margin: EdgeInsets.only(
+                                                left: 10, top: 10, right: 10),
                                             alignment: Alignment.centerLeft,
                                             decoration: BoxDecoration(
                                                 border: Border(
                                                     left: BorderSide(
                                                         color: Colors.lightBlue,
-                                                        width: 2
-                                                    )
-                                                )
-                                            ),
+                                                        width: 2))),
                                             child: Flex(
                                               direction: Axis.horizontal,
                                               children: [
                                                 Flexible(
                                                   child: Text(
-                                                    item['description'] == null ? '' : item['description'],
-                                                    overflow: TextOverflow.ellipsis,
+                                                    item['description'] == null
+                                                        ? ''
+                                                        : item['description'],
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
                                                     maxLines: 1,
                                                     softWrap: false,
-                                                    style: TextStyle(color: Colors.black87, fontWeight: FontWeight.w500, fontSize: 16),
+                                                    style: TextStyle(
+                                                        color: Colors.black87,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        fontSize: 16),
                                                   ),
                                                 ),
                                               ],
@@ -198,85 +244,165 @@ class VolunteerWorkPageState extends State<VolunteerWorkPage>{
                                           ),
                                           Container(
                                             height: 90,
-                                            margin: EdgeInsets.only(left: 10, right: 10, top: 30, bottom: 10),
+                                            margin: EdgeInsets.only(
+                                                left: 10,
+                                                right: 10,
+                                                top: 30,
+                                                bottom: 10),
                                             decoration: BoxDecoration(
                                                 border: Border(
                                                     top: BorderSide(
                                                         color: Colors.grey,
-                                                        width: 1
-                                                    )
-                                                )
-                                            ),
+                                                        width: 1))),
                                             child: Column(
                                               children: [
                                                 Container(
-                                                    padding: EdgeInsets.only(top: 10, bottom: 10),
-                                                    width: MediaQuery.of(context).size.width - 25,
+                                                    padding: EdgeInsets.only(
+                                                        top: 10, bottom: 10),
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .width -
+                                                            25,
                                                     child: Row(
                                                       children: [
                                                         Icon(
-                                                            Icons.calendar_today,
-                                                            color: Colors.lightBlue,
+                                                            Icons
+                                                                .calendar_today,
+                                                            color: Colors
+                                                                .lightBlue,
                                                             size: 14.0),
                                                         SizedBox(width: 5),
                                                         Text(
                                                           'Бүртгэх хугацаа: ',
-                                                          style: TextStyle(color: Colors.black54, fontWeight: FontWeight.w500, fontSize: 14),
+                                                          style: TextStyle(
+                                                              color: Colors
+                                                                  .black54,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              fontSize: 14),
                                                         ),
                                                         Text(
-                                                          item['startdate'] == null || item['enddate'] == null ? '' :
-                                                          DateFormat("y/MM/dd").format(DateTime.parse(item['startdate'])).toString() + " - " + DateFormat("y/MM/dd").format(DateTime.parse(item['enddate'])).toString(),
-                                                          style: TextStyle(color: volunteerColor, fontWeight: FontWeight.w500, fontSize: 14),
+                                                          item['startdate'] ==
+                                                                      null ||
+                                                                  item['enddate'] ==
+                                                                      null
+                                                              ? ''
+                                                              : DateFormat(
+                                                                          "y/MM/dd")
+                                                                      .format(DateTime
+                                                                          .parse(item[
+                                                                              'startdate']))
+                                                                      .toString() +
+                                                                  " - " +
+                                                                  DateFormat(
+                                                                          "y/MM/dd")
+                                                                      .format(DateTime
+                                                                          .parse(
+                                                                              item['enddate']))
+                                                                      .toString(),
+                                                          style: TextStyle(
+                                                              color:
+                                                                  volunteerColor,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              fontSize: 14),
                                                         ),
                                                       ],
-                                                    )
-                                                ),
+                                                    )),
                                                 Container(
-                                                    padding: EdgeInsets.only(top: 0, bottom: 10),
-                                                    width: MediaQuery.of(context).size.width - 25,
+                                                    padding: EdgeInsets.only(
+                                                        top: 0, bottom: 10),
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .width -
+                                                            25,
                                                     child: Row(
                                                       children: [
-                                                        Icon(
-                                                            Icons.access_time,
-                                                            color: Colors.lightBlue,
+                                                        Icon(Icons.access_time,
+                                                            color: Colors
+                                                                .lightBlue,
                                                             size: 14.0),
                                                         SizedBox(width: 5),
                                                         Text(
                                                           'Нэмсэн огноо: ',
-                                                          style: TextStyle(color: Colors.black54, fontWeight: FontWeight.w500, fontSize: 14),
+                                                          style: TextStyle(
+                                                              color: Colors
+                                                                  .black54,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              fontSize: 14),
                                                         ),
                                                         Text(
-                                                          item['created_at'] == null ? '' : DateFormat("y/MM/dd").format(DateTime.parse(item['created_at'])).toString(),
-                                                          style: TextStyle(color: volunteerColor, fontWeight: FontWeight.w500, fontSize: 14),
+                                                          item['created_at'] ==
+                                                                  null
+                                                              ? ''
+                                                              : DateFormat(
+                                                                      "y/MM/dd")
+                                                                  .format(DateTime
+                                                                      .parse(item[
+                                                                          'created_at']))
+                                                                  .toString(),
+                                                          style: TextStyle(
+                                                              color:
+                                                                  volunteerColor,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              fontSize: 14),
                                                         ),
                                                       ],
-                                                    )
-                                                ),
+                                                    )),
                                                 Container(
-                                                    padding: EdgeInsets.only(top: 0, bottom: 10),
-                                                    width: MediaQuery.of(context).size.width - 25,
+                                                    padding: EdgeInsets.only(
+                                                        top: 0, bottom: 10),
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .width -
+                                                            25,
                                                     child: Row(
                                                       children: [
                                                         Icon(
-                                                            Icons.supervised_user_circle,
-                                                            color: Colors.lightBlue,
+                                                            Icons
+                                                                .supervised_user_circle,
+                                                            color: Colors
+                                                                .lightBlue,
                                                             size: 14.0),
                                                         SizedBox(width: 5),
                                                         Text(
                                                           'Байгууллага: ',
-                                                          style: TextStyle(color: Colors.black54, fontWeight: FontWeight.w500, fontSize: 14),
+                                                          style: TextStyle(
+                                                              color: Colors
+                                                                  .black54,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              fontSize: 14),
                                                         ),
                                                         Text(
-                                                          item['org_name'] == null ? '__' : item['org_name'],
-                                                          style: TextStyle(color: volunteerColor, fontWeight: FontWeight.w500, fontSize: 14),
+                                                          item['org_name'] ==
+                                                                  null
+                                                              ? '__'
+                                                              : item[
+                                                                  'org_name'],
+                                                          style: TextStyle(
+                                                              color:
+                                                                  volunteerColor,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              fontSize: 14),
                                                         ),
                                                       ],
-                                                    )
-                                                ),
+                                                    )),
                                               ],
                                             ),
                                           ),
-
                                         ],
                                       ),
                                     )
@@ -286,82 +412,94 @@ class VolunteerWorkPageState extends State<VolunteerWorkPage>{
                                     bottom: 5,
                                     right: 10,
                                     child: GestureDetector(
-                                        onTap: (){
+                                        onTap: () {
                                           Navigator.push(
                                               context,
-                                              MaterialPageRoute(builder: (context) => VolunteerWorkDetailPage(
-                                                name: item['name'],
-                                                description: item['description'],
-                                                startdate: item['startdate'],
-                                                enddate: item['enddate'],
-                                                created_at: item['created_at'],
-                                                image: item['image'],
-                                                works: item['works'],
-                                                org_name: item['org_name'],
-                                              ))
-                                          );
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      VolunteerWorkDetailPage(
+                                                        name: item['name'],
+                                                        description:
+                                                            item['description'],
+                                                        startdate:
+                                                            item['startdate'],
+                                                        enddate:
+                                                            item['enddate'],
+                                                        created_at:
+                                                            item['created_at'],
+                                                        image: item['image'],
+                                                        works: item['works'],
+                                                        org_name:
+                                                            item['org_name'],
+                                                      )));
                                         },
                                         child: Row(
                                           children: [
                                             Container(
                                               padding: EdgeInsets.only(
-                                                bottom: 3, // space between underline and text
+                                                bottom:
+                                                    3, // space between underline and text
                                               ),
                                               decoration: BoxDecoration(
-                                                  border: Border(bottom: BorderSide(
-                                                    color: Colors.lightBlue,  // Text colour here
-                                                    width: 2.0, // Underline width
-                                                  ))
-                                              ),
+                                                  border: Border(
+                                                      bottom: BorderSide(
+                                                color: Colors
+                                                    .lightBlue, // Text colour here
+                                                width: 2.0, // Underline width
+                                              ))),
                                               child: Text(
                                                 'Ца'.toUpperCase(),
-                                                style: TextStyle(color: volunteerColor, fontSize: 14),
+                                                style: TextStyle(
+                                                    color: volunteerColor,
+                                                    fontSize: 14),
                                               ),
                                             ),
                                             Container(
                                               padding: EdgeInsets.only(
-                                                bottom: 3, // space between underline and text
+                                                bottom:
+                                                    3, // space between underline and text
                                               ),
                                               decoration: BoxDecoration(
-                                                  border: Border(bottom: BorderSide(
-                                                    color: Colors.white,  // Text colour here
-                                                    width: 2.0, // Underline width
-                                                  ))
-                                              ),
+                                                  border: Border(
+                                                      bottom: BorderSide(
+                                                color: Colors
+                                                    .white, // Text colour here
+                                                width: 2.0, // Underline width
+                                              ))),
                                               child: Text(
                                                 'аш үзэх'.toUpperCase(),
-                                                style: TextStyle(color: volunteerColor, fontSize: 14),
+                                                style: TextStyle(
+                                                    color: volunteerColor,
+                                                    fontSize: 14),
                                               ),
                                             ),
                                             Container(
                                                 padding: EdgeInsets.only(
-                                                  bottom: 3, // space between underline and text
+                                                  bottom:
+                                                      3, // space between underline and text
                                                 ),
                                                 decoration: BoxDecoration(
-                                                    border: Border(bottom: BorderSide(
-                                                      color: Colors.white,  // Text colour here
-                                                      width: 2.0, // Underline width
-                                                    ))
-                                                ),
+                                                    border: Border(
+                                                        bottom: BorderSide(
+                                                  color: Colors
+                                                      .white, // Text colour here
+                                                  width: 2.0, // Underline width
+                                                ))),
                                                 child: Icon(
-                                                  FontAwesome.getIconData('angle-double-right'),
+                                                  FontAwesome.getIconData(
+                                                      'angle-double-right'),
                                                   color: volunteerColor,
                                                   size: 18.0,
-                                                )
-                                            ),
+                                                )),
                                           ],
-                                        )
-                                    )
-                                ),
+                                        ))),
                               ],
-                            )
-                        );
+                            ));
                       },
                     ).toList(),
                   ),
                 ),
-              )
-          ),
+              )),
           Positioned(
             top: 0.0,
             left: 0.0,
@@ -385,8 +523,7 @@ class VolunteerWorkPageState extends State<VolunteerWorkPage>{
                   semanticsLabel: 'A red up arrow',
                   fit: BoxFit.cover,
                 ),
-              )
-          ),
+              )),
           Positioned(
               top: size.height * 0.15,
               left: 25,
@@ -395,13 +532,8 @@ class VolunteerWorkPageState extends State<VolunteerWorkPage>{
                   alignment: Alignment.topLeft,
                   child: Text(
                     widget.title.toUpperCase(),
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20
-                    ),
-                  )
-              )
-          ),
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ))),
           Positioned(
               top: 40.0,
               left: 20.0,
@@ -446,4 +578,3 @@ class CurvePainter extends CustomPainter {
     return true;
   }
 }
-

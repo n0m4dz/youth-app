@@ -72,6 +72,11 @@ flutter:
     - assets/images/svg/page-heading-knowledge.svg
     - assets/images/svg/page-heading-event.svg
     - assets/images/svg/menu-volunteer.svg
+    - assets/images/svg/menu-parttime.svg
+    - assets/images/svg/menu-lesson.svg
+    - assets/images/svg/menu-legal.svg
+    - assets/images/svg/menu-news.svg
+    - assets/images/svg/menu-event.svg
 
   # custom fonts
   fonts:

@@ -85,7 +85,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: MediaQuery.of(context).size.height,
                   padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
                   color: Color(0xfff2f3fa),
-                  // color: Colors.green,
                   child: Stack(
                     children: [
                       Positioned(
@@ -116,8 +115,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
                 /// here we use our custom widget
                 // titlePadding: EdgeInsets.zero,
-                titlePadding:
-                    EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                titlePadding: EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 20,
+                ),
               ),
               leading: IconButton(
                 onPressed: () {
@@ -134,14 +135,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: GestureDetector(
                     onTap: () {
                       Navigator.push(
-                          context,
-                          CupertinoPageRoute(
-                              builder: (context) => NotificationsScreen()));
+                        context,
+                        CupertinoPageRoute(
+                          builder: (context) => NotificationsScreen(),
+                        ),
+                      );
                     },
                     child: Icon(
-                        Ionicons.getIconData('ios-notifications-outline'),
-                        size: 31,
-                        color: primaryColor),
+                      Ionicons.getIconData('ios-notifications-outline'),
+                      size: 31,
+                      color: primaryColor,
+                    ),
                   ),
                 ),
                 Padding(
@@ -178,8 +182,11 @@ class _HomeScreenState extends State<HomeScreen> {
                         }
                       }
                     },
-                    child: Icon(Ionicons.getIconData('ios-contact'),
-                        size: 31, color: primaryColor),
+                    child: Icon(
+                      Ionicons.getIconData('ios-contact'),
+                      size: 31,
+                      color: primaryColor,
+                    ),
                   ),
                 ),
               ],
@@ -220,10 +227,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: <Widget>[
                       Container(
                         alignment: Alignment.topCenter,
+                        margin: EdgeInsets.only(top: 12),
                         child: SvgPicture.asset(
                           'assets/images/svg/menu-volunteer.svg',
-                          width: 90,
-                          height: 100,
+                          width: 80,
+                          height: 80,
                           color: Color(0xFF4323a7),
                         ),
                       ),
@@ -237,7 +245,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Container(
                             padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
-                              color: Color(0xFF4323a7),
+                              color: Color(0xFF55438c),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Column(
@@ -286,11 +294,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Stack(
                     children: <Widget>[
                       Container(
-                        margin: EdgeInsets.only(top: 20, bottom: 20, left: 20),
-                        child: Image.asset(
-                          'assets/images/job.png',
-                          height: 70,
-                          width: 70,
+                        margin: EdgeInsets.only(top: 12),
+                        alignment: Alignment.topCenter,
+                        child: SvgPicture.asset(
+                          'assets/images/svg/menu-parttime.svg',
+                          width: 80,
+                          height: 80,
+                          color: Color(0xFF128348),
                         ),
                       ),
                       Positioned(
@@ -303,8 +313,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Container(
                             padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
-                                color: Color(0xFF128348).withOpacity(.9),
-                                borderRadius: BorderRadius.circular(10)),
+                              color: Color(0xFF02b557),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
@@ -320,7 +331,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   '120+ ажлын зар байна',
                                   style: TextStyle(
                                     fontSize: 10.7,
-                                    color: Color(0xffcccccc),
+                                    color: Colors.white,
                                   ),
                                 )
                               ],
@@ -353,11 +364,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Stack(
                     children: <Widget>[
                       Container(
-                        margin: EdgeInsets.only(top: 20, bottom: 20, left: 20),
-                        child: Image.asset(
-                          'assets/images/scholarship.png',
-                          height: 70,
-                          width: 70,
+                        margin: EdgeInsets.only(top: 12),
+                        alignment: Alignment.topCenter,
+                        child: SvgPicture.asset(
+                          'assets/images/svg/menu-lesson.svg',
+                          width: 80,
+                          height: 80,
+                          color: Color(0xFF5f58CC),
                         ),
                       ),
                       Positioned(
@@ -370,8 +383,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Container(
                             padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
-                                color: Color(0xFF5f58CC).withOpacity(.9),
-                                borderRadius: BorderRadius.circular(10)),
+                              color: Color(0xFF7068fc),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
@@ -387,7 +401,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   'Их сургуулийн тэтгэлэг',
                                   style: TextStyle(
                                     fontSize: 10.7,
-                                    color: Color(0xffcccccc),
+                                    color: Colors.white,
                                   ),
                                 )
                               ],
@@ -419,11 +433,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Stack(
                     children: <Widget>[
                       Container(
-                        margin: EdgeInsets.only(top: 20, bottom: 20, left: 20),
-                        child: Image.asset(
-                          'assets/images/training.png',
-                          height: 70,
-                          width: 70,
+                        margin: EdgeInsets.only(top: 12),
+                        alignment: Alignment.topCenter,
+                        child: SvgPicture.asset(
+                          'assets/images/svg/menu-legal.svg',
+                          width: 80,
+                          height: 80,
+                          color: Color(0xFF992d34),
                         ),
                       ),
                       Positioned(
@@ -436,7 +452,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Container(
                             padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
-                              color: Color(0xFF992d34).withOpacity(.9),
+                              color: Color(0xFFd63e49),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Column(
@@ -454,7 +470,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   '10+ сургалтын зар байна',
                                   style: TextStyle(
                                     fontSize: 10.7,
-                                    color: Color(0xffcccccc),
+                                    color: Colors.white,
                                   ),
                                 )
                               ],
@@ -487,11 +503,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Stack(
                     children: <Widget>[
                       Container(
-                        margin: EdgeInsets.only(top: 20, bottom: 20, left: 20),
-                        child: Image.asset(
-                          'assets/images/law.png',
-                          height: 70,
-                          width: 70,
+                        margin: EdgeInsets.only(top: 12),
+                        alignment: Alignment.topCenter,
+                        child: SvgPicture.asset(
+                          'assets/images/svg/menu-news.svg',
+                          width: 80,
+                          height: 80,
+                          color: Color(0xFF576574),
                         ),
                       ),
                       Positioned(
@@ -504,7 +522,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Container(
                             padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
-                              color: Color(0xFF576574).withOpacity(.9),
+                              color: Color(0xFF7e8c9c),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Column(
@@ -522,7 +540,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   'Хууль эрх зүйн мэдлэг',
                                   style: TextStyle(
                                     fontSize: 10.7,
-                                    color: Color(0xffcccccc),
+                                    color: Colors.white,
                                   ),
                                 )
                               ],
@@ -554,11 +572,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Stack(
                     children: <Widget>[
                       Container(
-                        margin: EdgeInsets.only(top: 20, bottom: 20, left: 20),
-                        child: Image.asset(
-                          'assets/images/other.png',
-                          height: 70,
-                          width: 70,
+                        margin: EdgeInsets.only(top: 12),
+                        alignment: Alignment.topCenter,
+                        child: SvgPicture.asset(
+                          'assets/images/svg/menu-event.svg',
+                          width: 80,
+                          height: 80,
+                          color: Color(0xFFcba822),
                         ),
                       ),
                       Positioned(
@@ -571,7 +591,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Container(
                             padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
-                              color: Color(0xFFcba822),
+                              color: Color(0xFFd9bc4c),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Column(
@@ -586,10 +606,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                 ),
                                 Text(
-                                  'эрүүл мэнд, гэр бүл',
+                                  'Эрүүл мэнд, гэр бүл',
                                   style: TextStyle(
                                     fontSize: 10.7,
-                                    color: Color(0xffcccccc),
+                                    color: Colors.white,
                                   ),
                                 )
                               ],
