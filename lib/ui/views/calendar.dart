@@ -156,7 +156,6 @@ class _CalendarScreenState extends State<CalendarScreen>
           borderRadius: BorderRadius.circular(16.0),
         ),
       ),
-      onDaySelected: _onDaySelected,
       onVisibleDaysChanged: _onVisibleDaysChanged,
       builders: CalendarBuilders(
         markersBuilder: (context, date, events, holidays) {

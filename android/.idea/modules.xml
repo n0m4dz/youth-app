@@ -2,7 +2,29 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/android.iml" filepath="$PROJECT_DIR$/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android.iml" filepath="$PROJECT_DIR$/.idea/modules/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-708864538/android.connectivity.iml" filepath="$PROJECT_DIR$/.idea/modules/-708864538/android.connectivity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1075522651/android.device_info.iml" filepath="$PROJECT_DIR$/.idea/modules/1075522651/android.device_info.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/34819970/android.firebase_core.iml" filepath="$PROJECT_DIR$/.idea/modules/34819970/android.firebase_core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/858209985/android.firebase_messaging.iml" filepath="$PROJECT_DIR$/.idea/modules/858209985/android.firebase_messaging.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1757431327/android.flutter_facebook_login.iml" filepath="$PROJECT_DIR$/.idea/modules/-1757431327/android.flutter_facebook_login.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2018784504/android.flutter_inappwebview.iml" filepath="$PROJECT_DIR$/.idea/modules/2018784504/android.flutter_inappwebview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-111421500/android.flutter_local_notifications.iml" filepath="$PROJECT_DIR$/.idea/modules/-111421500/android.flutter_local_notifications.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2032925645/android.flutter_plugin_android_lifecycle.iml" filepath="$PROJECT_DIR$/.idea/modules/-2032925645/android.flutter_plugin_android_lifecycle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1541740780/android.flutter_secure_storage.iml" filepath="$PROJECT_DIR$/.idea/modules/1541740780/android.flutter_secure_storage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1960213340/android.image_picker.iml" filepath="$PROJECT_DIR$/.idea/modules/-1960213340/android.image_picker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-646146727/android.local_auth.iml" filepath="$PROJECT_DIR$/.idea/modules/-646146727/android.local_auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1159120212/android.meedu_player.iml" filepath="$PROJECT_DIR$/.idea/modules/1159120212/android.meedu_player.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-454498123/android.native_device_orientation.iml" filepath="$PROJECT_DIR$/.idea/modules/-454498123/android.native_device_orientation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1188820253/android.path_provider.iml" filepath="$PROJECT_DIR$/.idea/modules/1188820253/android.path_provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/777586396/android.screen.iml" filepath="$PROJECT_DIR$/.idea/modules/777586396/android.screen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1642381430/android.share.iml" filepath="$PROJECT_DIR$/.idea/modules/1642381430/android.share.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/448644524/android.shared_preferences.iml" filepath="$PROJECT_DIR$/.idea/modules/448644524/android.shared_preferences.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/248457093/android.sqflite.iml" filepath="$PROJECT_DIR$/.idea/modules/248457093/android.sqflite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1425324872/android.url_launcher.iml" filepath="$PROJECT_DIR$/.idea/modules/1425324872/android.url_launcher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1294850479/android.video_player.iml" filepath="$PROJECT_DIR$/.idea/modules/1294850479/android.video_player.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/447619585/android.webview_flutter.iml" filepath="$PROJECT_DIR$/.idea/modules/447619585/android.webview_flutter.iml" />
     </modules>
   </component>
 </project>
