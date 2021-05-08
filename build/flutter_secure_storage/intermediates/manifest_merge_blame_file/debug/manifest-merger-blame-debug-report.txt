@@ -6,8 +6,8 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="18"
-8-->/Users/n0m4dz/.pub-cache/hosted/pub.dartlang.org/flutter_secure_storage-3.3.5/android/src/main/AndroidManifest.xml
+8-->/Users/nyambayar/.pub-cache/hosted/pub.dartlang.org/flutter_secure_storage-3.3.5/android/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="28" />
-9-->/Users/n0m4dz/.pub-cache/hosted/pub.dartlang.org/flutter_secure_storage-3.3.5/android/src/main/AndroidManifest.xml
+9-->/Users/nyambayar/.pub-cache/hosted/pub.dartlang.org/flutter_secure_storage-3.3.5/android/src/main/AndroidManifest.xml
 10
 11</manifest>

@@ -1,677 +1,677 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:1:1-103:12
-INJECTED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:1:1-103:12
-INJECTED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:1:1-103:12
-INJECTED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:1:1-103:12
-MERGED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:1:1-103:12
-MERGED from [:local_auth] /Users/n0m4dz/Workspace/mobile/youth/build/local_auth/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:flutter_plugin_android_lifecycle] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_plugin_android_lifecycle/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:shared_preferences] /Users/n0m4dz/Workspace/mobile/youth/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:sqflite] /Users/n0m4dz/Workspace/mobile/youth/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:flutter_local_notifications] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-23:12
-MERGED from [:webview_flutter] /Users/n0m4dz/Workspace/mobile/youth/build/webview_flutter/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:path_provider] /Users/n0m4dz/Workspace/mobile/youth/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:flutter_secure_storage] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_secure_storage/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
-MERGED from [:flutter_webview_plugin] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-21:12
-MERGED from [:wakelock] /Users/n0m4dz/Workspace/mobile/youth/build/wakelock/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:video_player] /Users/n0m4dz/Workspace/mobile/youth/build/video_player/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:url_launcher] /Users/n0m4dz/Workspace/mobile/youth/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-14:12
-MERGED from [:firebase_messaging] /Users/n0m4dz/Workspace/mobile/youth/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-20:12
-MERGED from [com.google.firebase:firebase-messaging:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/39881029fd68e95fe81236c6b38abdbb/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:17:1-45:12
-MERGED from [androidx.media:media:1.1.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/0330fa1606dbd2927998321d8a033742/media-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.webkit:webkit:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/3af8640ce562b4b4e0a6111579ef27f6/webkit-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.biometric:biometric:1.0.0-beta01] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/c667fe5f358cadc10af5ee26c81dba87/biometric-1.0.0-beta01/AndroidManifest.xml:17:1-33:12
-MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/701c33591765b03ec8ed51d702bd262d/appcompat-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/34a0e5d53ae61e749f2724a77a7fa61b/firebase-datatransport-17.0.3/AndroidManifest.xml:15:1-34:12
-MERGED from [com.google.firebase:firebase-iid:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:17:1-47:12
-MERGED from [com.google.firebase:firebase-installations:16.3.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/657a4170ad1fbb28863aa99d484eaa8d/firebase-installations-16.3.3/AndroidManifest.xml:2:1-23:12
-MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/1f24754138cdbe9dd292e6ee32cb2d40/jetified-firebase-common-19.3.0/AndroidManifest.xml:15:1-39:12
-MERGED from [com.google.android.gms:play-services-cloud-messaging:16.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/ae3c1578debcad49d0a6c8743b24abc8/play-services-cloud-messaging-16.0.0/AndroidManifest.xml:2:1-13:12
-MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/646fcaf19234d7b37b884114aa567eb2/play-services-stats-17.0.0/AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.firebase:firebase-installations-interop:16.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/be92c5c51e7e0033fb4b175f26388755/firebase-installations-interop-16.0.0/AndroidManifest.xml:15:1-23:12
-MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/566477192cad9be9e53ff137fdc3eff4/firebase-iid-interop-17.0.0/AndroidManifest.xml:2:1-10:12
-MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/4c0b774c09d5393feb013f0dbe753af3/play-services-base-17.0.0/AndroidManifest.xml:17:1-29:12
-MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/187fb4c1c365ae32171bd8312a35992f/play-services-tasks-17.0.0/AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/31a3395230a9bd928e78ed2dc5338b8e/firebase-measurement-connector-18.0.0/AndroidManifest.xml:17:1-25:12
-MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/14beb446a0b03d7b4a64c1d9cc66376a/jetified-play-services-basement-17.0.0/AndroidManifest.xml:17:1-28:12
-MERGED from [androidx.fragment:fragment:1.1.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/0d479d426be2ba1f4bdfee2f9a7aa519/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/f266002780b6f62ae73a8842bc10a810/appcompat-resources-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/6af37b0dc18acadfaf8b0344ec157d66/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/d10fe1176fa5480b064486ece15f99c1/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/4881302d1430cfdcaa10344523e2ce7f/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.loader:loader:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/28c8df72e3e98cf2af337943db219b6d/loader-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.activity:activity:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/5a1de8d3594afca67ad230d5d25a73b9/activity-1.0.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/a5b8095803802f17607f1ac359c588fa/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/06d80eb16b557b026bc1ef456724990c/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.customview:customview:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/31cd047ed3ec37dce69ba9f16e10a05d/customview-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.core:core:1.3.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/f2e0eaaff67bde345351d7ed79a43d9e/core-1.3.0/AndroidManifest.xml:17:1-26:12
-MERGED from [com.google.android.exoplayer:exoplayer-hls:2.12.1] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/7e8162b9b2b1fa3c1ffde3d0255da233/exoplayer-hls-2.12.1/AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.android.exoplayer:exoplayer-dash:2.12.1] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/87e8b8d9c095cd2faccbcc5e84668b76/exoplayer-dash-2.12.1/AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.12.1] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/5768751ec6df02e1d630bc2d5ceff0b3/exoplayer-smoothstreaming-2.12.1/AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.android.exoplayer:exoplayer-core:2.12.1] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/59c64c6f0354ffe8f2a2f14ca084d685/exoplayer-core-2.12.1/AndroidManifest.xml:17:1-26:12
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/c8f4c2580dddd9ecf64fc10bf9fbc418/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:15:1-38:12
-MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:15:1-41:12
-MERGED from [com.google.firebase:firebase-components:16.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/6eed3107dd830b3be8cff99d463e687c/jetified-firebase-components-16.0.0/AndroidManifest.xml:15:1-23:12
-MERGED from [com.google.firebase:firebase-encoders-json:16.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/49c931c92b12f4476416c70f28960002/firebase-encoders-json-16.0.0/AndroidManifest.xml:15:1-23:12
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/00db72760b3662c4528b816b17c43995/lifecycle-runtime-2.2.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/13eb812daeca5edd5883d98298d1a9d8/savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/82b463c8584fb88ea5a1f562d740c4b7/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/a78ce9b49fd39a3eac90624d04d1ee8a/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/4227c25f5adddf6ac1aa1a65c6b6f6a4/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/07713a4b02ecb1ede5529340586b2906/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.12.1] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/aa2217e288c28bbdad4d68ab1a649fe0/jetified-exoplayer-extractor-2.12.1/AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.android.exoplayer:exoplayer-common:2.12.1] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/82d316601e8245f35d512cc73a1d58a8/jetified-exoplayer-common-2.12.1/AndroidManifest.xml:17:1-26:12
-MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/3bf5fc05ca184d01c3bed36c84f7c6c7/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/ec735b528ee8f52f56a38a2f27a69a4b/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.print:print:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/dff04f4f27a157ea6f57a15b661fd9d7/print-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/d51e0220d8e43d4bfbf3a1c4895b8a97/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/b59192acc39c8e1083525bb1a0764fd3/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/86b8e2095003c265d89e3b21dd416032/threetenabp-1.2.3/AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.datatransport:transport-api:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/d62c70c682445a3aae6412574932cb36/transport-api-2.2.0/AndroidManifest.xml:15:1-22:12
-INJECTED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/debug/AndroidManifest.xml:1:1-7:12
-INJECTED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/debug/AndroidManifest.xml:1:1-7:12
-INJECTED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:1:1-103:12
+INJECTED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:1:1-103:12
+INJECTED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:1:1-103:12
+INJECTED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:1:1-103:12
+MERGED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:1:1-103:12
+MERGED from [:flutter_secure_storage] /Users/nyambayar/workspace/youth-app/build/flutter_secure_storage/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:video_player] /Users/nyambayar/workspace/youth-app/build/video_player/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:sqflite] /Users/nyambayar/workspace/youth-app/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:wakelock] /Users/nyambayar/workspace/youth-app/build/wakelock/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:local_auth] /Users/nyambayar/workspace/youth-app/build/local_auth/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:flutter_plugin_android_lifecycle] /Users/nyambayar/workspace/youth-app/build/flutter_plugin_android_lifecycle/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:flutter_webview_plugin] /Users/nyambayar/workspace/youth-app/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-21:12
+MERGED from [:firebase_messaging] /Users/nyambayar/workspace/youth-app/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-20:12
+MERGED from [:url_launcher] /Users/nyambayar/workspace/youth-app/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-14:12
+MERGED from [:webview_flutter] /Users/nyambayar/workspace/youth-app/build/webview_flutter/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:path_provider] /Users/nyambayar/workspace/youth-app/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:flutter_local_notifications] /Users/nyambayar/workspace/youth-app/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-23:12
+MERGED from [:shared_preferences] /Users/nyambayar/workspace/youth-app/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.firebase:firebase-messaging:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/a84a0cbdc23cce898e6a7d2488dc944e/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:17:1-45:12
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.12.1] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/7e8162b9b2b1fa3c1ffde3d0255da233/exoplayer-hls-2.12.1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.12.1] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/87e8b8d9c095cd2faccbcc5e84668b76/exoplayer-dash-2.12.1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.12.1] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/5768751ec6df02e1d630bc2d5ceff0b3/exoplayer-smoothstreaming-2.12.1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.12.1] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/59c64c6f0354ffe8f2a2f14ca084d685/exoplayer-core-2.12.1/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.biometric:biometric:1.0.0-beta01] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/c667fe5f358cadc10af5ee26c81dba87/biometric-1.0.0-beta01/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/701c33591765b03ec8ed51d702bd262d/appcompat-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-iid:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:17:1-47:12
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/646fcaf19234d7b37b884114aa567eb2/play-services-stats-17.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/d10fe1176fa5480b064486ece15f99c1/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/c8f4c2580dddd9ecf64fc10bf9fbc418/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.webkit:webkit:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/3af8640ce562b4b4e0a6111579ef27f6/webkit-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media:media:1.1.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/0330fa1606dbd2927998321d8a033742/media-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/34a0e5d53ae61e749f2724a77a7fa61b/firebase-datatransport-17.0.3/AndroidManifest.xml:15:1-34:12
+MERGED from [com.google.firebase:firebase-installations:16.3.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/657a4170ad1fbb28863aa99d484eaa8d/firebase-installations-16.3.3/AndroidManifest.xml:2:1-23:12
+MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/e91615cc3070c90581d0b30ddf0fda2d/jetified-firebase-common-19.3.0/AndroidManifest.xml:15:1-39:12
+MERGED from [com.google.android.gms:play-services-cloud-messaging:16.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/ae3c1578debcad49d0a6c8743b24abc8/play-services-cloud-messaging-16.0.0/AndroidManifest.xml:2:1-13:12
+MERGED from [com.google.firebase:firebase-installations-interop:16.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/be92c5c51e7e0033fb4b175f26388755/firebase-installations-interop-16.0.0/AndroidManifest.xml:15:1-23:12
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/566477192cad9be9e53ff137fdc3eff4/firebase-iid-interop-17.0.0/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/4c0b774c09d5393feb013f0dbe753af3/play-services-base-17.0.0/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/187fb4c1c365ae32171bd8312a35992f/play-services-tasks-17.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/31a3395230a9bd928e78ed2dc5338b8e/firebase-measurement-connector-18.0.0/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/43d267f1efcfc8ae1c41ef369d5408d7/jetified-play-services-basement-17.0.0/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/0d479d426be2ba1f4bdfee2f9a7aa519/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/f266002780b6f62ae73a8842bc10a810/appcompat-resources-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/6af37b0dc18acadfaf8b0344ec157d66/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/4881302d1430cfdcaa10344523e2ce7f/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/28c8df72e3e98cf2af337943db219b6d/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/5a1de8d3594afca67ad230d5d25a73b9/activity-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/a5b8095803802f17607f1ac359c588fa/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/06d80eb16b557b026bc1ef456724990c/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/31cd047ed3ec37dce69ba9f16e10a05d/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.3.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/f2e0eaaff67bde345351d7ed79a43d9e/core-1.3.0/AndroidManifest.xml:17:1-26:12
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:15:1-38:12
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:15:1-41:12
+MERGED from [com.google.firebase:firebase-components:16.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/56403250a4e10d66419bf3a3a32aecc0/jetified-firebase-components-16.0.0/AndroidManifest.xml:15:1-23:12
+MERGED from [com.google.firebase:firebase-encoders-json:16.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/49c931c92b12f4476416c70f28960002/firebase-encoders-json-16.0.0/AndroidManifest.xml:15:1-23:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/00db72760b3662c4528b816b17c43995/lifecycle-runtime-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/13eb812daeca5edd5883d98298d1a9d8/savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/82b463c8584fb88ea5a1f562d740c4b7/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/a78ce9b49fd39a3eac90624d04d1ee8a/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.12.1] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/d45fd046de7e74960261d86211da8e5c/jetified-exoplayer-extractor-2.12.1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.12.1] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/032df62ee80fec69fac0b39cbdf90af4/jetified-exoplayer-common-2.12.1/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/07713a4b02ecb1ede5529340586b2906/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/4227c25f5adddf6ac1aa1a65c6b6f6a4/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/3bf5fc05ca184d01c3bed36c84f7c6c7/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/ec735b528ee8f52f56a38a2f27a69a4b/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/dff04f4f27a157ea6f57a15b661fd9d7/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/d51e0220d8e43d4bfbf3a1c4895b8a97/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/b59192acc39c8e1083525bb1a0764fd3/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/86b8e2095003c265d89e3b21dd416032/threetenabp-1.2.3/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.datatransport:transport-api:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/d62c70c682445a3aae6412574932cb36/transport-api-2.2.0/AndroidManifest.xml:15:1-22:12
+INJECTED from /Users/nyambayar/workspace/youth-app/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+INJECTED from /Users/nyambayar/workspace/youth-app/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+INJECTED from /Users/nyambayar/workspace/youth-app/android/app/src/debug/AndroidManifest.xml:1:1-7:12
 	package
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:2:5-32
-		INJECTED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/debug/AndroidManifest.xml
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:2:5-32
+		INJECTED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/nyambayar/workspace/youth-app/android/app/src/debug/AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:1:1-103:12
-		INJECTED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:1:1-103:12
+		INJECTED from /Users/nyambayar/workspace/youth-app/android/app/src/debug/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:1:1-103:12
-		INJECTED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:1:1-103:12
+		INJECTED from /Users/nyambayar/workspace/youth-app/android/app/src/debug/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:1:11-69
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:9:5-67
-MERGED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:9:5-67
-MERGED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:9:5-67
-MERGED from [com.google.firebase:firebase-iid:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-iid:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-installations:16.3.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/657a4170ad1fbb28863aa99d484eaa8d/firebase-installations-16.3.3/AndroidManifest.xml:11:5-67
-MERGED from [com.google.firebase:firebase-installations:16.3.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/657a4170ad1fbb28863aa99d484eaa8d/firebase-installations-16.3.3/AndroidManifest.xml:11:5-67
-MERGED from [com.google.android.gms:play-services-cloud-messaging:16.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/ae3c1578debcad49d0a6c8743b24abc8/play-services-cloud-messaging-16.0.0/AndroidManifest.xml:8:5-67
-MERGED from [com.google.android.gms:play-services-cloud-messaging:16.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/ae3c1578debcad49d0a6c8743b24abc8/play-services-cloud-messaging-16.0.0/AndroidManifest.xml:8:5-67
-MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:26:5-67
-MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:26:5-67
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:9:5-67
+MERGED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:9:5-67
+MERGED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:9:5-67
+MERGED from [com.google.firebase:firebase-iid:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-installations:16.3.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/657a4170ad1fbb28863aa99d484eaa8d/firebase-installations-16.3.3/AndroidManifest.xml:11:5-67
+MERGED from [com.google.firebase:firebase-installations:16.3.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/657a4170ad1fbb28863aa99d484eaa8d/firebase-installations-16.3.3/AndroidManifest.xml:11:5-67
+MERGED from [com.google.android.gms:play-services-cloud-messaging:16.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/ae3c1578debcad49d0a6c8743b24abc8/play-services-cloud-messaging-16.0.0/AndroidManifest.xml:8:5-67
+MERGED from [com.google.android.gms:play-services-cloud-messaging:16.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/ae3c1578debcad49d0a6c8743b24abc8/play-services-cloud-messaging-16.0.0/AndroidManifest.xml:8:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:26:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:26:5-67
 	android:name
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:9:22-64
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:9:22-64
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:10:5-79
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:10:5-79
 	android:name
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:10:22-76
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:10:22-76
 uses-permission#android.permission.FLASHLIGHT
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:11:5-69
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:11:5-69
 	android:name
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:11:22-66
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:11:22-66
 uses-permission#android.permission.CAMERA
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:12:5-65
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:12:5-65
 	android:name
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:12:22-62
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:12:22-62
 uses-feature#android.hardware.camera
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:14:5-60
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:14:5-60
 	android:name
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:14:19-57
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:14:19-57
 uses-feature#android.hardware.camera.autofocus
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:15:5-70
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:15:5-70
 	android:name
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:15:19-67
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:15:19-67
 uses-feature#android.hardware.camera.flash
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:16:5-66
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:16:5-66
 	android:name
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:16:19-63
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:16:19-63
 uses-permission#android.permission.VIBRATE
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:17:5-66
-MERGED from [:flutter_local_notifications] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-66
-MERGED from [:flutter_local_notifications] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-66
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:17:5-66
+MERGED from [:flutter_local_notifications] /Users/nyambayar/workspace/youth-app/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-66
+MERGED from [:flutter_local_notifications] /Users/nyambayar/workspace/youth-app/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-66
 	android:name
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:17:22-63
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:17:22-63
 uses-permission#android.permission.USE_FINGERPRINT
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:19:5-74
-MERGED from [androidx.biometric:biometric:1.0.0-beta01] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/c667fe5f358cadc10af5ee26c81dba87/biometric-1.0.0-beta01/AndroidManifest.xml:25:5-74
-MERGED from [androidx.biometric:biometric:1.0.0-beta01] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/c667fe5f358cadc10af5ee26c81dba87/biometric-1.0.0-beta01/AndroidManifest.xml:25:5-74
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:19:5-74
+MERGED from [androidx.biometric:biometric:1.0.0-beta01] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/c667fe5f358cadc10af5ee26c81dba87/biometric-1.0.0-beta01/AndroidManifest.xml:25:5-74
+MERGED from [androidx.biometric:biometric:1.0.0-beta01] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/c667fe5f358cadc10af5ee26c81dba87/biometric-1.0.0-beta01/AndroidManifest.xml:25:5-74
 	android:name
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:19:22-71
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:19:22-71
 application
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:21:5-102:19
-MERGED from [:flutter_local_notifications] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-21:19
-MERGED from [:flutter_local_notifications] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-21:19
-MERGED from [:flutter_webview_plugin] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-19:19
-MERGED from [:flutter_webview_plugin] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-19:19
-MERGED from [:url_launcher] /Users/n0m4dz/Workspace/mobile/youth/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-12:19
-MERGED from [:url_launcher] /Users/n0m4dz/Workspace/mobile/youth/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-12:19
-MERGED from [:firebase_messaging] /Users/n0m4dz/Workspace/mobile/youth/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-18:19
-MERGED from [:firebase_messaging] /Users/n0m4dz/Workspace/mobile/youth/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-18:19
-MERGED from [com.google.firebase:firebase-messaging:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/39881029fd68e95fe81236c6b38abdbb/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:22:5-43:19
-MERGED from [com.google.firebase:firebase-messaging:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/39881029fd68e95fe81236c6b38abdbb/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:22:5-43:19
-MERGED from [androidx.biometric:biometric:1.0.0-beta01] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/c667fe5f358cadc10af5ee26c81dba87/biometric-1.0.0-beta01/AndroidManifest.xml:27:5-31:19
-MERGED from [androidx.biometric:biometric:1.0.0-beta01] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/c667fe5f358cadc10af5ee26c81dba87/biometric-1.0.0-beta01/AndroidManifest.xml:27:5-31:19
-MERGED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/34a0e5d53ae61e749f2724a77a7fa61b/firebase-datatransport-17.0.3/AndroidManifest.xml:24:5-32:19
-MERGED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/34a0e5d53ae61e749f2724a77a7fa61b/firebase-datatransport-17.0.3/AndroidManifest.xml:24:5-32:19
-MERGED from [com.google.firebase:firebase-iid:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:28:5-45:19
-MERGED from [com.google.firebase:firebase-iid:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:28:5-45:19
-MERGED from [com.google.firebase:firebase-installations:16.3.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/657a4170ad1fbb28863aa99d484eaa8d/firebase-installations-16.3.3/AndroidManifest.xml:13:5-21:19
-MERGED from [com.google.firebase:firebase-installations:16.3.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/657a4170ad1fbb28863aa99d484eaa8d/firebase-installations-16.3.3/AndroidManifest.xml:13:5-21:19
-MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/1f24754138cdbe9dd292e6ee32cb2d40/jetified-firebase-common-19.3.0/AndroidManifest.xml:25:5-37:19
-MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/1f24754138cdbe9dd292e6ee32cb2d40/jetified-firebase-common-19.3.0/AndroidManifest.xml:25:5-37:19
-MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/646fcaf19234d7b37b884114aa567eb2/play-services-stats-17.0.0/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/646fcaf19234d7b37b884114aa567eb2/play-services-stats-17.0.0/AndroidManifest.xml:7:5-20
-MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/566477192cad9be9e53ff137fdc3eff4/firebase-iid-interop-17.0.0/AndroidManifest.xml:7:5-8:19
-MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/566477192cad9be9e53ff137fdc3eff4/firebase-iid-interop-17.0.0/AndroidManifest.xml:7:5-8:19
-MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/4c0b774c09d5393feb013f0dbe753af3/play-services-base-17.0.0/AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/4c0b774c09d5393feb013f0dbe753af3/play-services-base-17.0.0/AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/187fb4c1c365ae32171bd8312a35992f/play-services-tasks-17.0.0/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/187fb4c1c365ae32171bd8312a35992f/play-services-tasks-17.0.0/AndroidManifest.xml:7:5-20
-MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/31a3395230a9bd928e78ed2dc5338b8e/firebase-measurement-connector-18.0.0/AndroidManifest.xml:22:5-23:19
-MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/31a3395230a9bd928e78ed2dc5338b8e/firebase-measurement-connector-18.0.0/AndroidManifest.xml:22:5-23:19
-MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/14beb446a0b03d7b4a64c1d9cc66376a/jetified-play-services-basement-17.0.0/AndroidManifest.xml:22:5-26:19
-MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/14beb446a0b03d7b4a64c1d9cc66376a/jetified-play-services-basement-17.0.0/AndroidManifest.xml:22:5-26:19
-MERGED from [androidx.core:core:1.3.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/f2e0eaaff67bde345351d7ed79a43d9e/core-1.3.0/AndroidManifest.xml:24:5-89
-MERGED from [androidx.core:core:1.3.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/f2e0eaaff67bde345351d7ed79a43d9e/core-1.3.0/AndroidManifest.xml:24:5-89
-MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:28:5-36:19
-MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:28:5-36:19
-MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:25:5-39:19
-MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:25:5-39:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/4227c25f5adddf6ac1aa1a65c6b6f6a4/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/4227c25f5adddf6ac1aa1a65c6b6f6a4/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
-MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/86b8e2095003c265d89e3b21dd416032/threetenabp-1.2.3/AndroidManifest.xml:7:5-20
-MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/86b8e2095003c265d89e3b21dd416032/threetenabp-1.2.3/AndroidManifest.xml:7:5-20
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:21:5-102:19
+MERGED from [:flutter_webview_plugin] /Users/nyambayar/workspace/youth-app/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-19:19
+MERGED from [:flutter_webview_plugin] /Users/nyambayar/workspace/youth-app/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-19:19
+MERGED from [:firebase_messaging] /Users/nyambayar/workspace/youth-app/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-18:19
+MERGED from [:firebase_messaging] /Users/nyambayar/workspace/youth-app/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-18:19
+MERGED from [:url_launcher] /Users/nyambayar/workspace/youth-app/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-12:19
+MERGED from [:url_launcher] /Users/nyambayar/workspace/youth-app/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-12:19
+MERGED from [:flutter_local_notifications] /Users/nyambayar/workspace/youth-app/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-21:19
+MERGED from [:flutter_local_notifications] /Users/nyambayar/workspace/youth-app/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-21:19
+MERGED from [com.google.firebase:firebase-messaging:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/a84a0cbdc23cce898e6a7d2488dc944e/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:22:5-43:19
+MERGED from [com.google.firebase:firebase-messaging:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/a84a0cbdc23cce898e6a7d2488dc944e/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:22:5-43:19
+MERGED from [androidx.biometric:biometric:1.0.0-beta01] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/c667fe5f358cadc10af5ee26c81dba87/biometric-1.0.0-beta01/AndroidManifest.xml:27:5-31:19
+MERGED from [androidx.biometric:biometric:1.0.0-beta01] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/c667fe5f358cadc10af5ee26c81dba87/biometric-1.0.0-beta01/AndroidManifest.xml:27:5-31:19
+MERGED from [com.google.firebase:firebase-iid:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:28:5-45:19
+MERGED from [com.google.firebase:firebase-iid:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:28:5-45:19
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/646fcaf19234d7b37b884114aa567eb2/play-services-stats-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/646fcaf19234d7b37b884114aa567eb2/play-services-stats-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/34a0e5d53ae61e749f2724a77a7fa61b/firebase-datatransport-17.0.3/AndroidManifest.xml:24:5-32:19
+MERGED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/34a0e5d53ae61e749f2724a77a7fa61b/firebase-datatransport-17.0.3/AndroidManifest.xml:24:5-32:19
+MERGED from [com.google.firebase:firebase-installations:16.3.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/657a4170ad1fbb28863aa99d484eaa8d/firebase-installations-16.3.3/AndroidManifest.xml:13:5-21:19
+MERGED from [com.google.firebase:firebase-installations:16.3.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/657a4170ad1fbb28863aa99d484eaa8d/firebase-installations-16.3.3/AndroidManifest.xml:13:5-21:19
+MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/e91615cc3070c90581d0b30ddf0fda2d/jetified-firebase-common-19.3.0/AndroidManifest.xml:25:5-37:19
+MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/e91615cc3070c90581d0b30ddf0fda2d/jetified-firebase-common-19.3.0/AndroidManifest.xml:25:5-37:19
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/566477192cad9be9e53ff137fdc3eff4/firebase-iid-interop-17.0.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/566477192cad9be9e53ff137fdc3eff4/firebase-iid-interop-17.0.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/4c0b774c09d5393feb013f0dbe753af3/play-services-base-17.0.0/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/4c0b774c09d5393feb013f0dbe753af3/play-services-base-17.0.0/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/187fb4c1c365ae32171bd8312a35992f/play-services-tasks-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/187fb4c1c365ae32171bd8312a35992f/play-services-tasks-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/31a3395230a9bd928e78ed2dc5338b8e/firebase-measurement-connector-18.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/31a3395230a9bd928e78ed2dc5338b8e/firebase-measurement-connector-18.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/43d267f1efcfc8ae1c41ef369d5408d7/jetified-play-services-basement-17.0.0/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/43d267f1efcfc8ae1c41ef369d5408d7/jetified-play-services-basement-17.0.0/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.core:core:1.3.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/f2e0eaaff67bde345351d7ed79a43d9e/core-1.3.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.3.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/f2e0eaaff67bde345351d7ed79a43d9e/core-1.3.0/AndroidManifest.xml:24:5-89
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:25:5-39:19
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:25:5-39:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/4227c25f5adddf6ac1aa1a65c6b6f6a4/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/4227c25f5adddf6ac1aa1a65c6b6f6a4/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/86b8e2095003c265d89e3b21dd416032/threetenabp-1.2.3/AndroidManifest.xml:7:5-20
+MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/86b8e2095003c265d89e3b21dd416032/threetenabp-1.2.3/AndroidManifest.xml:7:5-20
 	android:appComponentFactory
-		ADDED from [androidx.core:core:1.3.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/f2e0eaaff67bde345351d7ed79a43d9e/core-1.3.0/AndroidManifest.xml:24:18-86
+		ADDED from [androidx.core:core:1.3.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/f2e0eaaff67bde345351d7ed79a43d9e/core-1.3.0/AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:26:9-34
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:26:9-34
 	android:fullBackupContent
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:24:9-42
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:24:9-42
 	android:icon
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:25:9-45
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:25:9-45
 	android:allowBackup
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:23:9-36
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:23:9-36
 	android:usesCleartextTraffic
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:27:9-44
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:27:9-44
 	android:name
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:22:9-57
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:22:9-57
 meta-data#com.google.firebase.messaging.default_notification_icon
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:29:9-31:55
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:29:9-31:55
 	android:resource
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:31:13-52
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:31:13-52
 	android:name
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:30:13-83
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:30:13-83
 meta-data#com.google.firebase.messaging.default_notification_color
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:32:9-34:49
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:32:9-34:49
 	android:resource
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:34:13-46
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:34:13-46
 	android:name
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:33:13-84
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:33:13-84
 activity#com.bitsoft.youth.MainActivity
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:36:9-73:20
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:36:9-73:20
 	android:turnScreenOn
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:43:13-40
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:43:13-40
 	android:showWhenLocked
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:42:13-42
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:42:13-42
 	android:launchMode
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:40:13-43
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:40:13-43
 	android:hardwareAccelerated
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:39:13-47
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:39:13-47
 	android:windowSoftInputMode
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:46:13-55
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:46:13-55
 	android:supportsPictureInPicture
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:45:13-52
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:45:13-52
 	android:resizeableActivity
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:44:13-46
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:44:13-46
 	android:configChanges
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:38:13-176
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:38:13-176
 	android:theme
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:41:13-47
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:41:13-47
 	android:name
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:37:13-41
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:37:13-41
 meta-data#io.flutter.embedding.android.NormalTheme
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:51:13-53:57
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:51:13-53:57
 	android:resource
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:53:17-54
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:53:17-54
 	android:name
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:52:17-72
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:52:17-72
 meta-data#io.flutter.embedding.android.SplashScreenDrawable
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:59:13-61:66
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:59:13-61:66
 	android:resource
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:61:17-63
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:61:17-63
 	android:name
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:60:17-81
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:60:17-81
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:63:13-66:29
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:63:13-66:29
 action#android.intent.action.MAIN
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:64:17-69
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:64:17-69
 	android:name
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:64:25-66
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:64:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:65:17-77
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:65:17-77
 	android:name
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:65:27-74
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:65:27-74
 intent-filter#action:name:FLUTTER_NOTIFICATION_CLICK+category:name:android.intent.category.DEFAULT
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:69:13-72:29
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:69:13-72:29
 action#FLUTTER_NOTIFICATION_CLICK
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:70:17-69
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:70:17-69
 	android:name
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:70:25-66
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:70:25-66
 category#android.intent.category.DEFAULT
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:71:17-76
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:71:17-76
 	android:name
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:71:27-73
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:71:27-73
 meta-data#flutterEmbedding
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:77:9-79:33
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:77:9-79:33
 	android:value
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:79:13-30
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:79:13-30
 	android:name
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:78:13-44
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:78:13-44
 meta-data#com.facebook.sdk.ApplicationId
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:81:9-83:55
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:81:9-83:55
 	android:value
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:83:13-52
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:83:13-52
 	android:name
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:82:13-58
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:82:13-58
 activity#com.facebook.FacebookActivity
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:85:9-88:48
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:85:9-88:48
 	android:label
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:88:13-45
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:88:13-45
 	android:configChanges
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:87:13-96
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:87:13-96
 	android:name
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:86:13-57
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:86:13-57
 activity#com.facebook.CustomTabActivity
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:90:9-101:20
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:90:9-101:20
 	android:exported
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:92:13-36
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:92:13-36
 	android:name
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:91:13-58
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:91:13-58
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:@string/fb_login_protocol_scheme
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:93:13-100:29
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:93:13-100:29
 action#android.intent.action.VIEW
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:94:17-69
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:94:17-69
 	android:name
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:94:25-66
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:94:25-66
 category#android.intent.category.BROWSABLE
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:97:17-78
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:97:17-78
 	android:name
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:97:27-75
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:97:27-75
 data
-ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:99:17-75
+ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:99:17-75
 	android:scheme
-		ADDED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml:99:23-72
+		ADDED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml:99:23-72
 uses-sdk
-INJECTED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml
-INJECTED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml
-MERGED from [:local_auth] /Users/n0m4dz/Workspace/mobile/youth/build/local_auth/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:local_auth] /Users/n0m4dz/Workspace/mobile/youth/build/local_auth/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:flutter_plugin_android_lifecycle] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_plugin_android_lifecycle/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:flutter_plugin_android_lifecycle] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_plugin_android_lifecycle/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:shared_preferences] /Users/n0m4dz/Workspace/mobile/youth/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:shared_preferences] /Users/n0m4dz/Workspace/mobile/youth/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:sqflite] /Users/n0m4dz/Workspace/mobile/youth/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:sqflite] /Users/n0m4dz/Workspace/mobile/youth/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:flutter_local_notifications] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:flutter_local_notifications] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:webview_flutter] /Users/n0m4dz/Workspace/mobile/youth/build/webview_flutter/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:webview_flutter] /Users/n0m4dz/Workspace/mobile/youth/build/webview_flutter/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:path_provider] /Users/n0m4dz/Workspace/mobile/youth/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:path_provider] /Users/n0m4dz/Workspace/mobile/youth/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:flutter_secure_storage] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_secure_storage/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:flutter_secure_storage] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_secure_storage/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:flutter_webview_plugin] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:6:5-44
-MERGED from [:flutter_webview_plugin] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:6:5-44
-MERGED from [:wakelock] /Users/n0m4dz/Workspace/mobile/youth/build/wakelock/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:wakelock] /Users/n0m4dz/Workspace/mobile/youth/build/wakelock/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:video_player] /Users/n0m4dz/Workspace/mobile/youth/build/video_player/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:video_player] /Users/n0m4dz/Workspace/mobile/youth/build/video_player/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:url_launcher] /Users/n0m4dz/Workspace/mobile/youth/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:url_launcher] /Users/n0m4dz/Workspace/mobile/youth/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:firebase_messaging] /Users/n0m4dz/Workspace/mobile/youth/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:firebase_messaging] /Users/n0m4dz/Workspace/mobile/youth/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-messaging:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/39881029fd68e95fe81236c6b38abdbb/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-messaging:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/39881029fd68e95fe81236c6b38abdbb/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.media:media:1.1.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/0330fa1606dbd2927998321d8a033742/media-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.media:media:1.1.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/0330fa1606dbd2927998321d8a033742/media-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.webkit:webkit:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/3af8640ce562b4b4e0a6111579ef27f6/webkit-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.webkit:webkit:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/3af8640ce562b4b4e0a6111579ef27f6/webkit-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.biometric:biometric:1.0.0-beta01] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/c667fe5f358cadc10af5ee26c81dba87/biometric-1.0.0-beta01/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.biometric:biometric:1.0.0-beta01] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/c667fe5f358cadc10af5ee26c81dba87/biometric-1.0.0-beta01/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/701c33591765b03ec8ed51d702bd262d/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/701c33591765b03ec8ed51d702bd262d/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/34a0e5d53ae61e749f2724a77a7fa61b/firebase-datatransport-17.0.3/AndroidManifest.xml:19:5-21:41
-MERGED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/34a0e5d53ae61e749f2724a77a7fa61b/firebase-datatransport-17.0.3/AndroidManifest.xml:19:5-21:41
-MERGED from [com.google.firebase:firebase-iid:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-iid:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-installations:16.3.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/657a4170ad1fbb28863aa99d484eaa8d/firebase-installations-16.3.3/AndroidManifest.xml:6:5-8:41
-MERGED from [com.google.firebase:firebase-installations:16.3.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/657a4170ad1fbb28863aa99d484eaa8d/firebase-installations-16.3.3/AndroidManifest.xml:6:5-8:41
-MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/1f24754138cdbe9dd292e6ee32cb2d40/jetified-firebase-common-19.3.0/AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/1f24754138cdbe9dd292e6ee32cb2d40/jetified-firebase-common-19.3.0/AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.gms:play-services-cloud-messaging:16.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/ae3c1578debcad49d0a6c8743b24abc8/play-services-cloud-messaging-16.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-cloud-messaging:16.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/ae3c1578debcad49d0a6c8743b24abc8/play-services-cloud-messaging-16.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/646fcaf19234d7b37b884114aa567eb2/play-services-stats-17.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/646fcaf19234d7b37b884114aa567eb2/play-services-stats-17.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-installations-interop:16.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/be92c5c51e7e0033fb4b175f26388755/firebase-installations-interop-16.0.0/AndroidManifest.xml:19:5-21:41
-MERGED from [com.google.firebase:firebase-installations-interop:16.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/be92c5c51e7e0033fb4b175f26388755/firebase-installations-interop-16.0.0/AndroidManifest.xml:19:5-21:41
-MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/566477192cad9be9e53ff137fdc3eff4/firebase-iid-interop-17.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/566477192cad9be9e53ff137fdc3eff4/firebase-iid-interop-17.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/4c0b774c09d5393feb013f0dbe753af3/play-services-base-17.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/4c0b774c09d5393feb013f0dbe753af3/play-services-base-17.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/187fb4c1c365ae32171bd8312a35992f/play-services-tasks-17.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/187fb4c1c365ae32171bd8312a35992f/play-services-tasks-17.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/31a3395230a9bd928e78ed2dc5338b8e/firebase-measurement-connector-18.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/31a3395230a9bd928e78ed2dc5338b8e/firebase-measurement-connector-18.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/14beb446a0b03d7b4a64c1d9cc66376a/jetified-play-services-basement-17.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/14beb446a0b03d7b4a64c1d9cc66376a/jetified-play-services-basement-17.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.fragment:fragment:1.1.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/0d479d426be2ba1f4bdfee2f9a7aa519/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.fragment:fragment:1.1.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/0d479d426be2ba1f4bdfee2f9a7aa519/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/f266002780b6f62ae73a8842bc10a810/appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/f266002780b6f62ae73a8842bc10a810/appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/6af37b0dc18acadfaf8b0344ec157d66/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/6af37b0dc18acadfaf8b0344ec157d66/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/d10fe1176fa5480b064486ece15f99c1/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/d10fe1176fa5480b064486ece15f99c1/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/4881302d1430cfdcaa10344523e2ce7f/viewpager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/4881302d1430cfdcaa10344523e2ce7f/viewpager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/28c8df72e3e98cf2af337943db219b6d/loader-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/28c8df72e3e98cf2af337943db219b6d/loader-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.activity:activity:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/5a1de8d3594afca67ad230d5d25a73b9/activity-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.activity:activity:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/5a1de8d3594afca67ad230d5d25a73b9/activity-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/a5b8095803802f17607f1ac359c588fa/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/a5b8095803802f17607f1ac359c588fa/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/06d80eb16b557b026bc1ef456724990c/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/06d80eb16b557b026bc1ef456724990c/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.customview:customview:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/31cd047ed3ec37dce69ba9f16e10a05d/customview-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.customview:customview:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/31cd047ed3ec37dce69ba9f16e10a05d/customview-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core:1.3.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/f2e0eaaff67bde345351d7ed79a43d9e/core-1.3.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core:1.3.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/f2e0eaaff67bde345351d7ed79a43d9e/core-1.3.0/AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.exoplayer:exoplayer-hls:2.12.1] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/7e8162b9b2b1fa3c1ffde3d0255da233/exoplayer-hls-2.12.1/AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.exoplayer:exoplayer-hls:2.12.1] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/7e8162b9b2b1fa3c1ffde3d0255da233/exoplayer-hls-2.12.1/AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.exoplayer:exoplayer-dash:2.12.1] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/87e8b8d9c095cd2faccbcc5e84668b76/exoplayer-dash-2.12.1/AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.exoplayer:exoplayer-dash:2.12.1] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/87e8b8d9c095cd2faccbcc5e84668b76/exoplayer-dash-2.12.1/AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.12.1] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/5768751ec6df02e1d630bc2d5ceff0b3/exoplayer-smoothstreaming-2.12.1/AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.12.1] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/5768751ec6df02e1d630bc2d5ceff0b3/exoplayer-smoothstreaming-2.12.1/AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.exoplayer:exoplayer-core:2.12.1] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/59c64c6f0354ffe8f2a2f14ca084d685/exoplayer-core-2.12.1/AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.exoplayer:exoplayer-core:2.12.1] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/59c64c6f0354ffe8f2a2f14ca084d685/exoplayer-core-2.12.1/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/c8f4c2580dddd9ecf64fc10bf9fbc418/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/c8f4c2580dddd9ecf64fc10bf9fbc418/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:19:5-21:41
-MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:19:5-21:41
-MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:18:5-20:41
-MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:18:5-20:41
-MERGED from [com.google.firebase:firebase-components:16.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/6eed3107dd830b3be8cff99d463e687c/jetified-firebase-components-16.0.0/AndroidManifest.xml:19:5-21:41
-MERGED from [com.google.firebase:firebase-components:16.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/6eed3107dd830b3be8cff99d463e687c/jetified-firebase-components-16.0.0/AndroidManifest.xml:19:5-21:41
-MERGED from [com.google.firebase:firebase-encoders-json:16.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/49c931c92b12f4476416c70f28960002/firebase-encoders-json-16.0.0/AndroidManifest.xml:19:5-21:41
-MERGED from [com.google.firebase:firebase-encoders-json:16.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/49c931c92b12f4476416c70f28960002/firebase-encoders-json-16.0.0/AndroidManifest.xml:19:5-21:41
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/00db72760b3662c4528b816b17c43995/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/00db72760b3662c4528b816b17c43995/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/13eb812daeca5edd5883d98298d1a9d8/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/13eb812daeca5edd5883d98298d1a9d8/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/82b463c8584fb88ea5a1f562d740c4b7/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/82b463c8584fb88ea5a1f562d740c4b7/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/a78ce9b49fd39a3eac90624d04d1ee8a/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/a78ce9b49fd39a3eac90624d04d1ee8a/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/4227c25f5adddf6ac1aa1a65c6b6f6a4/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/4227c25f5adddf6ac1aa1a65c6b6f6a4/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/07713a4b02ecb1ede5529340586b2906/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/07713a4b02ecb1ede5529340586b2906/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.12.1] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/aa2217e288c28bbdad4d68ab1a649fe0/jetified-exoplayer-extractor-2.12.1/AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.12.1] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/aa2217e288c28bbdad4d68ab1a649fe0/jetified-exoplayer-extractor-2.12.1/AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.exoplayer:exoplayer-common:2.12.1] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/82d316601e8245f35d512cc73a1d58a8/jetified-exoplayer-common-2.12.1/AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.exoplayer:exoplayer-common:2.12.1] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/82d316601e8245f35d512cc73a1d58a8/jetified-exoplayer-common-2.12.1/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/3bf5fc05ca184d01c3bed36c84f7c6c7/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/3bf5fc05ca184d01c3bed36c84f7c6c7/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/ec735b528ee8f52f56a38a2f27a69a4b/documentfile-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/ec735b528ee8f52f56a38a2f27a69a4b/documentfile-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.print:print:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/dff04f4f27a157ea6f57a15b661fd9d7/print-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.print:print:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/dff04f4f27a157ea6f57a15b661fd9d7/print-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/d51e0220d8e43d4bfbf3a1c4895b8a97/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/d51e0220d8e43d4bfbf3a1c4895b8a97/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/b59192acc39c8e1083525bb1a0764fd3/interpolator-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/b59192acc39c8e1083525bb1a0764fd3/interpolator-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/86b8e2095003c265d89e3b21dd416032/threetenabp-1.2.3/AndroidManifest.xml:5:5-44
-MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/86b8e2095003c265d89e3b21dd416032/threetenabp-1.2.3/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.datatransport:transport-api:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/d62c70c682445a3aae6412574932cb36/transport-api-2.2.0/AndroidManifest.xml:18:5-20:41
-MERGED from [com.google.android.datatransport:transport-api:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/d62c70c682445a3aae6412574932cb36/transport-api-2.2.0/AndroidManifest.xml:18:5-20:41
-INJECTED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/debug/AndroidManifest.xml
-INJECTED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/debug/AndroidManifest.xml
+INJECTED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml
+MERGED from [:flutter_secure_storage] /Users/nyambayar/workspace/youth-app/build/flutter_secure_storage/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:flutter_secure_storage] /Users/nyambayar/workspace/youth-app/build/flutter_secure_storage/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:video_player] /Users/nyambayar/workspace/youth-app/build/video_player/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:video_player] /Users/nyambayar/workspace/youth-app/build/video_player/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:sqflite] /Users/nyambayar/workspace/youth-app/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:sqflite] /Users/nyambayar/workspace/youth-app/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:wakelock] /Users/nyambayar/workspace/youth-app/build/wakelock/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:wakelock] /Users/nyambayar/workspace/youth-app/build/wakelock/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:local_auth] /Users/nyambayar/workspace/youth-app/build/local_auth/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:local_auth] /Users/nyambayar/workspace/youth-app/build/local_auth/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_plugin_android_lifecycle] /Users/nyambayar/workspace/youth-app/build/flutter_plugin_android_lifecycle/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_plugin_android_lifecycle] /Users/nyambayar/workspace/youth-app/build/flutter_plugin_android_lifecycle/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_webview_plugin] /Users/nyambayar/workspace/youth-app/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:6:5-44
+MERGED from [:flutter_webview_plugin] /Users/nyambayar/workspace/youth-app/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:6:5-44
+MERGED from [:firebase_messaging] /Users/nyambayar/workspace/youth-app/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_messaging] /Users/nyambayar/workspace/youth-app/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher] /Users/nyambayar/workspace/youth-app/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher] /Users/nyambayar/workspace/youth-app/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:webview_flutter] /Users/nyambayar/workspace/youth-app/build/webview_flutter/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:webview_flutter] /Users/nyambayar/workspace/youth-app/build/webview_flutter/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] /Users/nyambayar/workspace/youth-app/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] /Users/nyambayar/workspace/youth-app/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_local_notifications] /Users/nyambayar/workspace/youth-app/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_local_notifications] /Users/nyambayar/workspace/youth-app/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences] /Users/nyambayar/workspace/youth-app/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences] /Users/nyambayar/workspace/youth-app/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-messaging:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/a84a0cbdc23cce898e6a7d2488dc944e/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-messaging:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/a84a0cbdc23cce898e6a7d2488dc944e/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.12.1] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/7e8162b9b2b1fa3c1ffde3d0255da233/exoplayer-hls-2.12.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.12.1] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/7e8162b9b2b1fa3c1ffde3d0255da233/exoplayer-hls-2.12.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.12.1] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/87e8b8d9c095cd2faccbcc5e84668b76/exoplayer-dash-2.12.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.12.1] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/87e8b8d9c095cd2faccbcc5e84668b76/exoplayer-dash-2.12.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.12.1] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/5768751ec6df02e1d630bc2d5ceff0b3/exoplayer-smoothstreaming-2.12.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.12.1] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/5768751ec6df02e1d630bc2d5ceff0b3/exoplayer-smoothstreaming-2.12.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.12.1] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/59c64c6f0354ffe8f2a2f14ca084d685/exoplayer-core-2.12.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.12.1] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/59c64c6f0354ffe8f2a2f14ca084d685/exoplayer-core-2.12.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.biometric:biometric:1.0.0-beta01] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/c667fe5f358cadc10af5ee26c81dba87/biometric-1.0.0-beta01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.biometric:biometric:1.0.0-beta01] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/c667fe5f358cadc10af5ee26c81dba87/biometric-1.0.0-beta01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/701c33591765b03ec8ed51d702bd262d/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/701c33591765b03ec8ed51d702bd262d/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-iid:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/646fcaf19234d7b37b884114aa567eb2/play-services-stats-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/646fcaf19234d7b37b884114aa567eb2/play-services-stats-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/d10fe1176fa5480b064486ece15f99c1/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/d10fe1176fa5480b064486ece15f99c1/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/c8f4c2580dddd9ecf64fc10bf9fbc418/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/c8f4c2580dddd9ecf64fc10bf9fbc418/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.webkit:webkit:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/3af8640ce562b4b4e0a6111579ef27f6/webkit-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.webkit:webkit:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/3af8640ce562b4b4e0a6111579ef27f6/webkit-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.1.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/0330fa1606dbd2927998321d8a033742/media-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.media:media:1.1.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/0330fa1606dbd2927998321d8a033742/media-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/34a0e5d53ae61e749f2724a77a7fa61b/firebase-datatransport-17.0.3/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/34a0e5d53ae61e749f2724a77a7fa61b/firebase-datatransport-17.0.3/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-installations:16.3.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/657a4170ad1fbb28863aa99d484eaa8d/firebase-installations-16.3.3/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-installations:16.3.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/657a4170ad1fbb28863aa99d484eaa8d/firebase-installations-16.3.3/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/e91615cc3070c90581d0b30ddf0fda2d/jetified-firebase-common-19.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/e91615cc3070c90581d0b30ddf0fda2d/jetified-firebase-common-19.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-cloud-messaging:16.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/ae3c1578debcad49d0a6c8743b24abc8/play-services-cloud-messaging-16.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-cloud-messaging:16.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/ae3c1578debcad49d0a6c8743b24abc8/play-services-cloud-messaging-16.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-installations-interop:16.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/be92c5c51e7e0033fb4b175f26388755/firebase-installations-interop-16.0.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-installations-interop:16.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/be92c5c51e7e0033fb4b175f26388755/firebase-installations-interop-16.0.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/566477192cad9be9e53ff137fdc3eff4/firebase-iid-interop-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/566477192cad9be9e53ff137fdc3eff4/firebase-iid-interop-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/4c0b774c09d5393feb013f0dbe753af3/play-services-base-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/4c0b774c09d5393feb013f0dbe753af3/play-services-base-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/187fb4c1c365ae32171bd8312a35992f/play-services-tasks-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/187fb4c1c365ae32171bd8312a35992f/play-services-tasks-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/31a3395230a9bd928e78ed2dc5338b8e/firebase-measurement-connector-18.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/31a3395230a9bd928e78ed2dc5338b8e/firebase-measurement-connector-18.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/43d267f1efcfc8ae1c41ef369d5408d7/jetified-play-services-basement-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/43d267f1efcfc8ae1c41ef369d5408d7/jetified-play-services-basement-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/0d479d426be2ba1f4bdfee2f9a7aa519/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/0d479d426be2ba1f4bdfee2f9a7aa519/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/f266002780b6f62ae73a8842bc10a810/appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/f266002780b6f62ae73a8842bc10a810/appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/6af37b0dc18acadfaf8b0344ec157d66/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/6af37b0dc18acadfaf8b0344ec157d66/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/4881302d1430cfdcaa10344523e2ce7f/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/4881302d1430cfdcaa10344523e2ce7f/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/28c8df72e3e98cf2af337943db219b6d/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/28c8df72e3e98cf2af337943db219b6d/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/5a1de8d3594afca67ad230d5d25a73b9/activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/5a1de8d3594afca67ad230d5d25a73b9/activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/a5b8095803802f17607f1ac359c588fa/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/a5b8095803802f17607f1ac359c588fa/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/06d80eb16b557b026bc1ef456724990c/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/06d80eb16b557b026bc1ef456724990c/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/31cd047ed3ec37dce69ba9f16e10a05d/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/31cd047ed3ec37dce69ba9f16e10a05d/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.3.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/f2e0eaaff67bde345351d7ed79a43d9e/core-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.3.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/f2e0eaaff67bde345351d7ed79a43d9e/core-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-components:16.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/56403250a4e10d66419bf3a3a32aecc0/jetified-firebase-components-16.0.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-components:16.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/56403250a4e10d66419bf3a3a32aecc0/jetified-firebase-components-16.0.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-encoders-json:16.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/49c931c92b12f4476416c70f28960002/firebase-encoders-json-16.0.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-encoders-json:16.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/49c931c92b12f4476416c70f28960002/firebase-encoders-json-16.0.0/AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/00db72760b3662c4528b816b17c43995/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/00db72760b3662c4528b816b17c43995/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/13eb812daeca5edd5883d98298d1a9d8/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/13eb812daeca5edd5883d98298d1a9d8/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/82b463c8584fb88ea5a1f562d740c4b7/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/82b463c8584fb88ea5a1f562d740c4b7/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/a78ce9b49fd39a3eac90624d04d1ee8a/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/a78ce9b49fd39a3eac90624d04d1ee8a/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.12.1] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/d45fd046de7e74960261d86211da8e5c/jetified-exoplayer-extractor-2.12.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.12.1] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/d45fd046de7e74960261d86211da8e5c/jetified-exoplayer-extractor-2.12.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.12.1] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/032df62ee80fec69fac0b39cbdf90af4/jetified-exoplayer-common-2.12.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.12.1] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/032df62ee80fec69fac0b39cbdf90af4/jetified-exoplayer-common-2.12.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/07713a4b02ecb1ede5529340586b2906/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/07713a4b02ecb1ede5529340586b2906/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/4227c25f5adddf6ac1aa1a65c6b6f6a4/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/4227c25f5adddf6ac1aa1a65c6b6f6a4/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/3bf5fc05ca184d01c3bed36c84f7c6c7/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/3bf5fc05ca184d01c3bed36c84f7c6c7/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/ec735b528ee8f52f56a38a2f27a69a4b/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/ec735b528ee8f52f56a38a2f27a69a4b/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/dff04f4f27a157ea6f57a15b661fd9d7/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/dff04f4f27a157ea6f57a15b661fd9d7/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/d51e0220d8e43d4bfbf3a1c4895b8a97/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/d51e0220d8e43d4bfbf3a1c4895b8a97/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/b59192acc39c8e1083525bb1a0764fd3/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/b59192acc39c8e1083525bb1a0764fd3/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/86b8e2095003c265d89e3b21dd416032/threetenabp-1.2.3/AndroidManifest.xml:5:5-44
+MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/86b8e2095003c265d89e3b21dd416032/threetenabp-1.2.3/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.datatransport:transport-api:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/d62c70c682445a3aae6412574932cb36/transport-api-2.2.0/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-api:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/d62c70c682445a3aae6412574932cb36/transport-api-2.2.0/AndroidManifest.xml:18:5-20:41
+INJECTED from /Users/nyambayar/workspace/youth-app/android/app/src/debug/AndroidManifest.xml
+INJECTED from /Users/nyambayar/workspace/youth-app/android/app/src/debug/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/nyambayar/workspace/youth-app/android/app/src/debug/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/n0m4dz/Workspace/mobile/youth/android/app/src/debug/AndroidManifest.xml
-uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
-ADDED from [:flutter_local_notifications] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-81
-	android:name
-		ADDED from [:flutter_local_notifications] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:7:22-78
-uses-permission#android.permission.USE_FULL_SCREEN_INTENT
-ADDED from [:flutter_local_notifications] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-81
-	android:name
-		ADDED from [:flutter_local_notifications] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:9:22-78
-receiver#com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
-ADDED from [:flutter_local_notifications] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-106
-	android:name
-		ADDED from [:flutter_local_notifications] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:12:19-103
-receiver#com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver
-ADDED from [:flutter_local_notifications] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:13:9-20:20
-	android:name
-		ADDED from [:flutter_local_notifications] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:13:19-107
-intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.MY_PACKAGE_REPLACED+action:name:android.intent.action.QUICKBOOT_POWERON+action:name:com.htc.intent.action.QUICKBOOT_POWERON
-ADDED from [:flutter_local_notifications] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-19:29
-action#android.intent.action.BOOT_COMPLETED
-ADDED from [:flutter_local_notifications] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:15:17-79
-	android:name
-		ADDED from [:flutter_local_notifications] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:15:25-76
-action#android.intent.action.MY_PACKAGE_REPLACED
-ADDED from [:flutter_local_notifications] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:16:17-84
-	android:name
-		ADDED from [:flutter_local_notifications] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:16:25-81
-action#android.intent.action.QUICKBOOT_POWERON
-ADDED from [:flutter_local_notifications] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:17:17-82
-	android:name
-		ADDED from [:flutter_local_notifications] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:17:25-79
-action#com.htc.intent.action.QUICKBOOT_POWERON
-ADDED from [:flutter_local_notifications] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:18:17-82
-	android:name
-		ADDED from [:flutter_local_notifications] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:18:25-79
+		INJECTED from /Users/nyambayar/workspace/youth-app/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/nyambayar/workspace/youth-app/android/app/src/debug/AndroidManifest.xml
 provider#androidx.core.content.FileProvider
-ADDED from [:flutter_webview_plugin] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:9:9-18:20
+ADDED from [:flutter_webview_plugin] /Users/nyambayar/workspace/youth-app/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:9:9-18:20
 	android:grantUriPermissions
-		ADDED from [:flutter_webview_plugin] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-47
+		ADDED from [:flutter_webview_plugin] /Users/nyambayar/workspace/youth-app/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-47
 	android:authorities
-		ADDED from [:flutter_webview_plugin] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-64
+		ADDED from [:flutter_webview_plugin] /Users/nyambayar/workspace/youth-app/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-64
 	android:exported
-		ADDED from [:flutter_webview_plugin] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-37
+		ADDED from [:flutter_webview_plugin] /Users/nyambayar/workspace/youth-app/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-37
 	tools:replace
-		ADDED from [:flutter_webview_plugin] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-48
+		ADDED from [:flutter_webview_plugin] /Users/nyambayar/workspace/youth-app/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-48
 	android:name
-		ADDED from [:flutter_webview_plugin] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-62
+		ADDED from [:flutter_webview_plugin] /Users/nyambayar/workspace/youth-app/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-62
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from [:flutter_webview_plugin] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-17:53
+ADDED from [:flutter_webview_plugin] /Users/nyambayar/workspace/youth-app/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-17:53
 	android:resource
-		ADDED from [:flutter_webview_plugin] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:17:17-50
+		ADDED from [:flutter_webview_plugin] /Users/nyambayar/workspace/youth-app/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:17:17-50
 	android:name
-		ADDED from [:flutter_webview_plugin] /Users/n0m4dz/Workspace/mobile/youth/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:16:17-67
-activity#io.flutter.plugins.urllauncher.WebViewActivity
-ADDED from [:url_launcher] /Users/n0m4dz/Workspace/mobile/youth/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-11:74
-	android:exported
-		ADDED from [:url_launcher] /Users/n0m4dz/Workspace/mobile/youth/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-37
-	android:theme
-		ADDED from [:url_launcher] /Users/n0m4dz/Workspace/mobile/youth/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-71
-	android:name
-		ADDED from [:url_launcher] /Users/n0m4dz/Workspace/mobile/youth/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-74
+		ADDED from [:flutter_webview_plugin] /Users/nyambayar/workspace/youth-app/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:16:17-67
 service#io.flutter.plugins.firebasemessaging.FlutterFirebaseMessagingService
-ADDED from [:firebase_messaging] /Users/n0m4dz/Workspace/mobile/youth/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
+ADDED from [:firebase_messaging] /Users/nyambayar/workspace/youth-app/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
 	android:name
-		ADDED from [:firebase_messaging] /Users/n0m4dz/Workspace/mobile/youth/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:8:18-101
+		ADDED from [:firebase_messaging] /Users/nyambayar/workspace/youth-app/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:8:18-101
 intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
-ADDED from [:firebase_messaging] /Users/n0m4dz/Workspace/mobile/youth/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:29
+ADDED from [:firebase_messaging] /Users/nyambayar/workspace/youth-app/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:29
 action#com.google.firebase.MESSAGING_EVENT
-ADDED from [:firebase_messaging] /Users/n0m4dz/Workspace/mobile/youth/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-78
+ADDED from [:firebase_messaging] /Users/nyambayar/workspace/youth-app/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-78
 	android:name
-		ADDED from [:firebase_messaging] /Users/n0m4dz/Workspace/mobile/youth/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:10:25-75
+		ADDED from [:firebase_messaging] /Users/nyambayar/workspace/youth-app/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:10:25-75
 service#com.google.firebase.components.ComponentDiscoveryService
-ADDED from [:firebase_messaging] /Users/n0m4dz/Workspace/mobile/youth/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:13:9-17:19
-MERGED from [com.google.firebase:firebase-messaging:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/39881029fd68e95fe81236c6b38abdbb/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:36:9-42:19
-MERGED from [com.google.firebase:firebase-messaging:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/39881029fd68e95fe81236c6b38abdbb/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:36:9-42:19
-MERGED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/34a0e5d53ae61e749f2724a77a7fa61b/firebase-datatransport-17.0.3/AndroidManifest.xml:25:9-31:19
-MERGED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/34a0e5d53ae61e749f2724a77a7fa61b/firebase-datatransport-17.0.3/AndroidManifest.xml:25:9-31:19
-MERGED from [com.google.firebase:firebase-iid:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:29:9-35:19
-MERGED from [com.google.firebase:firebase-iid:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:29:9-35:19
-MERGED from [com.google.firebase:firebase-installations:16.3.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/657a4170ad1fbb28863aa99d484eaa8d/firebase-installations-16.3.3/AndroidManifest.xml:14:9-20:19
-MERGED from [com.google.firebase:firebase-installations:16.3.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/657a4170ad1fbb28863aa99d484eaa8d/firebase-installations-16.3.3/AndroidManifest.xml:14:9-20:19
-MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/1f24754138cdbe9dd292e6ee32cb2d40/jetified-firebase-common-19.3.0/AndroidManifest.xml:32:9-36:35
-MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/1f24754138cdbe9dd292e6ee32cb2d40/jetified-firebase-common-19.3.0/AndroidManifest.xml:32:9-36:35
+ADDED from [:firebase_messaging] /Users/nyambayar/workspace/youth-app/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:13:9-17:19
+MERGED from [com.google.firebase:firebase-messaging:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/a84a0cbdc23cce898e6a7d2488dc944e/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:36:9-42:19
+MERGED from [com.google.firebase:firebase-messaging:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/a84a0cbdc23cce898e6a7d2488dc944e/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:36:9-42:19
+MERGED from [com.google.firebase:firebase-iid:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.firebase:firebase-iid:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/34a0e5d53ae61e749f2724a77a7fa61b/firebase-datatransport-17.0.3/AndroidManifest.xml:25:9-31:19
+MERGED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/34a0e5d53ae61e749f2724a77a7fa61b/firebase-datatransport-17.0.3/AndroidManifest.xml:25:9-31:19
+MERGED from [com.google.firebase:firebase-installations:16.3.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/657a4170ad1fbb28863aa99d484eaa8d/firebase-installations-16.3.3/AndroidManifest.xml:14:9-20:19
+MERGED from [com.google.firebase:firebase-installations:16.3.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/657a4170ad1fbb28863aa99d484eaa8d/firebase-installations-16.3.3/AndroidManifest.xml:14:9-20:19
+MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/e91615cc3070c90581d0b30ddf0fda2d/jetified-firebase-common-19.3.0/AndroidManifest.xml:32:9-36:35
+MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/e91615cc3070c90581d0b30ddf0fda2d/jetified-firebase-common-19.3.0/AndroidManifest.xml:32:9-36:35
 	android:exported
-		ADDED from [com.google.firebase:firebase-messaging:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/39881029fd68e95fe81236c6b38abdbb/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:38:13-37
+		ADDED from [com.google.firebase:firebase-messaging:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/a84a0cbdc23cce898e6a7d2488dc944e/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:38:13-37
 	tools:targetApi
-		ADDED from [com.google.firebase:firebase-common:19.3.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/1f24754138cdbe9dd292e6ee32cb2d40/jetified-firebase-common-19.3.0/AndroidManifest.xml:36:13-32
+		ADDED from [com.google.firebase:firebase-common:19.3.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/e91615cc3070c90581d0b30ddf0fda2d/jetified-firebase-common-19.3.0/AndroidManifest.xml:36:13-32
 	android:directBootAware
-		ADDED from [com.google.firebase:firebase-common:19.3.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/1f24754138cdbe9dd292e6ee32cb2d40/jetified-firebase-common-19.3.0/AndroidManifest.xml:34:13-43
+		ADDED from [com.google.firebase:firebase-common:19.3.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/e91615cc3070c90581d0b30ddf0fda2d/jetified-firebase-common-19.3.0/AndroidManifest.xml:34:13-43
 	android:name
-		ADDED from [:firebase_messaging] /Users/n0m4dz/Workspace/mobile/youth/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:13:18-89
+		ADDED from [:firebase_messaging] /Users/nyambayar/workspace/youth-app/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:13:18-89
 meta-data#com.google.firebase.components:io.flutter.plugins.firebasemessaging.FlutterFirebaseAppRegistrar
-ADDED from [:firebase_messaging] /Users/n0m4dz/Workspace/mobile/youth/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-16:85
+ADDED from [:firebase_messaging] /Users/nyambayar/workspace/youth-app/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-16:85
 	android:value
-		ADDED from [:firebase_messaging] /Users/n0m4dz/Workspace/mobile/youth/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:16:17-82
+		ADDED from [:firebase_messaging] /Users/nyambayar/workspace/youth-app/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:16:17-82
 	android:name
-		ADDED from [:firebase_messaging] /Users/n0m4dz/Workspace/mobile/youth/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:15:17-127
+		ADDED from [:firebase_messaging] /Users/nyambayar/workspace/youth-app/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:15:17-127
+activity#io.flutter.plugins.urllauncher.WebViewActivity
+ADDED from [:url_launcher] /Users/nyambayar/workspace/youth-app/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-11:74
+	android:exported
+		ADDED from [:url_launcher] /Users/nyambayar/workspace/youth-app/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-37
+	android:theme
+		ADDED from [:url_launcher] /Users/nyambayar/workspace/youth-app/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-71
+	android:name
+		ADDED from [:url_launcher] /Users/nyambayar/workspace/youth-app/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-74
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from [:flutter_local_notifications] /Users/nyambayar/workspace/youth-app/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-81
+	android:name
+		ADDED from [:flutter_local_notifications] /Users/nyambayar/workspace/youth-app/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:7:22-78
+uses-permission#android.permission.USE_FULL_SCREEN_INTENT
+ADDED from [:flutter_local_notifications] /Users/nyambayar/workspace/youth-app/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-81
+	android:name
+		ADDED from [:flutter_local_notifications] /Users/nyambayar/workspace/youth-app/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:9:22-78
+receiver#com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+ADDED from [:flutter_local_notifications] /Users/nyambayar/workspace/youth-app/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-106
+	android:name
+		ADDED from [:flutter_local_notifications] /Users/nyambayar/workspace/youth-app/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:12:19-103
+receiver#com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver
+ADDED from [:flutter_local_notifications] /Users/nyambayar/workspace/youth-app/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:13:9-20:20
+	android:name
+		ADDED from [:flutter_local_notifications] /Users/nyambayar/workspace/youth-app/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:13:19-107
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.MY_PACKAGE_REPLACED+action:name:android.intent.action.QUICKBOOT_POWERON+action:name:com.htc.intent.action.QUICKBOOT_POWERON
+ADDED from [:flutter_local_notifications] /Users/nyambayar/workspace/youth-app/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-19:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from [:flutter_local_notifications] /Users/nyambayar/workspace/youth-app/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:15:17-79
+	android:name
+		ADDED from [:flutter_local_notifications] /Users/nyambayar/workspace/youth-app/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:15:25-76
+action#android.intent.action.MY_PACKAGE_REPLACED
+ADDED from [:flutter_local_notifications] /Users/nyambayar/workspace/youth-app/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:16:17-84
+	android:name
+		ADDED from [:flutter_local_notifications] /Users/nyambayar/workspace/youth-app/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:16:25-81
+action#android.intent.action.QUICKBOOT_POWERON
+ADDED from [:flutter_local_notifications] /Users/nyambayar/workspace/youth-app/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:17:17-82
+	android:name
+		ADDED from [:flutter_local_notifications] /Users/nyambayar/workspace/youth-app/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:17:25-79
+action#com.htc.intent.action.QUICKBOOT_POWERON
+ADDED from [:flutter_local_notifications] /Users/nyambayar/workspace/youth-app/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:18:17-82
+	android:name
+		ADDED from [:flutter_local_notifications] /Users/nyambayar/workspace/youth-app/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:18:25-79
 service#com.google.firebase.messaging.FirebaseMessagingService
-ADDED from [com.google.firebase:firebase-messaging:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/39881029fd68e95fe81236c6b38abdbb/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:28:9-35:19
+ADDED from [com.google.firebase:firebase-messaging:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/a84a0cbdc23cce898e6a7d2488dc944e/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:28:9-35:19
 	android:exported
-		ADDED from [com.google.firebase:firebase-messaging:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/39881029fd68e95fe81236c6b38abdbb/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:31:13-37
+		ADDED from [com.google.firebase:firebase-messaging:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/a84a0cbdc23cce898e6a7d2488dc944e/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:31:13-37
 	android:directBootAware
-		ADDED from [com.google.firebase:firebase-messaging:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/39881029fd68e95fe81236c6b38abdbb/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:30:13-43
+		ADDED from [com.google.firebase:firebase-messaging:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/a84a0cbdc23cce898e6a7d2488dc944e/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:30:13-43
 	android:name
-		ADDED from [com.google.firebase:firebase-messaging:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/39881029fd68e95fe81236c6b38abdbb/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:29:13-82
+		ADDED from [com.google.firebase:firebase-messaging:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/a84a0cbdc23cce898e6a7d2488dc944e/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:29:13-82
 meta-data#com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar
-ADDED from [com.google.firebase:firebase-messaging:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/39881029fd68e95fe81236c6b38abdbb/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:39:13-41:85
+ADDED from [com.google.firebase:firebase-messaging:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/a84a0cbdc23cce898e6a7d2488dc944e/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:39:13-41:85
 	android:value
-		ADDED from [com.google.firebase:firebase-messaging:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/39881029fd68e95fe81236c6b38abdbb/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:41:17-82
+		ADDED from [com.google.firebase:firebase-messaging:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/a84a0cbdc23cce898e6a7d2488dc944e/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:41:17-82
 	android:name
-		ADDED from [com.google.firebase:firebase-messaging:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/39881029fd68e95fe81236c6b38abdbb/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:40:17-119
-uses-permission#android.permission.USE_BIOMETRIC
-ADDED from [androidx.biometric:biometric:1.0.0-beta01] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/c667fe5f358cadc10af5ee26c81dba87/biometric-1.0.0-beta01/AndroidManifest.xml:24:5-72
-	android:name
-		ADDED from [androidx.biometric:biometric:1.0.0-beta01] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/c667fe5f358cadc10af5ee26c81dba87/biometric-1.0.0-beta01/AndroidManifest.xml:24:22-69
-activity#androidx.biometric.DeviceCredentialHandlerActivity
-ADDED from [androidx.biometric:biometric:1.0.0-beta01] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/c667fe5f358cadc10af5ee26c81dba87/biometric-1.0.0-beta01/AndroidManifest.xml:28:9-30:67
-	android:theme
-		ADDED from [androidx.biometric:biometric:1.0.0-beta01] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/c667fe5f358cadc10af5ee26c81dba87/biometric-1.0.0-beta01/AndroidManifest.xml:30:13-64
-	android:name
-		ADDED from [androidx.biometric:biometric:1.0.0-beta01] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/c667fe5f358cadc10af5ee26c81dba87/biometric-1.0.0-beta01/AndroidManifest.xml:29:13-78
-meta-data#com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar
-ADDED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/34a0e5d53ae61e749f2724a77a7fa61b/firebase-datatransport-17.0.3/AndroidManifest.xml:28:13-30:85
-	android:value
-		ADDED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/34a0e5d53ae61e749f2724a77a7fa61b/firebase-datatransport-17.0.3/AndroidManifest.xml:30:17-82
-	android:name
-		ADDED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/34a0e5d53ae61e749f2724a77a7fa61b/firebase-datatransport-17.0.3/AndroidManifest.xml:29:17-115
+		ADDED from [com.google.firebase:firebase-messaging:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/a84a0cbdc23cce898e6a7d2488dc944e/jetified-firebase-messaging-21.0.0/AndroidManifest.xml:40:17-119
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:22:5-79
-MERGED from [com.google.firebase:firebase-installations:16.3.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/657a4170ad1fbb28863aa99d484eaa8d/firebase-installations-16.3.3/AndroidManifest.xml:10:5-79
-MERGED from [com.google.firebase:firebase-installations:16.3.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/657a4170ad1fbb28863aa99d484eaa8d/firebase-installations-16.3.3/AndroidManifest.xml:10:5-79
-MERGED from [com.google.android.gms:play-services-cloud-messaging:16.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/ae3c1578debcad49d0a6c8743b24abc8/play-services-cloud-messaging-16.0.0/AndroidManifest.xml:7:5-79
-MERGED from [com.google.android.gms:play-services-cloud-messaging:16.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/ae3c1578debcad49d0a6c8743b24abc8/play-services-cloud-messaging-16.0.0/AndroidManifest.xml:7:5-79
-MERGED from [com.google.android.exoplayer:exoplayer-core:2.12.1] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/59c64c6f0354ffe8f2a2f14ca084d685/exoplayer-core-2.12.1/AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.exoplayer:exoplayer-core:2.12.1] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/59c64c6f0354ffe8f2a2f14ca084d685/exoplayer-core-2.12.1/AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:25:5-79
-MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:25:5-79
-MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:22:5-79
-MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:22:5-79
-MERGED from [com.google.android.exoplayer:exoplayer-common:2.12.1] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/82d316601e8245f35d512cc73a1d58a8/jetified-exoplayer-common-2.12.1/AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.exoplayer:exoplayer-common:2.12.1] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/82d316601e8245f35d512cc73a1d58a8/jetified-exoplayer-common-2.12.1/AndroidManifest.xml:24:5-79
+ADDED from [com.google.android.exoplayer:exoplayer-core:2.12.1] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/59c64c6f0354ffe8f2a2f14ca084d685/exoplayer-core-2.12.1/AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-iid:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-iid:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-installations:16.3.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/657a4170ad1fbb28863aa99d484eaa8d/firebase-installations-16.3.3/AndroidManifest.xml:10:5-79
+MERGED from [com.google.firebase:firebase-installations:16.3.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/657a4170ad1fbb28863aa99d484eaa8d/firebase-installations-16.3.3/AndroidManifest.xml:10:5-79
+MERGED from [com.google.android.gms:play-services-cloud-messaging:16.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/ae3c1578debcad49d0a6c8743b24abc8/play-services-cloud-messaging-16.0.0/AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.gms:play-services-cloud-messaging:16.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/ae3c1578debcad49d0a6c8743b24abc8/play-services-cloud-messaging-16.0.0/AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.12.1] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/032df62ee80fec69fac0b39cbdf90af4/jetified-exoplayer-common-2.12.1/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.12.1] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/032df62ee80fec69fac0b39cbdf90af4/jetified-exoplayer-common-2.12.1/AndroidManifest.xml:24:5-79
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:22:22-76
-uses-permission#android.permission.WAKE_LOCK
-ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:24:5-68
-MERGED from [com.google.android.gms:play-services-cloud-messaging:16.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/ae3c1578debcad49d0a6c8743b24abc8/play-services-cloud-messaging-16.0.0/AndroidManifest.xml:9:5-68
-MERGED from [com.google.android.gms:play-services-cloud-messaging:16.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/ae3c1578debcad49d0a6c8743b24abc8/play-services-cloud-messaging-16.0.0/AndroidManifest.xml:9:5-68
+		ADDED from [com.google.android.exoplayer:exoplayer-core:2.12.1] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/59c64c6f0354ffe8f2a2f14ca084d685/exoplayer-core-2.12.1/AndroidManifest.xml:24:22-76
+uses-permission#android.permission.USE_BIOMETRIC
+ADDED from [androidx.biometric:biometric:1.0.0-beta01] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/c667fe5f358cadc10af5ee26c81dba87/biometric-1.0.0-beta01/AndroidManifest.xml:24:5-72
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:24:22-65
-uses-permission#com.google.android.c2dm.permission.RECEIVE
-ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:26:5-82
-MERGED from [com.google.android.gms:play-services-cloud-messaging:16.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/ae3c1578debcad49d0a6c8743b24abc8/play-services-cloud-messaging-16.0.0/AndroidManifest.xml:11:5-82
-MERGED from [com.google.android.gms:play-services-cloud-messaging:16.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/ae3c1578debcad49d0a6c8743b24abc8/play-services-cloud-messaging-16.0.0/AndroidManifest.xml:11:5-82
-	android:name
-		ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:26:22-79
-meta-data#com.google.firebase.components:com.google.firebase.iid.Registrar
-ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:32:13-34:85
-	android:value
-		ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:34:17-82
-	android:name
-		ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:33:17-96
-receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
-ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:37:9-44:20
-	android:exported
-		ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:39:13-36
-	android:permission
-		ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:40:13-73
-	android:name
-		ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:38:13-78
-intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE
-ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:41:13-43:29
-action#com.google.android.c2dm.intent.RECEIVE
-ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:42:17-81
-	android:name
-		ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:42:25-78
-meta-data#com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar
-ADDED from [com.google.firebase:firebase-installations:16.3.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/657a4170ad1fbb28863aa99d484eaa8d/firebase-installations-16.3.3/AndroidManifest.xml:17:13-19:85
-	android:value
-		ADDED from [com.google.firebase:firebase-installations:16.3.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/657a4170ad1fbb28863aa99d484eaa8d/firebase-installations-16.3.3/AndroidManifest.xml:19:17-82
-	android:name
-		ADDED from [com.google.firebase:firebase-installations:16.3.3] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/657a4170ad1fbb28863aa99d484eaa8d/firebase-installations-16.3.3/AndroidManifest.xml:18:17-127
-provider#com.google.firebase.provider.FirebaseInitProvider
-ADDED from [com.google.firebase:firebase-common:19.3.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/1f24754138cdbe9dd292e6ee32cb2d40/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
-	android:authorities
-		ADDED from [com.google.firebase:firebase-common:19.3.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/1f24754138cdbe9dd292e6ee32cb2d40/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
-	android:exported
-		ADDED from [com.google.firebase:firebase-common:19.3.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/1f24754138cdbe9dd292e6ee32cb2d40/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
-	android:initOrder
-		ADDED from [com.google.firebase:firebase-common:19.3.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/1f24754138cdbe9dd292e6ee32cb2d40/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
-	android:name
-		ADDED from [com.google.firebase:firebase-common:19.3.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/1f24754138cdbe9dd292e6ee32cb2d40/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
-activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/4c0b774c09d5393feb013f0dbe753af3/play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
-	android:exported
-		ADDED from [com.google.android.gms:play-services-base:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/4c0b774c09d5393feb013f0dbe753af3/play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+		ADDED from [androidx.biometric:biometric:1.0.0-beta01] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/c667fe5f358cadc10af5ee26c81dba87/biometric-1.0.0-beta01/AndroidManifest.xml:24:22-69
+activity#androidx.biometric.DeviceCredentialHandlerActivity
+ADDED from [androidx.biometric:biometric:1.0.0-beta01] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/c667fe5f358cadc10af5ee26c81dba87/biometric-1.0.0-beta01/AndroidManifest.xml:28:9-30:67
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/4c0b774c09d5393feb013f0dbe753af3/play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+		ADDED from [androidx.biometric:biometric:1.0.0-beta01] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/c667fe5f358cadc10af5ee26c81dba87/biometric-1.0.0-beta01/AndroidManifest.xml:30:13-64
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/4c0b774c09d5393feb013f0dbe753af3/play-services-base-17.0.0/AndroidManifest.xml:24:13-79
-meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/14beb446a0b03d7b4a64c1d9cc66376a/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+		ADDED from [androidx.biometric:biometric:1.0.0-beta01] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/c667fe5f358cadc10af5ee26c81dba87/biometric-1.0.0-beta01/AndroidManifest.xml:29:13-78
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-cloud-messaging:16.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/ae3c1578debcad49d0a6c8743b24abc8/play-services-cloud-messaging-16.0.0/AndroidManifest.xml:9:5-68
+MERGED from [com.google.android.gms:play-services-cloud-messaging:16.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/ae3c1578debcad49d0a6c8743b24abc8/play-services-cloud-messaging-16.0.0/AndroidManifest.xml:9:5-68
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:24:22-65
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:26:5-82
+MERGED from [com.google.android.gms:play-services-cloud-messaging:16.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/ae3c1578debcad49d0a6c8743b24abc8/play-services-cloud-messaging-16.0.0/AndroidManifest.xml:11:5-82
+MERGED from [com.google.android.gms:play-services-cloud-messaging:16.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/ae3c1578debcad49d0a6c8743b24abc8/play-services-cloud-messaging-16.0.0/AndroidManifest.xml:11:5-82
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:26:22-79
+meta-data#com.google.firebase.components:com.google.firebase.iid.Registrar
+ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:32:13-34:85
 	android:value
-		ADDED from [com.google.android.gms:play-services-basement:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/14beb446a0b03d7b4a64c1d9cc66376a/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+		ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:34:17-82
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:17.0.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/14beb446a0b03d7b4a64c1d9cc66376a/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
-service#com.google.android.datatransport.runtime.backends.TransportBackendDiscovery
-ADDED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:29:9-35:19
-MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:36:9-38:40
-MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:36:9-38:40
+		ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:33:17-96
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:37:9-44:20
 	android:exported
-		ADDED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:31:13-37
-	android:name
-		ADDED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:30:13-103
-meta-data#backend:com.google.android.datatransport.cct.CctBackendFactory
-ADDED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:32:13-34:39
-	android:value
-		ADDED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:34:17-36
-	android:name
-		ADDED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:33:17-94
-service#com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService
-ADDED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:26:9-30:19
-	android:exported
-		ADDED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:28:13-37
+		ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:39:13-36
 	android:permission
-		ADDED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:29:13-69
+		ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:40:13-73
 	android:name
-		ADDED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:27:13-117
-receiver#com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver
-ADDED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:32:9-34:40
+		ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:38:13-78
+intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:41:13-43:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:42:17-81
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:21.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/899d65b832889a936dd0e07dc1df19b8/firebase-iid-21.0.0/AndroidManifest.xml:42:25-78
+meta-data#com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar
+ADDED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/34a0e5d53ae61e749f2724a77a7fa61b/firebase-datatransport-17.0.3/AndroidManifest.xml:28:13-30:85
+	android:value
+		ADDED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/34a0e5d53ae61e749f2724a77a7fa61b/firebase-datatransport-17.0.3/AndroidManifest.xml:30:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-datatransport:17.0.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/34a0e5d53ae61e749f2724a77a7fa61b/firebase-datatransport-17.0.3/AndroidManifest.xml:29:17-115
+meta-data#com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar
+ADDED from [com.google.firebase:firebase-installations:16.3.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/657a4170ad1fbb28863aa99d484eaa8d/firebase-installations-16.3.3/AndroidManifest.xml:17:13-19:85
+	android:value
+		ADDED from [com.google.firebase:firebase-installations:16.3.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/657a4170ad1fbb28863aa99d484eaa8d/firebase-installations-16.3.3/AndroidManifest.xml:19:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-installations:16.3.3] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/657a4170ad1fbb28863aa99d484eaa8d/firebase-installations-16.3.3/AndroidManifest.xml:18:17-127
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:19.3.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/e91615cc3070c90581d0b30ddf0fda2d/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:19.3.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/e91615cc3070c90581d0b30ddf0fda2d/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
 	android:exported
-		ADDED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:34:13-37
+		ADDED from [com.google.firebase:firebase-common:19.3.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/e91615cc3070c90581d0b30ddf0fda2d/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:19.3.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/e91615cc3070c90581d0b30ddf0fda2d/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
 	android:name
-		ADDED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/n0m4dz/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:33:13-132
+		ADDED from [com.google.firebase:firebase-common:19.3.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/e91615cc3070c90581d0b30ddf0fda2d/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/4c0b774c09d5393feb013f0dbe753af3/play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/4c0b774c09d5393feb013f0dbe753af3/play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/4c0b774c09d5393feb013f0dbe753af3/play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/4c0b774c09d5393feb013f0dbe753af3/play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/43d267f1efcfc8ae1c41ef369d5408d7/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/43d267f1efcfc8ae1c41ef369d5408d7/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/43d267f1efcfc8ae1c41ef369d5408d7/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+service#com.google.android.datatransport.runtime.backends.TransportBackendDiscovery
+ADDED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:36:9-38:40
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:36:9-38:40
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:31:13-37
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:30:13-103
+meta-data#backend:com.google.android.datatransport.cct.CctBackendFactory
+ADDED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:32:13-34:39
+	android:value
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:34:17-36
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/96b48096cc6858db55ff0b9cadbfdd91/transport-backend-cct-2.2.0/AndroidManifest.xml:33:17-94
+service#com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService
+ADDED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:26:9-30:19
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:28:13-37
+	android:permission
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:29:13-69
+	android:name
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:27:13-117
+receiver#com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver
+ADDED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:32:9-34:40
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:34:13-37
+	android:name
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.0] /Users/nyambayar/.gradle/caches/transforms-2/files-2.1/34066712d6449b2703aaeeeb718baf20/transport-runtime-2.2.0/AndroidManifest.xml:33:13-132
