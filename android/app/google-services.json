@@ -1,42 +1,40 @@
 {
   "project_info": {
-    "project_number": "162308101924",
-    "firebase_url": "https://mle-app.firebaseio.com",
-    "project_id": "mle-app",
-    "storage_bucket": "mle-app.appspot.com"
+    "project_number": "822000066844",
+    "project_id": "youth-1bfaf",
+    "storage_bucket": "youth-1bfaf.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:162308101924:android:47bc4df4c3a5575e3945b1",
+        "mobilesdk_app_id": "1:822000066844:android:1e0f98f9efad7926649ad9",
         "android_client_info": {
           "package_name": "com.bitsoft.youth"
         }
       },
       "oauth_client": [
         {
-          "client_id": "162308101924-c31585dt0irklpeuhnjpdvh6fquq301c.apps.googleusercontent.com",
+          "client_id": "822000066844-3fqlkl757nf7spkc0s699p9l6rougap0.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB-sd0KkD3btPsIinFRye_1Zj0DAQlOOQA"
+          "current_key": "AIzaSyBv0ucl0fpeuHvxh223gq63VXJmk4ddDfg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "162308101924-c31585dt0irklpeuhnjpdvh6fquq301c.apps.googleusercontent.com",
+              "client_id": "822000066844-3fqlkl757nf7spkc0s699p9l6rougap0.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "162308101924-v9jsgvlgl3d4fl24cfnbb9q2baoafr2i.apps.googleusercontent.com",
+              "client_id": "822000066844-n1n4h79nkggfal7hej3c9lfv835kp067.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.bitsoft.youth",
-                "app_store_id": "1479664131"
+                "bundle_id": "com.bitsoft.youth"
               }
             }
           ]

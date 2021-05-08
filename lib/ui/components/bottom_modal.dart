@@ -132,9 +132,7 @@ Future<T> showBottomModal<T>({
       context,
       new _ModalBottomSheetRoute<T>(
         builder: builder,
-        theme: Theme.of(context, shadowThemeOnly: true),
-        barrierLabel:
-            MaterialLocalizations.of(context).modalBarrierDismissLabel,
+        theme: Theme.of(context),
         resizeToAvoidBottomPadding: resizeToAvoidBottomPadding,
         dismissOnTap: dismissOnTap,
       ));

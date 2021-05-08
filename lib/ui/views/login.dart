@@ -1,14 +1,12 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:youth/core/utils/helper.dart';
 import 'package:youth/core/viewmodels/user_model.dart';
 import 'package:youth/core/models/user.dart';
 import 'package:youth/ui/styles/_colors.dart';
 import 'package:lambda/modules/agent/agent_state.dart';
 import 'package:lambda/modules/agent/agent_util.dart';
-import 'package:lambda/modules/agent/social_auth.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -27,7 +25,6 @@ class _LoginPageState extends State<LoginPage> {
   SharedPreferences prefs;
   final GlobalKey<FormState> _loginFormKey = GlobalKey<FormState>();
   AgentUtil agentUtil = new AgentUtil();
-  SocialAuth social = locator<SocialAuth>();
 
   TextEditingController email = new TextEditingController();
   TextEditingController password = new TextEditingController();
@@ -95,9 +92,8 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    final _agent = Provider.of<AgentState>(context);
+    final _agent = Provider.of<AgentState>(context, listen: false);
     return Scaffold(
-        resizeToAvoidBottomPadding: false,
         body: GestureDetector(
           onTap: () {
             FocusScope.of(context).requestFocus(new FocusNode());

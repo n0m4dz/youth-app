@@ -1,1 +1,1 @@
-final String baseUrl = 'http://zaluuhun.mn';
+final String baseUrl = 'https://youth.bits.mn';

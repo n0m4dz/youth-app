@@ -44,8 +44,8 @@ class _AppState extends State<App> {
     });
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(builder: (_) => UserModel()),
-        ChangeNotifierProvider(builder: (_) => AgentState()),
+        ChangeNotifierProvider(create: (_) => UserModel()),
+        ChangeNotifierProvider(create: (_) => AgentState()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

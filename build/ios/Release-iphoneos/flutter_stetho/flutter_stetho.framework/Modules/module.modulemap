@@ -1,6 +1,0 @@
-framework module flutter_stetho {
-  umbrella header "flutter_stetho-umbrella.h"
-
-  export *
-  module * { export * }
-}
