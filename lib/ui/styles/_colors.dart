@@ -20,6 +20,8 @@ const Color podCastColor = Color.fromRGBO(0, 144, 140, 1);
 const Color eventColor = Color.fromRGBO(234, 185, 83, 1);
 const Color partTimeColor = Color.fromRGBO(51, 142, 108, 0.9);
 
+const Color volunteerWorkColor = Color(0xFF4323a7);
+
 const Gradient mainGradient = LinearGradient(
   begin: Alignment.topRight,
   end: Alignment.bottomLeft,

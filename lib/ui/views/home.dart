@@ -5,6 +5,7 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lambda/modules/network_util.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -40,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
   NetworkUtil _http = new NetworkUtil();
 
   Future getContactList() async {
-    var url  = baseUrl + '/mobile/api/getContact';
+    var url = baseUrl + '/mobile/api/getContact';
     var response = await _http.get(url);
     contact = json.decode(response.toString());
     print(contact);
@@ -72,1326 +73,559 @@ class _HomeScreenState extends State<HomeScreen> {
         child: SidebarScreen(contact: contact),
       ),
       body: NestedScrollView(
-          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-            return <Widget>[
-              SliverAppBar(
-                expandedHeight: 150,
-                pinned: true,
-                backgroundColor: Colors.white,
-                flexibleSpace: FlexibleSpaceBar(
-                  background: Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height,
-                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                    color: Color(0xfff2f3fa),
-                    // color: Colors.green,
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          bottom: 10.0,
-                          left: 7,
-                          child: Text(
-                            'Залуучуудыг дэмжих хөтөлбөр',
-                            style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w500,
-                                color: textColor
-                            ),
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          return <Widget>[
+            SliverAppBar(
+              expandedHeight: 150,
+              pinned: true,
+              backgroundColor: Colors.white,
+              flexibleSpace: FlexibleSpaceBar(
+                background: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                  color: Color(0xfff2f3fa),
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        bottom: 10.0,
+                        left: 7,
+                        child: Text(
+                          'Залуучуудыг дэмжих хөтөлбөр',
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                            color: textColor,
                           ),
                         ),
-                      ],
-                    ),
-                  ),
-                  title: DynamicFlexibleSpaceBarTitle(
-                      child: Text(
-                        'Залуу хүн',
-                        style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w500,
-                          color: primaryColor,
-                        ),
-                      )), /// here we use our custom widget
-                  // titlePadding: EdgeInsets.zero,
-                  titlePadding: EdgeInsets.symmetric(vertical: 10, horizontal: 20)
-                ),
-                leading: IconButton(
-                  onPressed: (){
-                    _scaffoldKey.currentState.openDrawer();
-                  },
-                  icon: Icon(
-                    Icons.menu,
-                    color: primaryColor,
+                      ),
+                    ],
                   ),
                 ),
-                actions: [
-                  Padding(
-                      padding: EdgeInsets.only(right: 10.0),
-                      child: GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                CupertinoPageRoute(
-                                    builder: (context) => NotificationsScreen()));
-
-                          },
-                          child: Icon(
-                              Ionicons.getIconData('ios-notifications-outline'),
-                              size: 31,
-                              color: primaryColor)
-                      )
-                  ),
-                  Padding(
-                      padding: EdgeInsets.only(right: 15.0),
-                      child: GestureDetector(
-                          onTap: () {
-                            print('------user');
-                            print(user);
-
-                            if(user == null){
-                              Navigator.push(
-                                  context,
-                                  CupertinoPageRoute(
-                                      builder: (context) => LoginPage()));
-                            }else{
-                              if(_prefs == null ? false : _prefs.getBool("is_auth") == false){
-                                Navigator.push(
-                                    context,
-                                    CupertinoPageRoute(
-                                        builder: (context) => LoginPage()));
-                              }else{
-                                Navigator.push(
-                                    context,
-                                    CupertinoPageRoute(
-                                        builder: (context) => SettingsScreen()));
-                              }
-                            }
-
-                          },
-                          child: Icon(
-                              Ionicons.getIconData('ios-contact'),
-                              size: 31,
-                              color: primaryColor)
-                      )
-                  ),
-                ],
-              ),
-            ];
-          },
-          body: Padding(
-            padding: EdgeInsets.symmetric(vertical: 0, horizontal: 0),
-            child: GridView.count(
-                padding: EdgeInsets.only(top: 0, bottom: 10, left: 15, right: 15),
-                crossAxisCount: 2,
-                mainAxisSpacing: 13,
-                crossAxisSpacing: 13,
-                childAspectRatio: (itemWidth / 195),
-                physics: new NeverScrollableScrollPhysics(),
-                controller: new ScrollController(keepScrollOffset: false),
-                shrinkWrap: true,
-                children: [
-                  GestureDetector(
-                    onTap: (){
-                      Navigator.push( context, MaterialPageRoute(builder: (context) => VolunteerWorkPage(title: 'Сайн дурын ажил')));
-                    },
-                    child: Container(
-                      height: 90,
-                      padding: EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [shadow],
-                      ),
-                      child: Stack(
-                        children: <Widget>[
-                          Container(
-                            margin: EdgeInsets.only(
-                                top: 20, bottom: 20, left: 20),
-                            child: Image.asset(
-                              'assets/images/leaf.png',
-                              height: 70,
-                              width: 70,
-                            ),
-                          ),
-                          Positioned(
-                              bottom: 0,
-                              left: 0,
-                              right: 0,
-                              child: Container(
-                                padding: EdgeInsets.only(top: 4, bottom: 4, right: 3, left: 4),
-                                child: Container(
-                                    padding: EdgeInsets.all(10),
-                                    decoration: BoxDecoration(
-                                        color: bgSecondColor,
-                                        borderRadius:
-                                        BorderRadius.circular(10)),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.start,
-                                      children: <Widget>[
-                                        Text(
-                                          'Сайн дурын ажил',
-                                          style: TextStyle(
-                                              fontSize: 14.3,
-                                              fontWeight: FontWeight.w600,
-                                              color: Color(0xff767676)),
-                                        ),
-                                        Text(
-                                          '5 сайн дурын ажил байна',
-                                          style: TextStyle(
-                                              fontSize: 10.7,
-                                              color: Color(0xffcccccc)),
-                                        )
-                                      ],
-                                    )
-                                ),
-                              )
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: (){
-                      Navigator.push( context, MaterialPageRoute(builder: (context) => PartTimeJobPage(title: 'Цагийн ажил')));
-                    },
-                    child: Container(
-                      height: 90,
-                      padding: EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [shadow],
-                      ),
-                      child: Stack(
-                        children: <Widget>[
-                          Container(
-                            margin: EdgeInsets.only(
-                                top: 20, bottom: 20, left: 20),
-                            child: Image.asset(
-                              'assets/images/job.png',
-                              height: 70,
-                              width: 70,
-                            ),
-                          ),
-                          Positioned(
-                              bottom: 0,
-                              left: 0,
-                              right: 0,
-                              child: Container(
-                                padding: EdgeInsets.only(top: 4, bottom: 4, right: 3, left: 4),
-                                child: Container(
-                                    padding: EdgeInsets.all(10),
-                                    decoration: BoxDecoration(
-                                        color: bgSecondColor,
-                                        borderRadius:
-                                        BorderRadius.circular(10)),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.start,
-                                      children: <Widget>[
-                                        Text(
-                                          'Цагийн ажил',
-                                          style: TextStyle(
-                                              fontSize: 14.3,
-                                              fontWeight: FontWeight.w600,
-                                              color: Color(0xff767676)),
-                                        ),
-                                        Text(
-                                          '120+ ажлын зар байна',
-                                          style: TextStyle(
-                                              fontSize: 10.7,
-                                              color: Color(0xffcccccc)),
-                                        )
-                                      ],
-                                    )
-                                ),
-                              )
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: (){
-                      Navigator.push( context, MaterialPageRoute(builder: (context) => ELearnHomePage(title: 'Цахим хичээл')));
-                    },
-                    child: Container(
-                      height: 90,
-                      padding: EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [shadow],
-                      ),
-                      child: Stack(
-                        children: <Widget>[
-                          Container(
-                            margin: EdgeInsets.only(
-                                top: 20, bottom: 20, left: 20),
-                            child: Image.asset(
-                              'assets/images/scholarship.png',
-                              height: 70,
-                              width: 70,
-                            ),
-                          ),
-                          Positioned(
-                              bottom: 0,
-                              left: 0,
-                              right: 0,
-                              child: Container(
-                                padding: EdgeInsets.only(top: 4, bottom: 4, right: 3, left: 4),
-                                child: Container(
-                                    padding: EdgeInsets.all(10),
-                                    decoration: BoxDecoration(
-                                        color: bgSecondColor,
-                                        borderRadius:
-                                        BorderRadius.circular(10)),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.start,
-                                      children: <Widget>[
-                                        Text(
-                                          'Цахим хичээл',
-                                          style: TextStyle(
-                                              fontSize: 14.3,
-                                              fontWeight: FontWeight.w600,
-                                              color: Color(0xff767676)),
-                                        ),
-                                        Text(
-                                          'Их сургуулийн тэтгэлэг',
-                                          style: TextStyle(
-                                              fontSize: 10.7,
-                                              color: Color(0xffcccccc)),
-                                        )
-                                      ],
-                                    )
-                                ),
-                              )
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: (){
-                      Navigator.push( context, MaterialPageRoute(builder: (context) => LawPage(title: 'Хууль')));
-                    },
-                    child: Container(
-                      height: 90,
-                      padding: EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [shadow],
-                      ),
-                      child: Stack(
-                        children: <Widget>[
-                          Container(
-                            margin: EdgeInsets.only(
-                                top: 20, bottom: 20, left: 20),
-                            child: Image.asset(
-                              'assets/images/training.png',
-                              height: 70,
-                              width: 70,
-                            ),
-                          ),
-                          Positioned(
-                              bottom: 0,
-                              left: 0,
-                              right: 0,
-                              child: Container(
-                                padding: EdgeInsets.only(top: 4, bottom: 4, right: 3, left: 4),
-                                child: Container(
-                                    padding: EdgeInsets.all(10),
-                                    decoration: BoxDecoration(
-                                        color: bgSecondColor,
-                                        borderRadius:
-                                        BorderRadius.circular(10)),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.start,
-                                      children: <Widget>[
-                                        Text(
-                                          'Хууль',
-                                          style: TextStyle(
-                                              fontSize: 14.3,
-                                              fontWeight: FontWeight.w600,
-                                              color: Color(0xff767676)),
-                                        ),
-                                        Text(
-                                          '10+ сургалтын зар байна',
-                                          style: TextStyle(
-                                              fontSize: 10.7,
-                                              color: Color(0xffcccccc)),
-                                        )
-                                      ],
-                                    )
-                                ),
-                              )
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: (){
-                      Navigator.push( context, MaterialPageRoute(builder: (context) => KnowLedgePage(title: 'Мэдлэг, Мэдээлэл')));
-                    },
-                    child: Container(
-                      height: 90,
-                      padding: EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [shadow],
-                      ),
-                      child: Stack(
-                        children: <Widget>[
-                          Container(
-                            margin: EdgeInsets.only(
-                                top: 20, bottom: 20, left: 20),
-                            child: Image.asset(
-                              'assets/images/law.png',
-                              height: 70,
-                              width: 70,
-                            ),
-                          ),
-                          Positioned(
-                              bottom: 0,
-                              left: 0,
-                              right: 0,
-                              child: Container(
-                                padding: EdgeInsets.only(top: 4, bottom: 4, right: 3, left: 4),
-                                child: Container(
-                                    padding: EdgeInsets.all(10),
-                                    decoration: BoxDecoration(
-                                        color: bgSecondColor,
-                                        borderRadius:
-                                        BorderRadius.circular(10)),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.start,
-                                      children: <Widget>[
-                                        Text(
-                                          'Мэдлэг',
-                                          style: TextStyle(
-                                              fontSize: 14.3,
-                                              fontWeight: FontWeight.w600,
-                                              color: Color(0xff767676)),
-                                        ),
-                                        Text(
-                                          'Хууль эрх зүйн мэдлэг',
-                                          style: TextStyle(
-                                              fontSize: 10.7,
-                                              color: Color(0xffcccccc)),
-                                        )
-                                      ],
-                                    )
-                                ),
-                              )
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: (){
-                      Navigator.push( context, MaterialPageRoute(builder: (context) => EventPage(title: 'Арга Хэмжээ')));
-                    },
-                    child: Container(
-                      height: 90,
-                      padding: EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [shadow],
-                      ),
-                      child: Stack(
-                        children: <Widget>[
-                          Container(
-                            margin: EdgeInsets.only(
-                                top: 20, bottom: 20, left: 20),
-                            child: Image.asset(
-                              'assets/images/other.png',
-                              height: 70,
-                              width: 70,
-                            ),
-                          ),
-                          Positioned(
-                              bottom: 0,
-                              left: 0,
-                              right: 0,
-                              child: Container(
-                                padding: EdgeInsets.only(top: 4, bottom: 4, right: 3, left: 4),
-                                child: Container(
-                                    padding: EdgeInsets.all(10),
-                                    decoration: BoxDecoration(
-                                        color: bgSecondColor,
-                                        borderRadius:
-                                        BorderRadius.circular(10)),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.start,
-                                      children: <Widget>[
-                                        Text(
-                                          'Эвэнт',
-                                          style: TextStyle(
-                                              fontSize: 14.3,
-                                              fontWeight: FontWeight.w600,
-                                              color: Color(0xff767676)),
-                                        ),
-                                        Text(
-                                          'эрүүл мэнд, гэр бүл',
-                                          style: TextStyle(
-                                              fontSize: 10.7,
-                                              color: Color(0xffcccccc)),
-                                        )
-                                      ],
-                                    )
-                                ),
-                              )
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ]),
-          )
-      ),
-      // body:  NestedScrollView(
-      //     headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-      //       return <Widget>[
-      //         SliverAppBar(
-      //           expandedHeight: 200.0,
-      //           floating: false,
-      //           pinned: true,
-      //           backgroundColor: primaryColor.withOpacity(0.9),
-      //         ),
-      //       ];
-      //     },
-      //     body:  Container(
-      //       padding: EdgeInsets.only(top: 110, bottom: 0),
-      //       child: GridView.count(
-      //           padding: EdgeInsets.only(top: 10, bottom: 20, left: 15, right: 15),
-      //           crossAxisCount: 2,
-      //           mainAxisSpacing: 13,
-      //           crossAxisSpacing: 13,
-      //           childAspectRatio: (itemWidth / 195),
-      //           physics: new NeverScrollableScrollPhysics(),
-      //           controller: new ScrollController(keepScrollOffset: false),
-      //           shrinkWrap: true,
-      //           children: [
-      //             GestureDetector(
-      //               onTap: (){
-      //                 Navigator.push( context, MaterialPageRoute(builder: (context) => VolunteerWorkPage(title: 'Сайн дурын ажил')));
-      //               },
-      //               child: Container(
-      //                 height: 90,
-      //                 padding: EdgeInsets.all(5),
-      //                 decoration: BoxDecoration(
-      //                   color: Colors.white,
-      //                   borderRadius: BorderRadius.circular(10),
-      //                   boxShadow: [shadow],
-      //                 ),
-      //                 child: Stack(
-      //                   children: <Widget>[
-      //                     Container(
-      //                       margin: EdgeInsets.only(
-      //                           top: 20, bottom: 20, left: 20),
-      //                       child: Image.asset(
-      //                         'assets/images/leaf.png',
-      //                         height: 70,
-      //                         width: 70,
-      //                       ),
-      //                     ),
-      //                     Positioned(
-      //                         bottom: 0,
-      //                         left: 0,
-      //                         right: 0,
-      //                         child: Container(
-      //                           padding: EdgeInsets.only(top: 4, bottom: 4, right: 3, left: 4),
-      //                           child: Container(
-      //                               padding: EdgeInsets.all(10),
-      //                               decoration: BoxDecoration(
-      //                                   color: bgSecondColor,
-      //                                   borderRadius:
-      //                                   BorderRadius.circular(10)),
-      //                               child: Column(
-      //                                 crossAxisAlignment:
-      //                                 CrossAxisAlignment.start,
-      //                                 children: <Widget>[
-      //                                   Text(
-      //                                     'Сайн дурын ажил',
-      //                                     style: TextStyle(
-      //                                         fontSize: 14.3,
-      //                                         fontWeight: FontWeight.w600,
-      //                                         color: Color(0xff767676)),
-      //                                   ),
-      //                                   Text(
-      //                                     '5 сайн дурын ажил байна',
-      //                                     style: TextStyle(
-      //                                         fontSize: 10.7,
-      //                                         color: Color(0xffcccccc)),
-      //                                   )
-      //                                 ],
-      //                               )
-      //                           ),
-      //                         )
-      //                     ),
-      //                   ],
-      //                 ),
-      //               ),
-      //             ),
-      //             GestureDetector(
-      //               onTap: (){
-      //                 Navigator.push( context, MaterialPageRoute(builder: (context) => PartTimeJobPage(title: 'Цагийн ажил')));
-      //               },
-      //               child: Container(
-      //                 height: 90,
-      //                 padding: EdgeInsets.all(5),
-      //                 decoration: BoxDecoration(
-      //                   color: Colors.white,
-      //                   borderRadius: BorderRadius.circular(10),
-      //                   boxShadow: [shadow],
-      //                 ),
-      //                 child: Stack(
-      //                   children: <Widget>[
-      //                     Container(
-      //                       margin: EdgeInsets.only(
-      //                           top: 20, bottom: 20, left: 20),
-      //                       child: Image.asset(
-      //                         'assets/images/job.png',
-      //                         height: 70,
-      //                         width: 70,
-      //                       ),
-      //                     ),
-      //                     Positioned(
-      //                         bottom: 0,
-      //                         left: 0,
-      //                         right: 0,
-      //                         child: Container(
-      //                           padding: EdgeInsets.only(top: 4, bottom: 4, right: 3, left: 4),
-      //                           child: Container(
-      //                               padding: EdgeInsets.all(10),
-      //                               decoration: BoxDecoration(
-      //                                   color: bgSecondColor,
-      //                                   borderRadius:
-      //                                   BorderRadius.circular(10)),
-      //                               child: Column(
-      //                                 crossAxisAlignment:
-      //                                 CrossAxisAlignment.start,
-      //                                 children: <Widget>[
-      //                                   Text(
-      //                                     'Цагийн ажил',
-      //                                     style: TextStyle(
-      //                                         fontSize: 14.3,
-      //                                         fontWeight: FontWeight.w600,
-      //                                         color: Color(0xff767676)),
-      //                                   ),
-      //                                   Text(
-      //                                     '120+ ажлын зар байна',
-      //                                     style: TextStyle(
-      //                                         fontSize: 10.7,
-      //                                         color: Color(0xffcccccc)),
-      //                                   )
-      //                                 ],
-      //                               )
-      //                           ),
-      //                         )
-      //                     ),
-      //                   ],
-      //                 ),
-      //               ),
-      //             ),
-      //             GestureDetector(
-      //               onTap: (){
-      //                 Navigator.push( context, MaterialPageRoute(builder: (context) => ELearnHomePage(title: 'Цахим хичээл')));
-      //               },
-      //               child: Container(
-      //                 height: 90,
-      //                 padding: EdgeInsets.all(5),
-      //                 decoration: BoxDecoration(
-      //                   color: Colors.white,
-      //                   borderRadius: BorderRadius.circular(10),
-      //                   boxShadow: [shadow],
-      //                 ),
-      //                 child: Stack(
-      //                   children: <Widget>[
-      //                     Container(
-      //                       margin: EdgeInsets.only(
-      //                           top: 20, bottom: 20, left: 20),
-      //                       child: Image.asset(
-      //                         'assets/images/scholarship.png',
-      //                         height: 70,
-      //                         width: 70,
-      //                       ),
-      //                     ),
-      //                     Positioned(
-      //                         bottom: 0,
-      //                         left: 0,
-      //                         right: 0,
-      //                         child: Container(
-      //                           padding: EdgeInsets.only(top: 4, bottom: 4, right: 3, left: 4),
-      //                           child: Container(
-      //                               padding: EdgeInsets.all(10),
-      //                               decoration: BoxDecoration(
-      //                                   color: bgSecondColor,
-      //                                   borderRadius:
-      //                                   BorderRadius.circular(10)),
-      //                               child: Column(
-      //                                 crossAxisAlignment:
-      //                                 CrossAxisAlignment.start,
-      //                                 children: <Widget>[
-      //                                   Text(
-      //                                     'Цахим хичээл',
-      //                                     style: TextStyle(
-      //                                         fontSize: 14.3,
-      //                                         fontWeight: FontWeight.w600,
-      //                                         color: Color(0xff767676)),
-      //                                   ),
-      //                                   Text(
-      //                                     'Их сургуулийн тэтгэлэг',
-      //                                     style: TextStyle(
-      //                                         fontSize: 10.7,
-      //                                         color: Color(0xffcccccc)),
-      //                                   )
-      //                                 ],
-      //                               )
-      //                           ),
-      //                         )
-      //                     ),
-      //                   ],
-      //                 ),
-      //               ),
-      //             ),
-      //             GestureDetector(
-      //               onTap: (){
-      //                 Navigator.push( context, MaterialPageRoute(builder: (context) => LawPage(title: 'Хууль')));
-      //               },
-      //               child: Container(
-      //                 height: 90,
-      //                 padding: EdgeInsets.all(5),
-      //                 decoration: BoxDecoration(
-      //                   color: Colors.white,
-      //                   borderRadius: BorderRadius.circular(10),
-      //                   boxShadow: [shadow],
-      //                 ),
-      //                 child: Stack(
-      //                   children: <Widget>[
-      //                     Container(
-      //                       margin: EdgeInsets.only(
-      //                           top: 20, bottom: 20, left: 20),
-      //                       child: Image.asset(
-      //                         'assets/images/training.png',
-      //                         height: 70,
-      //                         width: 70,
-      //                       ),
-      //                     ),
-      //                     Positioned(
-      //                         bottom: 0,
-      //                         left: 0,
-      //                         right: 0,
-      //                         child: Container(
-      //                           padding: EdgeInsets.only(top: 4, bottom: 4, right: 3, left: 4),
-      //                           child: Container(
-      //                               padding: EdgeInsets.all(10),
-      //                               decoration: BoxDecoration(
-      //                                   color: bgSecondColor,
-      //                                   borderRadius:
-      //                                   BorderRadius.circular(10)),
-      //                               child: Column(
-      //                                 crossAxisAlignment:
-      //                                 CrossAxisAlignment.start,
-      //                                 children: <Widget>[
-      //                                   Text(
-      //                                     'Хууль',
-      //                                     style: TextStyle(
-      //                                         fontSize: 14.3,
-      //                                         fontWeight: FontWeight.w600,
-      //                                         color: Color(0xff767676)),
-      //                                   ),
-      //                                   Text(
-      //                                     '10+ сургалтын зар байна',
-      //                                     style: TextStyle(
-      //                                         fontSize: 10.7,
-      //                                         color: Color(0xffcccccc)),
-      //                                   )
-      //                                 ],
-      //                               )
-      //                           ),
-      //                         )
-      //                     ),
-      //                   ],
-      //                 ),
-      //               ),
-      //             ),
-      //             GestureDetector(
-      //               onTap: (){
-      //                 Navigator.push( context, MaterialPageRoute(builder: (context) => KnowLedgePage(title: 'Мэдлэг, Мэдээлэл')));
-      //               },
-      //               child: Container(
-      //                 height: 90,
-      //                 padding: EdgeInsets.all(5),
-      //                 decoration: BoxDecoration(
-      //                   color: Colors.white,
-      //                   borderRadius: BorderRadius.circular(10),
-      //                   boxShadow: [shadow],
-      //                 ),
-      //                 child: Stack(
-      //                   children: <Widget>[
-      //                     Container(
-      //                       margin: EdgeInsets.only(
-      //                           top: 20, bottom: 20, left: 20),
-      //                       child: Image.asset(
-      //                         'assets/images/law.png',
-      //                         height: 70,
-      //                         width: 70,
-      //                       ),
-      //                     ),
-      //                     Positioned(
-      //                         bottom: 0,
-      //                         left: 0,
-      //                         right: 0,
-      //                         child: Container(
-      //                           padding: EdgeInsets.only(top: 4, bottom: 4, right: 3, left: 4),
-      //                           child: Container(
-      //                               padding: EdgeInsets.all(10),
-      //                               decoration: BoxDecoration(
-      //                                   color: bgSecondColor,
-      //                                   borderRadius:
-      //                                   BorderRadius.circular(10)),
-      //                               child: Column(
-      //                                 crossAxisAlignment:
-      //                                 CrossAxisAlignment.start,
-      //                                 children: <Widget>[
-      //                                   Text(
-      //                                     'Мэдлэг',
-      //                                     style: TextStyle(
-      //                                         fontSize: 14.3,
-      //                                         fontWeight: FontWeight.w600,
-      //                                         color: Color(0xff767676)),
-      //                                   ),
-      //                                   Text(
-      //                                     'Хууль эрх зүйн мэдлэг',
-      //                                     style: TextStyle(
-      //                                         fontSize: 10.7,
-      //                                         color: Color(0xffcccccc)),
-      //                                   )
-      //                                 ],
-      //                               )
-      //                           ),
-      //                         )
-      //                     ),
-      //                   ],
-      //                 ),
-      //               ),
-      //             ),
-      //             GestureDetector(
-      //               onTap: (){
-      //                 Navigator.push( context, MaterialPageRoute(builder: (context) => EventPage(title: 'Арга Хэмжээ')));
-      //               },
-      //               child: Container(
-      //                 height: 90,
-      //                 padding: EdgeInsets.all(5),
-      //                 decoration: BoxDecoration(
-      //                   color: Colors.white,
-      //                   borderRadius: BorderRadius.circular(10),
-      //                   boxShadow: [shadow],
-      //                 ),
-      //                 child: Stack(
-      //                   children: <Widget>[
-      //                     Container(
-      //                       margin: EdgeInsets.only(
-      //                           top: 20, bottom: 20, left: 20),
-      //                       child: Image.asset(
-      //                         'assets/images/other.png',
-      //                         height: 70,
-      //                         width: 70,
-      //                       ),
-      //                     ),
-      //                     Positioned(
-      //                         bottom: 0,
-      //                         left: 0,
-      //                         right: 0,
-      //                         child: Container(
-      //                           padding: EdgeInsets.only(top: 4, bottom: 4, right: 3, left: 4),
-      //                           child: Container(
-      //                               padding: EdgeInsets.all(10),
-      //                               decoration: BoxDecoration(
-      //                                   color: bgSecondColor,
-      //                                   borderRadius:
-      //                                   BorderRadius.circular(10)),
-      //                               child: Column(
-      //                                 crossAxisAlignment:
-      //                                 CrossAxisAlignment.start,
-      //                                 children: <Widget>[
-      //                                   Text(
-      //                                     'Эвэнт',
-      //                                     style: TextStyle(
-      //                                         fontSize: 14.3,
-      //                                         fontWeight: FontWeight.w600,
-      //                                         color: Color(0xff767676)),
-      //                                   ),
-      //                                   Text(
-      //                                     'эрүүл мэнд, гэр бүл',
-      //                                     style: TextStyle(
-      //                                         fontSize: 10.7,
-      //                                         color: Color(0xffcccccc)),
-      //                                   )
-      //                                 ],
-      //                               )
-      //                           ),
-      //                         )
-      //                     ),
-      //                   ],
-      //                 ),
-      //               ),
-      //             ),
-      //           ]),
-      //     ),
-      // ),
-
-    );
-
-    return Scaffold(
-      key: _scaffoldKey,
-      body:  Stack(
-        children: <Widget>[
-          Container(
-              margin: EdgeInsets.only(top: 0, left: 15),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  SizedBox(
-                    height: 16,
-                  ),
-                  Text(
+                title: DynamicFlexibleSpaceBarTitle(
+                  child: Text(
                     'Залуу хүн',
                     style: TextStyle(
-                      fontSize: 30,
+                      fontSize: 22,
                       fontWeight: FontWeight.w500,
-                      color: primaryColor.withOpacity(.9),
+                      color: primaryColor,
                     ),
                   ),
-                  Text(
-                    'Залуучуудыг дэмжих хөтөлбөр',
-                    style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w500,
-                        color: Color(0xff545454)),
-                  ),
-                ],
-              )),
-          Container(
-            padding: EdgeInsets.only(top: 110, bottom: 0),
-            child: SmartRefresher(
-              enablePullDown: true,
-              enablePullUp: false,
-              header: ClassicHeader(
-                idleText: "Доош чирч дахин ачааллана",
-                releaseText: "Дахин ачааллах",
-                refreshingText: "Түр хүлээнэ үү...",
-                completeText: 'Дахин ачааллаж дууслаа',
-                textStyle: TextStyle(color: primaryColor),
+                ),
+
+                /// here we use our custom widget
+                // titlePadding: EdgeInsets.zero,
+                titlePadding: EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 20,
+                ),
               ),
-              footer: ClassicFooter(
-                idleText: "Цааш үзэх",
-                loadingText: "Түр хүлээнэ үү",
-                noDataText: "Цааш мэдээлэл байхгүй",
-                textStyle: TextStyle(
+              leading: IconButton(
+                onPressed: () {
+                  _scaffoldKey.currentState.openDrawer();
+                },
+                icon: Icon(
+                  Icons.menu,
                   color: primaryColor,
                 ),
               ),
-              controller: _refreshController,
-              onRefresh: () async {
-                await Future.delayed(Duration(milliseconds: 1000));
-                _refreshController.refreshCompleted();
-              },
-              onLoading: () async {
-                await Future.delayed(Duration(milliseconds: 1000));
-                _refreshController.loadComplete();
-              },
-              child: GridView.count(
-                  padding:
-                  EdgeInsets.only(top: 10, bottom: 20, left: 15, right: 15),
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 13,
-                  crossAxisSpacing: 13,
-                  childAspectRatio: (itemWidth / 195),
-                  controller: new ScrollController(keepScrollOffset: false),
-                  shrinkWrap: true,
-                  children: [
-                    GestureDetector(
-                      onTap: (){
-                        Navigator.push( context, MaterialPageRoute(builder: (context) => VolunteerWorkPage(title: 'Сайн дурын ажил')));
-                      },
-                      child: Container(
-                        height: 90,
-                        padding: EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: [shadow],
+              actions: [
+                Padding(
+                  padding: EdgeInsets.only(right: 10.0),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                          builder: (context) => NotificationsScreen(),
                         ),
-                        child: Stack(
-                          children: <Widget>[
-                            Container(
-                              margin: EdgeInsets.only(
-                                  top: 20, bottom: 20, left: 20),
-                              child: Image.asset(
-                                'assets/images/leaf.png',
-                                height: 70,
-                                width: 70,
-                              ),
-                            ),
-                            Positioned(
-                                bottom: 0,
-                                left: 0,
-                                right: 0,
-                                child: Container(
-                                  padding: EdgeInsets.only(top: 4, bottom: 4, right: 3, left: 4),
-                                  child: Container(
-                                      padding: EdgeInsets.all(10),
-                                      decoration: BoxDecoration(
-                                          color: bgSecondColor,
-                                          borderRadius:
-                                          BorderRadius.circular(10)),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          Text(
-                                            'Сайн дурын ажил',
-                                            style: TextStyle(
-                                                fontSize: 14.3,
-                                                fontWeight: FontWeight.w600,
-                                                color: Color(0xff767676)),
-                                          ),
-                                          Text(
-                                            '5 сайн дурын ажил байна',
-                                            style: TextStyle(
-                                                fontSize: 10.7,
-                                                color: Color(0xffcccccc)),
-                                          )
-                                        ],
-                                      )
-                                  ),
-                                )
-                            ),
-                          ],
-                        ),
-                      ),
+                      );
+                    },
+                    child: Icon(
+                      Ionicons.getIconData('ios-notifications-outline'),
+                      size: 31,
+                      color: primaryColor,
                     ),
-                    GestureDetector(
-                      onTap: (){
-                        Navigator.push( context, MaterialPageRoute(builder: (context) => PartTimeJobPage(title: 'Цагийн ажил')));
-                      },
-                      child: Container(
-                        height: 90,
-                        padding: EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: [shadow],
-                        ),
-                        child: Stack(
-                          children: <Widget>[
-                            Container(
-                              margin: EdgeInsets.only(
-                                  top: 20, bottom: 20, left: 20),
-                              child: Image.asset(
-                                'assets/images/job.png',
-                                height: 70,
-                                width: 70,
-                              ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(right: 15.0),
+                  child: GestureDetector(
+                    onTap: () {
+                      print('------user');
+                      print(user);
+
+                      if (user == null) {
+                        Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (context) => LoginPage(),
+                          ),
+                        );
+                      } else {
+                        if (_prefs == null
+                            ? false
+                            : _prefs.getBool("is_auth") == false) {
+                          Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                              builder: (context) => LoginPage(),
                             ),
-                            Positioned(
-                                bottom: 0,
-                                left: 0,
-                                right: 0,
-                                child: Container(
-                                  padding: EdgeInsets.only(top: 4, bottom: 4, right: 3, left: 4),
-                                  child: Container(
-                                      padding: EdgeInsets.all(10),
-                                      decoration: BoxDecoration(
-                                          color: bgSecondColor,
-                                          borderRadius:
-                                          BorderRadius.circular(10)),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          Text(
-                                            'Цагийн ажил',
-                                            style: TextStyle(
-                                                fontSize: 14.3,
-                                                fontWeight: FontWeight.w600,
-                                                color: Color(0xff767676)),
-                                          ),
-                                          Text(
-                                            '120+ ажлын зар байна',
-                                            style: TextStyle(
-                                                fontSize: 10.7,
-                                                color: Color(0xffcccccc)),
-                                          )
-                                        ],
-                                      )
-                                  ),
-                                )
+                          );
+                        } else {
+                          Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                              builder: (context) => SettingsScreen(),
                             ),
-                          ],
-                        ),
-                      ),
+                          );
+                        }
+                      }
+                    },
+                    child: Icon(
+                      Ionicons.getIconData('ios-contact'),
+                      size: 31,
+                      color: primaryColor,
                     ),
-                    GestureDetector(
-                      onTap: (){
-                        Navigator.push( context, MaterialPageRoute(builder: (context) => ELearnHomePage(title: 'Цахим хичээл')));
-                      },
-                      child: Container(
-                        height: 90,
-                        padding: EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: [shadow],
-                        ),
-                        child: Stack(
-                          children: <Widget>[
-                            Container(
-                              margin: EdgeInsets.only(
-                                  top: 20, bottom: 20, left: 20),
-                              child: Image.asset(
-                                'assets/images/scholarship.png',
-                                height: 70,
-                                width: 70,
-                              ),
-                            ),
-                            Positioned(
-                                bottom: 0,
-                                left: 0,
-                                right: 0,
-                                child: Container(
-                                  padding: EdgeInsets.only(top: 4, bottom: 4, right: 3, left: 4),
-                                  child: Container(
-                                      padding: EdgeInsets.all(10),
-                                      decoration: BoxDecoration(
-                                          color: bgSecondColor,
-                                          borderRadius:
-                                          BorderRadius.circular(10)),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          Text(
-                                            'Цахим хичээл',
-                                            style: TextStyle(
-                                                fontSize: 14.3,
-                                                fontWeight: FontWeight.w600,
-                                                color: Color(0xff767676)),
-                                          ),
-                                          Text(
-                                            'Их сургуулийн тэтгэлэг',
-                                            style: TextStyle(
-                                                fontSize: 10.7,
-                                                color: Color(0xffcccccc)),
-                                          )
-                                        ],
-                                      )
-                                  ),
-                                )
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: (){
-                        Navigator.push( context, MaterialPageRoute(builder: (context) => LawPage(title: 'Хууль')));
-                      },
-                      child: Container(
-                        height: 90,
-                        padding: EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: [shadow],
-                        ),
-                        child: Stack(
-                          children: <Widget>[
-                            Container(
-                              margin: EdgeInsets.only(
-                                  top: 20, bottom: 20, left: 20),
-                              child: Image.asset(
-                                'assets/images/training.png',
-                                height: 70,
-                                width: 70,
-                              ),
-                            ),
-                            Positioned(
-                                bottom: 0,
-                                left: 0,
-                                right: 0,
-                                child: Container(
-                                  padding: EdgeInsets.only(top: 4, bottom: 4, right: 3, left: 4),
-                                  child: Container(
-                                      padding: EdgeInsets.all(10),
-                                      decoration: BoxDecoration(
-                                          color: bgSecondColor,
-                                          borderRadius:
-                                          BorderRadius.circular(10)),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          Text(
-                                            'Хууль',
-                                            style: TextStyle(
-                                                fontSize: 14.3,
-                                                fontWeight: FontWeight.w600,
-                                                color: Color(0xff767676)),
-                                          ),
-                                          Text(
-                                            '10+ сургалтын зар байна',
-                                            style: TextStyle(
-                                                fontSize: 10.7,
-                                                color: Color(0xffcccccc)),
-                                          )
-                                        ],
-                                      )
-                                  ),
-                                )
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: (){
-                        Navigator.push( context, MaterialPageRoute(builder: (context) => KnowLedgePage(title: 'Мэдлэг, Мэдээлэл')));
-                      },
-                      child: Container(
-                        height: 90,
-                        padding: EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: [shadow],
-                        ),
-                        child: Stack(
-                          children: <Widget>[
-                            Container(
-                              margin: EdgeInsets.only(
-                                  top: 20, bottom: 20, left: 20),
-                              child: Image.asset(
-                                'assets/images/law.png',
-                                height: 70,
-                                width: 70,
-                              ),
-                            ),
-                            Positioned(
-                                bottom: 0,
-                                left: 0,
-                                right: 0,
-                                child: Container(
-                                  padding: EdgeInsets.only(top: 4, bottom: 4, right: 3, left: 4),
-                                  child: Container(
-                                      padding: EdgeInsets.all(10),
-                                      decoration: BoxDecoration(
-                                          color: bgSecondColor,
-                                          borderRadius:
-                                          BorderRadius.circular(10)),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          Text(
-                                            'Мэдлэг',
-                                            style: TextStyle(
-                                                fontSize: 14.3,
-                                                fontWeight: FontWeight.w600,
-                                                color: Color(0xff767676)),
-                                          ),
-                                          Text(
-                                            'Хууль эрх зүйн мэдлэг',
-                                            style: TextStyle(
-                                                fontSize: 10.7,
-                                                color: Color(0xffcccccc)),
-                                          )
-                                        ],
-                                      )
-                                  ),
-                                )
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: (){
-                        Navigator.push( context, MaterialPageRoute(builder: (context) => EventPage(title: 'Арга Хэмжээ')));
-                      },
-                      child: Container(
-                        height: 90,
-                        padding: EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: [shadow],
-                        ),
-                        child: Stack(
-                          children: <Widget>[
-                            Container(
-                              margin: EdgeInsets.only(
-                                  top: 20, bottom: 20, left: 20),
-                              child: Image.asset(
-                                'assets/images/other.png',
-                                height: 70,
-                                width: 70,
-                              ),
-                            ),
-                            Positioned(
-                                bottom: 0,
-                                left: 0,
-                                right: 0,
-                                child: Container(
-                                  padding: EdgeInsets.only(top: 4, bottom: 4, right: 3, left: 4),
-                                  child: Container(
-                                      padding: EdgeInsets.all(10),
-                                      decoration: BoxDecoration(
-                                          color: bgSecondColor,
-                                          borderRadius:
-                                          BorderRadius.circular(10)),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          Text(
-                                            'Эвэнт',
-                                            style: TextStyle(
-                                                fontSize: 14.3,
-                                                fontWeight: FontWeight.w600,
-                                                color: Color(0xff767676)),
-                                          ),
-                                          Text(
-                                            'эрүүл мэнд, гэр бүл',
-                                            style: TextStyle(
-                                                fontSize: 10.7,
-                                                color: Color(0xffcccccc)),
-                                          )
-                                        ],
-                                      )
-                                  ),
-                                )
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ]),
+                  ),
+                ),
+              ],
             ),
+          ];
+        },
+        body: Padding(
+          padding: EdgeInsets.symmetric(vertical: 0, horizontal: 0),
+          child: GridView.count(
+            padding: EdgeInsets.only(top: 0, bottom: 10, left: 15, right: 15),
+            crossAxisCount: 2,
+            mainAxisSpacing: 13,
+            crossAxisSpacing: 13,
+            childAspectRatio: (itemWidth / 195),
+            physics: new NeverScrollableScrollPhysics(),
+            controller: new ScrollController(keepScrollOffset: false),
+            shrinkWrap: true,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => VolunteerWorkPage(
+                        title: 'Сайн дурын ажил',
+                        subTitle: '5 сайн дурын ажил байна.',
+                      ),
+                    ),
+                  );
+                },
+                child: Container(
+                  height: 90,
+                  padding: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [shadow],
+                  ),
+                  child: Stack(
+                    children: <Widget>[
+                      Container(
+                        alignment: Alignment.topCenter,
+                        margin: EdgeInsets.only(top: 20),
+                        child: SvgPicture.asset(
+                          'assets/images/svg/menu-volunteer.svg',
+                          width: 70,
+                          height: 70,
+                          color: Color(0xFF4323a7),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        child: Container(
+                          padding: EdgeInsets.only(
+                              top: 4, bottom: 4, right: 3, left: 4),
+                          child: Container(
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: Color(0xFF55438c),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  'Сайн дурын ажил',
+                                  style: TextStyle(
+                                    fontSize: 14.3,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                Text(
+                                  '5 сайн дурын ажил байна',
+                                  style: TextStyle(
+                                      fontSize: 10.7, color: Colors.white),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          PartTimeJobPage(title: 'Цагийн ажил'),
+                    ),
+                  );
+                },
+                child: Container(
+                  height: 90,
+                  padding: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [shadow],
+                  ),
+                  child: Stack(
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.only(top: 20),
+                        alignment: Alignment.topCenter,
+                        child: SvgPicture.asset(
+                          'assets/images/svg/menu-parttime.svg',
+                          width: 70,
+                          height: 70,
+                          color: Color(0xFF128348),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        child: Container(
+                          padding: EdgeInsets.only(
+                              top: 4, bottom: 4, right: 3, left: 4),
+                          child: Container(
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: Color(0xFF02b557),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  'Цагийн ажил',
+                                  style: TextStyle(
+                                    fontSize: 14.3,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                Text(
+                                  '120+ ажлын зар байна',
+                                  style: TextStyle(
+                                    fontSize: 10.7,
+                                    color: Colors.white,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          ELearnHomePage(title: 'Цахим хичээл'),
+                    ),
+                  );
+                },
+                child: Container(
+                  height: 90,
+                  padding: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [shadow],
+                  ),
+                  child: Stack(
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.only(top: 20),
+                        alignment: Alignment.topCenter,
+                        child: SvgPicture.asset(
+                          'assets/images/svg/menu-lesson.svg',
+                          width: 70,
+                          height: 70,
+                          color: Color(0xFF5f58CC),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        child: Container(
+                          padding: EdgeInsets.only(
+                              top: 4, bottom: 4, right: 3, left: 4),
+                          child: Container(
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: Color(0xFF7068fc),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  'Цахим хичээл',
+                                  style: TextStyle(
+                                    fontSize: 14.3,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                Text(
+                                  'Их сургуулийн тэтгэлэг',
+                                  style: TextStyle(
+                                    fontSize: 10.7,
+                                    color: Colors.white,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LawPage(title: 'Хууль'),
+                    ),
+                  );
+                },
+                child: Container(
+                  height: 90,
+                  padding: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [shadow],
+                  ),
+                  child: Stack(
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.only(top: 20),
+                        alignment: Alignment.topCenter,
+                        child: SvgPicture.asset(
+                          'assets/images/svg/menu-legal.svg',
+                          width: 70,
+                          height: 70,
+                          color: Color(0xFF992d34),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        child: Container(
+                          padding: EdgeInsets.only(
+                              top: 4, bottom: 4, right: 3, left: 4),
+                          child: Container(
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: Color(0xFFd63e49),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  'Хууль',
+                                  style: TextStyle(
+                                    fontSize: 14.3,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                Text(
+                                  '10+ сургалтын зар байна',
+                                  style: TextStyle(
+                                    fontSize: 10.7,
+                                    color: Colors.white,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          KnowLedgePage(title: 'Мэдлэг, Мэдээлэл'),
+                    ),
+                  );
+                },
+                child: Container(
+                  height: 90,
+                  padding: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [shadow],
+                  ),
+                  child: Stack(
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.only(top: 20),
+                        alignment: Alignment.topCenter,
+                        child: SvgPicture.asset(
+                          'assets/images/svg/menu-news.svg',
+                          width: 70,
+                          height: 70,
+                          color: Color(0xFF576574),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        child: Container(
+                          padding: EdgeInsets.only(
+                              top: 4, bottom: 4, right: 3, left: 4),
+                          child: Container(
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: Color(0xFF7e8c9c),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  'Мэдээ',
+                                  style: TextStyle(
+                                    fontSize: 14.3,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                Text(
+                                  'Хууль эрх зүйн мэдлэг',
+                                  style: TextStyle(
+                                    fontSize: 10.7,
+                                    color: Colors.white,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => EventPage(title: 'Арга Хэмжээ'),
+                    ),
+                  );
+                },
+                child: Container(
+                  height: 90,
+                  padding: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [shadow],
+                  ),
+                  child: Stack(
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.only(top: 20),
+                        alignment: Alignment.topCenter,
+                        child: SvgPicture.asset(
+                          'assets/images/svg/menu-event.svg',
+                          width: 70,
+                          height: 70,
+                          color: Color(0xFFcba822),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        child: Container(
+                          padding: EdgeInsets.only(
+                              top: 4, bottom: 4, right: 3, left: 4),
+                          child: Container(
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: Color(0xFFd9bc4c),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  'Эвэнт',
+                                  style: TextStyle(
+                                    fontSize: 14.3,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                Text(
+                                  'Эрүүл мэнд, гэр бүл',
+                                  style: TextStyle(
+                                    fontSize: 10.7,
+                                    color: Colors.white,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
-          // Header(title: '', reversed: true, scaffold: _scaffoldKey),
-        ],
+        ),
       ),
     );
   }
@@ -1410,9 +644,12 @@ class DynamicFlexibleSpaceBarTitle extends StatefulWidget {
   State<StatefulWidget> createState() => _DynamicFlexibleSpaceBarTitleState();
 }
 
-class _DynamicFlexibleSpaceBarTitleState extends State<DynamicFlexibleSpaceBarTitle> {
+class _DynamicFlexibleSpaceBarTitleState
+    extends State<DynamicFlexibleSpaceBarTitle> {
   ScrollPosition _position;
-  double _leftPadding = 30; /// default padding
+  double _leftPadding = 30;
+
+  /// default padding
   double _bottomPadding = 0;
 
   @override
@@ -1439,16 +676,18 @@ class _DynamicFlexibleSpaceBarTitleState extends State<DynamicFlexibleSpaceBarTi
   void _positionListener() {
     /// when scroll position changes widget will be rebuilt
     final FlexibleSpaceBarSettings settings =
-    context.dependOnInheritedWidgetOfExactType();
+        context.dependOnInheritedWidgetOfExactType();
     setState(() {
-      _leftPadding = getPadding(settings.minExtent.toInt(), settings.maxExtent.toInt(), settings.currentExtent.toInt());
-      _bottomPadding = getPaddingBottom(settings.minExtent.toInt(), settings.maxExtent.toInt(), settings.currentExtent.toInt());
-      }
-    );
+      _leftPadding = getPadding(settings.minExtent.toInt(),
+          settings.maxExtent.toInt(), settings.currentExtent.toInt());
+      _bottomPadding = getPaddingBottom(settings.minExtent.toInt(),
+          settings.maxExtent.toInt(), settings.currentExtent.toInt());
+    });
   }
 
   double getPadding(int minExtent, int maxExtent, int currentExtent) {
     double onePaddingExtent = (maxExtent - minExtent) / 31;
+
     /// onePaddingExtent stands for 1 logical pixel of padding, 17 = count of numbers in range from 0 to 16
     /// when currentExtent changes the padding smoothly change
     if (currentExtent >= minExtent &&
@@ -1509,7 +748,7 @@ class _DynamicFlexibleSpaceBarTitleState extends State<DynamicFlexibleSpaceBarTi
         currentExtent <= minExtent + (19 * onePaddingExtent))
       return 11;
     else if (currentExtent > minExtent + (19 * onePaddingExtent) &&
-        currentExtent <= minExtent + (20* onePaddingExtent))
+        currentExtent <= minExtent + (20 * onePaddingExtent))
       return 10;
     else if (currentExtent > minExtent + (20 * onePaddingExtent) &&
         currentExtent <= minExtent + (21 * onePaddingExtent))
@@ -1544,8 +783,10 @@ class _DynamicFlexibleSpaceBarTitleState extends State<DynamicFlexibleSpaceBarTi
     else
       return 0;
   }
+
   double getPaddingBottom(int minExtent, int maxExtent, int currentExtent) {
     double onePaddingExtent = (maxExtent - minExtent) / 20;
+
     /// onePaddingExtent stands for 1 logical pixel of padding, 17 = count of numbers in range from 0 to 16
     /// when currentExtent changes the padding smoothly change
     if (currentExtent >= minExtent &&
@@ -1602,7 +843,9 @@ class _DynamicFlexibleSpaceBarTitleState extends State<DynamicFlexibleSpaceBarTi
     else
       return 20;
   }
+
   @override
   Widget build(BuildContext context) => Padding(
-      padding: EdgeInsets.only(left: _leftPadding, bottom: _bottomPadding), child: widget.child);
+      padding: EdgeInsets.only(left: _leftPadding, bottom: _bottomPadding),
+      child: widget.child);
 }
