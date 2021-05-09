@@ -73,7 +73,7 @@ class VolunteerWorkPageState extends State<VolunteerWorkPage> {
               expandedHeight: 200.0,
               floating: false,
               pinned: true,
-              backgroundColor: Color(0xFF4323a7),
+              backgroundColor: volunteerColor,
               flexibleSpace: FlexibleSpaceBar(
                 titlePadding: EdgeInsets.zero,
                 centerTitle: true,
@@ -160,229 +160,289 @@ class VolunteerWorkPageState extends State<VolunteerWorkPage> {
               children: jobs.map(
                 (item) {
                   index = index + 1;
-                  return Container(
-                    width: size.width - 40,
-                    margin: EdgeInsets.symmetric(
-                      horizontal: 20,
-                      vertical: 20,
-                    ),
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Color.fromRGBO(67, 35, 167, 0.3),
-                        width: 1,
-                        style: BorderStyle.solid,
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => VolunteerWorkDetailPage(
+                            name: item['name'],
+                            description: item['description'],
+                            startdate: item['startdate'],
+                            enddate: item['enddate'],
+                            created_at: item['created_at'],
+                            image: item['image'],
+                            works: item['works'],
+                            org_name: item['org_name'],
+                          ),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      width: size.width - 40,
+                      margin: EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 20,
                       ),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Stack(
-                      children: [
-                        Column(
-                          children: [
-                            Container(
-                              width: size.width - 40,
-                              height: 150,
-                              decoration: BoxDecoration(
-                                border: Border(
-                                  bottom: BorderSide(
-                                    color: Color.fromRGBO(67, 35, 167, 0.3),
-                                    width: 1,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Color.fromRGBO(67, 35, 167, 0.3),
+                          width: 1,
+                          style: BorderStyle.solid,
+                        ),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Stack(
+                        children: [
+                          Column(
+                            children: [
+                              Container(
+                                width: size.width - 40,
+                                height: 150,
+                                decoration: BoxDecoration(
+                                  border: Border(
+                                    bottom: BorderSide(
+                                      color: Color.fromRGBO(67, 35, 167, 0.3),
+                                      width: 1,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(8),
-                                  topLeft: Radius.circular(8),
-                                ),
-                                child: Container(
-                                  child: Column(
-                                    children: [
-                                      item['image'] != null
-                                          ? Container(
-                                              height: 90,
-                                              child: CachedNetworkImage(
-                                                imageUrl: item['image'],
-                                                imageBuilder:
-                                                    (context, imageProvider) =>
-                                                        Container(
-                                                  decoration: BoxDecoration(
-                                                    image: DecorationImage(
-                                                      image: imageProvider,
-                                                      fit: BoxFit.cover,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.only(
+                                    topRight: Radius.circular(8),
+                                    topLeft: Radius.circular(8),
+                                  ),
+                                  child: Container(
+                                    child: Column(
+                                      children: [
+                                        item['image'] != null
+                                            ? Container(
+                                                height: 90,
+                                                child: CachedNetworkImage(
+                                                  imageUrl: item['image'],
+                                                  imageBuilder: (context,
+                                                          imageProvider) =>
+                                                      Container(
+                                                    decoration: BoxDecoration(
+                                                      image: DecorationImage(
+                                                        image: imageProvider,
+                                                        fit: BoxFit.cover,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              15),
                                                     ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            15),
+                                                  ),
+                                                  placeholder: (context, url) =>
+                                                      Container(
+                                                    child: Center(
+                                                      child:
+                                                          CircularProgressIndicator(
+                                                              strokeWidth: 2),
+                                                    ),
+                                                  ),
+                                                  errorWidget:
+                                                      (context, url, error) =>
+                                                          Image.network(
+                                                    baseUrl +
+                                                        "/assets/youth/images/noImage.jpg",
+                                                    width: 200,
+                                                    fit: BoxFit.fitWidth,
                                                   ),
                                                 ),
-                                                placeholder: (context, url) =>
-                                                    Container(
-                                                  child: Center(
-                                                    child:
-                                                        CircularProgressIndicator(
-                                                            strokeWidth: 2),
-                                                  ),
-                                                ),
-                                                errorWidget:
-                                                    (context, url, error) =>
-                                                        Image.network(
+                                              )
+                                            : Container(
+                                                height: 90,
+                                                child: Image.network(
                                                   baseUrl +
                                                       "/assets/youth/images/noImage.jpg",
                                                   width: 200,
                                                   fit: BoxFit.fitWidth,
                                                 ),
                                               ),
-                                            )
-                                          : Container(
-                                              height: 90,
-                                              child: Image.network(
-                                                baseUrl +
-                                                    "/assets/youth/images/noImage.jpg",
-                                                width: 200,
-                                                fit: BoxFit.fitWidth,
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                width: size.width - 40,
+                                height: 200,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.only(
+                                    bottomRight: Radius.circular(8),
+                                    bottomLeft: Radius.circular(8),
+                                  ),
+                                ),
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      padding: EdgeInsets.only(
+                                        left: 10,
+                                        top: 10,
+                                        right: 10,
+                                      ),
+                                      alignment: Alignment.centerLeft,
+                                      child: Flex(
+                                        direction: Axis.horizontal,
+                                        children: [
+                                          Flexible(
+                                            child: Text(
+                                              item['works'] == null
+                                                  ? ''
+                                                  : item['works'],
+                                              overflow: TextOverflow.ellipsis,
+                                              maxLines: 1,
+                                              softWrap: false,
+                                              style: TextStyle(
+                                                color: volunteerColor,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 18,
                                               ),
                                             ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Container(
-                              width: size.width - 40,
-                              height: 200,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.only(
-                                  bottomRight: Radius.circular(8),
-                                  bottomLeft: Radius.circular(8),
-                                ),
-                              ),
-                              child: Column(
-                                children: [
-                                  Container(
-                                    padding: EdgeInsets.only(
-                                      left: 10,
-                                      top: 10,
-                                      right: 10,
-                                    ),
-                                    alignment: Alignment.centerLeft,
-                                    child: Flex(
-                                      direction: Axis.horizontal,
-                                      children: [
-                                        Flexible(
-                                          child: Text(
-                                            item['works'] == null
-                                                ? ''
-                                                : item['works'],
-                                            overflow: TextOverflow.ellipsis,
-                                            maxLines: 1,
-                                            softWrap: false,
-                                            style: TextStyle(
-                                              color: volunteerColor,
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 18,
-                                            ),
                                           ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Container(
-                                    padding: EdgeInsets.only(
-                                      left: 10,
-                                    ),
-                                    margin: EdgeInsets.only(
-                                        left: 10, top: 10, right: 10),
-                                    alignment: Alignment.centerLeft,
-                                    decoration: BoxDecoration(
-                                      border: Border(
-                                        left: BorderSide(
-                                            color: Colors.lightBlue, width: 2),
+                                        ],
                                       ),
                                     ),
-                                    child: Flex(
-                                      direction: Axis.horizontal,
-                                      children: [
-                                        Flexible(
-                                          child: Text(
-                                            item['description'] == null
-                                                ? ''
-                                                : item['description'],
-                                            overflow: TextOverflow.ellipsis,
-                                            maxLines: 1,
-                                            softWrap: false,
-                                            style: TextStyle(
+                                    Container(
+                                      padding: EdgeInsets.only(
+                                        left: 10,
+                                      ),
+                                      margin: EdgeInsets.only(
+                                          left: 10, top: 10, right: 10),
+                                      alignment: Alignment.centerLeft,
+                                      decoration: BoxDecoration(
+                                        border: Border(
+                                          left: BorderSide(
+                                              color: Colors.lightBlue,
+                                              width: 2),
+                                        ),
+                                      ),
+                                      child: Flex(
+                                        direction: Axis.horizontal,
+                                        children: [
+                                          Flexible(
+                                            child: Text(
+                                              item['description'] == null
+                                                  ? ''
+                                                  : item['description'],
+                                              overflow: TextOverflow.ellipsis,
+                                              maxLines: 1,
+                                              softWrap: false,
+                                              style: TextStyle(
                                                 color: Colors.black87,
                                                 fontWeight: FontWeight.w500,
-                                                fontSize: 16),
+                                                fontSize: 16,
+                                              ),
+                                            ),
                                           ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Container(
-                                    height: 90,
-                                    margin: EdgeInsets.only(
-                                        left: 10,
-                                        right: 10,
-                                        top: 30,
-                                        bottom: 10),
-                                    decoration: BoxDecoration(
-                                      border: Border(
-                                        top: BorderSide(
-                                            color: Colors.grey, width: 1),
+                                        ],
                                       ),
                                     ),
-                                    child: Column(
-                                      children: [
-                                        Container(
-                                            padding: EdgeInsets.only(
-                                                top: 10, bottom: 10),
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width -
-                                                25,
-                                            child: Row(
-                                              children: [
-                                                Icon(Icons.calendar_today,
-                                                    color: Colors.lightBlue,
-                                                    size: 14.0),
-                                                SizedBox(width: 5),
-                                                Text(
-                                                  'Бүртгэх хугацаа: ',
-                                                  style: TextStyle(
-                                                      color: Colors.black54,
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                      fontSize: 14),
-                                                ),
-                                                Text(
-                                                  item['startdate'] == null ||
-                                                          item['enddate'] ==
-                                                              null
-                                                      ? ''
-                                                      : DateFormat("y/MM/dd")
-                                                              .format(
-                                                                DateTime.parse(item[
-                                                                    'startdate']),
-                                                              )
-                                                              .toString() +
-                                                          " - " +
-                                                          DateFormat("y/MM/dd")
-                                                              .format(
-                                                                DateTime.parse(item[
-                                                                    'enddate']),
-                                                              )
-                                                              .toString(),
-                                                  style: TextStyle(
-                                                      color: volunteerColor,
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                      fontSize: 14),
-                                                ),
-                                              ],
-                                            )),
-                                        Container(
+                                    Container(
+                                      height: 90,
+                                      margin: EdgeInsets.only(
+                                          left: 10,
+                                          right: 10,
+                                          top: 30,
+                                          bottom: 10),
+                                      decoration: BoxDecoration(
+                                        border: Border(
+                                          top: BorderSide(
+                                              color: Colors.grey, width: 1),
+                                        ),
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          Container(
+                                              padding: EdgeInsets.only(
+                                                  top: 10, bottom: 10),
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width -
+                                                  25,
+                                              child: Row(
+                                                children: [
+                                                  Icon(Icons.calendar_today,
+                                                      color: Colors.lightBlue,
+                                                      size: 14.0),
+                                                  SizedBox(width: 5),
+                                                  Text(
+                                                    'Бүртгэх хугацаа: ',
+                                                    style: TextStyle(
+                                                        color: Colors.black54,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        fontSize: 14),
+                                                  ),
+                                                  Text(
+                                                    item['startdate'] == null ||
+                                                            item['enddate'] ==
+                                                                null
+                                                        ? ''
+                                                        : DateFormat("y/MM/dd")
+                                                                .format(
+                                                                  DateTime.parse(
+                                                                      item[
+                                                                          'startdate']),
+                                                                )
+                                                                .toString() +
+                                                            " - " +
+                                                            DateFormat(
+                                                                    "y/MM/dd")
+                                                                .format(
+                                                                  DateTime.parse(
+                                                                      item[
+                                                                          'enddate']),
+                                                                )
+                                                                .toString(),
+                                                    style: TextStyle(
+                                                        color: volunteerColor,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        fontSize: 14),
+                                                  ),
+                                                ],
+                                              )),
+                                          Container(
+                                              padding: EdgeInsets.only(
+                                                  top: 0, bottom: 10),
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width -
+                                                  25,
+                                              child: Row(
+                                                children: [
+                                                  Icon(Icons.access_time,
+                                                      color: Colors.lightBlue,
+                                                      size: 14.0),
+                                                  SizedBox(width: 5),
+                                                  Text(
+                                                    'Нэмсэн огноо: ',
+                                                    style: TextStyle(
+                                                        color: Colors.black54,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        fontSize: 14),
+                                                  ),
+                                                  Text(
+                                                    item['created_at'] == null
+                                                        ? ''
+                                                        : DateFormat("y/MM/dd")
+                                                            .format(DateTime
+                                                                .parse(item[
+                                                                    'created_at']))
+                                                            .toString(),
+                                                    style: TextStyle(
+                                                        color: volunteerColor,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        fontSize: 14),
+                                                  ),
+                                                ],
+                                              )),
+                                          Container(
                                             padding: EdgeInsets.only(
                                                 top: 0, bottom: 10),
                                             width: MediaQuery.of(context)
@@ -391,12 +451,14 @@ class VolunteerWorkPageState extends State<VolunteerWorkPage> {
                                                 25,
                                             child: Row(
                                               children: [
-                                                Icon(Icons.access_time,
+                                                Icon(
+                                                    Icons
+                                                        .supervised_user_circle,
                                                     color: Colors.lightBlue,
                                                     size: 14.0),
                                                 SizedBox(width: 5),
                                                 Text(
-                                                  'Нэмсэн огноо: ',
+                                                  'Байгууллага: ',
                                                   style: TextStyle(
                                                       color: Colors.black54,
                                                       fontWeight:
@@ -404,13 +466,9 @@ class VolunteerWorkPageState extends State<VolunteerWorkPage> {
                                                       fontSize: 14),
                                                 ),
                                                 Text(
-                                                  item['created_at'] == null
-                                                      ? ''
-                                                      : DateFormat("y/MM/dd")
-                                                          .format(DateTime
-                                                              .parse(item[
-                                                                  'created_at']))
-                                                          .toString(),
+                                                  item['org_name'] == null
+                                                      ? '__'
+                                                      : item['org_name'],
                                                   style: TextStyle(
                                                       color: volunteerColor,
                                                       fontWeight:
@@ -418,127 +476,105 @@ class VolunteerWorkPageState extends State<VolunteerWorkPage> {
                                                       fontSize: 14),
                                                 ),
                                               ],
-                                            )),
-                                        Container(
-                                          padding: EdgeInsets.only(
-                                              top: 0, bottom: 10),
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width -
-                                              25,
-                                          child: Row(
-                                            children: [
-                                              Icon(Icons.supervised_user_circle,
-                                                  color: Colors.lightBlue,
-                                                  size: 14.0),
-                                              SizedBox(width: 5),
-                                              Text(
-                                                'Байгууллага: ',
-                                                style: TextStyle(
-                                                    color: Colors.black54,
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 14),
-                                              ),
-                                              Text(
-                                                item['org_name'] == null
-                                                    ? '__'
-                                                    : item['org_name'],
-                                                style: TextStyle(
-                                                    color: volunteerColor,
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 14),
-                                              ),
-                                            ],
+                                            ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
-                        Positioned(
-                          bottom: 5,
-                          right: 10,
-                          child: GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => VolunteerWorkDetailPage(
-                                    name: item['name'],
-                                    description: item['description'],
-                                    startdate: item['startdate'],
-                                    enddate: item['enddate'],
-                                    created_at: item['created_at'],
-                                    image: item['image'],
-                                    works: item['works'],
-                                    org_name: item['org_name'],
-                                  ),
+                                  ],
                                 ),
-                              );
-                            },
-                            child: Row(
-                              children: [
-                                Container(
-                                  padding: EdgeInsets.only(
-                                    bottom:
-                                        3, // space between underline and text
-                                  ),
-                                  decoration: BoxDecoration(
-                                      border: Border(
-                                          bottom: BorderSide(
-                                    color: Colors.lightBlue, // Text colour here
-                                    width: 2.0, // Underline width
-                                  ))),
-                                  child: Text(
-                                    'Ца'.toUpperCase(),
-                                    style: TextStyle(
-                                        color: volunteerColor, fontSize: 14),
-                                  ),
-                                ),
-                                Container(
-                                  padding: EdgeInsets.only(
-                                    bottom:
-                                        3, // space between underline and text
-                                  ),
-                                  decoration: BoxDecoration(
-                                      border: Border(
-                                          bottom: BorderSide(
-                                    color: Colors.white, // Text colour here
-                                    width: 2.0, // Underline width
-                                  ))),
-                                  child: Text(
-                                    'аш үзэх'.toUpperCase(),
-                                    style: TextStyle(
-                                        color: volunteerColor, fontSize: 14),
-                                  ),
-                                ),
-                                Container(
-                                  padding: EdgeInsets.only(
-                                    bottom:
-                                        3, // space between underline and text
-                                  ),
-                                  decoration: BoxDecoration(
-                                      border: Border(
-                                          bottom: BorderSide(
-                                    color: Colors.white, // Text colour here
-                                    width: 2.0, // Underline width
-                                  ))),
-                                  child: Icon(
-                                    FontAwesome.getIconData(
-                                        'angle-double-right'),
-                                    color: volunteerColor,
-                                    size: 18.0,
-                                  ),
-                                ),
-                              ],
-                            ),
+                              )
+                            ],
                           ),
-                        ),
-                      ],
+                          // Positioned(
+                          //   bottom: 5,
+                          //   right: 10,
+                          //   child: GestureDetector(
+                          //     onTap: () {
+                          //       Navigator.push(
+                          //         context,
+                          //         MaterialPageRoute(
+                          //           builder: (context) =>
+                          //               VolunteerWorkDetailPage(
+                          //             name: item['name'],
+                          //             description: item['description'],
+                          //             startdate: item['startdate'],
+                          //             enddate: item['enddate'],
+                          //             created_at: item['created_at'],
+                          //             image: item['image'],
+                          //             works: item['works'],
+                          //             org_name: item['org_name'],
+                          //           ),
+                          //         ),
+                          //       );
+                          //     },
+                          //     child: Row(
+                          //       children: [
+                          //         Container(
+                          //           padding: EdgeInsets.only(
+                          //             bottom:
+                          //                 3, // space between underline and text
+                          //           ),
+                          //           decoration: BoxDecoration(
+                          //               border: Border(
+                          //                   bottom: BorderSide(
+                          //             color:
+                          //                 Colors.lightBlue, // Text colour here
+                          //             width: 2.0, // Underline width
+                          //           ))),
+                          //           child: Text(
+                          //             'Ца'.toUpperCase(),
+                          //             style: TextStyle(
+                          //                 color: volunteerColor, fontSize: 14),
+                          //           ),
+                          //         ),
+                          //         Container(
+                          //           padding: EdgeInsets.only(
+                          //             bottom:
+                          //                 3, // space between underline and text
+                          //           ),
+                          //           decoration: BoxDecoration(
+                          //             border: Border(
+                          //               bottom: BorderSide(
+                          //                 color:
+                          //                     Colors.white, // Text colour here
+                          //                 width: 2.0, // Underline width
+                          //               ),
+                          //             ),
+                          //           ),
+                          //           child: Text(
+                          //             'аш үзэх'.toUpperCase(),
+                          //             style: TextStyle(
+                          //                 color: volunteerColor, fontSize: 14),
+                          //           ),
+                          //         ),
+                          //         Container(
+                          //           padding: EdgeInsets.only(
+                          //             bottom:
+                          //                 3, // space between underline and text
+                          //           ),
+                          //           decoration: BoxDecoration(
+                          //             border: Border(
+                          //               bottom: BorderSide(
+                          //                 color:
+                          //                     Colors.white, // Text colour here
+                          //                 width: 2.0, // Underline width
+                          //               ),
+                          //             ),
+                          //           ),
+                          //           child: Icon(
+                          //             FontAwesome.getIconData(
+                          //                 'angle-double-right'),
+                          //             color: volunteerColor,
+                          //             size: 18.0,
+                          //           ),
+                          //         ),
+                          //       ],
+                          //     ),
+                          //   ),
+                          // ),
+                        ],
+                      ),
                     ),
                   );
                 },
