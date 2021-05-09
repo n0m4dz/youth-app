@@ -210,8 +210,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>
-                          VolunteerWorkPage(title: 'Сайн дурын ажил'),
+                      builder: (context) => VolunteerWorkPage(
+                        title: 'Сайн дурын ажил',
+                        subTitle: '5 сайн дурын ажил байна.',
+                      ),
                     ),
                   );
                 },
@@ -227,11 +229,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: <Widget>[
                       Container(
                         alignment: Alignment.topCenter,
-                        margin: EdgeInsets.only(top: 12),
+                        margin: EdgeInsets.only(top: 20),
                         child: SvgPicture.asset(
                           'assets/images/svg/menu-volunteer.svg',
-                          width: 80,
-                          height: 80,
+                          width: 70,
+                          height: 70,
                           color: Color(0xFF4323a7),
                         ),
                       ),
@@ -294,12 +296,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Stack(
                     children: <Widget>[
                       Container(
-                        margin: EdgeInsets.only(top: 12),
+                        margin: EdgeInsets.only(top: 20),
                         alignment: Alignment.topCenter,
                         child: SvgPicture.asset(
                           'assets/images/svg/menu-parttime.svg',
-                          width: 80,
-                          height: 80,
+                          width: 70,
+                          height: 70,
                           color: Color(0xFF128348),
                         ),
                       ),
@@ -364,12 +366,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Stack(
                     children: <Widget>[
                       Container(
-                        margin: EdgeInsets.only(top: 12),
+                        margin: EdgeInsets.only(top: 20),
                         alignment: Alignment.topCenter,
                         child: SvgPicture.asset(
                           'assets/images/svg/menu-lesson.svg',
-                          width: 80,
-                          height: 80,
+                          width: 70,
+                          height: 70,
                           color: Color(0xFF5f58CC),
                         ),
                       ),
@@ -433,12 +435,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Stack(
                     children: <Widget>[
                       Container(
-                        margin: EdgeInsets.only(top: 12),
+                        margin: EdgeInsets.only(top: 20),
                         alignment: Alignment.topCenter,
                         child: SvgPicture.asset(
                           'assets/images/svg/menu-legal.svg',
-                          width: 80,
-                          height: 80,
+                          width: 70,
+                          height: 70,
                           color: Color(0xFF992d34),
                         ),
                       ),
@@ -503,12 +505,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Stack(
                     children: <Widget>[
                       Container(
-                        margin: EdgeInsets.only(top: 12),
+                        margin: EdgeInsets.only(top: 20),
                         alignment: Alignment.topCenter,
                         child: SvgPicture.asset(
                           'assets/images/svg/menu-news.svg',
-                          width: 80,
-                          height: 80,
+                          width: 70,
+                          height: 70,
                           color: Color(0xFF576574),
                         ),
                       ),
@@ -572,12 +574,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Stack(
                     children: <Widget>[
                       Container(
-                        margin: EdgeInsets.only(top: 12),
+                        margin: EdgeInsets.only(top: 20),
                         alignment: Alignment.topCenter,
                         child: SvgPicture.asset(
                           'assets/images/svg/menu-event.svg',
-                          width: 80,
-                          height: 80,
+                          width: 70,
+                          height: 70,
                           color: Color(0xFFcba822),
                         ),
                       ),

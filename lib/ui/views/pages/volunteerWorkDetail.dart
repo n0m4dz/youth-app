@@ -11,8 +11,7 @@ import 'dart:ui';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class VolunteerWorkDetailPage extends StatefulWidget{
-
+class VolunteerWorkDetailPage extends StatefulWidget {
   final name;
   final description;
   final startdate;
@@ -22,17 +21,25 @@ class VolunteerWorkDetailPage extends StatefulWidget{
   final works;
   final org_name;
 
-  const VolunteerWorkDetailPage({Key key, this.name, this.description, this.startdate, this.enddate, this.created_at, this.image, this.works, this.org_name}) : super(key: key);
+  const VolunteerWorkDetailPage(
+      {Key key,
+      this.name,
+      this.description,
+      this.startdate,
+      this.enddate,
+      this.created_at,
+      this.image,
+      this.works,
+      this.org_name})
+      : super(key: key);
 
   @override
   VolunteerWorkDetailPageState createState() => VolunteerWorkDetailPageState();
 }
 
-class VolunteerWorkDetailPageState extends State<VolunteerWorkDetailPage>{
-
+class VolunteerWorkDetailPageState extends State<VolunteerWorkDetailPage> {
   @override
   Widget build(BuildContext context) {
-
     Size size = MediaQuery.of(context).size;
     int index = 0;
 
@@ -47,9 +54,11 @@ class VolunteerWorkDetailPageState extends State<VolunteerWorkDetailPage>{
                 backgroundColor: primaryColor.withOpacity(0.9),
                 flexibleSpace: FlexibleSpaceBar(
                     background: Image.network(
-                      widget.image == null ? baseUrl + "/assets/youth/images/noImage.jpg" :  baseUrl + widget.image.toString(),
-                      fit: BoxFit.cover,
-                    )),
+                  widget.image == null
+                      ? baseUrl + "/assets/youth/images/noImage.jpg"
+                      : baseUrl + widget.image.toString(),
+                  fit: BoxFit.cover,
+                )),
               ),
             ];
           },
@@ -65,28 +74,28 @@ class VolunteerWorkDetailPageState extends State<VolunteerWorkDetailPage>{
                       children: [
                         Text(
                           widget.works == null ? '' : widget.works,
-                          style: TextStyle(color: Colors.black87, fontSize: 18, fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              color: Colors.black87,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold),
                         ),
                         SizedBox(
                           height: 15,
                         ),
-                        Text(
-                            widget.description == null ? '' : widget.description
-                        ),
+                        Text(widget.description == null
+                            ? ''
+                            : widget.description),
                         SizedBox(
                           height: 15,
                         ),
                         Container(
                           height: 90,
-                          margin: EdgeInsets.only(left: 10, right: 10, top: 30, bottom: 10),
+                          margin: EdgeInsets.only(
+                              left: 10, right: 10, top: 30, bottom: 10),
                           decoration: BoxDecoration(
                               border: Border(
                                   top: BorderSide(
-                                      color: Colors.grey,
-                                      width: 1
-                                  )
-                              )
-                          ),
+                                      color: Colors.grey, width: 1))),
                           child: Column(
                             children: [
                               Container(
@@ -94,77 +103,100 @@ class VolunteerWorkDetailPageState extends State<VolunteerWorkDetailPage>{
                                   width: MediaQuery.of(context).size.width - 25,
                                   child: Row(
                                     children: [
-                                      Icon(
-                                          Icons.calendar_today,
-                                          color: Colors.lightBlue,
-                                          size: 14.0),
+                                      Icon(Icons.calendar_today,
+                                          color: Colors.lightBlue, size: 14.0),
                                       SizedBox(width: 5),
                                       Text(
                                         'Бүртгэх хугацаа: ',
-                                        style: TextStyle(color: Colors.black54, fontWeight: FontWeight.w500, fontSize: 14),
+                                        style: TextStyle(
+                                            color: Colors.black54,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 14),
                                       ),
                                       Text(
-                                        widget.startdate == null || widget.enddate == null ? '' :
-                                        DateFormat("y/MM/dd").format(DateTime.parse(widget.startdate)).toString() + " - " + DateFormat("y/MM/dd").format(DateTime.parse(widget.enddate)).toString(),
-                                        style: TextStyle(color: volunteerColor, fontWeight: FontWeight.w500, fontSize: 14),
+                                        widget.startdate == null ||
+                                                widget.enddate == null
+                                            ? ''
+                                            : DateFormat("y/MM/dd")
+                                                    .format(DateTime.parse(
+                                                        widget.startdate))
+                                                    .toString() +
+                                                " - " +
+                                                DateFormat("y/MM/dd")
+                                                    .format(DateTime.parse(
+                                                        widget.enddate))
+                                                    .toString(),
+                                        style: TextStyle(
+                                            color: volunteerColor,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 14),
                                       ),
                                     ],
-                                  )
-                              ),
+                                  )),
                               Container(
                                   padding: EdgeInsets.only(top: 0, bottom: 10),
                                   width: MediaQuery.of(context).size.width - 25,
                                   child: Row(
                                     children: [
-                                      Icon(
-                                          Icons.access_time,
-                                          color: Colors.lightBlue,
-                                          size: 14.0),
+                                      Icon(Icons.access_time,
+                                          color: Colors.lightBlue, size: 14.0),
                                       SizedBox(width: 5),
                                       Text(
                                         'Нэмсэн огноо: ',
-                                        style: TextStyle(color: Colors.black54, fontWeight: FontWeight.w500, fontSize: 14),
+                                        style: TextStyle(
+                                            color: Colors.black54,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 14),
                                       ),
                                       Text(
-                                        widget.created_at == null ? '' : DateFormat("y/MM/dd").format(DateTime.parse(widget.created_at)).toString(),
-                                        style: TextStyle(color: volunteerColor, fontWeight: FontWeight.w500, fontSize: 14),
+                                        widget.created_at == null
+                                            ? ''
+                                            : DateFormat("y/MM/dd")
+                                                .format(DateTime.parse(
+                                                    widget.created_at))
+                                                .toString(),
+                                        style: TextStyle(
+                                            color: volunteerColor,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 14),
                                       ),
                                     ],
-                                  )
-                              ),
+                                  )),
                               Container(
                                   padding: EdgeInsets.only(top: 0, bottom: 10),
                                   width: MediaQuery.of(context).size.width - 25,
                                   child: Row(
                                     children: [
-                                      Icon(
-                                          Icons.supervised_user_circle,
-                                          color: Colors.lightBlue,
-                                          size: 14.0),
+                                      Icon(Icons.supervised_user_circle,
+                                          color: Colors.lightBlue, size: 14.0),
                                       SizedBox(width: 5),
                                       Text(
                                         'Байгууллага: ',
-                                        style: TextStyle(color: Colors.black54, fontWeight: FontWeight.w500, fontSize: 14),
+                                        style: TextStyle(
+                                            color: Colors.black54,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 14),
                                       ),
                                       Text(
-                                        widget.org_name == null ? '__' : widget.org_name,
-                                        style: TextStyle(color: volunteerColor, fontWeight: FontWeight.w500, fontSize: 14),
+                                        widget.org_name == null
+                                            ? '__'
+                                            : widget.org_name,
+                                        style: TextStyle(
+                                            color: volunteerColor,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 14),
                                       ),
                                     ],
-                                  )
-                              ),
+                                  )),
                             ],
                           ),
                         ),
                       ],
-                    )
-                )
+                    ))
               ],
             ),
-          )
-      ),
+          )),
     );
-
   }
 }
 
