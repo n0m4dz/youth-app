@@ -85,7 +85,7 @@ class VolunteerWorkPageState extends State<VolunteerWorkPage> {
                       child: Container(),
                     ),
                     Flexible(
-                      flex: 1,
+                      flex: 2,
                       child: Text(
                         widget.title.toUpperCase(),
                         textAlign: TextAlign.center,
@@ -356,92 +356,53 @@ class VolunteerWorkPageState extends State<VolunteerWorkPage> {
                                       child: Column(
                                         children: [
                                           Container(
-                                              padding: EdgeInsets.only(
-                                                  top: 10, bottom: 10),
-                                              width: MediaQuery.of(context)
-                                                      .size
-                                                      .width -
-                                                  25,
-                                              child: Row(
-                                                children: [
-                                                  Icon(Icons.calendar_today,
-                                                      color: Colors.lightBlue,
-                                                      size: 14.0),
-                                                  SizedBox(width: 5),
-                                                  Text(
-                                                    'Бүртгэх хугацаа: ',
-                                                    style: TextStyle(
-                                                        color: Colors.black54,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        fontSize: 14),
+                                            padding: EdgeInsets.only(
+                                                top: 10, bottom: 10),
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width -
+                                                25,
+                                            child: Row(
+                                              children: [
+                                                Icon(Icons.calendar_today,
+                                                    color: Colors.lightBlue,
+                                                    size: 14.0),
+                                                SizedBox(width: 5),
+                                                Text(
+                                                  'Бүртгэх хугацаа: ',
+                                                  style: TextStyle(
+                                                      color: Colors.black54,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 14),
+                                                ),
+                                                Text(
+                                                  item['startdate'] == null ||
+                                                          item['enddate'] ==
+                                                              null
+                                                      ? ''
+                                                      : DateFormat("y/MM/dd")
+                                                              .format(
+                                                                DateTime.parse(item[
+                                                                    'startdate']),
+                                                              )
+                                                              .toString() +
+                                                          " - " +
+                                                          DateFormat("y/MM/dd")
+                                                              .format(
+                                                                DateTime.parse(item[
+                                                                    'enddate']),
+                                                              )
+                                                              .toString(),
+                                                  style: TextStyle(
+                                                    color: volunteerColor,
+                                                    fontWeight: FontWeight.w500,
+                                                    fontSize: 14,
                                                   ),
-                                                  Text(
-                                                    item['startdate'] == null ||
-                                                            item['enddate'] ==
-                                                                null
-                                                        ? ''
-                                                        : DateFormat("y/MM/dd")
-                                                                .format(
-                                                                  DateTime.parse(
-                                                                      item[
-                                                                          'startdate']),
-                                                                )
-                                                                .toString() +
-                                                            " - " +
-                                                            DateFormat(
-                                                                    "y/MM/dd")
-                                                                .format(
-                                                                  DateTime.parse(
-                                                                      item[
-                                                                          'enddate']),
-                                                                )
-                                                                .toString(),
-                                                    style: TextStyle(
-                                                        color: volunteerColor,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        fontSize: 14),
-                                                  ),
-                                                ],
-                                              )),
-                                          Container(
-                                              padding: EdgeInsets.only(
-                                                  top: 0, bottom: 10),
-                                              width: MediaQuery.of(context)
-                                                      .size
-                                                      .width -
-                                                  25,
-                                              child: Row(
-                                                children: [
-                                                  Icon(Icons.access_time,
-                                                      color: Colors.lightBlue,
-                                                      size: 14.0),
-                                                  SizedBox(width: 5),
-                                                  Text(
-                                                    'Нэмсэн огноо: ',
-                                                    style: TextStyle(
-                                                        color: Colors.black54,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        fontSize: 14),
-                                                  ),
-                                                  Text(
-                                                    item['created_at'] == null
-                                                        ? ''
-                                                        : DateFormat("y/MM/dd")
-                                                            .format(DateTime
-                                                                .parse(item[
-                                                                    'created_at']))
-                                                            .toString(),
-                                                    style: TextStyle(
-                                                        color: volunteerColor,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        fontSize: 14),
-                                                  ),
-                                                ],
-                                              )),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
                                           Container(
                                             padding: EdgeInsets.only(
                                                 top: 0, bottom: 10),
@@ -451,29 +412,67 @@ class VolunteerWorkPageState extends State<VolunteerWorkPage> {
                                                 25,
                                             child: Row(
                                               children: [
-                                                Icon(
-                                                    Icons
-                                                        .supervised_user_circle,
+                                                Icon(Icons.access_time,
                                                     color: Colors.lightBlue,
                                                     size: 14.0),
                                                 SizedBox(width: 5),
                                                 Text(
+                                                  'Нэмсэн огноо: ',
+                                                  style: TextStyle(
+                                                    color: Colors.black54,
+                                                    fontWeight: FontWeight.w500,
+                                                    fontSize: 14,
+                                                  ),
+                                                ),
+                                                Text(
+                                                  item['created_at'] == null
+                                                      ? ''
+                                                      : DateFormat("y/MM/dd")
+                                                          .format(DateTime
+                                                              .parse(item[
+                                                                  'created_at']))
+                                                          .toString(),
+                                                  style: TextStyle(
+                                                    color: volunteerColor,
+                                                    fontWeight: FontWeight.w500,
+                                                    fontSize: 14,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Container(
+                                            padding: EdgeInsets.only(
+                                                top: 0, bottom: 0),
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width -
+                                                25,
+                                            child: Row(
+                                              children: [
+                                                Icon(
+                                                  Icons.supervised_user_circle,
+                                                  color: Colors.lightBlue,
+                                                  size: 14.0,
+                                                ),
+                                                SizedBox(width: 5),
+                                                Text(
                                                   'Байгууллага: ',
                                                   style: TextStyle(
-                                                      color: Colors.black54,
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                      fontSize: 14),
+                                                    color: Colors.black54,
+                                                    fontWeight: FontWeight.w500,
+                                                    fontSize: 14,
+                                                  ),
                                                 ),
                                                 Text(
                                                   item['org_name'] == null
                                                       ? '__'
                                                       : item['org_name'],
                                                   style: TextStyle(
-                                                      color: volunteerColor,
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                      fontSize: 14),
+                                                    color: volunteerColor,
+                                                    fontWeight: FontWeight.w500,
+                                                    fontSize: 14,
+                                                  ),
                                                 ),
                                               ],
                                             ),
