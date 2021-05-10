@@ -70,13 +70,13 @@ class PartTimeJobPageState extends State<PartTimeJobPage> {
               pinned: true,
               backgroundColor: partTimeColor,
               flexibleSpace: FlexibleSpaceBar(
-                titlePadding: EdgeInsets.zero,
+                titlePadding: EdgeInsets.only(right: 150),
                 centerTitle: true,
                 title: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Flexible(
-                      flex: 2,
+                      flex: 3,
                       child: Container(),
                     ),
                     Flexible(
@@ -95,13 +95,12 @@ class PartTimeJobPageState extends State<PartTimeJobPage> {
                 background: Stack(
                   children: [
                     Positioned(
-                      right: -50,
-                      bottom: 0,
+                      left: -270,
+                      bottom: 40,
                       child: SvgPicture.asset(
                         "assets/images/svg/page-heading-part-time.svg",
                         width: size.width,
-                        height: size.height * .13,
-                        fit: BoxFit.cover,
+                        height: size.height * .20,
                       ),
                     ),
                   ],
