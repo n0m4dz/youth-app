@@ -5,6 +5,7 @@ import 'package:lambda/modules/network_util.dart';
 import 'core/services/faq_service.dart';
 import 'core/services/home_service.dart';
 import 'core/services/movie_service.dart';
+import 'core/services/national_council_service.dart';
 import 'core/services/user_service.dart';
 import 'core/services/video_service.dart';
 import 'core/services/api.dart';
@@ -14,6 +15,7 @@ import 'core/viewmodels/job_model.dart';
 import 'core/viewmodels/slide_model.dart';
 import 'core/viewmodels/user_model.dart';
 import 'core/viewmodels/video_model.dart';
+import 'core/viewmodels/national_council_model.dart';
 
 GetIt locator = GetIt();
 
@@ -30,6 +32,7 @@ void setupLocator() {
   locator.registerLazySingleton(() => HomeService());
   locator.registerLazySingleton(() => FaqService());
   locator.registerLazySingleton(() => UserService());
+  locator.registerLazySingleton(() => NationalCouncilService());
 
   //App view models for busines logic
   locator.registerFactory(() => BaseModel());
@@ -38,4 +41,5 @@ void setupLocator() {
   locator.registerFactory(() => SlidesModel());
   locator.registerFactory(() => UserModel());
   locator.registerFactory(() => JobModel());
+  locator.registerFactory(() => NationalCouncilModel());
 }

@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart' as secure;
 import 'responseModel.dart';
@@ -76,8 +77,41 @@ class NetworkUtil {
 //      );
       response = await dio.post(url, data: body);
       print(response);
+      print('----->');
       if (response.statusCode == 200) {
         r = ResponseModel.fromJson(response.data);
+      }
+    } on DioError catch (e) {
+      r = ResponseModel.fromError();
+      if (e.response != null) {
+        print(e.response.data);
+        print(e.response.headers);
+        print(e.response.request);
+      } else {
+        print(e.request);
+        print(e.message);
+      }
+    }
+    return r;
+  }
+
+  Future<dynamic> postRaw(String url, body, {String base}) async {
+    if (base != null) {
+      options.baseUrl = base;
+    }
+
+    try {
+//      dio.interceptors.add(
+//        InterceptorsWrapper(onRequest: (Options options) async {
+//          String jwt = await storage.read(key: 'jwt');
+//          options.headers["token"] = jwt;
+//          return options;
+//        }),
+//      );
+      final resp = await dio.post(url, data: body);
+      if (resp.statusCode == 200) {
+        print("status 200");
+        return resp;
       }
     } on DioError catch (e) {
       r = ResponseModel.fromError();

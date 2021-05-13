@@ -1,9 +1,12 @@
+import 'dart:convert';
+
 import 'package:youth/core/models/anime.dart';
 import 'package:youth/core/models/branch.dart';
 import 'package:youth/core/models/episode.dart';
 import 'package:youth/core/models/faq.dart';
 import 'package:youth/core/models/job.dart';
 import 'package:youth/core/models/movie.dart';
+import 'package:youth/core/models/national_council.dart';
 import 'package:youth/core/models/video.dart';
 import 'package:lambda/modules/network_util.dart';
 import 'package:youth/core/models/slide.dart';
@@ -201,5 +204,42 @@ class Api {
     for (var item in parsed) {
       _job.add(Job.fromJson(item));
     }
+  }
+
+  // List<NationalCouncil> _nationalCouncilList = new List();
+  // List<NationalCouncil> get nationalCouncilList => _nationalCouncilList;
+
+  // Future<void> getNationalCouncil() async {
+  //   var _nationalCouncilList = new List();
+  //   final response =
+  //       await _http.post('/api/mobile/zxvz', "?search=&aimag=&soum=");
+  //   var parsed = response.data as List<dynamic>;
+
+  //   for (var item in parsed) {
+  //     _nationalCouncilList.add(NationalCouncil.fromJson(item));
+  //   }
+  // }
+
+  // List jsonResponse = json.decode(response.body);
+  // return jsonResponse.map((job) => new ProductList.fromJson(job)).toList();
+
+  Future<List<NationalCouncil>> getNationalCouncil() async {
+    print("I am here");
+    var data = new List<NationalCouncil>();
+    final response = await _http.postRaw('/api/mobile/zxvz', {
+      "search": "",
+      "aimag": "",
+      "soum": "",
+    });
+
+    // print("********** data *********");
+    // print(response);
+
+    var parsed = response.data as List<dynamic>;
+
+    for (var d in parsed) {
+      data.add(NationalCouncil.fromJson(d));
+    }
+    return data;
   }
 }
