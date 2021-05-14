@@ -647,11 +647,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       Container(
                         margin: EdgeInsets.only(top: 20),
                         alignment: Alignment.topCenter,
-                        child: SvgPicture.asset(
-                          'assets/images/svg/menu-event.svg',
+                        // child: SvgPicture.asset(
+                        //   'assets/images/svg/menu-event.svg',
+                        //   width: 70,
+                        //   height: 70,
+                        //   color: Color(0xFF38ada9),
+                        // ),
+                        child: Image.asset(
+                          'assets/images/zxvz.png',
                           width: 70,
                           height: 70,
-                          color: Color(0xFF38ada9),
                         ),
                       ),
                       Positioned(
@@ -709,11 +714,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       Container(
                         margin: EdgeInsets.only(top: 20),
                         alignment: Alignment.topCenter,
-                        child: SvgPicture.asset(
-                          'assets/images/svg/menu-event.svg',
+                        // child: SvgPicture.asset(
+                        //   'assets/images/logo_zxz.png',
+                        //   width: 70,
+                        //   height: 70,
+                        //   color: Color(0xFFfa983a),
+                        // ),
+                        child: Image.asset(
+                          'assets/images/logo_zxz.png',
                           width: 70,
                           height: 70,
-                          color: Color(0xFFfa983a),
                         ),
                       ),
                       Positioned(
