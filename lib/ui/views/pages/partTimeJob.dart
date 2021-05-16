@@ -96,7 +96,7 @@ class PartTimeJobPageState extends State<PartTimeJobPage> {
                   children: [
                     Positioned(
                       left: -270,
-                      bottom: 40,
+                      bottom: 0,
                       child: SvgPicture.asset(
                         "assets/images/svg/page-heading-part-time.svg",
                         width: size.width,

@@ -8,20 +8,21 @@ class Loader extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Container(
-        height: double.infinity,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: Color(0xffcccccc),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            SpinKitFadingCube(
-              color: secondaryDarken,
-              size: 28.0,
-            ),
-          ],
-        ));
+      height: double.infinity,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: Colors.grey[100],
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          SpinKitFadingCube(
+            color: primaryColor,
+            size: 28.0,
+          ),
+        ],
+      ),
+    );
   }
 }
