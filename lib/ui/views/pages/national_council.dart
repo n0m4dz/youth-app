@@ -8,64 +8,13 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:youth/core/contants/values.dart';
 import 'package:youth/core/models/national_council.dart';
+import 'package:youth/core/viewmodels/aimag_model.dart';
 import 'package:youth/ui/components/dynamic_flexible_spacebar_title.dart';
 import 'package:youth/ui/components/loader.dart';
 import 'package:youth/ui/styles/_colors.dart';
 import 'package:youth/ui/views/base_view.dart';
 import 'package:youth/core/viewmodels/national_council_model.dart';
 import 'dart:math';
-import '../notifications.dart';
-
-/*class NationalCouncilPage extends StatefulWidget {
-  final title;
-
-  const NationalCouncilPage({Key key, this.title}) : super(key: key);
-
-  @override
-  NationalCouncilPageState createState() => NationalCouncilPageState();
-}
-
-class NationalCouncilPageState extends State<NationalCouncilPage> {
-  GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
-  RefreshController _refreshController =
-      RefreshController(initialRefresh: false);
-  List<dynamic> jobs = new List();
-
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    int index = 0;
-
-    // TODO: implement build
-    return Scaffold(
-      backgroundColor: Colors.grey[100],
-      body: CustomScrollView(slivers: [
-        SliverPersistentHeader(
-          pinned: true,
-          floating: false,
-          delegate: SearchHeader(
-            icon: Icons.terrain,
-            title: 'Trees',
-            search: _Search(),
-          ),
-        ),
-      ]),
-      body: SafeArea(
-        child: Column(
-          children: [
-            Container(
-              child:
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}*/
 
 class NationalCouncilPage extends StatefulWidget {
   final title;
@@ -155,10 +104,6 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
                                               "/assets/youth/images/noImage.jpg",
                                           width: 60,
                                         ),
-                                  // Image.network(
-                                  //   baseUrl + "/assets/youth/images/noImage.jpg",
-                                  //   width: 60,
-                                  // ),
                                   SizedBox(width: 20),
                                   Expanded(
                                     child: Text(item.name),
@@ -215,7 +160,7 @@ class __SearchState extends State<_Search> {
               decoration: InputDecoration(
                 hintText: 'Хайх',
                 hintStyle: TextStyle(
-                  color: Theme.of(context).primaryColor.withOpacity(0.5),
+                  color: Theme.of(context).primaryColor,
                 ),
                 enabledBorder: InputBorder.none,
                 focusedBorder: InputBorder.none,
@@ -226,15 +171,17 @@ class __SearchState extends State<_Search> {
               ? IconButton(
                   icon: Icon(
                     Icons.search,
-                    color: Theme.of(context).primaryColor.withOpacity(0.5),
+                    color: Theme.of(context).primaryColor,
                   ),
-                  onPressed: null)
+                  onPressed: () {
+                    print(123);
+                  })
               : IconButton(
                   highlightColor: Colors.transparent,
                   splashColor: Colors.transparent,
                   icon: Icon(
                     Icons.clear,
-                    color: Theme.of(context).primaryColor.withOpacity(0.5),
+                    color: Theme.of(context).primaryColor,
                   ),
                   onPressed: () => setState(
                     () {
@@ -287,22 +234,10 @@ class SearchHeader extends SliverPersistentHeaderDelegate {
                     color: Colors.white,
                   ),
             ),
-            /*SizedBox(
-              width: 20,
-            ),
-            Icon(
-              icon,
-              size: 40,
-              color: Colors.white,
-            )*/
           ],
         ),
         decoration: BoxDecoration(
           color: Color(0xFF38ada9),
-          borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(36),
-            bottomRight: Radius.circular(36),
-          ),
         ),
       ),
     );
@@ -319,15 +254,15 @@ class SearchHeader extends SliverPersistentHeaderDelegate {
                 bottom: 10,
               ),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
                     alignment: Alignment.center,
                     child: search,
-                    width: 120,
-                    height: 50,
+                    width: 245,
+                    height: 45,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(10),
                       color: Colors.white,
                       boxShadow: [
                         BoxShadow(
@@ -348,95 +283,48 @@ class SearchHeader extends SliverPersistentHeaderDelegate {
                       showModalBottomSheet(
                         context: context,
                         builder: (context) {
+                          /*return BaseView<AimagModel>(
+                              onModelReady: (model) {
+                            model.getAimagModelList();
+                          },
+                          builder: (context, model, child) => model.loading
+                          ? Loader()
+                          : ListView(
+                              children: model.getAimagModelList.map(
+                                (Aimag item) {
+                                  return Text('ok done');
+                                }
+                              );
+                            ),
+                          );*/
                           return Column(
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
-                              ListTile(
+                              /*ListTile(
                                 leading: new Icon(Icons.photo),
                                 title: new Text('Photo'),
                                 onTap: () {
                                   Navigator.pop(context);
                                 },
+                              ),*/
+                              Container(
+                                child: Text('1')
                               ),
-                              ListTile(
-                                leading: new Icon(Icons.music_note),
-                                title: new Text('Music'),
-                                onTap: () {
-                                  Navigator.pop(context);
-                                },
-                              ),
-                              ListTile(
-                                leading: new Icon(Icons.videocam),
-                                title: new Text('Video'),
-                                onTap: () {
-                                  Navigator.pop(context);
-                                },
-                              ),
-                              ListTile(
-                                leading: new Icon(Icons.share),
-                                title: new Text('Share'),
-                                onTap: () {
-                                  Navigator.pop(context);
-                                },
-                              ),
+
                             ],
                           );
                         },
                       );
                     },
-                    padding: EdgeInsets.all(15),
+                    padding: EdgeInsets.all(14),
                     color: Colors.white,
-                    child: Text('Аймаг/нийслэл'),
-                  ),
-                  RaisedButton(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
+                    child: Text(
+                      'Байршил',
+                      style: TextStyle(
+                        color: Theme.of(context).primaryColor,
+                        fontSize: 14,
                       ),
                     ),
-                    onPressed: () {
-                      showModalBottomSheet(
-                        context: context,
-                        builder: (context) {
-                          return Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: <Widget>[
-                              ListTile(
-                                leading: new Icon(Icons.photo),
-                                title: new Text('Photo'),
-                                onTap: () {
-                                  Navigator.pop(context);
-                                },
-                              ),
-                              ListTile(
-                                leading: new Icon(Icons.music_note),
-                                title: new Text('Music'),
-                                onTap: () {
-                                  Navigator.pop(context);
-                                },
-                              ),
-                              ListTile(
-                                leading: new Icon(Icons.videocam),
-                                title: new Text('Video'),
-                                onTap: () {
-                                  Navigator.pop(context);
-                                },
-                              ),
-                              ListTile(
-                                leading: new Icon(Icons.share),
-                                title: new Text('Share'),
-                                onTap: () {
-                                  Navigator.pop(context);
-                                },
-                              ),
-                            ],
-                          );
-                        },
-                      );
-                    },
-                    padding: EdgeInsets.all(15),
-                    color: Colors.white,
-                    child: Text('Сум/Дүүрэг'),
                   ),
                 ],
               ),
@@ -456,4 +344,41 @@ class SearchHeader extends SliverPersistentHeaderDelegate {
 
   @override
   bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) => true;
+}
+
+class CourseContent extends StatelessWidget {
+  final String number, title;
+  final double duration;
+  final bool isDone;
+
+  const CourseContent({
+    Key key,
+    this.number,
+    this.title,
+    this.duration,
+    this.isDone = false,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Expanded(
+            child: Text(title),
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 20),
+            child: Icon(
+              Icons.arrow_forward_ios,
+              color: Color(0xFF000000).withOpacity(.5),
+              size: 15,
+            ),
+          )
+        ],
+      ),
+    );
+  }
 }

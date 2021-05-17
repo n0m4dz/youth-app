@@ -101,18 +101,37 @@ class NetworkUtil {
     }
 
     try {
-//      dio.interceptors.add(
-//        InterceptorsWrapper(onRequest: (Options options) async {
-//          String jwt = await storage.read(key: 'jwt');
-//          options.headers["token"] = jwt;
-//          return options;
-//        }),
-//      );
       final resp = await dio.post(url, data: body);
       if (resp.statusCode == 200) {
         print("status 200");
         return resp;
       }
+    } on DioError catch (e) {
+      r = ResponseModel.fromError();
+      if (e.response != null) {
+        print(e.response.data);
+        print(e.response.headers);
+        print(e.response.request);
+      } else {
+        print(e.request);
+        print(e.message);
+      }
+    }
+    return r;
+  }
+
+  Future<dynamic> getRaw(String url, {dynamic params, String base}) async {
+    if (base != null) {
+      options.baseUrl = base;
+    }
+
+    try {
+      final response = await dio.get(url, queryParameters: params ?? null);
+      if (response.statusCode == 200) {
+        print("status 200");
+        return response;
+      }
+      //print(response);
     } on DioError catch (e) {
       r = ResponseModel.fromError();
       if (e.response != null) {

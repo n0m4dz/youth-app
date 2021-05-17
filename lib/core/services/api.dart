@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:youth/core/models/aimag.dart';
 import 'package:youth/core/models/anime.dart';
 import 'package:youth/core/models/branch.dart';
 import 'package:youth/core/models/episode.dart';
@@ -206,25 +207,7 @@ class Api {
     }
   }
 
-  // List<NationalCouncil> _nationalCouncilList = new List();
-  // List<NationalCouncil> get nationalCouncilList => _nationalCouncilList;
-
-  // Future<void> getNationalCouncil() async {
-  //   var _nationalCouncilList = new List();
-  //   final response =
-  //       await _http.post('/api/mobile/zxvz', "?search=&aimag=&soum=");
-  //   var parsed = response.data as List<dynamic>;
-
-  //   for (var item in parsed) {
-  //     _nationalCouncilList.add(NationalCouncil.fromJson(item));
-  //   }
-  // }
-
-  // List jsonResponse = json.decode(response.body);
-  // return jsonResponse.map((job) => new ProductList.fromJson(job)).toList();
-
   Future<List<NationalCouncil>> getNationalCouncil() async {
-    print("I am here");
     var data = new List<NationalCouncil>();
     final response = await _http.postRaw('/api/mobile/zxvz', {
       "search": "",
@@ -232,13 +215,22 @@ class Api {
       "soum": "",
     });
 
-    // print("********** data *********");
-    // print(response);
-
     var parsed = response.data as List<dynamic>;
 
     for (var d in parsed) {
       data.add(NationalCouncil.fromJson(d));
+    }
+    return data;
+  }
+
+  Future<List<Aimag>> getAimagList() async {
+    var data = new List<Aimag>();
+
+    final response = await _http.getRaw('/api/mobile/aimag');
+    var parsed = response.data as List<dynamic>;
+
+    for (var item in parsed) {
+      data.add(Aimag.fromJson(item));
     }
     return data;
   }
