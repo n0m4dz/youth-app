@@ -308,7 +308,7 @@ class SearchHeader extends SliverPersistentHeaderDelegate {
                                 },
                               ),*/
                               Container(
-                                child: Text('1')
+                                child: Text('1'),
                               ),
                             ],
                           );
