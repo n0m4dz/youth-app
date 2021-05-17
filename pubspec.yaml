@@ -78,6 +78,8 @@ flutter:
     - assets/images/svg/menu-legal.svg
     - assets/images/svg/menu-news.svg
     - assets/images/svg/menu-event.svg
+    - assets/images/svg/menu-zxvz.svg
+    - assets/images/svg/menu-zxz.svg
 
   # custom fonts
   fonts:
