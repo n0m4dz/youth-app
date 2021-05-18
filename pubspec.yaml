@@ -72,6 +72,7 @@ flutter:
     - assets/images/svg/page-heading-law.svg
     - assets/images/svg/page-heading-knowledge.svg
     - assets/images/svg/page-heading-event.svg
+    - assets/images/svg/page-heading-blog.svg
     - assets/images/svg/menu-volunteer.svg
     - assets/images/svg/menu-parttime.svg
     - assets/images/svg/menu-lesson.svg

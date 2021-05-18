@@ -207,7 +207,7 @@ class Api {
     }
   }
 
-  Future<List<NationalCouncil>> getNationalCouncil() async {
+  Future<List<NationalCouncil>> getNationalCouncil(aimagId) async {
     var data = new List<NationalCouncil>();
     final response = await _http.postRaw('/api/mobile/zxvz', {
       "search": "",
@@ -232,6 +232,7 @@ class Api {
     for (var item in parsed) {
       data.add(Aimag.fromJson(item));
     }
+
     return data;
   }
 }

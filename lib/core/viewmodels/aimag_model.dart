@@ -5,7 +5,7 @@ import 'package:youth/core/services/aimag_service.dart';
 
 class AimagModel extends BaseModel {
   AimagService api = locator<AimagService>();
-  List<Aimag> get nationalCouncilList => api.aimagList;
+  List<Aimag> get aimagList => api.aimagList;
 
   Future<void> getAimagModelList() async {
     setLoading(true);

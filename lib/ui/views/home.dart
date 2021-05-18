@@ -209,6 +209,76 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
+                      builder: (context) => NationalCouncilPage(
+                          title: 'Залуучууд Хөгжлийн Үндэсний зөвлөл'),
+                    ),
+                  );
+                },
+                child: Container(
+                  height: 90,
+                  padding: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [shadow],
+                  ),
+                  child: Stack(
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.only(top: 20),
+                        alignment: Alignment.topCenter,
+                        child: SvgPicture.asset(
+                          'assets/images/svg/menu-zxvz.svg',
+                          width: 70,
+                          height: 70,
+                          color: Color(0xFF409EFF),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        child: Container(
+                          padding: EdgeInsets.only(
+                              top: 4, bottom: 4, right: 3, left: 4),
+                          child: Container(
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: Color(0xFF409EFF),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  'ЗХҮЗ',
+                                  style: TextStyle(
+                                    fontSize: 14.3,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                Text(
+                                  'салбар зөвлөл',
+                                  style: TextStyle(
+                                    fontSize: 10.7,
+                                    color: Colors.white,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
                       builder: (context) => VolunteerWorkPage(
                         title: 'Сайн дурын ажил',
                         subTitle: '5 сайн дурын ажил байна.',
@@ -608,76 +678,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                                 Text(
                                   'Эрүүл мэнд, гэр бүл',
-                                  style: TextStyle(
-                                    fontSize: 10.7,
-                                    color: Colors.white,
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => NationalCouncilPage(
-                          title: 'Залуучууд Хөгжлийн Үндэсний зөвлөл'),
-                    ),
-                  );
-                },
-                child: Container(
-                  height: 90,
-                  padding: EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: [shadow],
-                  ),
-                  child: Stack(
-                    children: <Widget>[
-                      Container(
-                        margin: EdgeInsets.only(top: 20),
-                        alignment: Alignment.topCenter,
-                        child: SvgPicture.asset(
-                          'assets/images/svg/menu-zxvz.svg',
-                          width: 70,
-                          height: 70,
-                          color: Color(0xFF38ada9),
-                        ),
-                      ),
-                      Positioned(
-                        bottom: 0,
-                        left: 0,
-                        right: 0,
-                        child: Container(
-                          padding: EdgeInsets.only(
-                              top: 4, bottom: 4, right: 3, left: 4),
-                          child: Container(
-                            padding: EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              color: Color(0xFF38ada9),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Text(
-                                  'ЗХҮЗ',
-                                  style: TextStyle(
-                                    fontSize: 14.3,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                Text(
-                                  'салбар зөвлөл',
                                   style: TextStyle(
                                     fontSize: 10.7,
                                     color: Colors.white,

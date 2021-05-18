@@ -11,6 +11,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:youth/ui/views/pages/partTimeJobDetail.dart';
 
+import '../../../size_config.dart';
 import '../../styles/_colors.dart';
 
 class PartTimeJobPage extends StatefulWidget {
@@ -57,7 +58,7 @@ class PartTimeJobPageState extends State<PartTimeJobPage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     int index = 0;
-
+    SizeConfig().init(context);
     // TODO: implement build
     return Scaffold(
       backgroundColor: Colors.grey[100],
@@ -70,37 +71,36 @@ class PartTimeJobPageState extends State<PartTimeJobPage> {
               pinned: true,
               backgroundColor: partTimeColor,
               flexibleSpace: FlexibleSpaceBar(
-                titlePadding: EdgeInsets.only(right: 150),
+                titlePadding: EdgeInsets.zero,
                 centerTitle: true,
                 title: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Flexible(
-                      flex: 3,
+                      flex: 1,
                       child: Container(),
-                    ),
-                    Flexible(
-                      flex: 2,
-                      child: Text(
-                        widget.title.toUpperCase(),
-                        textAlign: TextAlign.center,
-                      ),
                     ),
                     Flexible(
                       flex: 1,
-                      child: Container(),
+                      child: Text(
+                        widget.title.toUpperCase(),
+                        style: TextStyle(
+                          fontSize: getProportionateScreenWidth(20),
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   ],
                 ),
                 background: Stack(
                   children: [
                     Positioned(
-                      left: -270,
+                      right: getProportionateScreenWidth(-50),
                       bottom: 0,
                       child: SvgPicture.asset(
                         "assets/images/svg/page-heading-part-time.svg",
                         width: size.width,
-                        height: size.height * .20,
+                        height: size.height * getProportionateScreenWidth(.23),
                       ),
                     ),
                   ],
