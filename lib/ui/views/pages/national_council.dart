@@ -56,7 +56,7 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
                       child: Text(
                         widget.title.toUpperCase(),
                         style: TextStyle(
-                          fontSize: getProportionateScreenWidth(20),
+                          fontSize: getProportionateScreenWidth(16),
                         ),
                         textAlign: TextAlign.center,
                       ),
@@ -176,7 +176,7 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
             Expanded(
               child: BaseView<NationalCouncilModel>(
                 onModelReady: (model) {
-                  model.getNationalList(22);
+                  model.getNationalList();
                 },
                 builder: (context, model, child) => model.loading
                     ? Loader()

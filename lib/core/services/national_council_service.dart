@@ -8,7 +8,7 @@ class NationalCouncilService {
   List<NationalCouncil> _councils = new List();
   List<NationalCouncil> get councilList => _councils;
 
-  getCouncils(aimagId) async {
-    _councils = await api.getNationalCouncil(aimagId);
+  getCouncils() async {
+    _councils = await api.getNationalCouncil();
   }
 }

@@ -8,9 +8,9 @@ class NationalCouncilModel extends BaseModel {
 
   List<NationalCouncil> get nationalCouncilList => api.councilList;
 
-  Future<void> getNationalList(aimagId) async {
+  Future<void> getNationalList() async {
     setLoading(true);
-    await api.getCouncils(aimagId);
+    await api.getCouncils();
     setLoading(false);
   }
 }

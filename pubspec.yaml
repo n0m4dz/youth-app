@@ -66,6 +66,7 @@ flutter:
     - assets/images/leaf.png
     - assets/images/law.png
     - assets/images/job.png
+    - assets/images/svg/arrow-left.svg
     - assets/images/svg/page-heading-part-time.svg
     - assets/images/svg/icon-part-time.svg
     - assets/images/svg/page-heading-legal.svg

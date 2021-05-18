@@ -207,7 +207,7 @@ class Api {
     }
   }
 
-  Future<List<NationalCouncil>> getNationalCouncil(aimagId) async {
+  Future<List<NationalCouncil>> getNationalCouncil() async {
     var data = new List<NationalCouncil>();
     final response = await _http.postRaw('/api/mobile/zxvz', {
       "search": "",

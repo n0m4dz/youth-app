@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:youth/ui/views/pages/subCouncil/introduction.dart';
 
-import '../../../size_config.dart';
+import '../../../../size_config.dart';
 
-class SubCouncil extends StatefulWidget {
+class Introduction extends StatefulWidget {
   final String title;
 
-  const SubCouncil({Key key, this.title}) : super(key: key);
+  const Introduction({Key key, this.title}) : super(key: key);
   @override
-  _SubCouncilState createState() => _SubCouncilState();
+  _Introduction createState() => _Introduction();
 }
 
-class _SubCouncilState extends State<SubCouncil> {
+class _Introduction extends State<Introduction> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,6 +30,7 @@ class _SubCouncilState extends State<SubCouncil> {
           // ),
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
               padding: EdgeInsets.only(left: 5, top: 40, right: 20),
@@ -61,37 +61,11 @@ class _SubCouncilState extends State<SubCouncil> {
             Expanded(
               child: Container(
                 width: double.infinity,
+                padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                 decoration: BoxDecoration(
                   color: Colors.white,
                 ),
-                child: Stack(
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.all(15),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          SubButton(
-                            title: "Танилцуулга",
-                            press: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      Introduction(title: 'Танилцуулга'),
-                                ),
-                              );
-                            },
-                          ),
-                          SubButton(title: "Гишүүд", press: () {}),
-                          SubButton(title: "Мэдээ", press: () {}),
-                          SubButton(title: "Тогтоол", press: () {}),
-                          SubButton(title: "Тайлан", press: () {}),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+                child: Text('Introduction'),
               ),
             ),
           ],
@@ -103,11 +77,9 @@ class _SubCouncilState extends State<SubCouncil> {
 
 class SubButton extends StatelessWidget {
   final String title;
-  final Function press;
   const SubButton({
     Key key,
     this.title,
-    this.press,
   }) : super(key: key);
 
   @override
@@ -119,16 +91,11 @@ class SubButton extends StatelessWidget {
       ),
       child: FlatButton(
         padding: EdgeInsets.all(15),
-        onPressed: press,
-        color: Colors.white,
+        onPressed: () {},
+        color: Color(0xFFCCCCCC).withOpacity(.5),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(
-            getProportionateScreenWidth(8),
-          ),
-          side: BorderSide(
-            color: Color(0xFF409EFF),
-            width: 1,
-            style: BorderStyle.solid,
+            getProportionateScreenWidth(10),
           ),
         ),
         child: Row(
@@ -138,7 +105,7 @@ class SubButton extends StatelessWidget {
             ),
             Icon(
               Icons.arrow_forward_ios,
-              color: Color(0xFF409EFF),
+              color: Color(0xFF000000).withOpacity(.5),
               size: 15,
             ),
           ],
