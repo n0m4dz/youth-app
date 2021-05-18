@@ -206,8 +206,8 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) =>
-                                          SubCouncil(title: item.name),
+                                      builder: (context) => SubCouncil(
+                                          title: item.name, id: item.id),
                                     ),
                                   );
                                 },

@@ -5,9 +5,10 @@ import 'package:youth/ui/views/pages/subCouncil/introduction.dart';
 import '../../../size_config.dart';
 
 class SubCouncil extends StatefulWidget {
+  final int id;
   final String title;
 
-  const SubCouncil({Key key, this.title}) : super(key: key);
+  const SubCouncil({Key key, this.title, this.id}) : super(key: key);
   @override
   _SubCouncilState createState() => _SubCouncilState();
 }
