@@ -1,8 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:lambda/modules/network_util.dart';
-import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:youth/core/contants/values.dart';
 import 'package:youth/core/models/aimag.dart';
 import 'package:youth/core/models/national_council.dart';
@@ -10,10 +8,10 @@ import 'package:youth/core/viewmodels/aimag_model.dart';
 import 'package:youth/core/viewmodels/national_council_model.dart';
 import 'package:youth/size_config.dart';
 import 'package:youth/ui/components/loader.dart';
-import 'package:youth/ui/styles/_colors.dart';
 import 'dart:ui';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:youth/ui/views/pages/sub_council.dart';
 
 import '../base_view.dart';
 
@@ -191,7 +189,7 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
                           (NationalCouncil item) {
                             return Padding(
                               padding: EdgeInsets.symmetric(
-                                horizontal: getProportionateScreenWidth(10),
+                                horizontal: getProportionateScreenWidth(15),
                                 vertical: getProportionateScreenHeight(10),
                               ),
                               child: FlatButton(
@@ -204,7 +202,15 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
                                     getProportionateScreenWidth(15),
                                   ),
                                 ),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          SubCouncil(title: item.name),
+                                    ),
+                                  );
+                                },
                                 child: Row(
                                   children: [
                                     item.logo != null
@@ -300,7 +306,6 @@ class __SearchState extends State<_Search> {
           Expanded(
             child: TextField(
               controller: _editingController,
-              // textAlignVertical: TextAlignVertical.center,
               onChanged: (_) => setState(() {}),
               decoration: InputDecoration(
                 hintText: 'Хайх',
@@ -320,7 +325,8 @@ class __SearchState extends State<_Search> {
                   ),
                   onPressed: () {
                     print(123);
-                  })
+                  },
+                )
               : IconButton(
                   highlightColor: Colors.transparent,
                   splashColor: Colors.transparent,
