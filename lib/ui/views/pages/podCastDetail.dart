@@ -1,24 +1,18 @@
 import 'dart:async';
-import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:flutter_icons/font_awesome.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
-import 'package:lambda/modules/network_util.dart';
-import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:youth/core/contants/values.dart';
 import 'package:youth/ui/styles/_colors.dart';
 import 'package:intl/intl.dart';
 import 'dart:ui';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-class PodCastDetailPage extends StatefulWidget{
-
+class PodCastDetailPage extends StatefulWidget {
   final title;
   final img;
   final content;
@@ -28,14 +22,23 @@ class PodCastDetailPage extends StatefulWidget{
   final views;
   final created_at;
 
-  const PodCastDetailPage({Key key, this.title, this.img, this.created_at, this.content, this.guest, this.views, this.link, this.embed}) : super(key: key);
+  const PodCastDetailPage(
+      {Key key,
+      this.title,
+      this.img,
+      this.created_at,
+      this.content,
+      this.guest,
+      this.views,
+      this.link,
+      this.embed})
+      : super(key: key);
 
   @override
   PodCastDetailPageState createState() => PodCastDetailPageState();
 }
 
-class PodCastDetailPageState extends State<PodCastDetailPage>{
-
+class PodCastDetailPageState extends State<PodCastDetailPage> {
   final _key = UniqueKey();
   bool _isLoadingPage = false;
   WebViewController webController;
@@ -46,13 +49,12 @@ class PodCastDetailPageState extends State<PodCastDetailPage>{
     Factory(() => EagerGestureRecognizer()),
   ].toSet();
 
-  void initState(){
+  void initState() {
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
@@ -66,9 +68,11 @@ class PodCastDetailPageState extends State<PodCastDetailPage>{
               backgroundColor: podCastColor.withOpacity(0.9),
               flexibleSpace: FlexibleSpaceBar(
                   background: Image.network(
-                    widget.img == null ? baseUrl + "/assets/youth/images/noImage.jpg" :  baseUrl + widget.img.toString(),
-                    fit: BoxFit.cover,
-                  )),
+                widget.img == null
+                    ? baseUrl + "/assets/youth/images/noImage.jpg"
+                    : baseUrl + widget.img.toString(),
+                fit: BoxFit.cover,
+              )),
             ),
           ];
         },
@@ -79,7 +83,10 @@ class PodCastDetailPageState extends State<PodCastDetailPage>{
               padding: EdgeInsets.symmetric(horizontal: 10),
               child: Text(
                 widget.title == null ? '' : widget.title,
-                style: TextStyle(color: Colors.black87, fontSize: 18, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    color: Colors.black87,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
               ),
             ),
             SizedBox(
@@ -87,9 +94,7 @@ class PodCastDetailPageState extends State<PodCastDetailPage>{
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),
-              child: Text(
-                  widget.content
-              ),
+              child: Text(widget.content),
             ),
             SizedBox(
               height: 15,
@@ -98,8 +103,7 @@ class PodCastDetailPageState extends State<PodCastDetailPage>{
                 width: MediaQuery.of(context).size.width,
                 child: Html(
                   data: widget.embed,
-                )
-            ),
+                )),
           ],
         ),
       ),
@@ -107,7 +111,7 @@ class PodCastDetailPageState extends State<PodCastDetailPage>{
 
     return Scaffold(
       backgroundColor: Colors.grey[100],
-      body:  Stack(
+      body: Stack(
         children: <Widget>[
           Positioned(
               width: MediaQuery.of(context).size.width,
@@ -122,27 +126,24 @@ class PodCastDetailPageState extends State<PodCastDetailPage>{
                     children: [
                       Text(
                         widget.title == null ? '' : widget.title,
-                        style: TextStyle(color: Colors.black87, fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            color: Colors.black87,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold),
                       ),
                       SizedBox(
                         height: 15,
                       ),
                       Container(
-                        child: Html(
-                          data: widget.content
-                        ),
+                        child: Html(data: widget.content),
                       ),
                       Container(
                         height: 90,
-                        margin: EdgeInsets.only(left: 10, right: 10, top: 30, bottom: 10),
+                        margin: EdgeInsets.only(
+                            left: 10, right: 10, top: 30, bottom: 10),
                         decoration: BoxDecoration(
                             border: Border(
-                                top: BorderSide(
-                                    color: Colors.grey,
-                                    width: 1
-                                )
-                            )
-                        ),
+                                top: BorderSide(color: Colors.grey, width: 1))),
                         child: Column(
                           children: [
                             Container(
@@ -150,29 +151,35 @@ class PodCastDetailPageState extends State<PodCastDetailPage>{
                                 width: MediaQuery.of(context).size.width - 25,
                                 child: Row(
                                   children: [
-                                    Icon(
-                                        Icons.access_time,
-                                        color: knowLedgeColor,
-                                        size: 14.0),
+                                    Icon(Icons.access_time,
+                                        color: knowLedgeColor, size: 14.0),
                                     SizedBox(width: 5),
                                     Text(
                                       'Нэмсэн огноо: ',
-                                      style: TextStyle(color: Colors.black54, fontWeight: FontWeight.w500, fontSize: 14),
+                                      style: TextStyle(
+                                          color: Colors.black54,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 14),
                                     ),
                                     Text(
-                                      widget.created_at == null ? '' : DateFormat("y/MM/dd").format(DateTime.parse(widget.created_at)).toString(),
-                                      style: TextStyle(color: knowLedgeColor, fontWeight: FontWeight.w500, fontSize: 14),
+                                      widget.created_at == null
+                                          ? ''
+                                          : DateFormat("y/MM/dd")
+                                              .format(DateTime.parse(
+                                                  widget.created_at))
+                                              .toString(),
+                                      style: TextStyle(
+                                          color: knowLedgeColor,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 14),
                                     ),
                                   ],
-                                )
-                            ),
+                                )),
                           ],
                         ),
                       ),
                     ],
-                  )
-              )
-          ),
+                  ))),
           // Positioned(
           //   top: 0.0,
           //   left: 0.0,
@@ -192,13 +199,14 @@ class PodCastDetailPageState extends State<PodCastDetailPage>{
                 width: size.width,
                 // color: Colors.greenAccent,
                 child: Image.network(
-                  widget.img == null ? baseUrl + "/assets/youth/images/noImage.jpg" :  baseUrl + widget.img.toString(),
+                  widget.img == null
+                      ? baseUrl + "/assets/youth/images/noImage.jpg"
+                      : baseUrl + widget.img.toString(),
                   height: MediaQuery.of(context).size.height,
                   width: size.width,
-                  fit:BoxFit.fitWidth,
+                  fit: BoxFit.fitWidth,
                 ),
-              )
-          ),
+              )),
           // Positioned(
           //     top: 47.0,
           //     right: 20,
@@ -235,7 +243,6 @@ class PodCastDetailPageState extends State<PodCastDetailPage>{
                       ))))
         ],
       ),
-
     );
   }
 }

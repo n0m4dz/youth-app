@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:youth/core/contants/values.dart';
+import 'package:youth/core/models/national_council.dart';
 import 'package:youth/ui/views/pages/subCouncil/introduction.dart';
+import 'package:youth/ui/views/pages/subCouncil/staff_list.dart';
 
 import '../../../size_config.dart';
 
 class SubCouncil extends StatefulWidget {
-  final int id;
-  final String title;
+  final NationalCouncil item;
 
-  const SubCouncil({Key key, this.title, this.id}) : super(key: key);
+  const SubCouncil({Key key, this.item}) : super(key: key);
   @override
   _SubCouncilState createState() => _SubCouncilState();
 }
@@ -48,7 +50,7 @@ class _SubCouncilState extends State<SubCouncil> {
                   Padding(
                     padding: const EdgeInsets.only(left: 20),
                     child: Text(
-                      widget.title,
+                      widget.item.name,
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.white,
@@ -79,12 +81,22 @@ class _SubCouncilState extends State<SubCouncil> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                      Introduction(title: 'Танилцуулга'),
+                                      Introduction(item: widget.item),
                                 ),
                               );
                             },
                           ),
-                          SubButton(title: "Гишүүд", press: () {}),
+                          SubButton(
+                            title: "Гишүүд",
+                            press: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => StaffList(),
+                                ),
+                              );
+                            },
+                          ),
                           SubButton(title: "Мэдээ", press: () {}),
                           SubButton(title: "Тогтоол", press: () {}),
                           SubButton(title: "Тайлан", press: () {}),
@@ -103,12 +115,13 @@ class _SubCouncilState extends State<SubCouncil> {
 }
 
 class SubButton extends StatelessWidget {
-  final String title;
+  final String title, icon;
   final Function press;
   const SubButton({
     Key key,
     this.title,
     this.press,
+    this.icon,
   }) : super(key: key);
 
   @override
@@ -134,8 +147,17 @@ class SubButton extends StatelessWidget {
         ),
         child: Row(
           children: [
+            Icon(
+              Icons.input_rounded,
+              color: Color(0xFF409EFF),
+              size: 15,
+            ),
+            SizedBox(width: 10),
             Expanded(
-              child: Text(title),
+              child: Text(
+                title,
+                style: TextStyle(color: kTextColor),
+              ),
             ),
             Icon(
               Icons.arrow_forward_ios,

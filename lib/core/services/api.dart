@@ -8,6 +8,7 @@ import 'package:youth/core/models/faq.dart';
 import 'package:youth/core/models/job.dart';
 import 'package:youth/core/models/movie.dart';
 import 'package:youth/core/models/national_council.dart';
+import 'package:youth/core/models/staff.dart';
 import 'package:youth/core/models/video.dart';
 import 'package:lambda/modules/network_util.dart';
 import 'package:youth/core/models/slide.dart';
@@ -243,6 +244,19 @@ class Api {
 
     for (var item in parsed) {
       data.add(Aimag.fromJson(item));
+    }
+
+    return data;
+  }
+
+  Future<List<Staff>> getStaffList() async {
+    var data = new List<Staff>();
+
+    final response = await _http.getRaw('/api/mobile/get-member-list/5');
+    var parsed = response.data as List<dynamic>;
+
+    for (var item in parsed) {
+      data.add(Staff.fromJson(item));
     }
 
     return data;

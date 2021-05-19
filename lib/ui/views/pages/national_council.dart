@@ -206,8 +206,8 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => SubCouncil(
-                                          title: item.name, id: item.id),
+                                      builder: (context) =>
+                                          SubCouncil(item: item),
                                     ),
                                   );
                                 },
@@ -216,43 +216,24 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
                                     item.logo != null
                                         ? Container(
                                             child: CachedNetworkImage(
-                                              imageUrl: item.logo,
-                                              imageBuilder:
-                                                  (context, imageProvider) =>
-                                                      Container(
-                                                decoration: BoxDecoration(
-                                                  image: DecorationImage(
-                                                    image: imageProvider,
-                                                    fit: BoxFit.cover,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(15),
-                                                ),
-                                              ),
+                                              imageUrl: baseUrl + item.logo,
+                                              width: 64,
+                                              height: 64,
                                               placeholder: (context, url) =>
-                                                  Container(
-                                                child: Center(
-                                                  child:
-                                                      CircularProgressIndicator(
-                                                    strokeWidth: 2,
-                                                  ),
-                                                ),
-                                              ),
+                                                  CircularProgressIndicator(),
                                               errorWidget:
                                                   (context, url, error) =>
                                                       Image.network(
                                                 baseUrl +
                                                     "/assets/youth/images/noImage.jpg",
-                                                width:
-                                                    getProportionateScreenWidth(
-                                                        60),
+                                                width: 64,
                                               ),
                                             ),
                                           )
                                         : Image.network(
                                             baseUrl +
                                                 "/assets/youth/images/noImage.jpg",
-                                            width: 60,
+                                            width: 64,
                                           ),
                                     SizedBox(width: 20),
                                     Expanded(

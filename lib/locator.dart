@@ -7,6 +7,7 @@ import 'core/services/faq_service.dart';
 import 'core/services/home_service.dart';
 import 'core/services/movie_service.dart';
 import 'core/services/national_council_service.dart';
+import 'core/services/staff_service.dart';
 import 'core/services/user_service.dart';
 import 'core/services/video_service.dart';
 import 'core/services/api.dart';
@@ -15,6 +16,7 @@ import 'core/viewmodels/base_model.dart';
 import 'core/viewmodels/faq_model.dart';
 import 'core/viewmodels/job_model.dart';
 import 'core/viewmodels/slide_model.dart';
+import 'core/viewmodels/staff_model.dart';
 import 'core/viewmodels/user_model.dart';
 import 'core/viewmodels/video_model.dart';
 import 'core/viewmodels/national_council_model.dart';
@@ -36,6 +38,7 @@ void setupLocator() {
   locator.registerLazySingleton(() => UserService());
   locator.registerLazySingleton(() => NationalCouncilService());
   locator.registerLazySingleton(() => AimagService());
+  locator.registerLazySingleton(() => StaffService());
 
   //App view models for busines logic
   locator.registerFactory(() => BaseModel());
@@ -46,4 +49,5 @@ void setupLocator() {
   locator.registerFactory(() => JobModel());
   locator.registerFactory(() => NationalCouncilModel());
   locator.registerFactory(() => AimagModel());
+  locator.registerFactory(() => StaffModel());
 }

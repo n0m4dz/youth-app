@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_html/style.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:youth/core/contants/values.dart';
+import 'package:youth/core/models/national_council.dart';
 
 import '../../../../size_config.dart';
 
 class Introduction extends StatefulWidget {
-  final String title;
+  final NationalCouncil item;
 
-  const Introduction({Key key, this.title}) : super(key: key);
+  const Introduction({Key key, this.item}) : super(key: key);
   @override
   _Introduction createState() => _Introduction();
 }
@@ -47,7 +51,7 @@ class _Introduction extends State<Introduction> {
                   Padding(
                     padding: const EdgeInsets.only(left: 20),
                     child: Text(
-                      widget.title,
+                      widget.item.name,
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.white,
@@ -61,11 +65,34 @@ class _Introduction extends State<Introduction> {
             Expanded(
               child: Container(
                 width: double.infinity,
-                padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                padding: EdgeInsets.only(
+                  left: 20,
+                  right: 20,
+                ),
                 decoration: BoxDecoration(
                   color: Colors.white,
                 ),
-                child: Text('Introduction'),
+                child: widget.item.introduction != null
+                    ? Html(
+                        data: widget.item.introduction.toString(),
+                        style: {
+                          "p": Style(
+                            color: kTextColor,
+                            fontSize: FontSize(14),
+                          ),
+                        },
+                      )
+                    : Padding(
+                        padding: EdgeInsets.all(
+                          getProportionateScreenWidth(15),
+                        ),
+                        child: Text(
+                          'Мэдээлэл байхгүй байна',
+                          style: TextStyle(
+                            color: kTextColor,
+                          ),
+                        ),
+                      ),
               ),
             ),
           ],
