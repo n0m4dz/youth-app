@@ -12,6 +12,7 @@ class Staff {
   String image;
   String description;
   int msgSend;
+  String positionName;
 
   Staff(
       {this.id,
@@ -26,7 +27,8 @@ class Staff {
       this.updatedAt,
       this.image,
       this.description,
-      this.msgSend});
+      this.msgSend,
+      this.positionName});
 
   Staff.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -42,6 +44,7 @@ class Staff {
     image = json['image'];
     description = json['description'];
     msgSend = json['msg_send'];
+    positionName = json['position_name'];
   }
 
   Map<String, dynamic> toJson() {
@@ -59,6 +62,7 @@ class Staff {
     data['image'] = this.image;
     data['description'] = this.description;
     data['msg_send'] = this.msgSend;
+    data['position_name'] = this.positionName;
     return data;
   }
 }

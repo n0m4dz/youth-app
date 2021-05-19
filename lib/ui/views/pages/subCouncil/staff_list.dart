@@ -6,6 +6,7 @@ import 'package:youth/core/contants/values.dart';
 import 'package:youth/core/models/staff.dart';
 import 'package:youth/core/viewmodels/staff_model.dart';
 import 'package:youth/ui/components/loader.dart';
+import 'package:youth/ui/styles/_colors.dart';
 import '../../../../size_config.dart';
 import '../../base_view.dart';
 
@@ -58,7 +59,7 @@ class _StaffListState extends State<StaffList> {
                       child: Text(
                         "Зөвлөлийн гишүүд".toUpperCase(),
                         style: TextStyle(
-                          fontSize: getProportionateScreenWidth(20),
+                          fontSize: getProportionateScreenWidth(17),
                         ),
                         textAlign: TextAlign.center,
                       ),
@@ -152,7 +153,6 @@ class _StaffListState extends State<StaffList> {
                               Container(
                                 padding: EdgeInsets.all(10),
                                 child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
                                   children: <Widget>[
                                     Container(
                                       child: Text(
@@ -160,51 +160,37 @@ class _StaffListState extends State<StaffList> {
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                           fontSize: 18,
-                                          color: Colors.blue,
+                                          color: primaryColor,
                                         ),
                                       ),
                                     ),
                                     SizedBox(
-                                      height: 15,
+                                      height: 10,
                                     ),
                                     Container(
-                                      child: Row(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          Container(
-                                            width: 150,
-                                            height: 35,
-                                            child: Text(
-                                              item.appointment,
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(fontSize: 12.5),
-                                            ),
-                                          ),
-                                        ],
+                                      height: 35,
+                                      child: Text(
+                                        item.appointment,
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(fontSize: 12.5),
                                       ),
                                     ),
-                                    SizedBox(
-                                      height: 15,
-                                    ),
-                                    Center(
-                                      child: Row(
-                                        children: <Widget>[
-                                          Icon(
-                                            Icons.phone,
-                                            size: 16,
-                                            color: Colors.blue,
-                                          ),
-                                          SizedBox(
-                                            width: 8,
-                                          ),
-                                          Text(
-                                            item.phone,
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(fontSize: 12.5),
-                                          ),
-                                        ],
-                                      ),
+                                    Column(
+                                      children: [
+                                        Text(
+                                          'Зөвлөлийн албан тушаал:',
+                                          style: TextStyle(
+                                              fontSize: 12.5,
+                                              color: primaryColor),
+                                        ),
+                                        SizedBox(
+                                          height: 5,
+                                        ),
+                                        Text(
+                                          item.positionName,
+                                          style: TextStyle(fontSize: 13.5),
+                                        ),
+                                      ],
                                     ),
                                     SizedBox(
                                       height: 15,
@@ -214,9 +200,6 @@ class _StaffListState extends State<StaffList> {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: <Widget>[
-                                          SizedBox(
-                                            width: 10,
-                                          ),
                                           Expanded(
                                             child: InkWell(
                                               onTap: () =>
@@ -228,10 +211,23 @@ class _StaffListState extends State<StaffList> {
                                                   borderRadius:
                                                       BorderRadius.circular(4),
                                                 ),
-                                                child: Icon(
-                                                  Icons.phone,
-                                                  size: 16,
-                                                  color: Colors.white,
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    Icon(
+                                                      Icons.phone,
+                                                      size: 16,
+                                                      color: Colors.white,
+                                                    ),
+                                                    SizedBox(width: 10),
+                                                    Text(
+                                                      item.phone,
+                                                      style: TextStyle(
+                                                        color: Colors.white,
+                                                      ),
+                                                    ),
+                                                  ],
                                                 ),
                                               ),
                                             ),

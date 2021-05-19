@@ -66,33 +66,42 @@ class _Introduction extends State<Introduction> {
               child: Container(
                 width: double.infinity,
                 padding: EdgeInsets.only(
+                  top: 30,
                   left: 20,
                   right: 20,
                 ),
                 decoration: BoxDecoration(
                   color: Colors.white,
                 ),
-                child: widget.item.introduction != null
-                    ? Html(
-                        data: widget.item.introduction.toString(),
-                        style: {
-                          "p": Style(
-                            color: kTextColor,
-                            fontSize: FontSize(14),
+                child: Column(
+                  children: [
+                    Text(
+                      "Танилцуулга",
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    widget.item.introduction != null
+                        ? Html(
+                            data: widget.item.introduction.toString(),
+                            style: {
+                              "p": Style(
+                                color: kTextColor,
+                                fontSize: FontSize(14),
+                              ),
+                            },
+                          )
+                        : Padding(
+                            padding: EdgeInsets.all(
+                              getProportionateScreenWidth(15),
+                            ),
+                            child: Text(
+                              'Мэдээлэл байхгүй байна',
+                              style: TextStyle(
+                                color: kTextColor,
+                              ),
+                            ),
                           ),
-                        },
-                      )
-                    : Padding(
-                        padding: EdgeInsets.all(
-                          getProportionateScreenWidth(15),
-                        ),
-                        child: Text(
-                          'Мэдээлэл байхгүй байна',
-                          style: TextStyle(
-                            color: kTextColor,
-                          ),
-                        ),
-                      ),
+                  ],
+                ),
               ),
             ),
           ],
