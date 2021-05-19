@@ -92,7 +92,8 @@ class _SubCouncilState extends State<SubCouncil> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => StaffList(),
+                                  builder: (context) =>
+                                      StaffList(aimagId: widget.item.id),
                                 ),
                               );
                             },

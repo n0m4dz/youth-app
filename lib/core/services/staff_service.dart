@@ -8,7 +8,7 @@ class StaffService {
   List<Staff> _staffs = new List();
   List<Staff> get staffList => _staffs;
 
-  getStaff() async {
-    _staffs = await api.getStaffList();
+  getStaff(aimagId) async {
+    _staffs = await api.getStaffList(aimagId);
   }
 }

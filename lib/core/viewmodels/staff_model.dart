@@ -7,9 +7,9 @@ class StaffModel extends BaseModel {
   StaffService api = locator<StaffService>();
   List<Staff> get staffList => api.staffList;
 
-  Future<void> getStaffList() async {
+  Future<void> getStaffList(aimagId) async {
     setLoading(true);
-    await api.getStaff();
+    await api.getStaff(aimagId);
     setLoading(false);
   }
 }

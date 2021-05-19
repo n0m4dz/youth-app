@@ -224,18 +224,6 @@ class Api {
     return data;
   }
 
-  Future<List<NationalCouncil>> getNationalCouncilDetail() async {
-    var data = new List<NationalCouncil>();
-    final response = await _http.getRaw('/api/mobile/get-council-detail/5');
-
-    var parsed = response.data as List<dynamic>;
-
-    for (var d in parsed) {
-      data.add(NationalCouncil.fromJson(d));
-    }
-    return data;
-  }
-
   Future<List<Aimag>> getAimagList() async {
     var data = new List<Aimag>();
 
@@ -249,10 +237,11 @@ class Api {
     return data;
   }
 
-  Future<List<Staff>> getStaffList() async {
+  Future<List<Staff>> getStaffList(aimagId) async {
     var data = new List<Staff>();
 
-    final response = await _http.getRaw('/api/mobile/get-member-list/5');
+    final response =
+        await _http.getRaw('/api/mobile/get-member-list/' + aimagId.toString());
     var parsed = response.data as List<dynamic>;
 
     for (var item in parsed) {
