@@ -9,6 +9,7 @@ import 'package:youth/core/models/faq.dart';
 import 'package:youth/core/models/job.dart';
 import 'package:youth/core/models/movie.dart';
 import 'package:youth/core/models/national_council.dart';
+import 'package:youth/core/models/resolution.dart';
 import 'package:youth/core/models/staff.dart';
 import 'package:youth/core/models/video.dart';
 import 'package:lambda/modules/network_util.dart';
@@ -257,11 +258,6 @@ class Api {
   Future<List<AimagNews>> getAimagNews(int aimagId, int page) async {
     var data = new List<AimagNews>();
 
-    // print('/api/mobile/get-news/' +
-    //     aimagId.toString() +
-    //     "?page=" +
-    //     page.toString());
-
     final response = await _http.get('/api/mobile/get-news/' +
         aimagId.toString() +
         "?page=" +
@@ -270,6 +266,24 @@ class Api {
 
     for (var news in parsed) {
       data.add(AimagNews.fromJson(news));
+    }
+
+    return data;
+  }
+
+  Future<List<Resolution>> getResolution(int aimagId, int page) async {
+    var data = new List<Resolution>();
+
+    final response = await _http.get('/api/mobile/get-legals/' +
+        aimagId.toString() +
+        '/63' +
+        '?page=' +
+        page.toString());
+
+    var parsed = response.data['data'] as List<dynamic>;
+
+    for (var r in parsed) {
+      data.add(Resolution.fromJson(r));
     }
 
     return data;

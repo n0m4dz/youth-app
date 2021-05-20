@@ -4,6 +4,7 @@ import 'package:youth/core/contants/values.dart';
 import 'package:youth/core/models/national_council.dart';
 import 'package:youth/ui/views/pages/subCouncil/introduction.dart';
 import 'package:youth/ui/views/pages/subCouncil/news_list.dart';
+import 'package:youth/ui/views/pages/subCouncil/resolution_list.dart';
 import 'package:youth/ui/views/pages/subCouncil/staff_list.dart';
 
 import '../../../size_config.dart';
@@ -111,7 +112,18 @@ class _SubCouncilState extends State<SubCouncil> {
                               );
                             },
                           ),
-                          SubButton(title: "Тогтоол", press: () {}),
+                          SubButton(
+                            title: "Тогтоол",
+                            press: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      ResolutionList(aimagId: widget.item.id),
+                                ),
+                              );
+                            },
+                          ),
                           SubButton(title: "Тайлан", press: () {}),
                         ],
                       ),
