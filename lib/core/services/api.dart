@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:youth/core/models/aimag.dart';
+import 'package:youth/core/models/aimag_news.dart';
 import 'package:youth/core/models/anime.dart';
 import 'package:youth/core/models/branch.dart';
 import 'package:youth/core/models/episode.dart';
@@ -208,6 +209,8 @@ class Api {
     }
   }
 
+  /* NB */
+
   Future<List<NationalCouncil>> getNationalCouncil() async {
     var data = new List<NationalCouncil>();
     final response = await _http.postRaw('/api/mobile/zxvz', {
@@ -246,6 +249,27 @@ class Api {
 
     for (var item in parsed) {
       data.add(Staff.fromJson(item));
+    }
+
+    return data;
+  }
+
+  Future<List<AimagNews>> getAimagNews(int aimagId, int page) async {
+    var data = new List<AimagNews>();
+
+    // print('/api/mobile/get-news/' +
+    //     aimagId.toString() +
+    //     "?page=" +
+    //     page.toString());
+
+    final response = await _http.get('/api/mobile/get-news/' +
+        aimagId.toString() +
+        "?page=" +
+        page.toString());
+    var parsed = response.data['data'] as List<dynamic>;
+
+    for (var news in parsed) {
+      data.add(AimagNews.fromJson(news));
     }
 
     return data;

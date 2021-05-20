@@ -147,6 +147,7 @@ class _StaffListState extends State<StaffList> {
                                       : Image.network(
                                           baseUrl +
                                               "/assets/youth/images/noImage.jpg",
+                                          fit: BoxFit.cover,
                                         ),
                                 ),
                               ),
@@ -156,7 +157,7 @@ class _StaffListState extends State<StaffList> {
                                   children: <Widget>[
                                     Container(
                                       child: Text(
-                                        item.lastname + " \n" + item.firstname,
+                                        item.lastname + "\n" + item.firstname,
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                           fontSize: 18,
@@ -175,20 +176,24 @@ class _StaffListState extends State<StaffList> {
                                         style: TextStyle(fontSize: 12.5),
                                       ),
                                     ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
                                     Column(
                                       children: [
                                         Text(
                                           'Зөвлөлийн албан тушаал:',
                                           style: TextStyle(
-                                              fontSize: 12.5,
-                                              color: primaryColor),
+                                            fontSize: 12.5,
+                                            color: primaryColor,
+                                          ),
                                         ),
                                         SizedBox(
                                           height: 5,
                                         ),
                                         Text(
                                           item.positionName,
-                                          style: TextStyle(fontSize: 13.5),
+                                          style: TextStyle(fontSize: 12.5),
                                         ),
                                       ],
                                     ),
@@ -220,13 +225,13 @@ class _StaffListState extends State<StaffList> {
                                                       size: 16,
                                                       color: Colors.white,
                                                     ),
-                                                    SizedBox(width: 10),
-                                                    Text(
-                                                      item.phone,
-                                                      style: TextStyle(
-                                                        color: Colors.white,
-                                                      ),
-                                                    ),
+                                                    // SizedBox(width: 10),
+                                                    // Text(
+                                                    //   item.phone,
+                                                    //   style: TextStyle(
+                                                    //     color: Colors.white,
+                                                    //   ),
+                                                    // ),
                                                   ],
                                                 ),
                                               ),
