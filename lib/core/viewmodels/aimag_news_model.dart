@@ -23,11 +23,10 @@ class AimagNewsModel extends BaseModel {
         notifyListeners();
         break;
       default:
-        if (aimagNewsList.length == 0) {
-          setLoading(true);
-          await _api.getAimagNewsList(aimagId, 1);
-          setLoading(false);
-        }
+        setLoading(true);
+        await _api.getAimagNewsList(aimagId, 1);
+        setLoading(false);
+
         break;
     }
   }
