@@ -25,6 +25,17 @@ class _NewsListState extends State<NewsList> {
       RefreshController(initialRefresh: false);
 
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
@@ -115,120 +126,126 @@ class _NewsListState extends State<NewsList> {
                   },
                   child: ListView(
                       padding: EdgeInsets.only(left: 15, right: 15, bottom: 30),
-                      children: model.aimagNewsList.map((AimagNews item) {
-                        return InkWell(
-                          onTap: () {},
-                          child: Container(
-                            margin: EdgeInsets.only(top: 15),
-                            decoration: BoxDecoration(
-                              color: Color(0xffF2F5FA),
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            child: Column(
-                              children: <Widget>[
-                                Container(
-                                    height: 136,
-                                    child: Stack(
-                                      children: <Widget>[
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(4),
-                                          child: CachedNetworkImage(
-                                            imageUrl: baseUrl + item.thumb,
-                                            imageBuilder:
-                                                (context, imageProvider) =>
-                                                    Container(
-                                              decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                  image: imageProvider,
-                                                  fit: BoxFit.cover,
+                      children: model.aimagNewsList.map(
+                        (AimagNews item) {
+                          return InkWell(
+                            onTap: () {},
+                            child: Container(
+                              margin: EdgeInsets.only(top: 15),
+                              decoration: BoxDecoration(
+                                color: Color(0xffF2F5FA),
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              child: Column(
+                                children: <Widget>[
+                                  Container(
+                                      height: 136,
+                                      child: Stack(
+                                        children: <Widget>[
+                                          ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(4),
+                                            child: CachedNetworkImage(
+                                              imageUrl: baseUrl + item.thumb,
+                                              imageBuilder:
+                                                  (context, imageProvider) =>
+                                                      Container(
+                                                decoration: BoxDecoration(
+                                                  image: DecorationImage(
+                                                    image: imageProvider,
+                                                    fit: BoxFit.cover,
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                            placeholder: (context, url) =>
-                                                Center(
-                                              child: CircularProgressIndicator(
-                                                strokeWidth: 2,
-                                                backgroundColor: Colors.red,
+                                              placeholder: (context, url) =>
+                                                  Center(
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  strokeWidth: 2,
+                                                  backgroundColor: Colors.red,
+                                                ),
                                               ),
+                                              errorWidget:
+                                                  (context, url, error) =>
+                                                      Icon(Icons.error),
                                             ),
-                                            errorWidget:
-                                                (context, url, error) =>
-                                                    Icon(Icons.error),
                                           ),
-                                        ),
-                                        Positioned(
-                                          left: 0,
-                                          top: 20,
-                                          child: Container(
-                                              decoration: BoxDecoration(
+                                          Positioned(
+                                            left: 0,
+                                            top: 20,
+                                            child: Container(
+                                                decoration: BoxDecoration(
                                                   color: Colors.blue
                                                       .withOpacity(.7),
                                                   borderRadius:
                                                       BorderRadius.only(
-                                                          bottomRight:
-                                                              Radius.circular(
-                                                                  4.0),
-                                                          topRight:
-                                                              Radius.circular(
-                                                                  4.0))),
-                                              padding: EdgeInsets.only(
+                                                    bottomRight:
+                                                        Radius.circular(4.0),
+                                                    topRight:
+                                                        Radius.circular(4.0),
+                                                  ),
+                                                ),
+                                                padding: EdgeInsets.only(
                                                   top: 3,
                                                   bottom: 3,
                                                   right: 10,
-                                                  left: 10),
-                                              child: Wrap(
-                                                children: <Widget>[
-                                                  // Icon(
-                                                  //   Feather.getIconData('clock'),
-                                                  //   size: 13,
-                                                  //   color: Colors.white,
-                                                  // ),
-                                                  SizedBox(width: 5),
-                                                  Text(
-                                                    item.createdAt
-                                                        .toString()
-                                                        .substring(0, 10),
-                                                    textAlign: TextAlign.left,
-                                                    style: TextStyle(
+                                                  left: 10,
+                                                ),
+                                                child: Wrap(
+                                                  children: <Widget>[
+                                                    // Icon(
+                                                    //   Feather.getIconData('clock'),
+                                                    //   size: 13,
+                                                    //   color: Colors.white,
+                                                    // ),
+                                                    SizedBox(width: 5),
+                                                    Text(
+                                                      item.createdAt
+                                                          .toString()
+                                                          .substring(0, 10),
+                                                      textAlign: TextAlign.left,
+                                                      style: TextStyle(
                                                         fontWeight:
                                                             FontWeight.w500,
                                                         fontSize: 13,
-                                                        color: Colors.white),
-                                                  ),
-                                                ],
-                                              )),
+                                                        color: Colors.white,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                )),
+                                          ),
+                                        ],
+                                      )),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Container(
+                                    padding: EdgeInsets.all(10),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        Text(
+                                          item.title.length > 75
+                                              ? item.title
+                                                      .toUpperCase()
+                                                      .substring(0, 75) +
+                                                  "..."
+                                              : item.title.toUpperCase(),
+                                          textAlign: TextAlign.left,
+                                          style: TextStyle(fontSize: 13),
                                         ),
                                       ],
-                                    )),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Container(
-                                  padding: EdgeInsets.all(10),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        item.title.length > 75
-                                            ? item.title
-                                                    .toUpperCase()
-                                                    .substring(0, 75) +
-                                                "..."
-                                            : item.title.toUpperCase(),
-                                        textAlign: TextAlign.left,
-                                        style: TextStyle(fontSize: 13),
-                                      ),
-                                    ],
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                          ),
-                        );
-                      }).toList()),
+                          );
+                        },
+                      ).toList()),
                 ),
         ),
       ),

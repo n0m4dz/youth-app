@@ -21,11 +21,6 @@ class _SubCouncilState extends State<SubCouncil> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: Color(0xFF409EFF),
-      //   bottomOpacity: 0.0,
-      //   elevation: 0.0,
-      // ),
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -82,8 +77,9 @@ class _SubCouncilState extends State<SubCouncil> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) =>
-                                      Introduction(item: widget.item),
+                                  builder: (context) => Introduction(
+                                    item: widget.item,
+                                  ),
                                 ),
                               );
                             },
@@ -94,8 +90,9 @@ class _SubCouncilState extends State<SubCouncil> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) =>
-                                      StaffList(aimagId: widget.item.id),
+                                  builder: (context) => StaffList(
+                                    aimagId: widget.item.id,
+                                  ),
                                 ),
                               );
                             },
@@ -106,8 +103,9 @@ class _SubCouncilState extends State<SubCouncil> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) =>
-                                      NewsList(aimagId: widget.item.id),
+                                  builder: (context) => NewsList(
+                                    aimagId: widget.item.id,
+                                  ),
                                 ),
                               );
                             },
@@ -118,8 +116,9 @@ class _SubCouncilState extends State<SubCouncil> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) =>
-                                      ResolutionList(aimagId: widget.item.id),
+                                  builder: (context) => ResolutionList(
+                                    aimagId: widget.item.id,
+                                  ),
                                 ),
                               );
                             },

@@ -256,6 +256,9 @@ class Api {
   }
 
   Future<List<AimagNews>> getAimagNews(int aimagId, int page) async {
+    print('---------------------------------------');
+    print(aimagId);
+    print('---------------------------------------');
     var data = new List<AimagNews>();
 
     final response = await _http.get('/api/mobile/get-news/' +
@@ -274,7 +277,7 @@ class Api {
   Future<List<Resolution>> getResolution(int aimagId, int page) async {
     var data = new List<Resolution>();
 
-    final response = await _http.get('/api/mobile/get-legals/' +
+    final response = await _http.getRaw('/api/mobile/get-legals/' +
         aimagId.toString() +
         '/63' +
         '?page=' +
