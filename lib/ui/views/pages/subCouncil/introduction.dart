@@ -18,94 +18,116 @@ class Introduction extends StatefulWidget {
 class _Introduction extends State<Introduction> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: Color(0xFF409EFF),
-      //   bottomOpacity: 0.0,
-      //   elevation: 0.0,
-      // ),
-      body: Container(
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: Color(0xFF409EFF),
-          // image: DecorationImage(
-          //   image: AssetImage("assets/images/ux_big.png"),
-          //   alignment: Alignment.topRight,
-          // ),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Container(
-              padding: EdgeInsets.only(left: 5, top: 40, right: 20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Container(
-                    child: IconButton(
-                      icon: Icon(Icons.arrow_back, color: Colors.white),
-                      onPressed: () => Navigator.of(context).pop(),
+      body: NestedScrollView(
+        physics: NeverScrollableScrollPhysics(),
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          return <Widget>[
+            SliverAppBar(
+              expandedHeight: getProportionateScreenHeight(200),
+              floating: false,
+              pinned: true,
+              backgroundColor: Color(0xFF409EFF),
+              flexibleSpace: FlexibleSpaceBar(
+                titlePadding: EdgeInsets.zero,
+                centerTitle: true,
+                title: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Flexible(
+                      flex: 1,
+                      child: Container(),
                     ),
-                  ),
-                  SizedBox(height: 30),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20),
-                    child: Text(
-                      widget.item.name,
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
+                    Flexible(
+                      flex: 1,
+                      child: Text(
+                        "Танилцуулга",
+                        style: TextStyle(
+                          fontSize: getProportionateScreenWidth(13),
+                        ),
+                        textAlign: TextAlign.center,
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 60),
-            Expanded(
-              child: Container(
-                width: double.infinity,
-                padding: EdgeInsets.only(
-                  top: 30,
-                  left: 20,
-                  right: 20,
+                  ],
                 ),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                ),
-                child: Column(
+                background: Stack(
                   children: [
-                    Text(
-                      "Танилцуулга",
-                      style: TextStyle(fontSize: 18),
+                    Positioned(
+                      right: getProportionateScreenWidth(-50),
+                      bottom: 0,
+                      child: SvgPicture.asset(
+                        "assets/images/svg/page-heading-legal.svg",
+                        width: size.width,
+                        height: size.height * getProportionateScreenWidth(.13),
+                      ),
                     ),
-                    widget.item.introduction != null
-                        ? Html(
-                            data: widget.item.introduction.toString(),
-                            style: {
-                              "p": Style(
-                                color: kTextColor,
-                                fontSize: FontSize(14),
-                              ),
-                            },
-                          )
-                        : Padding(
-                            padding: EdgeInsets.all(
-                              getProportionateScreenWidth(15),
-                            ),
-                            child: Text(
-                              'Мэдээлэл байхгүй байна',
-                              style: TextStyle(
-                                color: kTextColor,
-                              ),
-                            ),
-                          ),
                   ],
                 ),
               ),
             ),
-          ],
-        ),
+          ];
+        },
+        body: widget.item.introduction != null
+            ? Padding(
+                padding: EdgeInsets.all(
+                  getProportionateScreenWidth(15),
+                ),
+                child: Container(
+                  padding: EdgeInsets.all(
+                    getProportionateScreenWidth(15),
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        offset: Offset(0, 2),
+                        blurRadius: 1,
+                        color: Colors.grey.withOpacity(0.23),
+                      )
+                    ],
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Html(
+                    data: widget.item.introduction.toString(),
+                    style: {
+                      "p": Style(
+                        color: kTextColor,
+                        fontSize: FontSize(14),
+                      ),
+                    },
+                  ),
+                ),
+              )
+            : Padding(
+                padding: EdgeInsets.all(
+                  getProportionateScreenWidth(15),
+                ),
+                child: Container(
+                  alignment: Alignment.center,
+                  padding: EdgeInsets.all(
+                    getProportionateScreenWidth(15),
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(15),
+                    boxShadow: [
+                      BoxShadow(
+                        offset: Offset(0, 2),
+                        blurRadius: 1,
+                        color: Colors.grey.withOpacity(0.23),
+                      )
+                    ],
+                  ),
+                  child: Text(
+                    'Мэдээлэл байхгүй байна.',
+                    style: TextStyle(
+                      color: kTextColor,
+                      fontSize: 18,
+                    ),
+                  ),
+                ),
+              ),
       ),
     );
   }

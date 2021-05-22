@@ -56,7 +56,7 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
                       child: Text(
                         widget.title.toUpperCase(),
                         style: TextStyle(
-                          fontSize: getProportionateScreenWidth(16),
+                          fontSize: getProportionateScreenWidth(15),
                         ),
                         textAlign: TextAlign.center,
                       ),
@@ -192,59 +192,66 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
                                 horizontal: getProportionateScreenWidth(15),
                                 vertical: getProportionateScreenHeight(10),
                               ),
-                              child: FlatButton(
-                                padding: EdgeInsets.all(
-                                  getProportionateScreenWidth(20),
-                                ),
-                                color: Color(0xFFCCCCCC).withOpacity(.5),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(
-                                    getProportionateScreenWidth(15),
-                                  ),
-                                ),
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          SubCouncil(item: item),
-                                    ),
-                                  );
-                                },
-                                child: Row(
-                                  children: [
-                                    item.logo != null
-                                        ? Container(
-                                            child: CachedNetworkImage(
-                                              imageUrl: baseUrl + item.logo,
-                                              width: 64,
-                                              height: 64,
-                                              placeholder: (context, url) =>
-                                                  CircularProgressIndicator(),
-                                              errorWidget:
-                                                  (context, url, error) =>
-                                                      Image.network(
-                                                baseUrl +
-                                                    "/assets/youth/images/noImage.jpg",
-                                                width: 64,
-                                              ),
-                                            ),
-                                          )
-                                        : Image.network(
-                                            baseUrl +
-                                                "/assets/youth/images/noImage.jpg",
-                                            width: 64,
-                                          ),
-                                    SizedBox(width: 20),
-                                    Expanded(
-                                      child: Text(item.name),
-                                    ),
-                                    Icon(
-                                      Icons.arrow_forward_ios,
-                                      color: Color(0xFF000000).withOpacity(.5),
-                                      size: 15,
-                                    ),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      offset: Offset(0, 2),
+                                      blurRadius: 1,
+                                      color: Colors.grey.withOpacity(0.23),
+                                    )
                                   ],
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                                child: FlatButton(
+                                  padding: EdgeInsets.all(
+                                    getProportionateScreenWidth(20),
+                                  ),
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            SubCouncil(item: item),
+                                      ),
+                                    );
+                                  },
+                                  child: Row(
+                                    children: [
+                                      item.logo != null
+                                          ? Container(
+                                              child: CachedNetworkImage(
+                                                imageUrl: baseUrl + item.logo,
+                                                width: 64,
+                                                height: 64,
+                                                placeholder: (context, url) =>
+                                                    CircularProgressIndicator(),
+                                                errorWidget:
+                                                    (context, url, error) =>
+                                                        Image.network(
+                                                  baseUrl +
+                                                      "/assets/youth/images/noImage.jpg",
+                                                  width: 64,
+                                                ),
+                                              ),
+                                            )
+                                          : Image.network(
+                                              baseUrl +
+                                                  "/assets/youth/images/noImage.jpg",
+                                              width: 64,
+                                            ),
+                                      SizedBox(width: 20),
+                                      Expanded(
+                                        child: Text(item.name),
+                                      ),
+                                      Icon(
+                                        Icons.arrow_forward_ios,
+                                        color: Color(0xFF409EFF),
+                                        size: 15,
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             );

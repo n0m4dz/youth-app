@@ -11,15 +11,15 @@ import 'package:youth/ui/components/loader.dart';
 import '../../../../size_config.dart';
 import '../../base_view.dart';
 
-class ResolutionList extends StatefulWidget {
+class ReportList extends StatefulWidget {
   final int aimagId;
 
-  const ResolutionList({Key key, this.aimagId}) : super(key: key);
+  const ReportList({Key key, this.aimagId}) : super(key: key);
   @override
-  _ResolutionListState createState() => _ResolutionListState();
+  _ReportListState createState() => _ReportListState();
 }
 
-class _ResolutionListState extends State<ResolutionList> {
+class _ReportListState extends State<ReportList> {
   RefreshController _refreshController =
       RefreshController(initialRefresh: false);
   @override
@@ -48,7 +48,7 @@ class _ResolutionListState extends State<ResolutionList> {
                     Flexible(
                       flex: 1,
                       child: Text(
-                        "Тогтоол".toUpperCase(),
+                        "Тайлан".toUpperCase(),
                         style: TextStyle(
                           fontSize: getProportionateScreenWidth(17),
                         ),
@@ -76,7 +76,7 @@ class _ResolutionListState extends State<ResolutionList> {
         },
         body: BaseView<ResolutionModel>(
           onModelReady: (model) {
-            model.getResolutionList(widget.aimagId, 63, 1, action: 'refresh');
+            model.getResolutionList(widget.aimagId, 81, 1, action: 'refresh');
           },
           builder: (context, model, child) => model.loading
               ? Loader()
@@ -99,14 +99,14 @@ class _ResolutionListState extends State<ResolutionList> {
                   ),
                   controller: _refreshController,
                   onRefresh: () async {
-                    await model.getResolutionList(widget.aimagId, 63, 1,
+                    await model.getResolutionList(widget.aimagId, 81, 1,
                         action: "refresh");
                     await Future.delayed(Duration(milliseconds: 1000));
                     _refreshController.refreshCompleted();
                   },
                   onLoading: () async {
                     await model.getResolutionList(
-                        widget.aimagId, 63, model.page + 1,
+                        widget.aimagId, 81, model.page + 1,
                         action: "more");
                     await Future.delayed(Duration(milliseconds: 1000));
                     _refreshController.loadComplete();
@@ -138,29 +138,43 @@ class _ResolutionListState extends State<ResolutionList> {
                                         ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(4),
-                                          child: CachedNetworkImage(
-                                            imageUrl: baseUrl + item.thumb,
-                                            imageBuilder:
-                                                (context, imageProvider) =>
-                                                    Container(
-                                              decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                  image: imageProvider,
-                                                  fit: BoxFit.cover,
+                                          child: item.thumb != null
+                                              ? CachedNetworkImage(
+                                                  imageUrl:
+                                                      baseUrl + item.thumb,
+                                                  imageBuilder: (context,
+                                                          imageProvider) =>
+                                                      Container(
+                                                    decoration: BoxDecoration(
+                                                      image: DecorationImage(
+                                                        image: imageProvider,
+                                                        fit: BoxFit.cover,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  placeholder: (context, url) =>
+                                                      Center(
+                                                    child:
+                                                        CircularProgressIndicator(
+                                                      strokeWidth: 2,
+                                                      backgroundColor:
+                                                          Colors.red,
+                                                    ),
+                                                  ),
+                                                  errorWidget:
+                                                      (context, url, error) =>
+                                                          Icon(Icons.error),
+                                                )
+                                              : Container(
+                                                  decoration: BoxDecoration(
+                                                    image: DecorationImage(
+                                                        image: NetworkImage(
+                                                          baseUrl +
+                                                              "/assets/youth/images/noImage.jpg",
+                                                        ),
+                                                        fit: BoxFit.cover),
+                                                  ),
                                                 ),
-                                              ),
-                                            ),
-                                            placeholder: (context, url) =>
-                                                Center(
-                                              child: CircularProgressIndicator(
-                                                strokeWidth: 2,
-                                                backgroundColor: Colors.red,
-                                              ),
-                                            ),
-                                            errorWidget:
-                                                (context, url, error) =>
-                                                    Icon(Icons.error),
-                                          ),
                                         ),
                                         Positioned(
                                           left: 0,

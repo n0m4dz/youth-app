@@ -1,18 +1,3 @@
-// import 'package:youth/core/models/aimag.dart';
-// import '../../locator.dart';
-// import 'api.dart';
-
-// class AimagService {
-//   Api api = locator<Api>();
-
-//   List<Aimag> _aimaguud = new List();
-//   List<Aimag> get aimagList => _aimaguud;
-
-//   getAimags() async {
-//     _aimaguud = await api.getAimagList();
-//   }
-// }
-
 import 'package:youth/core/models/resolution.dart';
 import 'package:youth/locator.dart';
 
@@ -29,7 +14,8 @@ class ResolutionService {
   List<Resolution> _resolutions = new List();
   List<Resolution> get resolutionList => _resolutions;
 
-  Future<void> getResolution(aimagId, page, {bool isForced = false}) async {
+  Future<void> getResolution(aimagId, type, page,
+      {bool isForced = false}) async {
     if (isForced) {
       _resolutions = new List();
       _hasData = true;
@@ -41,7 +27,7 @@ class ResolutionService {
       if (page == 1 && _resolutions.length > 0) {
         return;
       }
-      List<Resolution> data = await api.getResolution(aimagId, page);
+      List<Resolution> data = await api.getData(aimagId, type, page);
       if (data.length == 0) {
         _hasData = false;
       } else {

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:youth/core/contants/values.dart';
 import 'package:youth/core/models/national_council.dart';
+import 'package:youth/ui/components/sub_button.dart';
 import 'package:youth/ui/views/pages/subCouncil/introduction.dart';
 import 'package:youth/ui/views/pages/subCouncil/news_list.dart';
+import 'package:youth/ui/views/pages/subCouncil/report_list.dart';
 import 'package:youth/ui/views/pages/subCouncil/resolution_list.dart';
 import 'package:youth/ui/views/pages/subCouncil/staff_list.dart';
 
@@ -20,175 +23,135 @@ class SubCouncil extends StatefulWidget {
 class _SubCouncilState extends State<SubCouncil> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: Color(0xFF409EFF),
-          // image: DecorationImage(
-          //   image: AssetImage("assets/images/ux_big.png"),
-          //   alignment: Alignment.topRight,
-          // ),
-        ),
-        child: Column(
-          children: <Widget>[
-            Container(
-              padding: EdgeInsets.only(left: 5, top: 40, right: 20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Container(
-                    child: IconButton(
-                      icon: Icon(Icons.arrow_back, color: Colors.white),
-                      onPressed: () => Navigator.of(context).pop(),
+      backgroundColor: Colors.grey[200],
+      body: NestedScrollView(
+        physics: NeverScrollableScrollPhysics(),
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          return <Widget>[
+            SliverAppBar(
+              expandedHeight: getProportionateScreenHeight(200),
+              floating: false,
+              pinned: true,
+              backgroundColor: Color(0xFF409EFF),
+              flexibleSpace: FlexibleSpaceBar(
+                titlePadding: EdgeInsets.zero,
+                centerTitle: true,
+                title: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Flexible(
+                      flex: 1,
+                      child: Container(),
                     ),
-                  ),
-                  SizedBox(height: 30),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20),
-                    child: Text(
-                      widget.item.name,
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
+                    Flexible(
+                      flex: 1,
+                      child: Text(
+                        widget.item.name,
+                        style: TextStyle(
+                          fontSize: getProportionateScreenWidth(13),
+                        ),
+                        textAlign: TextAlign.center,
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 60),
-            Expanded(
-              child: Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.white,
+                  ],
                 ),
-                child: Stack(
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.all(15),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          SubButton(
-                            title: "Танилцуулга",
-                            press: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => Introduction(
-                                    item: widget.item,
-                                  ),
-                                ),
-                              );
-                            },
-                          ),
-                          SubButton(
-                            title: "Гишүүд",
-                            press: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => StaffList(
-                                    aimagId: widget.item.id,
-                                  ),
-                                ),
-                              );
-                            },
-                          ),
-                          SubButton(
-                            title: "Мэдээ",
-                            press: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => NewsList(
-                                    aimagId: widget.item.id,
-                                  ),
-                                ),
-                              );
-                            },
-                          ),
-                          SubButton(
-                            title: "Тогтоол",
-                            press: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => ResolutionList(
-                                    aimagId: widget.item.id,
-                                  ),
-                                ),
-                              );
-                            },
-                          ),
-                          SubButton(title: "Тайлан", press: () {}),
-                        ],
+                background: Stack(
+                  children: [
+                    Positioned(
+                      right: getProportionateScreenWidth(-50),
+                      bottom: 0,
+                      child: SvgPicture.asset(
+                        "assets/images/svg/page-heading-legal.svg",
+                        width: size.width,
+                        height: size.height * getProportionateScreenWidth(.13),
                       ),
                     ),
                   ],
                 ),
               ),
             ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class SubButton extends StatelessWidget {
-  final String title, icon;
-  final Function press;
-  const SubButton({
-    Key key,
-    this.title,
-    this.press,
-    this.icon,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: getProportionateScreenWidth(15),
-        vertical: getProportionateScreenHeight(10),
-      ),
-      child: FlatButton(
-        padding: EdgeInsets.all(15),
-        onPressed: press,
-        color: Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(
-            getProportionateScreenWidth(8),
+          ];
+        },
+        body: Container(
+          child: Padding(
+            padding: const EdgeInsets.all(15),
+            child: Column(
+              children: [
+                SubButton(
+                  title: "Танилцуулга",
+                  press: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Introduction(
+                          item: widget.item,
+                        ),
+                      ),
+                    );
+                  },
+                  icon: FontAwesomeIcons.addressBook,
+                ),
+                SubButton(
+                  title: "Гишүүд",
+                  press: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => StaffList(
+                          aimagId: widget.item.id,
+                        ),
+                      ),
+                    );
+                  },
+                  icon: FontAwesomeIcons.users,
+                ),
+                SubButton(
+                  title: "Мэдээ",
+                  press: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => NewsList(
+                          aimagId: widget.item.id,
+                        ),
+                      ),
+                    );
+                  },
+                  icon: FontAwesomeIcons.newspaper,
+                ),
+                SubButton(
+                  title: "Тогтоол",
+                  press: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ResolutionList(
+                          aimagId: widget.item.id,
+                        ),
+                      ),
+                    );
+                  },
+                  icon: FontAwesomeIcons.solidNewspaper,
+                ),
+                SubButton(
+                  title: "Тайлан",
+                  press: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ReportList(
+                          aimagId: widget.item.id,
+                        ),
+                      ),
+                    );
+                  },
+                  icon: FontAwesomeIcons.arrowDown,
+                ),
+              ],
+            ),
           ),
-          side: BorderSide(
-            color: Color(0xFF409EFF),
-            width: 1,
-            style: BorderStyle.solid,
-          ),
-        ),
-        child: Row(
-          children: [
-            Icon(
-              Icons.input_rounded,
-              color: Color(0xFF409EFF),
-              size: 15,
-            ),
-            SizedBox(width: 10),
-            Expanded(
-              child: Text(
-                title,
-                style: TextStyle(color: kTextColor),
-              ),
-            ),
-            Icon(
-              Icons.arrow_forward_ios,
-              color: Color(0xFF409EFF),
-              size: 15,
-            ),
-          ],
         ),
       ),
     );

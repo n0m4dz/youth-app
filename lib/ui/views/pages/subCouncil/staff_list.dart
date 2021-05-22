@@ -35,7 +35,7 @@ class _StaffListState extends State<StaffList> {
     final double itemWidth = size.width / 2;
 
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      backgroundColor: Colors.grey[100],
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
@@ -105,8 +105,15 @@ class _StaffListState extends State<StaffList> {
                           margin: EdgeInsets.only(top: 15),
                           padding: EdgeInsets.only(top: 15),
                           decoration: BoxDecoration(
-                            color: Color(0xffF2F5FA),
+                            color: Colors.white,
                             borderRadius: BorderRadius.circular(5),
+                            boxShadow: [
+                              BoxShadow(
+                                offset: Offset(0, 2),
+                                blurRadius: 1,
+                                color: Colors.grey.withOpacity(0.23),
+                              )
+                            ],
                           ),
                           child: Column(
                             children: <Widget>[
@@ -121,34 +128,29 @@ class _StaffListState extends State<StaffList> {
                                 ),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(60),
-                                  child: item.image != null
-                                      ? CachedNetworkImage(
-                                          imageUrl: baseUrl + item.image,
-                                          imageBuilder:
-                                              (context, imageProvider) =>
-                                                  Container(
-                                            decoration: BoxDecoration(
-                                              color: Colors.blue,
-                                              image: DecorationImage(
-                                                image: imageProvider,
-                                                fit: BoxFit.cover,
-                                              ),
-                                            ),
-                                          ),
-                                          placeholder: (context, url) => Center(
-                                            child: CircularProgressIndicator(
-                                              strokeWidth: 2,
-                                              backgroundColor: Colors.red,
-                                            ),
-                                          ),
-                                          errorWidget: (context, url, error) =>
-                                              Icon(Icons.error),
-                                        )
-                                      : Image.network(
-                                          baseUrl +
-                                              "/assets/youth/images/noImage.jpg",
+                                  child: CachedNetworkImage(
+                                    imageUrl: baseUrl + item.image ??
+                                        baseUrl +
+                                            "/assets/youth/images/noImage.jpg",
+                                    imageBuilder: (context, imageProvider) =>
+                                        Container(
+                                      decoration: BoxDecoration(
+                                        color: Colors.blue,
+                                        image: DecorationImage(
+                                          image: imageProvider,
                                           fit: BoxFit.cover,
                                         ),
+                                      ),
+                                    ),
+                                    placeholder: (context, url) => Center(
+                                      child: CircularProgressIndicator(
+                                        strokeWidth: 2,
+                                        backgroundColor: Colors.red,
+                                      ),
+                                    ),
+                                    errorWidget: (context, url, error) =>
+                                        Icon(Icons.error),
+                                  ),
                                 ),
                               ),
                               Container(
@@ -169,7 +171,7 @@ class _StaffListState extends State<StaffList> {
                                       height: 10,
                                     ),
                                     Container(
-                                      height: 35,
+                                      height: 50,
                                       child: Text(
                                         item.appointment,
                                         textAlign: TextAlign.center,
@@ -200,46 +202,46 @@ class _StaffListState extends State<StaffList> {
                                     SizedBox(
                                       height: 15,
                                     ),
-                                    Container(
-                                      child: Row(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          Expanded(
-                                            child: InkWell(
-                                              onTap: () =>
-                                                  _launchCall(item.phone),
-                                              child: Container(
-                                                padding: EdgeInsets.all(6),
-                                                decoration: BoxDecoration(
-                                                  color: Colors.green,
-                                                  borderRadius:
-                                                      BorderRadius.circular(4),
-                                                ),
-                                                child: Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  children: [
-                                                    Icon(
-                                                      Icons.phone,
-                                                      size: 16,
-                                                      color: Colors.white,
-                                                    ),
-                                                    // SizedBox(width: 10),
-                                                    // Text(
-                                                    //   item.phone,
-                                                    //   style: TextStyle(
-                                                    //     color: Colors.white,
-                                                    //   ),
-                                                    // ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
+                                    // Container(
+                                    //   child: Row(
+                                    //     crossAxisAlignment:
+                                    //         CrossAxisAlignment.start,
+                                    //     children: <Widget>[
+                                    //       Expanded(
+                                    //         child: InkWell(
+                                    //           onTap: () =>
+                                    //               _launchCall(item.phone),
+                                    //           child: Container(
+                                    //             padding: EdgeInsets.all(6),
+                                    //             decoration: BoxDecoration(
+                                    //               color: Colors.green,
+                                    //               borderRadius:
+                                    //                   BorderRadius.circular(4),
+                                    //             ),
+                                    //             child: Row(
+                                    //               mainAxisAlignment:
+                                    //                   MainAxisAlignment.center,
+                                    //               children: [
+                                    //                 Icon(
+                                    //                   Icons.phone,
+                                    //                   size: 16,
+                                    //                   color: Colors.white,
+                                    //                 ),
+                                    //                 // SizedBox(width: 10),
+                                    //                 // Text(
+                                    //                 //   item.phone,
+                                    //                 //   style: TextStyle(
+                                    //                 //     color: Colors.white,
+                                    //                 //   ),
+                                    //                 // ),
+                                    //               ],
+                                    //             ),
+                                    //           ),
+                                    //         ),
+                                    //       ),
+                                    //     ],
+                                    //   ),
+                                    // ),
                                   ],
                                 ),
                               ),
@@ -254,4 +256,16 @@ class _StaffListState extends State<StaffList> {
       ),
     );
   }
+}
+
+String replaceWhitespacesUsingRegex(String s, String replace) {
+  if (s == null) {
+    return null;
+  }
+
+  // This pattern means "at least one space, or more"
+  // \\s : space
+  // +   : one or more
+  final pattern = RegExp('\\s+');
+  return s.replaceAll(pattern, replace);
 }

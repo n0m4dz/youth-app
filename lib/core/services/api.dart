@@ -274,12 +274,13 @@ class Api {
     return data;
   }
 
-  Future<List<Resolution>> getResolution(int aimagId, int page) async {
+  Future<List<Resolution>> getData(int aimagId, int type, int page) async {
     var data = new List<Resolution>();
 
     final response = await _http.getRaw('/api/mobile/get-legals/' +
         aimagId.toString() +
-        '/63' +
+        '/' +
+        type.toString() +
         '?page=' +
         page.toString());
 
