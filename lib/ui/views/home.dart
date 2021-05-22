@@ -204,34 +204,78 @@ class _HomeScreenState extends State<HomeScreen> {
             controller: new ScrollController(keepScrollOffset: false),
             shrinkWrap: true,
             children: [
-              // Padding(
-              //   padding: const EdgeInsets.symmetric(horizontal: 16),
-              //   child: Column(
-              //     crossAxisAlignment: CrossAxisAlignment.start,
-              //     children: [
-              //       Padding(
-              //         padding: const EdgeInsets.symmetric(vertical: 20),
-              //         child: Row(
-              //           children: [
-              //             Expanded(
-              //               child: Padding(
-              //                 padding: const EdgeInsets.only(right: 7),
-              //                 child: HomeCategoryItem(
-              //                   primaryColor: Color(0xFFF96133),
-              //                   primaryIcon: "lib/assets/images/study.svg",
-              //                   primaryTitle: "Chemistry",
-              //                   secondaryColor: Color(0xFFFF9233),
-              //                   secondaryIcon: "lib/assets/images/flask.svg",
-              //                   secondaryIconHeight: 30,
-              //                 ),
-              //               ),
-              //             ),
-              //           ],
-              //         ),
-              //       ),
-              //     ],
-              //   ),
+              // HomeCategoryItem(
+              //   primaryColor: Color(0xFF409EFF),
+              //   primaryIcon: "assets/images/svg/menu-zxz.svg",
+              //   primaryTitle: "Залуучууд хөгжлийн үндэсний зөвлөл",
               // ),
+              // HomeCategoryItem(
+              //   primaryColor: Color(0xFFfa983a),
+              //   primaryIcon: "assets/images/svg/menu-zxz.svg",
+              //   primaryTitle: "Залуучууд хөгжлийн зөвлөл",
+              // ),
+              GestureDetector(
+                onTap: () {},
+                child: Container(
+                  height: 90,
+                  padding: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [shadow],
+                  ),
+                  child: Stack(
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.only(top: 20),
+                        alignment: Alignment.topCenter,
+                        child: SvgPicture.asset(
+                          'assets/images/svg/menu-zxz.svg',
+                          width: 70,
+                          height: 70,
+                          color: Color(0xFFfa983a),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        child: Container(
+                          padding: EdgeInsets.only(
+                              top: 4, bottom: 4, right: 3, left: 4),
+                          child: Container(
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: Color(0xFFfa983a),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  'ЗХЗ',
+                                  style: TextStyle(
+                                    fontSize: 14.3,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                Text(
+                                  'Залуучууд хөгжлийн зөвлөл',
+                                  style: TextStyle(
+                                    fontSize: 10.2,
+                                    color: Colors.white,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
               GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -720,68 +764,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              GestureDetector(
-                onTap: () {},
-                child: Container(
-                  height: 90,
-                  padding: EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: [shadow],
-                  ),
-                  child: Stack(
-                    children: <Widget>[
-                      Container(
-                        margin: EdgeInsets.only(top: 20),
-                        alignment: Alignment.topCenter,
-                        child: SvgPicture.asset(
-                          'assets/images/svg/menu-zxz.svg',
-                          width: 70,
-                          height: 70,
-                          color: Color(0xFFfa983a),
-                        ),
-                      ),
-                      Positioned(
-                        bottom: 0,
-                        left: 0,
-                        right: 0,
-                        child: Container(
-                          padding: EdgeInsets.only(
-                              top: 4, bottom: 4, right: 3, left: 4),
-                          child: Container(
-                            padding: EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              color: Color(0xFFfa983a),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Text(
-                                  'ЗХЗ',
-                                  style: TextStyle(
-                                    fontSize: 14.3,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                Text(
-                                  'Залуучууд хөгжлийн зөвлөл',
-                                  style: TextStyle(
-                                    fontSize: 10.7,
-                                    color: Colors.white,
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
             ],
           ),
         ),
@@ -790,21 +772,17 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
+// ignore: must_be_immutable
 class HomeCategoryItem extends StatefulWidget {
   Color primaryColor;
   String primaryIcon;
   String primaryTitle;
-  Color secondaryColor;
-  String secondaryIcon;
-  double secondaryIconHeight;
 
-  HomeCategoryItem(
-      {this.primaryColor,
-      this.primaryIcon,
-      this.primaryTitle,
-      this.secondaryColor,
-      this.secondaryIcon,
-      this.secondaryIconHeight});
+  HomeCategoryItem({
+    this.primaryColor,
+    this.primaryIcon,
+    this.primaryTitle,
+  });
 
   @override
   _HomeCategoryItemState createState() => _HomeCategoryItemState();
@@ -824,63 +802,41 @@ class _HomeCategoryItemState extends State<HomeCategoryItem> {
         color: widget.primaryColor,
         borderRadius: BorderRadius.circular(10),
       ),
-      child: Material(
-        type: MaterialType.transparency,
-        child: InkWell(
-          onTap: () {},
-          borderRadius: BorderRadius.circular(10),
-          child: Container(
-            height: 100,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Flexible(
-                  flex: 2,
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        SvgPicture.asset(
-                          widget.primaryIcon,
-                          height: 45,
-                          color: Color(0xFFDDDDDD),
+      child: InkWell(
+        onTap: () {},
+        borderRadius: BorderRadius.circular(10),
+        child: Container(
+          height: 120,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Flexible(
+                flex: 2,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    SvgPicture.asset(
+                      widget.primaryIcon,
+                      height: 50,
+                      color: Colors.white,
+                    ),
+                    Container(
+                      alignment: Alignment.center,
+                      padding: const EdgeInsets.all(10),
+                      child: Text(
+                        widget.primaryTitle,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          color: Colors.white,
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 8),
-                          child: Text(
-                            widget.primaryTitle,
-                            style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 14,
-                              color: Colors.white,
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-                Flexible(
-                  flex: 1,
-                  child: Container(
-                    alignment: Alignment.center,
-                    child: SvgPicture.asset(widget.secondaryIcon,
-                        height: widget.secondaryIconHeight,
-                        color: Colors.white),
-                    decoration: BoxDecoration(
-                      color: widget.secondaryColor,
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(10),
-                        bottomRight: Radius.circular(10),
-                        bottomLeft: Radius.circular(40),
-                        topLeft: Radius.circular(40),
                       ),
-                    ),
-                  ),
-                )
-              ],
-            ),
+                    )
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
       ),

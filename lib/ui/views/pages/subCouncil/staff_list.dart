@@ -5,6 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:youth/core/contants/values.dart';
 import 'package:youth/core/models/staff.dart';
 import 'package:youth/core/viewmodels/staff_model.dart';
+import 'package:youth/ui/components/default_sliver_app_bar.dart';
 import 'package:youth/ui/components/loader.dart';
 import 'package:youth/ui/styles/_colors.dart';
 import '../../../../size_config.dart';
@@ -39,47 +40,11 @@ class _StaffListState extends State<StaffList> {
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
-            SliverAppBar(
-              expandedHeight: getProportionateScreenHeight(200),
-              floating: false,
-              pinned: true,
-              backgroundColor: Color(0xFF409EFF),
-              flexibleSpace: FlexibleSpaceBar(
-                titlePadding: EdgeInsets.zero,
-                centerTitle: true,
-                title: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Flexible(
-                      flex: 1,
-                      child: Container(),
-                    ),
-                    Flexible(
-                      flex: 1,
-                      child: Text(
-                        "Зөвлөлийн гишүүд".toUpperCase(),
-                        style: TextStyle(
-                          fontSize: getProportionateScreenWidth(17),
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ],
-                ),
-                background: Stack(
-                  children: [
-                    Positioned(
-                      right: getProportionateScreenWidth(-50),
-                      bottom: 0,
-                      child: SvgPicture.asset(
-                        "assets/images/svg/page-heading-legal.svg",
-                        width: size.width,
-                        height: size.height * getProportionateScreenWidth(.13),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+            DefaultSliverAppBar(
+              title: "Зөвлөлийн гишүүд",
+              size: size,
+              color: Color(0xFF409EFF),
+              svgData: "assets/images/svg/page-heading-legal.svg",
             ),
           ];
         },

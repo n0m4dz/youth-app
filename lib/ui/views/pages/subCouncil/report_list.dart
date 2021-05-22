@@ -6,6 +6,7 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:youth/core/contants/values.dart';
 import 'package:youth/core/models/resolution.dart';
 import 'package:youth/core/viewmodels/resolution_model.dart';
+import 'package:youth/ui/components/default_sliver_app_bar.dart';
 import 'package:youth/ui/components/loader.dart';
 
 import '../../../../size_config.dart';
@@ -30,47 +31,11 @@ class _ReportListState extends State<ReportList> {
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
-            SliverAppBar(
-              expandedHeight: getProportionateScreenHeight(200),
-              floating: false,
-              pinned: true,
-              backgroundColor: Color(0xFF409EFF),
-              flexibleSpace: FlexibleSpaceBar(
-                titlePadding: EdgeInsets.zero,
-                centerTitle: true,
-                title: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Flexible(
-                      flex: 1,
-                      child: Container(),
-                    ),
-                    Flexible(
-                      flex: 1,
-                      child: Text(
-                        "Тайлан".toUpperCase(),
-                        style: TextStyle(
-                          fontSize: getProportionateScreenWidth(17),
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ],
-                ),
-                background: Stack(
-                  children: [
-                    Positioned(
-                      right: getProportionateScreenWidth(-50),
-                      bottom: 0,
-                      child: SvgPicture.asset(
-                        "assets/images/svg/page-heading-legal.svg",
-                        width: size.width,
-                        height: size.height * getProportionateScreenWidth(.13),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+            DefaultSliverAppBar(
+              title: "Тайлан",
+              size: size,
+              color: Color(0xFF409EFF),
+              svgData: "assets/images/svg/page-heading-legal.svg",
             ),
           ];
         },
@@ -112,8 +77,9 @@ class _ReportListState extends State<ReportList> {
                     _refreshController.loadComplete();
                   },
                   child: ListView(
-                      padding: EdgeInsets.only(left: 15, right: 15, bottom: 30),
-                      children: model.resolutionList.map((Resolution item) {
+                    padding: EdgeInsets.only(left: 15, right: 15, bottom: 30),
+                    children: model.resolutionList.map(
+                      (Resolution item) {
                         return InkWell(
                           onTap: () {},
                           child: Container(
@@ -132,94 +98,90 @@ class _ReportListState extends State<ReportList> {
                             child: Column(
                               children: <Widget>[
                                 Container(
-                                    height: 136,
-                                    child: Stack(
-                                      children: <Widget>[
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(4),
-                                          child: item.thumb != null
-                                              ? CachedNetworkImage(
-                                                  imageUrl:
-                                                      baseUrl + item.thumb,
-                                                  imageBuilder: (context,
-                                                          imageProvider) =>
-                                                      Container(
-                                                    decoration: BoxDecoration(
-                                                      image: DecorationImage(
-                                                        image: imageProvider,
-                                                        fit: BoxFit.cover,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  placeholder: (context, url) =>
-                                                      Center(
-                                                    child:
-                                                        CircularProgressIndicator(
-                                                      strokeWidth: 2,
-                                                      backgroundColor:
-                                                          Colors.red,
-                                                    ),
-                                                  ),
-                                                  errorWidget:
-                                                      (context, url, error) =>
-                                                          Icon(Icons.error),
-                                                )
-                                              : Container(
+                                  height: 136,
+                                  child: Stack(
+                                    children: <Widget>[
+                                      ClipRRect(
+                                        borderRadius: BorderRadius.circular(4),
+                                        child: item.thumb != null
+                                            ? CachedNetworkImage(
+                                                imageUrl: baseUrl + item.thumb,
+                                                imageBuilder:
+                                                    (context, imageProvider) =>
+                                                        Container(
                                                   decoration: BoxDecoration(
                                                     image: DecorationImage(
-                                                        image: NetworkImage(
-                                                          baseUrl +
-                                                              "/assets/youth/images/noImage.jpg",
-                                                        ),
-                                                        fit: BoxFit.cover),
+                                                      image: imageProvider,
+                                                      fit: BoxFit.cover,
+                                                    ),
                                                   ),
                                                 ),
-                                        ),
-                                        Positioned(
-                                          left: 0,
-                                          top: 20,
-                                          child: Container(
-                                              decoration: BoxDecoration(
-                                                  color: Colors.blue
-                                                      .withOpacity(.7),
-                                                  borderRadius:
-                                                      BorderRadius.only(
-                                                          bottomRight:
-                                                              Radius.circular(
-                                                                  4.0),
-                                                          topRight:
-                                                              Radius.circular(
-                                                                  4.0))),
-                                              padding: EdgeInsets.only(
-                                                  top: 3,
-                                                  bottom: 3,
-                                                  right: 10,
-                                                  left: 10),
-                                              child: Wrap(
-                                                children: <Widget>[
-                                                  Icon(
-                                                    FontAwesomeIcons.clock,
-                                                    color: Colors.white,
-                                                    size: 13,
+                                                placeholder: (context, url) =>
+                                                    Center(
+                                                  child:
+                                                      CircularProgressIndicator(
+                                                    strokeWidth: 2,
+                                                    backgroundColor: Colors.red,
                                                   ),
-                                                  SizedBox(width: 5),
-                                                  Text(
-                                                    item.createdAt
-                                                        .toString()
-                                                        .substring(0, 10),
-                                                    textAlign: TextAlign.left,
-                                                    style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        fontSize: 13,
-                                                        color: Colors.white),
-                                                  ),
-                                                ],
-                                              )),
+                                                ),
+                                                errorWidget:
+                                                    (context, url, error) =>
+                                                        Icon(Icons.error),
+                                              )
+                                            : Container(
+                                                decoration: BoxDecoration(
+                                                  image: DecorationImage(
+                                                      image: NetworkImage(
+                                                        baseUrl +
+                                                            "/assets/youth/images/noImage.jpg",
+                                                      ),
+                                                      fit: BoxFit.cover),
+                                                ),
+                                              ),
+                                      ),
+                                      Positioned(
+                                        left: 0,
+                                        top: 20,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            color: Colors.blue.withOpacity(.7),
+                                            borderRadius: BorderRadius.only(
+                                              bottomRight: Radius.circular(4.0),
+                                              topRight: Radius.circular(4.0),
+                                            ),
+                                          ),
+                                          padding: EdgeInsets.only(
+                                            top: 3,
+                                            bottom: 3,
+                                            right: 10,
+                                            left: 10,
+                                          ),
+                                          child: Wrap(
+                                            children: <Widget>[
+                                              Icon(
+                                                FontAwesomeIcons.clock,
+                                                color: Colors.white,
+                                                size: 13,
+                                              ),
+                                              SizedBox(width: 5),
+                                              Text(
+                                                item.createdAt
+                                                    .toString()
+                                                    .substring(0, 10),
+                                                textAlign: TextAlign.left,
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.w500,
+                                                  fontSize: 13,
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
-                                      ],
-                                    )),
+                                      ),
+                                    ],
+                                  ),
+                                ),
                                 SizedBox(
                                   width: 10,
                                 ),
@@ -247,7 +209,9 @@ class _ReportListState extends State<ReportList> {
                             ),
                           ),
                         );
-                      }).toList()),
+                      },
+                    ).toList(),
+                  ),
                 ),
         ),
       ),

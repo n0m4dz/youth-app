@@ -7,10 +7,10 @@ import 'package:youth/core/models/national_council.dart';
 import 'package:youth/core/viewmodels/aimag_model.dart';
 import 'package:youth/core/viewmodels/national_council_model.dart';
 import 'package:youth/size_config.dart';
+import 'package:youth/ui/components/default_sliver_app_bar.dart';
 import 'package:youth/ui/components/loader.dart';
 import 'dart:ui';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:youth/ui/views/pages/sub_council.dart';
 
 import '../base_view.dart';
@@ -36,47 +36,11 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
-            SliverAppBar(
-              expandedHeight: getProportionateScreenHeight(200),
-              floating: false,
-              pinned: true,
-              backgroundColor: Color(0xFF409EFF),
-              flexibleSpace: FlexibleSpaceBar(
-                titlePadding: EdgeInsets.zero,
-                centerTitle: true,
-                title: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Flexible(
-                      flex: 1,
-                      child: Container(),
-                    ),
-                    Flexible(
-                      flex: 1,
-                      child: Text(
-                        widget.title.toUpperCase(),
-                        style: TextStyle(
-                          fontSize: getProportionateScreenWidth(15),
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ],
-                ),
-                background: Stack(
-                  children: [
-                    Positioned(
-                      right: getProportionateScreenWidth(-50),
-                      bottom: 0,
-                      child: SvgPicture.asset(
-                        "assets/images/svg/page-heading-legal.svg",
-                        width: size.width,
-                        height: size.height * getProportionateScreenWidth(.13),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+            DefaultSliverAppBar(
+              title: widget.title,
+              size: size,
+              color: Color(0xFF409EFF),
+              svgData: "assets/images/svg/page-heading-legal.svg",
             ),
           ];
         },
