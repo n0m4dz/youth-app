@@ -15,8 +15,10 @@ class AimagNewsModel extends BaseModel {
       {String action}) async {
     switch (action) {
       case 'refresh':
+        setLoading(true);
         await _api.getAimagNewsList(aimagId, 1, isForced: true);
         notifyListeners();
+        setLoading(false);
         break;
       case 'more':
         await _api.getAimagNewsList(aimagId, page);

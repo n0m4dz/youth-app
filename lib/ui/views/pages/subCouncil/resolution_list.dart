@@ -75,7 +75,7 @@ class _ResolutionListState extends State<ResolutionList> {
         },
         body: BaseView<ResolutionModel>(
           onModelReady: (model) {
-            model.getResolutionList(widget.aimagId, 1);
+            model.getResolutionList(widget.aimagId, 1, action: 'refresh');
           },
           builder: (context, model, child) => model.loading
               ? Loader()

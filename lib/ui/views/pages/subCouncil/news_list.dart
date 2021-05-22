@@ -89,7 +89,7 @@ class _NewsListState extends State<NewsList> {
         },
         body: BaseView<AimagNewsModel>(
           onModelReady: (model) {
-            model.getAimagNewsModelList(widget.aimagId, 1);
+            model.getAimagNewsModelList(widget.aimagId, 1, action: 'refresh');
           },
           builder: (context, model, child) => model.loading
               ? Loader()

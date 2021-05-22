@@ -15,19 +15,20 @@ class ResolutionModel extends BaseModel {
   Future<void> getResolutionList(int aimagId, int page, {String action}) async {
     switch (action) {
       case 'refresh':
+        setLoading(true);
         await api.getResolution(aimagId, 1, isForced: true);
         notifyListeners();
+        setLoading(false);
         break;
       case 'more':
         await api.getResolution(aimagId, page);
         notifyListeners();
         break;
       default:
-        if (resolutionList.length == 0) {
-          setLoading(true);
-          await api.getResolution(aimagId, 1);
-          setLoading(false);
-        }
+        setLoading(true);
+        await api.getResolution(aimagId, 1);
+        setLoading(false);
+
         break;
     }
   }
