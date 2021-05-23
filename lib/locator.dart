@@ -4,8 +4,10 @@ import 'package:lambda/modules/gcm/notify.dart';
 import 'package:lambda/modules/network_util.dart';
 import 'package:youth/core/services/aimag_news_service.dart';
 import 'package:youth/core/services/resolution_service.dart';
+import 'package:youth/core/services/volunteer_work_service.dart';
 import 'package:youth/core/viewmodels/aimag_news_model.dart';
 import 'package:youth/core/viewmodels/resolution_model.dart';
+import 'package:youth/core/viewmodels/volunteer_work_model.dart';
 import 'core/services/aimag_service.dart';
 import 'core/services/faq_service.dart';
 import 'core/services/home_service.dart';
@@ -45,6 +47,7 @@ void setupLocator() {
   locator.registerLazySingleton(() => StaffService());
   locator.registerLazySingleton(() => AimagNewsService());
   locator.registerLazySingleton(() => ResolutionService());
+  locator.registerLazySingleton(() => VolunteerWorkService());
 
   //App view models for busines logic
   locator.registerFactory(() => BaseModel());
@@ -58,4 +61,5 @@ void setupLocator() {
   locator.registerFactory(() => StaffModel());
   locator.registerFactory(() => AimagNewsModel());
   locator.registerFactory(() => ResolutionModel());
+  locator.registerFactory(() => VolunteerWorkModel());
 }

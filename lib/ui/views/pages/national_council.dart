@@ -140,7 +140,7 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
             Expanded(
               child: BaseView<NationalCouncilModel>(
                 onModelReady: (model) {
-                  model.getNationalList();
+                  model.getNationalList(search: '');
                 },
                 builder: (context, model, child) => model.loading
                     ? Loader()
@@ -258,7 +258,7 @@ class __SearchState extends State<_Search> {
           Expanded(
             child: TextField(
               controller: _editingController,
-              onChanged: (_) => setState(() {}),
+              onChanged: (value) => setState(() => {print(value)}),
               decoration: InputDecoration(
                 hintText: 'Хайх',
                 hintStyle: TextStyle(

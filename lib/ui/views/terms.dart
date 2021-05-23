@@ -19,13 +19,12 @@ class TermsScreen extends StatefulWidget {
 }
 
 class TermsScreenState extends State<TermsScreen> {
-
-  Map<String, dynamic>  item;
+  Map<String, dynamic> item;
   NetworkUtil _http = new NetworkUtil();
   // final DateFormat formatter = DateFormat('yyyy-MM-dd');
 
   Future getItemList() async {
-    var url  = baseUrl + '/mobile/api/getOtherPage/4';
+    var url = baseUrl + '/mobile/api/getOtherPage/4';
     var response = await _http.get(url);
     item = jsonDecode(response.toString());
 
@@ -51,10 +50,7 @@ class TermsScreenState extends State<TermsScreen> {
           item == null ? '' : item['title'].toUpperCase(),
           textAlign: TextAlign.start,
           style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w600,
-              fontSize: 18
-          ),
+              color: Colors.white, fontWeight: FontWeight.w600, fontSize: 18),
         ),
         leading: FlatButton(
           padding: EdgeInsets.all(0),
@@ -82,17 +78,9 @@ class TermsScreenState extends State<TermsScreen> {
             child: Html(
               data: item == null ? '' : item['body'],
               style: {
-                "h1": Style(
-                    color: textColor,
-                    fontSize: FontSize.larger
-                ),
-                "p": Style(
-                    color: textColor
-                ),
-                "li": Style(
-                    color: textColor,
-                    fontSize: FontSize.large
-                ),
+                "h1": Style(color: textColor, fontSize: FontSize.larger),
+                "p": Style(color: textColor),
+                "li": Style(color: textColor, fontSize: FontSize.large),
               },
             ),
           ),

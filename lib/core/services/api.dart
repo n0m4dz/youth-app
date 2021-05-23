@@ -14,6 +14,7 @@ import 'package:youth/core/models/staff.dart';
 import 'package:youth/core/models/video.dart';
 import 'package:lambda/modules/network_util.dart';
 import 'package:youth/core/models/slide.dart';
+import 'package:youth/core/models/volunteer_work.dart';
 
 class Api {
   NetworkUtil _http = new NetworkUtil();
@@ -212,10 +213,10 @@ class Api {
 
   /* NB */
 
-  Future<List<NationalCouncil>> getNationalCouncil() async {
+  Future<List<NationalCouncil>> getNationalCouncil(String search) async {
     var data = new List<NationalCouncil>();
     final response = await _http.postRaw('/api/mobile/zxvz', {
-      "search": "",
+      "search": search,
       "aimag": "",
       "soum": "",
     });
@@ -288,6 +289,21 @@ class Api {
 
     for (var r in parsed) {
       data.add(Resolution.fromJson(r));
+    }
+
+    return data;
+  }
+
+  Future<List<VolunteerWork>> getVolunteerWorks(int page) async {
+    var data = new List<VolunteerWork>();
+
+    final response =
+        await _http.getRaw('/api/mobile/get-volunteers/' + page.toString());
+
+    var parsed = response.data['data'] as List<dynamic>;
+
+    for (var r in parsed) {
+      data.add(VolunteerWork.fromJson(r));
     }
 
     return data;

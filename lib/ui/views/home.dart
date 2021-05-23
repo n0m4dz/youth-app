@@ -17,6 +17,7 @@ import 'package:youth/ui/styles/_colors.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:youth/ui/views/login.dart';
 import 'package:youth/ui/views/notifications.dart';
+import 'package:youth/ui/views/pages/VolunteerWork/volunteer_work.dart';
 import 'package:youth/ui/views/pages/eLearnHome.dart';
 import 'package:youth/ui/views/pages/event.dart';
 import 'package:youth/ui/views/pages/knowLedge.dart';
@@ -351,9 +352,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => VolunteerWorkPage(
+                      builder: (context) => VolunteerWorks(
                         title: 'Сайн дурын ажил',
-                        subTitle: '5 сайн дурын ажил байна.',
                       ),
                     ),
                   );

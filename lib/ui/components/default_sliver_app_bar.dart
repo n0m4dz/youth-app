@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:youth/ui/views/pages/national_council.dart';
 
 import '../../size_config.dart';
 
