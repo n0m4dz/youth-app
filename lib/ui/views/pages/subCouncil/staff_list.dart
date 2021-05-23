@@ -167,46 +167,6 @@ class _StaffListState extends State<StaffList> {
                                     SizedBox(
                                       height: 15,
                                     ),
-                                    // Container(
-                                    //   child: Row(
-                                    //     crossAxisAlignment:
-                                    //         CrossAxisAlignment.start,
-                                    //     children: <Widget>[
-                                    //       Expanded(
-                                    //         child: InkWell(
-                                    //           onTap: () =>
-                                    //               _launchCall(item.phone),
-                                    //           child: Container(
-                                    //             padding: EdgeInsets.all(6),
-                                    //             decoration: BoxDecoration(
-                                    //               color: Colors.green,
-                                    //               borderRadius:
-                                    //                   BorderRadius.circular(4),
-                                    //             ),
-                                    //             child: Row(
-                                    //               mainAxisAlignment:
-                                    //                   MainAxisAlignment.center,
-                                    //               children: [
-                                    //                 Icon(
-                                    //                   Icons.phone,
-                                    //                   size: 16,
-                                    //                   color: Colors.white,
-                                    //                 ),
-                                    //                 // SizedBox(width: 10),
-                                    //                 // Text(
-                                    //                 //   item.phone,
-                                    //                 //   style: TextStyle(
-                                    //                 //     color: Colors.white,
-                                    //                 //   ),
-                                    //                 // ),
-                                    //               ],
-                                    //             ),
-                                    //           ),
-                                    //         ),
-                                    //       ),
-                                    //     ],
-                                    //   ),
-                                    // ),
                                   ],
                                 ),
                               ),

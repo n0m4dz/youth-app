@@ -38,7 +38,8 @@ class _ReportDetailState extends State<ReportDetail> {
             ),
           ];
         },
-        body: Padding(
+        body: Container(
+          color: Colors.white,
           padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
           child: ListView(
             scrollDirection: Axis.vertical,

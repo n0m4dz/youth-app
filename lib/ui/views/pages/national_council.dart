@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:youth/core/contants/values.dart';
 import 'package:youth/core/models/aimag.dart';
 import 'package:youth/core/models/national_council.dart';
+import 'package:youth/core/models/soum.dart';
 import 'package:youth/core/viewmodels/aimag_model.dart';
 import 'package:youth/core/viewmodels/national_council_model.dart';
+import 'package:youth/core/viewmodels/soum_model.dart';
 import 'package:youth/size_config.dart';
 import 'package:youth/ui/components/default_sliver_app_bar.dart';
 import 'package:youth/ui/components/loader.dart';
@@ -27,6 +29,8 @@ class NationalCouncilPage extends StatefulWidget {
 class _NationalCouncilPageState extends State<NationalCouncilPage> {
   TextEditingController _editingController;
   String _searchValue;
+  int aimagId;
+  int soumtId;
 
   @override
   void initState() {
@@ -246,6 +250,10 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
         return Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              child: Text('Аймаг сонгох'),
+            ),
             Expanded(
               child: BaseView<AimagModel>(
                 onModelReady: (model) {
@@ -256,26 +264,97 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
                     : ListView(
                         children: model.aimagList.map(
                           (Aimag aimag) {
-                            return Container(
-                              margin: EdgeInsets.symmetric(
-                                  horizontal: 20, vertical: 10),
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 20, vertical: 15),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(10),
+                            return GestureDetector(
+                              onTap: () {
+                                Navigator.pop(context);
+                                buildShowModalSoumBottomSheet(
+                                    context, aimag.id);
+                              },
+                              child: Container(
+                                margin: EdgeInsets.symmetric(
+                                    horizontal: 20, vertical: 10),
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 20, vertical: 15),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      child: Text(aimag.ner),
+                                    ),
+                                    Icon(
+                                      Icons.arrow_forward_ios,
+                                      color: Color(0xFF000000).withOpacity(.5),
+                                      size: 15,
+                                    ),
+                                  ],
+                                ),
                               ),
-                              child: Row(
-                                children: [
-                                  Expanded(
-                                    child: Text(aimag.ner),
-                                  ),
-                                  Icon(
-                                    Icons.arrow_forward_ios,
-                                    color: Color(0xFF000000).withOpacity(.5),
-                                    size: 15,
-                                  ),
-                                ],
+                            );
+                          },
+                        ).toList(),
+                      ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Future<dynamic> buildShowModalSoumBottomSheet(BuildContext context, aimagId) {
+    return showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              child: Text('Сум сонгох $aimagId'),
+            ),
+            Expanded(
+              child: BaseView<SoumModel>(
+                onModelReady: (model) {
+                  model.getSoumModelList(aimagId);
+                },
+                builder: (context, model, child) => model.loading
+                    ? Loader()
+                    : ListView(
+                        children: model.soumList.map(
+                          (Soum soum) {
+                            return GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  aimagId = aimagId;
+                                  soumtId = soum.id;
+                                });
+                                Navigator.pop(context);
+                                //model.getAimagModelList(selectSoum: true);
+                              },
+                              child: Container(
+                                margin: EdgeInsets.symmetric(
+                                    horizontal: 20, vertical: 10),
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 20, vertical: 15),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      child: Text(soum.ner),
+                                    ),
+                                    Icon(
+                                      Icons.arrow_forward_ios,
+                                      color: Color(0xFF000000).withOpacity(.5),
+                                      size: 15,
+                                    ),
+                                  ],
+                                ),
                               ),
                             );
                           },

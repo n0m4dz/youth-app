@@ -1,11 +1,15 @@
 import 'package:youth/core/models/aimag.dart';
+import 'package:youth/core/models/soum.dart';
 import '../../locator.dart';
 import 'api.dart';
 
 class AimagService {
   Api api = locator<Api>();
 
+  //List<Object>
   List<Aimag> _aimaguud = new List();
+  List<Soum> _soumuud = new List();
+
   List<Aimag> get aimagList => _aimaguud;
 
   getAimags() async {

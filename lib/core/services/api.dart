@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:youth/core/models/soum.dart';
 import 'package:youth/core/models/aimag.dart';
 import 'package:youth/core/models/aimag_news.dart';
 import 'package:youth/core/models/anime.dart';
@@ -242,6 +243,20 @@ class Api {
     return data;
   }
 
+  Future<List<Soum>> getSoumList(int aimagId) async {
+    var data = new List<Soum>();
+
+    final response =
+        await _http.getRaw('/api/mobile/soum/' + aimagId.toString());
+    var parsed = response.data as List<dynamic>;
+
+    for (var item in parsed) {
+      data.add(Soum.fromJson(item));
+    }
+
+    return data;
+  }
+
   Future<List<Staff>> getStaffList(aimagId) async {
     var data = new List<Staff>();
 
@@ -257,9 +272,6 @@ class Api {
   }
 
   Future<List<AimagNews>> getAimagNews(int aimagId, int page) async {
-    print('---------------------------------------');
-    print(aimagId);
-    print('---------------------------------------');
     var data = new List<AimagNews>();
 
     final response = await _http.get('/api/mobile/get-news/' +

@@ -2,8 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/ionicons.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:youth/core/models/user.dart';
 import 'package:youth/ui/styles/_colors.dart';
+import 'package:youth/ui/views/login.dart';
 import 'package:youth/ui/views/notifications.dart';
+import 'package:youth/ui/views/settings.dart';
 
 import '../../size_config.dart';
 
@@ -23,6 +27,8 @@ class DefaultSliverAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    User user;
+    SharedPreferences _prefs;
     return SliverAppBar(
       expandedHeight: getProportionateScreenHeight(200),
       floating: false,
@@ -85,34 +91,34 @@ class DefaultSliverAppBar extends StatelessWidget {
           child: GestureDetector(
             onTap: () {
               print('------user');
-              //print(user);
+              print(user);
 
-              // if (user == null) {
-              //   Navigator.push(
-              //     context,
-              //     CupertinoPageRoute(
-              //       builder: (context) => LoginPage(),
-              //     ),
-              //   );
-              // } else {
-              //   if (_prefs == null
-              //       ? false
-              //       : _prefs.getBool("is_auth") == false) {
-              //     Navigator.push(
-              //       context,
-              //       CupertinoPageRoute(
-              //         builder: (context) => LoginPage(),
-              //       ),
-              //     );
-              //   } else {
-              //     Navigator.push(
-              //       context,
-              //       CupertinoPageRoute(
-              //         builder: (context) => SettingsScreen(),
-              //       ),
-              //     );
-              //   }
-              // }
+              if (user == null) {
+                Navigator.push(
+                  context,
+                  CupertinoPageRoute(
+                    builder: (context) => LoginPage(),
+                  ),
+                );
+              } else {
+                if (_prefs == null
+                    ? false
+                    : _prefs.getBool("is_auth") == false) {
+                  Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                      builder: (context) => LoginPage(),
+                    ),
+                  );
+                } else {
+                  Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                      builder: (context) => SettingsScreen(),
+                    ),
+                  );
+                }
+              }
             },
             child: Icon(Ionicons.getIconData('ios-contact'),
                 size: 31, color: Colors.white),

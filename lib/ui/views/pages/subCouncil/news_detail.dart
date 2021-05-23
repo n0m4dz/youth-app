@@ -20,6 +20,7 @@ class _NewsDetailState extends State<NewsDetail> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.grey[100],
       body: NestedScrollView(
         physics: NeverScrollableScrollPhysics(),
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
@@ -41,50 +42,47 @@ class _NewsDetailState extends State<NewsDetail> {
           ];
         },
         body: Padding(
-          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-          child: ListView(
-            scrollDirection: Axis.vertical,
-            children: [
-              Text(
-                widget.news.title == null ? '' : widget.news.title,
-                style: TextStyle(
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(5),
+              boxShadow: [
+                BoxShadow(
+                  offset: Offset(0, 2),
+                  blurRadius: 1,
+                  color: Colors.grey.withOpacity(0.23),
+                )
+              ],
+            ),
+            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            child: ListView(
+              scrollDirection: Axis.vertical,
+              children: [
+                Text(
+                  widget.news.title == null ? '' : widget.news.title,
+                  style: TextStyle(
                     color: Colors.black87,
                     fontSize: 18,
-                    fontWeight: FontWeight.bold),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              Container(
-                //child: Html(data: widget.news.content),
-                child: Html(
-                  data: widget.news.content.toString(),
-                  style: {
-                    "p": Style(
-                      color: kTextColor,
-                      fontSize: FontSize(13),
-                      fontWeight: FontWeight.normal,
-                    ),
-                  },
-                ),
-              ),
-              Container(
-                height: 90,
-                margin: EdgeInsets.only(
-                  left: 10,
-                  right: 10,
-                  top: 30,
-                  bottom: 10,
-                ),
-                decoration: BoxDecoration(
-                  border: Border(
-                    top: BorderSide(
-                      color: Colors.grey,
-                      width: 1,
-                    ),
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-                child: Column(
+                SizedBox(
+                  height: 15,
+                ),
+                Container(
+                  child: Html(
+                    data: widget.news.content.toString(),
+                    style: {
+                      "p": Style(
+                        color: kTextColor,
+                        fontSize: FontSize(13),
+                        fontWeight: FontWeight.normal,
+                      ),
+                    },
+                  ),
+                ),
+                Column(
                   children: [
                     Container(
                       padding: EdgeInsets.only(top: 10, bottom: 10),
@@ -118,8 +116,8 @@ class _NewsDetailState extends State<NewsDetail> {
                     ),
                   ],
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
