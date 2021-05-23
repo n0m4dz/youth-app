@@ -8,17 +8,14 @@ class NationalCouncilModel extends BaseModel {
 
   List<NationalCouncil> get nationalCouncilList => api.councilList;
 
-  Future<void> getNationalList({String search, action}) async {
-    print(action);
-    if (action == 'searching') {
-      setLoading(true);
-      await api.getCouncils(search, isForced: true);
-      notifyListeners();
-      setLoading(false);
-    } else {
-      setLoading(true);
-      await api.getCouncils(search);
-      setLoading(false);
-    }
+  Future<void> getNationalList({String search}) async {
+    setLoading(true);
+    await api.getCouncils(search);
+    setLoading(false);
+  }
+
+  searchTrack(val) {
+    api.searchTrack(val);
+    notifyListeners();
   }
 }

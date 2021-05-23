@@ -298,7 +298,7 @@ class Api {
     var data = new List<VolunteerWork>();
 
     final response =
-        await _http.getRaw('/api/mobile/get-volunteers/' + page.toString());
+        await _http.get('/api/mobile/get-volunteers/' + page.toString());
 
     var parsed = response.data['data'] as List<dynamic>;
 
