@@ -62,7 +62,7 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
             Expanded(
               child: BaseView<NationalCouncilModel>(
                 onModelReady: (model) {
-                  model.getNationalList();
+                  model.getNationalList(0, 0);
                 },
                 builder: (context, model, child) => model.loading
                     ? Loader()
@@ -327,12 +327,12 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
                           (Soum soum) {
                             return GestureDetector(
                               onTap: () {
-                                setState(() {
-                                  aimagId = aimagId;
-                                  soumtId = soum.id;
-                                });
+                                NationalCouncilModel nationalCouncilModel =
+                                    new NationalCouncilModel();
+                                nationalCouncilModel.getNationalList(
+                                    aimagId, soum.id,
+                                    action: 'selected');
                                 Navigator.pop(context);
-                                //model.getAimagModelList(selectSoum: true);
                               },
                               child: Container(
                                 margin: EdgeInsets.symmetric(

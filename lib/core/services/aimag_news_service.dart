@@ -7,6 +7,7 @@ class AimagNewsService {
 
   int _page = 1;
   int get page => _page;
+
   bool _hasData = true;
   bool get hasData => _hasData;
 

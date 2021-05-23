@@ -214,12 +214,14 @@ class Api {
 
   /* NB */
 
-  Future<List<NationalCouncil>> getNationalCouncil() async {
+  Future<List<NationalCouncil>> getNationalCouncil(aimagId, soumId) async {
+    print(aimagId);
+    print(soumId);
     var data = new List<NationalCouncil>();
     final response = await _http.postRaw('/api/mobile/zxvz', {
       "search": "",
-      "aimag": "",
-      "soum": "",
+      "aimag": aimagId,
+      "soum": soumId,
     });
 
     var parsed = response.data as List<dynamic>;
