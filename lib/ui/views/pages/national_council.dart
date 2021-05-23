@@ -29,6 +29,8 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     SizeConfig().init(context);
+    String _searchValue = '';
+    String _action = 'default';
 
     // TODO: implement build
     return Scaffold(
@@ -53,7 +55,33 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
                 children: [
                   Container(
                     alignment: Alignment.center,
-                    child: _Search(),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 20, right: 5),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Expanded(
+                            child: TextField(
+                              onChanged: (value) => setState(
+                                () => {
+                                  _action = 'searching',
+                                  _searchValue = value,
+                                },
+                              ),
+                              decoration: InputDecoration(
+                                hintText: 'Хайх',
+                                hintStyle: TextStyle(
+                                  color: Theme.of(context).primaryColor,
+                                ),
+                                enabledBorder: InputBorder.none,
+                                focusedBorder: InputBorder.none,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                     width: getProportionateScreenWidth(245),
                     height: getProportionateScreenWidth(45),
                     decoration: BoxDecoration(
@@ -140,12 +168,12 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
             Expanded(
               child: BaseView<NationalCouncilModel>(
                 onModelReady: (model) {
-                  model.getNationalList(search: '');
+                  model.getNationalList(search: _searchValue, action: '');
                 },
                 builder: (context, model, child) => model.loading
                     ? Loader()
                     : ListView(
-                        physics: ScrollPhysics(),
+                        physics: NeverScrollableScrollPhysics(),
                         padding: EdgeInsets.only(
                           top: getProportionateScreenWidth(20),
                         ),
@@ -258,7 +286,9 @@ class __SearchState extends State<_Search> {
           Expanded(
             child: TextField(
               controller: _editingController,
-              onChanged: (value) => setState(() => {print(value)}),
+              onChanged: (value) => setState(
+                () => {},
+              ),
               decoration: InputDecoration(
                 hintText: 'Хайх',
                 hintStyle: TextStyle(
@@ -275,9 +305,7 @@ class __SearchState extends State<_Search> {
                     Icons.search,
                     color: Theme.of(context).primaryColor,
                   ),
-                  onPressed: () {
-                    print(123);
-                  },
+                  onPressed: () {},
                 )
               : IconButton(
                   highlightColor: Colors.transparent,
@@ -296,4 +324,8 @@ class __SearchState extends State<_Search> {
       ),
     );
   }
+}
+
+String getSearchValue(val) {
+  print(val);
 }

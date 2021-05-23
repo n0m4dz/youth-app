@@ -37,19 +37,19 @@ class SubButton extends StatelessWidget {
           ),
         ),
         child: FlatButton(
-          padding: EdgeInsets.all(15),
+          padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
           onPressed: press,
           child: Row(
             children: [
               Icon(
                 icon,
                 color: Color(0xFF409EFF),
-                size: 13,
+                size: 15,
               ),
               SizedBox(width: 10),
               Expanded(
                 child: Text(
-                  title,
+                  title.toUpperCase(),
                   style: TextStyle(color: kTextColor),
                 ),
               ),

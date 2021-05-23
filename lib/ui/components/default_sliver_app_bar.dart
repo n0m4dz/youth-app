@@ -1,5 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/ionicons.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:youth/ui/styles/_colors.dart';
+import 'package:youth/ui/views/notifications.dart';
 
 import '../../size_config.dart';
 
@@ -60,6 +64,61 @@ class DefaultSliverAppBar extends StatelessWidget {
           ],
         ),
       ),
+      actions: [
+        Padding(
+          padding: EdgeInsets.only(right: 10.0),
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                CupertinoPageRoute(
+                  builder: (context) => NotificationsScreen(),
+                ),
+              );
+            },
+            child: Icon(Ionicons.getIconData('ios-notifications-outline'),
+                size: 31, color: Colors.white),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(right: 15.0),
+          child: GestureDetector(
+            onTap: () {
+              print('------user');
+              //print(user);
+
+              // if (user == null) {
+              //   Navigator.push(
+              //     context,
+              //     CupertinoPageRoute(
+              //       builder: (context) => LoginPage(),
+              //     ),
+              //   );
+              // } else {
+              //   if (_prefs == null
+              //       ? false
+              //       : _prefs.getBool("is_auth") == false) {
+              //     Navigator.push(
+              //       context,
+              //       CupertinoPageRoute(
+              //         builder: (context) => LoginPage(),
+              //       ),
+              //     );
+              //   } else {
+              //     Navigator.push(
+              //       context,
+              //       CupertinoPageRoute(
+              //         builder: (context) => SettingsScreen(),
+              //       ),
+              //     );
+              //   }
+              // }
+            },
+            child: Icon(Ionicons.getIconData('ios-contact'),
+                size: 31, color: Colors.white),
+          ),
+        ),
+      ],
     );
   }
 }

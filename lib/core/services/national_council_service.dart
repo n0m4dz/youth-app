@@ -8,7 +8,15 @@ class NationalCouncilService {
   List<NationalCouncil> _councils = new List();
   List<NationalCouncil> get councilList => _councils;
 
-  getCouncils(search) async {
+  getCouncils(search, {bool isForced = false}) async {
+    if (isForced) {
+      _councils = new List();
+    }
+
     _councils = await api.getNationalCouncil(search);
+    List<NationalCouncil> data = await api.getNationalCouncil(search);
+    if (data.length > 0) {
+      _councils = _councils + data;
+    }
   }
 }
