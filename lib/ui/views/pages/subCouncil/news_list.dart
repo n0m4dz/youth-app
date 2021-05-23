@@ -11,6 +11,7 @@ import 'package:youth/core/models/aimag_news.dart';
 import 'package:youth/core/viewmodels/aimag_news_model.dart';
 import 'package:youth/ui/components/default_sliver_app_bar.dart';
 import 'package:youth/ui/components/loader.dart';
+import 'package:youth/ui/views/pages/subCouncil/news_detail.dart';
 
 import '../../../../size_config.dart';
 import '../../base_view.dart';
@@ -96,7 +97,16 @@ class _NewsListState extends State<NewsList> {
                     children: model.aimagNewsList.map(
                       (AimagNews item) {
                         return InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => NewsDetail(
+                                  news: item,
+                                ),
+                              ),
+                            );
+                          },
                           child: Container(
                             margin: EdgeInsets.only(top: 15),
                             decoration: BoxDecoration(

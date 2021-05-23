@@ -13,8 +13,7 @@ import 'dart:ui';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class KnowLedgeDetailPage extends StatefulWidget{
-
+class KnowLedgeDetailPage extends StatefulWidget {
   final title;
   final thumb;
   final content;
@@ -22,98 +21,110 @@ class KnowLedgeDetailPage extends StatefulWidget{
   final views;
   final created_at;
 
-  const KnowLedgeDetailPage({Key key, this.title, this.thumb, this.created_at, this.content, this.type, this.views}) : super(key: key);
+  const KnowLedgeDetailPage(
+      {Key key,
+      this.title,
+      this.thumb,
+      this.created_at,
+      this.content,
+      this.type,
+      this.views})
+      : super(key: key);
 
   @override
   KnowLedgeDetailPageState createState() => KnowLedgeDetailPageState();
 }
 
-class KnowLedgeDetailPageState extends State<KnowLedgeDetailPage>{
-
-  void initState(){
+class KnowLedgeDetailPageState extends State<KnowLedgeDetailPage> {
+  void initState() {
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
       body: NestedScrollView(
-        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-          return <Widget>[
-            SliverAppBar(
-              expandedHeight: 200.0,
-              floating: false,
-              pinned: true,
-              backgroundColor: primaryColor.withOpacity(0.9),
-              flexibleSpace: FlexibleSpaceBar(
-                  background: Image.network(
-                    widget.thumb == null ? baseUrl + "/assets/youth/images/noImage.jpg" :  baseUrl + widget.thumb.toString(),
-                    fit: BoxFit.cover,
-                  )),
+          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+            return <Widget>[
+              SliverAppBar(
+                expandedHeight: 200.0,
+                floating: false,
+                pinned: true,
+                backgroundColor: primaryColor.withOpacity(0.9),
+                flexibleSpace: FlexibleSpaceBar(
+                    background: Image.network(
+                  widget.thumb == null
+                      ? baseUrl + "/assets/youth/images/noImage.jpg"
+                      : baseUrl + widget.thumb.toString(),
+                  fit: BoxFit.cover,
+                )),
+              ),
+            ];
+          },
+          body: Padding(
+            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            child: ListView(
+              scrollDirection: Axis.vertical,
+              children: [
+                Text(
+                  widget.title == null ? '' : widget.title,
+                  style: TextStyle(
+                      color: Colors.black87,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Container(
+                  child: Html(data: widget.content),
+                ),
+                Container(
+                  height: 90,
+                  margin:
+                      EdgeInsets.only(left: 10, right: 10, top: 30, bottom: 10),
+                  decoration: BoxDecoration(
+                      border: Border(
+                          top: BorderSide(color: Colors.grey, width: 1))),
+                  child: Column(
+                    children: [
+                      Container(
+                          padding: EdgeInsets.only(top: 10, bottom: 10),
+                          width: MediaQuery.of(context).size.width - 25,
+                          child: Row(
+                            children: [
+                              Icon(Icons.access_time,
+                                  color: knowLedgeColor, size: 14.0),
+                              SizedBox(width: 5),
+                              Text(
+                                'Нэмсэн огноо: ',
+                                style: TextStyle(
+                                    color: Colors.black54,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 14),
+                              ),
+                              Text(
+                                widget.created_at == null
+                                    ? ''
+                                    : DateFormat("y/MM/dd")
+                                        .format(
+                                            DateTime.parse(widget.created_at))
+                                        .toString(),
+                                style: TextStyle(
+                                    color: knowLedgeColor,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 14),
+                              ),
+                            ],
+                          )),
+                    ],
+                  ),
+                ),
+              ],
             ),
-          ];
-        },
-        body: Padding(
-          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-          child: ListView(
-            scrollDirection: Axis.vertical,
-            children: [
-              Text(
-                widget.title == null ? '' : widget.title,
-                style: TextStyle(color: Colors.black87, fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              Container(
-                child: Html(
-                    data: widget.content
-                ),
-              ),
-              Container(
-                height: 90,
-                margin: EdgeInsets.only(left: 10, right: 10, top: 30, bottom: 10),
-                decoration: BoxDecoration(
-                    border: Border(
-                        top: BorderSide(
-                            color: Colors.grey,
-                            width: 1
-                        )
-                    )
-                ),
-                child: Column(
-                  children: [
-                    Container(
-                        padding: EdgeInsets.only(top: 10, bottom: 10),
-                        width: MediaQuery.of(context).size.width - 25,
-                        child: Row(
-                          children: [
-                            Icon(
-                                Icons.access_time,
-                                color: knowLedgeColor,
-                                size: 14.0),
-                            SizedBox(width: 5),
-                            Text(
-                              'Нэмсэн огноо: ',
-                              style: TextStyle(color: Colors.black54, fontWeight: FontWeight.w500, fontSize: 14),
-                            ),
-                            Text(
-                              widget.created_at == null ? '' : DateFormat("y/MM/dd").format(DateTime.parse(widget.created_at)).toString(),
-                              style: TextStyle(color: knowLedgeColor, fontWeight: FontWeight.w500, fontSize: 14),
-                            ),
-                          ],
-                        )
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        )
-      ),
+          )),
     );
   }
 }

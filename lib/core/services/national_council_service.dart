@@ -8,10 +8,10 @@ class NationalCouncilService {
   List<NationalCouncil> _councils = new List();
   List<NationalCouncil> get councilList => _councils;
 
-  Future<void> getCouncils(search) async {
-    _councils = await api.getNationalCouncil(search);
-    _allCouncils = await api.getNationalCouncil(search);
-    List<NationalCouncil> data = await api.getNationalCouncil(search);
+  Future<void> getCouncils() async {
+    _councils = await api.getNationalCouncil();
+    _allCouncils = await api.getNationalCouncil();
+    List<NationalCouncil> data = await api.getNationalCouncil();
     if (data.length > 0) {
       _councils = _councils + data;
     }

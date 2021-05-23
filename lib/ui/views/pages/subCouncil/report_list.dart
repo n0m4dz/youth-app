@@ -8,6 +8,7 @@ import 'package:youth/core/models/resolution.dart';
 import 'package:youth/core/viewmodels/resolution_model.dart';
 import 'package:youth/ui/components/default_sliver_app_bar.dart';
 import 'package:youth/ui/components/loader.dart';
+import 'package:youth/ui/views/pages/subCouncil/report_detail.dart';
 
 import '../../../../size_config.dart';
 import '../../base_view.dart';
@@ -81,7 +82,16 @@ class _ReportListState extends State<ReportList> {
                     children: model.resolutionList.map(
                       (Resolution item) {
                         return InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ReportDetail(
+                                  item: item,
+                                ),
+                              ),
+                            );
+                          },
                           child: Container(
                             margin: EdgeInsets.only(top: 15),
                             decoration: BoxDecoration(

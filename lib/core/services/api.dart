@@ -213,10 +213,10 @@ class Api {
 
   /* NB */
 
-  Future<List<NationalCouncil>> getNationalCouncil(String search) async {
+  Future<List<NationalCouncil>> getNationalCouncil() async {
     var data = new List<NationalCouncil>();
     final response = await _http.postRaw('/api/mobile/zxvz', {
-      "search": search,
+      "search": "",
       "aimag": "",
       "soum": "",
     });

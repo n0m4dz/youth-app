@@ -55,26 +55,21 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
         },
         body: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 30.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [],
-              ),
-            ),
             Expanded(
               child: BaseView<NationalCouncilModel>(
                 onModelReady: (model) {
-                  model.getNationalList(search: _searchValue);
+                  model.getNationalList();
                 },
                 builder: (context, model, child) => model.loading
                     ? Loader()
                     : ListView(
-                        physics: NeverScrollableScrollPhysics(),
+                        physics:
+                            NeverScrollableScrollPhysics(), // <-- this will disable scroll
+                        shrinkWrap: true,
                         padding: EdgeInsets.zero,
                         children: [
                           Container(
-                            margin: EdgeInsets.only(bottom: 20),
+                            margin: EdgeInsets.only(bottom: 20, top: 20),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
@@ -132,90 +127,108 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
                               ],
                             ),
                           ),
-                          Column(
-                            children: model.nationalCouncilList.map(
-                              (NationalCouncil item) {
-                                return Column(
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal:
-                                            getProportionateScreenWidth(15),
-                                        vertical:
-                                            getProportionateScreenHeight(10),
-                                      ),
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          boxShadow: [
-                                            BoxShadow(
-                                              offset: Offset(0, 2),
-                                              blurRadius: 1,
-                                              color:
-                                                  Colors.grey.withOpacity(0.23),
-                                            )
-                                          ],
-                                          borderRadius:
-                                              BorderRadius.circular(15),
-                                        ),
-                                        child: FlatButton(
-                                          padding: EdgeInsets.all(
-                                            getProportionateScreenWidth(20),
-                                          ),
-                                          onPressed: () {
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) =>
-                                                    SubCouncil(item: item),
+                          model.nationalCouncilList.length == 0
+                              ? Container(
+                                  alignment: Alignment.center,
+                                  margin: EdgeInsets.all(15),
+                                  padding: EdgeInsets.all(20),
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                  child: Text('Үр дүн олдсонгүй'),
+                                )
+                              : Column(
+                                  children: model.nationalCouncilList.map(
+                                    (NationalCouncil item) {
+                                      return Column(
+                                        children: [
+                                          Padding(
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal:
+                                                  getProportionateScreenWidth(
+                                                      15),
+                                              vertical:
+                                                  getProportionateScreenHeight(
+                                                      10),
+                                            ),
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                color: Colors.white,
+                                                boxShadow: [
+                                                  BoxShadow(
+                                                    offset: Offset(0, 2),
+                                                    blurRadius: 1,
+                                                    color: Colors.grey
+                                                        .withOpacity(0.23),
+                                                  )
+                                                ],
+                                                borderRadius:
+                                                    BorderRadius.circular(15),
                                               ),
-                                            );
-                                          },
-                                          child: Row(
-                                            children: [
-                                              item.logo != null
-                                                  ? Container(
-                                                      child: CachedNetworkImage(
-                                                        imageUrl:
-                                                            baseUrl + item.logo,
-                                                        width: 64,
-                                                        height: 64,
-                                                        placeholder: (context,
-                                                                url) =>
-                                                            CircularProgressIndicator(),
-                                                        errorWidget: (context,
-                                                                url, error) =>
-                                                            Image.network(
-                                                          baseUrl +
-                                                              "/assets/youth/images/noImage.jpg",
-                                                          width: 64,
-                                                        ),
-                                                      ),
-                                                    )
-                                                  : Image.network(
-                                                      baseUrl +
-                                                          "/assets/youth/images/noImage.jpg",
-                                                      width: 64,
+                                              child: FlatButton(
+                                                padding: EdgeInsets.all(
+                                                  getProportionateScreenWidth(
+                                                      20),
+                                                ),
+                                                onPressed: () {
+                                                  Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          SubCouncil(
+                                                              item: item),
                                                     ),
-                                              SizedBox(width: 20),
-                                              Expanded(
-                                                child: Text(item.name),
+                                                  );
+                                                },
+                                                child: Row(
+                                                  children: [
+                                                    item.logo != null
+                                                        ? Container(
+                                                            child:
+                                                                CachedNetworkImage(
+                                                              imageUrl:
+                                                                  baseUrl +
+                                                                      item.logo,
+                                                              width: 64,
+                                                              height: 64,
+                                                              placeholder: (context,
+                                                                      url) =>
+                                                                  CircularProgressIndicator(),
+                                                              errorWidget: (context,
+                                                                      url,
+                                                                      error) =>
+                                                                  Image.network(
+                                                                baseUrl +
+                                                                    "/assets/youth/images/noImage.jpg",
+                                                                width: 64,
+                                                              ),
+                                                            ),
+                                                          )
+                                                        : Image.network(
+                                                            baseUrl +
+                                                                "/assets/youth/images/noImage.jpg",
+                                                            width: 64,
+                                                          ),
+                                                    SizedBox(width: 20),
+                                                    Expanded(
+                                                      child: Text(item.name),
+                                                    ),
+                                                    Icon(
+                                                      Icons.arrow_forward_ios,
+                                                      color: Color(0xFF409EFF),
+                                                      size: 15,
+                                                    ),
+                                                  ],
+                                                ),
                                               ),
-                                              Icon(
-                                                Icons.arrow_forward_ios,
-                                                color: Color(0xFF409EFF),
-                                                size: 15,
-                                              ),
-                                            ],
+                                            ),
                                           ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                );
-                              },
-                            ).toList(),
-                          )
+                                        ],
+                                      );
+                                    },
+                                  ).toList(),
+                                )
                         ],
                       ),
               ),
