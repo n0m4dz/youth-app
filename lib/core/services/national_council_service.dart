@@ -38,13 +38,6 @@ class NationalCouncilService {
         _hasData = false;
       }
       _councils = _councils + data;
-
-      // List<AimagNews> data = await api.getAimagNews(aimagId, page);
-      // if (data.length == 0) {
-      //   _hasData = false;
-      // } else {
-      //   _aimagNews = _aimagNews + data;
-      // }
     } else {
       List<NationalCouncil> data = await api.getNationalCouncil("", "");
       _councils = _councils + data;

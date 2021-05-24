@@ -126,7 +126,6 @@ class NetworkUtil {
     }
 
     try {
-      print('i am here');
       final response = await dio.get(url, queryParameters: params ?? null);
       if (response.statusCode == 200) {
         print("status 200");
