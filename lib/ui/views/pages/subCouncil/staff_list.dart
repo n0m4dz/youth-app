@@ -87,35 +87,53 @@ class _StaffListState extends State<StaffList> {
                                 width: 120,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
-                                  border:
-                                      Border.all(color: Colors.blue, width: 2),
+                                  border: Border.all(
+                                    color: Colors.blue,
+                                    width: 2,
+                                  ),
                                   borderRadius: BorderRadius.circular(60),
                                 ),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(60),
-                                  child: CachedNetworkImage(
-                                    imageUrl: baseUrl + item.image ??
-                                        baseUrl +
-                                            "/assets/youth/images/noImage.jpg",
-                                    imageBuilder: (context, imageProvider) =>
-                                        Container(
-                                      decoration: BoxDecoration(
-                                        color: Colors.blue,
-                                        image: DecorationImage(
-                                          image: imageProvider,
-                                          fit: BoxFit.cover,
+                                  child: item.image != null
+                                      ? CachedNetworkImage(
+                                          imageUrl: baseUrl + item.image,
+                                          imageBuilder:
+                                              (context, imageProvider) =>
+                                                  Container(
+                                            decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                                image: imageProvider,
+                                                fit: BoxFit.cover,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(15),
+                                            ),
+                                          ),
+                                          placeholder: (context, url) =>
+                                              Container(
+                                            child: Center(
+                                              child: CircularProgressIndicator(
+                                                  strokeWidth: 2),
+                                            ),
+                                          ),
+                                          errorWidget: (context, url, error) =>
+                                              Image.network(
+                                            baseUrl +
+                                                "/assets/youth/images/noImage.jpg",
+                                            width: 200,
+                                            fit: BoxFit.fitWidth,
+                                          ),
+                                        )
+                                      : Container(
+                                          height: 90,
+                                          child: Image.network(
+                                            baseUrl +
+                                                "/assets/youth/images/noImage.jpg",
+                                            width: 200,
+                                            fit: BoxFit.fitWidth,
+                                          ),
                                         ),
-                                      ),
-                                    ),
-                                    placeholder: (context, url) => Center(
-                                      child: CircularProgressIndicator(
-                                        strokeWidth: 2,
-                                        backgroundColor: Colors.red,
-                                      ),
-                                    ),
-                                    errorWidget: (context, url, error) =>
-                                        Icon(Icons.error),
-                                  ),
                                 ),
                               ),
                               Container(
@@ -138,7 +156,9 @@ class _StaffListState extends State<StaffList> {
                                     Container(
                                       height: 50,
                                       child: Text(
-                                        item.appointment,
+                                        item.appointment != null
+                                            ? item.appointment
+                                            : '',
                                         textAlign: TextAlign.center,
                                         style: TextStyle(fontSize: 12.5),
                                       ),

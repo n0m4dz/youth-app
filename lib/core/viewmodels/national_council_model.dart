@@ -32,8 +32,8 @@ class NationalCouncilModel extends BaseModel {
     // setLoading(false);
   }
 
-  searchTrack(val) {
-    api.searchTrack(val);
+  searchCouncil(val) {
+    api.searchCouncil(val);
     notifyListeners();
   }
 }

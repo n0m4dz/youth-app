@@ -38,16 +38,8 @@ class NetworkUtil {
     }
 
     try {
-//      dio.interceptors.add(
-//        InterceptorsWrapper(onRequest: (Options options) async {
-//          String jwt = await storage.read(key: 'jwt');
-//          options.headers["token"] = jwt;
-//          return options;
-//        }),
-//      );
-
       response = await dio.get(url, queryParameters: params ?? null);
-      print(response);
+      //print(response);
     } on DioError catch (e) {
       if (e.response != null) {
         print(e.response.data);

@@ -312,9 +312,10 @@ class Api {
     var data = new List<VolunteerWork>();
 
     final response =
-        await _http.get('/api/mobile/get-volunteers/' + page.toString());
+        await _http.get('/api/mobile/get-volunteers/1?page=' + page.toString());
+    print(response.data['volunteers']['data']);
 
-    var parsed = response.data['data'] as List<dynamic>;
+    var parsed = response.data['volunteers']['data'] as List<dynamic>;
 
     for (var r in parsed) {
       data.add(VolunteerWork.fromJson(r));
