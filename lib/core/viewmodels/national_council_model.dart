@@ -15,15 +15,13 @@ class NationalCouncilModel extends BaseModel {
   Future<void> getNationalList(int aimagId, int soumId, {String action}) async {
     switch (action) {
       case 'selected':
-        setLoading(true);
         await api.getCouncils(aimagId, soumId, isForced: true);
         notifyListeners();
-        setLoading(false);
         break;
+
       default:
         setLoading(true);
         await api.getCouncils(aimagId, soumId);
-
         setLoading(false);
         break;
     }

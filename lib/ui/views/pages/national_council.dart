@@ -65,7 +65,7 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
             Expanded(
               child: BaseView<NationalCouncilModel>(
                   onModelReady: (model) {
-                    model.getNationalList(0, 0, action: 'unselected');
+                    model.getNationalList(0, 0);
                   },
                   builder: (context, model, child) => model.loading
                       ? Loader()
@@ -127,7 +127,7 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
                                       ),
                                       padding: const EdgeInsets.only(
                                           left: 20, right: 5),
-                                      child: Expanded(
+                                      child: Container(
                                         child: TextField(
                                           controller: _editingController,
                                           onChanged: model.searchCouncil,
