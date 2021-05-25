@@ -3,6 +3,7 @@ import 'package:lambda/modules/agent/agent_util.dart';
 import 'package:lambda/modules/gcm/notify.dart';
 import 'package:lambda/modules/network_util.dart';
 import 'package:youth/core/services/aimag_news_service.dart';
+import 'package:youth/core/services/event_service.dart';
 import 'package:youth/core/services/resolution_service.dart';
 import 'package:youth/core/services/volunteer_work_service.dart';
 import 'package:youth/core/viewmodels/aimag_news_model.dart';
@@ -28,6 +29,7 @@ import 'core/viewmodels/staff_model.dart';
 import 'core/viewmodels/user_model.dart';
 import 'core/viewmodels/video_model.dart';
 import 'core/viewmodels/national_council_model.dart';
+import 'core/viewmodels/event_model.dart';
 
 GetIt locator = GetIt();
 
@@ -51,6 +53,7 @@ void setupLocator() {
   locator.registerLazySingleton(() => AimagNewsService());
   locator.registerLazySingleton(() => ResolutionService());
   locator.registerLazySingleton(() => VolunteerWorkService());
+  locator.registerLazySingleton(() => EventService());
 
   //App view models for busines logic
   locator.registerFactory(() => BaseModel());
@@ -66,4 +69,5 @@ void setupLocator() {
   locator.registerFactory(() => AimagNewsModel());
   locator.registerFactory(() => ResolutionModel());
   locator.registerFactory(() => VolunteerWorkModel());
+  locator.registerFactory(() => EventModel());
 }

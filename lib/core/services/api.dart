@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:youth/core/models/event.dart';
 import 'package:youth/core/models/soum.dart';
 import 'package:youth/core/models/aimag.dart';
 import 'package:youth/core/models/aimag_news.dart';
@@ -313,12 +314,28 @@ class Api {
 
     final response =
         await _http.get('/api/mobile/get-volunteers/1?page=' + page.toString());
-    print(response.data['volunteers']['data']);
+    //print(response.data['volunteers']['data']);
 
     var parsed = response.data['volunteers']['data'] as List<dynamic>;
 
     for (var r in parsed) {
       data.add(VolunteerWork.fromJson(r));
+    }
+
+    return data;
+  }
+
+  Future<List<Event>> getApiEvents(int page) async {
+    var data = new List<Event>();
+
+    final response =
+        await _http.get('/api/mobile/get-events/1?page=' + page.toString());
+    print(response.data['data']);
+
+    var parsed = response.data['data'] as List<dynamic>;
+
+    for (var r in parsed) {
+      data.add(Event.fromJson(r));
     }
 
     return data;

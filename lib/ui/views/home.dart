@@ -19,7 +19,7 @@ import 'package:youth/ui/views/login.dart';
 import 'package:youth/ui/views/notifications.dart';
 import 'package:youth/ui/views/pages/VolunteerWork/volunteer_work.dart';
 import 'package:youth/ui/views/pages/eLearnHome.dart';
-import 'package:youth/ui/views/pages/event.dart';
+import 'package:youth/ui/views/pages/event/event_page.dart';
 import 'package:youth/ui/views/pages/knowLedge.dart';
 import 'package:youth/ui/views/pages/law.dart';
 import 'package:youth/ui/views/pages/national_council.dart';
@@ -700,7 +700,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => EventPage(title: 'Арга Хэмжээ'),
+                      builder: (context) => EventPage(
+                        title: 'Арга Хэмжээ',
+                      ),
                     ),
                   );
                 },
