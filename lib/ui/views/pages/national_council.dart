@@ -64,218 +64,218 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
           children: [
             Expanded(
               child: BaseView<NationalCouncilModel>(
-                  onModelReady: (model) {
-                    model.getNationalList(0, 0);
-                  },
-                  builder: (context, model, child) => model.loading
-                      ? Loader()
-                      : SmartRefresher(
-                          enablePullDown: true,
-                          enablePullUp: model.hasData ? true : false,
-                          header: ClassicHeader(
-                            idleText: "Доош чирч дахин ачааллана",
-                            releaseText: "Дахин ачааллах",
-                            refreshingText: "Түр хүлээнэ үү...",
-                            completeText: 'Дахин ачааллаж дууслаа',
-                            textStyle: TextStyle(color: Colors.grey),
+                onModelReady: (model) {
+                  model.getNationalList(0, 0);
+                },
+                builder: (context, model, child) => model.loading
+                    ? Loader()
+                    : SmartRefresher(
+                        enablePullDown: true,
+                        enablePullUp: model.hasData ? true : false,
+                        header: ClassicHeader(
+                          idleText: "Доош чирч дахин ачааллана",
+                          releaseText: "Дахин ачааллах",
+                          refreshingText: "Түр хүлээнэ үү...",
+                          completeText: 'Дахин ачааллаж дууслаа',
+                          textStyle: TextStyle(color: Colors.grey),
+                        ),
+                        footer: ClassicFooter(
+                          idleText: "Цааш үзэх",
+                          noDataText: "Цааш мэдээлэл байхгүй",
+                          textStyle: TextStyle(
+                            color: Colors.grey,
                           ),
-                          footer: ClassicFooter(
-                            idleText: "Цааш үзэх",
-                            noDataText: "Цааш мэдээлэл байхгүй",
-                            textStyle: TextStyle(
-                              color: Colors.grey,
-                            ),
-                          ),
-                          controller: _refreshController,
-                          onRefresh: () async {
-                            await model.getNationalList(0, 0,
-                                action: "refresh");
-                            await Future.delayed(Duration(milliseconds: 1000));
-                            _refreshController.refreshCompleted();
-                          },
-                          onLoading: () async {
-                            await model.getNationalList(0, 0, action: "more");
-                            await Future.delayed(Duration(milliseconds: 1000));
-                            _refreshController.loadComplete();
-                          },
-                          child: ListView(
-                            physics:
-                                NeverScrollableScrollPhysics(), // <-- this will disable scroll
-                            shrinkWrap: true,
-                            padding: EdgeInsets.zero,
-                            children: [
-                              Container(
-                                margin: EdgeInsets.only(bottom: 20, top: 20),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    Container(
-                                      width: getProportionateScreenWidth(245),
-                                      height: getProportionateScreenWidth(45),
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        color: Colors.white,
-                                        boxShadow: [
-                                          BoxShadow(
-                                            offset: Offset(0, 2),
-                                            blurRadius: 1,
+                        ),
+                        controller: _refreshController,
+                        onRefresh: () async {
+                          await model.getNationalList(0, 0, action: "refresh");
+                          await Future.delayed(Duration(milliseconds: 1000));
+                          _refreshController.refreshCompleted();
+                        },
+                        onLoading: () async {
+                          await model.getNationalList(0, 0, action: "more");
+                          await Future.delayed(Duration(milliseconds: 1000));
+                          _refreshController.loadComplete();
+                        },
+                        child: ListView(
+                          physics:
+                              NeverScrollableScrollPhysics(), // <-- this will disable scroll
+                          shrinkWrap: true,
+                          padding: EdgeInsets.zero,
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(bottom: 20, top: 20),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Container(
+                                    width: getProportionateScreenWidth(245),
+                                    height: getProportionateScreenWidth(45),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      color: Colors.white,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          offset: Offset(0, 2),
+                                          blurRadius: 1,
+                                          color: Colors.grey.withOpacity(0.23),
+                                        )
+                                      ],
+                                    ),
+                                    padding: const EdgeInsets.only(
+                                      left: 20,
+                                      right: 5,
+                                    ),
+                                    child: Container(
+                                      child: TextField(
+                                        controller: _editingController,
+                                        onChanged: model.searchCouncil,
+                                        decoration: InputDecoration(
+                                          hintText: 'Хайх',
+                                          hintStyle: TextStyle(
                                             color:
-                                                Colors.grey.withOpacity(0.23),
-                                          )
-                                        ],
-                                      ),
-                                      padding: const EdgeInsets.only(
-                                          left: 20, right: 5),
-                                      child: Container(
-                                        child: TextField(
-                                          controller: _editingController,
-                                          onChanged: model.searchCouncil,
-                                          decoration: InputDecoration(
-                                            hintText: 'Хайх',
-                                            hintStyle: TextStyle(
-                                              color: Theme.of(context)
-                                                  .primaryColor,
-                                            ),
-                                            enabledBorder: InputBorder.none,
-                                            focusedBorder: InputBorder.none,
+                                                Theme.of(context).primaryColor,
                                           ),
+                                          enabledBorder: InputBorder.none,
+                                          focusedBorder: InputBorder.none,
                                         ),
                                       ),
                                     ),
-                                    RaisedButton(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(10),
-                                        ),
+                                  ),
+                                  RaisedButton(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(10),
                                       ),
-                                      onPressed: () {
-                                        buildShowModalBottomSheet(context);
-                                      },
-                                      padding: EdgeInsets.all(
-                                          getProportionateScreenWidth(14)),
-                                      color: Colors.white,
-                                      child: Text(
-                                        'Байршил',
-                                        style: TextStyle(
-                                          color: Theme.of(context).primaryColor,
-                                          fontSize: 14,
-                                        ),
+                                    ),
+                                    onPressed: () {
+                                      buildShowModalBottomSheet(context, model);
+                                    },
+                                    padding: EdgeInsets.all(
+                                        getProportionateScreenWidth(14)),
+                                    color: Colors.white,
+                                    child: Text(
+                                      'Байршил',
+                                      style: TextStyle(
+                                        color: Theme.of(context).primaryColor,
+                                        fontSize: 14,
                                       ),
-                                    )
-                                  ],
-                                ),
+                                    ),
+                                  )
+                                ],
                               ),
-                              model.nationalCouncilList.length == 0
-                                  ? Container(
-                                      alignment: Alignment.center,
-                                      margin: EdgeInsets.all(15),
-                                      padding: EdgeInsets.all(20),
-                                      decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius: BorderRadius.circular(15),
-                                      ),
-                                      child: Text('Үр дүн олдсонгүй'),
-                                    )
-                                  : Column(
-                                      children: model.nationalCouncilList.map(
-                                        (NationalCouncil item) {
-                                          return Column(
-                                            children: [
-                                              Padding(
-                                                padding: EdgeInsets.symmetric(
-                                                  horizontal:
-                                                      getProportionateScreenWidth(
-                                                          15),
-                                                  vertical:
-                                                      getProportionateScreenHeight(
-                                                          10),
+                            ),
+                            model.nationalCouncilList.length == 0
+                                ? Container(
+                                    alignment: Alignment.center,
+                                    margin: EdgeInsets.all(15),
+                                    padding: EdgeInsets.all(20),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(15),
+                                    ),
+                                    child: Text('Үр дүн олдсонгүй'),
+                                  )
+                                : Column(
+                                    children: model.nationalCouncilList.map(
+                                      (NationalCouncil item) {
+                                        return Column(
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal:
+                                                    getProportionateScreenWidth(
+                                                  15,
                                                 ),
-                                                child: Container(
-                                                  decoration: BoxDecoration(
-                                                    color: Colors.white,
-                                                    boxShadow: [
-                                                      BoxShadow(
-                                                        offset: Offset(0, 2),
-                                                        blurRadius: 1,
-                                                        color: Colors.grey
-                                                            .withOpacity(0.23),
-                                                      )
-                                                    ],
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            15),
+                                                vertical:
+                                                    getProportionateScreenHeight(
+                                                  10,
+                                                ),
+                                              ),
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  boxShadow: [
+                                                    BoxShadow(
+                                                      offset: Offset(0, 2),
+                                                      blurRadius: 1,
+                                                      color: Colors.grey
+                                                          .withOpacity(0.23),
+                                                    )
+                                                  ],
+                                                  borderRadius:
+                                                      BorderRadius.circular(15),
+                                                ),
+                                                child: FlatButton(
+                                                  padding: EdgeInsets.all(
+                                                    getProportionateScreenWidth(
+                                                        20),
                                                   ),
-                                                  child: FlatButton(
-                                                    padding: EdgeInsets.all(
-                                                      getProportionateScreenWidth(
-                                                          20),
-                                                    ),
-                                                    onPressed: () {
-                                                      Navigator.push(
-                                                        context,
-                                                        MaterialPageRoute(
-                                                          builder: (context) =>
-                                                              SubCouncil(
-                                                                  item: item),
-                                                        ),
-                                                      );
-                                                    },
-                                                    child: Row(
-                                                      children: [
-                                                        item.logo != null
-                                                            ? Container(
-                                                                child:
-                                                                    CachedNetworkImage(
-                                                                  imageUrl:
-                                                                      baseUrl +
-                                                                          item.logo,
-                                                                  width: 64,
-                                                                  height: 64,
-                                                                  placeholder: (context,
-                                                                          url) =>
-                                                                      CircularProgressIndicator(),
-                                                                  errorWidget: (context,
-                                                                          url,
-                                                                          error) =>
-                                                                      Image
-                                                                          .network(
+                                                  onPressed: () {
+                                                    Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            SubCouncil(
+                                                                item: item),
+                                                      ),
+                                                    );
+                                                  },
+                                                  child: Row(
+                                                    children: [
+                                                      item.logo != null
+                                                          ? Container(
+                                                              child:
+                                                                  CachedNetworkImage(
+                                                                imageUrl:
                                                                     baseUrl +
-                                                                        "/assets/youth/images/noImage.jpg",
-                                                                    width: 64,
-                                                                  ),
-                                                                ),
-                                                              )
-                                                            : Image.network(
-                                                                baseUrl +
-                                                                    "/assets/youth/images/noImage.jpg",
+                                                                        item.logo,
                                                                 width: 64,
+                                                                height: 64,
+                                                                placeholder: (context,
+                                                                        url) =>
+                                                                    CircularProgressIndicator(),
+                                                                errorWidget: (context,
+                                                                        url,
+                                                                        error) =>
+                                                                    Image
+                                                                        .network(
+                                                                  baseUrl +
+                                                                      "/assets/youth/images/noImage.jpg",
+                                                                  width: 64,
+                                                                ),
                                                               ),
-                                                        SizedBox(width: 20),
-                                                        Expanded(
-                                                          child:
-                                                              Text(item.name),
-                                                        ),
-                                                        Icon(
-                                                          Icons
-                                                              .arrow_forward_ios,
-                                                          color:
-                                                              Color(0xFF409EFF),
-                                                          size: 15,
-                                                        ),
-                                                      ],
-                                                    ),
+                                                            )
+                                                          : Image.network(
+                                                              baseUrl +
+                                                                  "/assets/youth/images/noImage.jpg",
+                                                              width: 64,
+                                                            ),
+                                                      SizedBox(width: 20),
+                                                      Expanded(
+                                                        child: Text(item.name),
+                                                      ),
+                                                      Icon(
+                                                        Icons.arrow_forward_ios,
+                                                        color:
+                                                            Color(0xFF409EFF),
+                                                        size: 15,
+                                                      ),
+                                                    ],
                                                   ),
                                                 ),
                                               ),
-                                            ],
-                                          );
-                                        },
-                                      ).toList(),
-                                    )
-                            ],
-                          ),
-                        )),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    ).toList(),
+                                  )
+                          ],
+                        ),
+                      ),
+              ),
             ),
           ],
         ),
@@ -283,7 +283,8 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
     );
   }
 
-  Future<dynamic> buildShowModalBottomSheet(BuildContext context) {
+  Future<dynamic> buildShowModalBottomSheet(
+      BuildContext context, NationalCouncilModel nModel) {
     return showModalBottomSheet(
       context: context,
       builder: (context) {
@@ -308,7 +309,7 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
                               onTap: () {
                                 Navigator.pop(context);
                                 buildShowModalSoumBottomSheet(
-                                    context, aimag.id);
+                                    context, aimag.id, nModel);
                               },
                               child: Container(
                                 margin: EdgeInsets.symmetric(
@@ -344,7 +345,8 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
     );
   }
 
-  Future<dynamic> buildShowModalSoumBottomSheet(BuildContext context, aimagId) {
+  Future<dynamic> buildShowModalSoumBottomSheet(
+      BuildContext context, aimagId, NationalCouncilModel nModel) {
     return showModalBottomSheet(
       context: context,
       builder: (context) {
@@ -367,10 +369,7 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
                           (Soum soum) {
                             return GestureDetector(
                               onTap: () {
-                                NationalCouncilModel nationalCouncilModel =
-                                    new NationalCouncilModel();
-                                nationalCouncilModel.getNationalList(
-                                    aimagId, soum.id,
+                                nModel.getNationalList(aimagId, soum.id,
                                     action: 'selected');
                                 Navigator.pop(context);
                               },

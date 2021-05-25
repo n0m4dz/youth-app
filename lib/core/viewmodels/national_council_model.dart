@@ -15,22 +15,27 @@ class NationalCouncilModel extends BaseModel {
   Future<void> getNationalList(int aimagId, int soumId, {String action}) async {
     switch (action) {
       case 'selected':
+        print('selected aimag soumd');
+        setLoading(true);
         await api.getCouncils(aimagId, soumId, isForced: true);
-        notifyListeners();
+        setLoading(false);
         break;
 
       default:
         setLoading(true);
         await api.getCouncils(aimagId, soumId);
+        //notifyListeners();
         setLoading(false);
         break;
     }
     // setLoading(true);
     // await api.getCouncils();
     // setLoading(false);
+    notifyListeners();
   }
 
   searchCouncil(val) {
+    print("working here");
     api.searchCouncil(val);
     notifyListeners();
   }
