@@ -306,6 +306,13 @@ class _YouthCouncilPageState extends State<YouthCouncilPage> {
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(10),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      offset: Offset(0, 2),
+                                      blurRadius: 1,
+                                      color: Colors.grey.withOpacity(0.23),
+                                    )
+                                  ],
                                 ),
                                 child: Row(
                                   children: [
@@ -368,6 +375,13 @@ class _YouthCouncilPageState extends State<YouthCouncilPage> {
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(10),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      offset: Offset(0, 2),
+                                      blurRadius: 1,
+                                      color: Colors.grey.withOpacity(0.23),
+                                    )
+                                  ],
                                 ),
                                 child: Row(
                                   children: [
@@ -431,6 +445,13 @@ class _YouthCouncilPageState extends State<YouthCouncilPage> {
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(10),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      offset: Offset(0, 2),
+                                      blurRadius: 1,
+                                      color: Colors.grey.withOpacity(0.23),
+                                    )
+                                  ],
                                 ),
                                 child: Row(
                                   children: [

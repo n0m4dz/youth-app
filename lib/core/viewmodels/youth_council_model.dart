@@ -19,7 +19,7 @@ class YouthCouncilModel extends BaseModel {
     switch (action) {
       case 'selected':
         setLoading(true);
-        await api.getYouthCouncil(page, aimagId, soumId, bkhId, isForced: true);
+        await api.getYouthCouncil(page, aimagId, soumId, bkhId);
         notifyListeners();
         setLoading(false);
         break;

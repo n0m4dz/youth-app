@@ -43,6 +43,7 @@ class YouthCouncilService {
       if (page == 1 && _youthCounchils.length > 0) {
         return;
       }
+
       List<YouthCouncil> data =
           await api.getYouthCouncil(page, aimagId, soumId, bkhId);
       if (data.length == 0) {
