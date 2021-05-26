@@ -30,17 +30,18 @@ class YouthCouncilPage extends StatefulWidget {
 }
 
 class _YouthCouncilPageState extends State<YouthCouncilPage> {
-  TextEditingController _editingController;
+  // TextEditingController _editingController;
   RefreshController _refreshController =
       RefreshController(initialRefresh: false);
-
-  int aimagId;
-  int soumtId;
 
   @override
   void initState() {
     super.initState();
-    _editingController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 
   @override
@@ -62,224 +63,208 @@ class _YouthCouncilPageState extends State<YouthCouncilPage> {
             ),
           ];
         },
-        body: Column(
-          children: [
-            Expanded(
-              child: BaseView<YouthCouncilModel>(
-                onModelReady: (model) {
-                  model.getYouthList(0, 0, 0);
-                },
-                builder: (context, model, child) => model.loading
-                    ? Loader()
-                    : SmartRefresher(
-                        enablePullDown: true,
-                        enablePullUp: model.hasData ? true : false,
-                        header: ClassicHeader(
-                          idleText: "Доош чирч дахин ачааллана",
-                          releaseText: "Дахин ачааллах",
-                          refreshingText: "Түр хүлээнэ үү...",
-                          completeText: 'Дахин ачааллаж дууслаа',
-                          textStyle: TextStyle(color: Colors.grey),
-                        ),
-                        footer: ClassicFooter(
-                          idleText: "Цааш үзэх",
-                          noDataText: "Цааш мэдээлэл байхгүй",
-                          textStyle: TextStyle(
-                            color: Colors.grey,
-                          ),
-                        ),
-                        controller: _refreshController,
-                        onRefresh: () async {
-                          await model.getYouthList(0, 0, 0, action: "refresh");
-                          await Future.delayed(Duration(milliseconds: 1000));
-                          _refreshController.refreshCompleted();
-                        },
-                        onLoading: () async {
-                          await model.getYouthList(0, 0, 0, action: "more");
-                          await Future.delayed(Duration(milliseconds: 1000));
-                          _refreshController.loadComplete();
-                        },
-                        child: ListView(
-                          physics:
-                              NeverScrollableScrollPhysics(), // <-- this will disable scroll
-                          shrinkWrap: true,
-                          padding: EdgeInsets.zero,
+        body: BaseView<YouthCouncilModel>(
+          onModelReady: (model) {
+            model.getYouthList(1, 0, 0, 0, action: 'refresh');
+          },
+          builder: (context, model, child) => model.loading
+              ? Loader()
+              : SmartRefresher(
+                  enablePullDown: true,
+                  enablePullUp: model.hasData ? true : false,
+                  header: ClassicHeader(
+                    idleText: "Доош чирч дахин ачааллана",
+                    releaseText: "Дахин ачааллах",
+                    refreshingText: "Түр хүлээнэ үү...",
+                    completeText: 'Дахин ачааллаж дууслаа',
+                    textStyle: TextStyle(color: Colors.grey),
+                  ),
+                  footer: ClassicFooter(
+                    idleText: "Цааш үзэх",
+                    noDataText: "Цааш мэдээлэл байхгүй",
+                    textStyle: TextStyle(
+                      color: Colors.grey,
+                    ),
+                  ),
+                  controller: _refreshController,
+                  onRefresh: () async {
+                    await model.getYouthList(1, 0, 0, 0, action: "refresh");
+                    await Future.delayed(Duration(milliseconds: 1000));
+                    _refreshController.refreshCompleted();
+                  },
+                  onLoading: () async {
+                    await model.getYouthList(model.page + 1, 0, 0, 0,
+                        action: "more");
+                    await Future.delayed(Duration(milliseconds: 1000));
+                    _refreshController.loadComplete();
+                  },
+                  child: ListView(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(bottom: 20, top: 20),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Container(
-                              margin: EdgeInsets.only(bottom: 20, top: 20),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Container(
-                                    width: getProportionateScreenWidth(245),
-                                    height: getProportionateScreenWidth(45),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      color: Colors.white,
-                                      boxShadow: [
-                                        BoxShadow(
-                                          offset: Offset(0, 2),
-                                          blurRadius: 1,
-                                          color: Colors.grey.withOpacity(0.23),
-                                        )
-                                      ],
-                                    ),
-                                    padding: const EdgeInsets.only(
-                                      left: 20,
-                                      right: 5,
-                                    ),
-                                    child: Container(
-                                      child: TextField(
-                                        controller: _editingController,
-                                        onChanged: model.searchCouncil,
-                                        decoration: InputDecoration(
-                                          hintText: 'Хайх',
-                                          hintStyle: TextStyle(
-                                            color:
-                                                Theme.of(context).primaryColor,
-                                          ),
-                                          enabledBorder: InputBorder.none,
-                                          focusedBorder: InputBorder.none,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  RaisedButton(
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.all(
-                                        Radius.circular(10),
-                                      ),
-                                    ),
-                                    onPressed: () {
-                                      buildShowModalBottomSheet(context, model);
-                                    },
-                                    padding: EdgeInsets.all(
-                                        getProportionateScreenWidth(14)),
-                                    color: Colors.white,
-                                    child: Text(
-                                      'Байршил',
-                                      style: TextStyle(
-                                        color: Theme.of(context).primaryColor,
-                                        fontSize: 14,
-                                      ),
-                                    ),
+                              width: getProportionateScreenWidth(245),
+                              height: getProportionateScreenWidth(45),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.white,
+                                boxShadow: [
+                                  BoxShadow(
+                                    offset: Offset(0, 2),
+                                    blurRadius: 1,
+                                    color: Colors.grey.withOpacity(0.23),
                                   )
                                 ],
                               ),
-                            ),
-                            model.youthCouncilList.length == 0
-                                ? Container(
-                                    alignment: Alignment.center,
-                                    margin: EdgeInsets.all(15),
-                                    padding: EdgeInsets.all(20),
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(15),
+                              padding: const EdgeInsets.only(
+                                left: 20,
+                                right: 5,
+                              ),
+                              child: Container(
+                                child: TextField(
+                                  // controller: _editingController,
+                                  onChanged: model.searchCouncil,
+                                  decoration: InputDecoration(
+                                    hintText: 'Хайх',
+                                    hintStyle: TextStyle(
+                                      color: Theme.of(context).primaryColor,
                                     ),
-                                    child: Text('Үр дүн олдсонгүй'),
-                                  )
-                                : Column(
-                                    children: model.youthCouncilList.map(
-                                      (YouthCouncil item) {
-                                        return Column(
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsets.symmetric(
-                                                horizontal:
-                                                    getProportionateScreenWidth(
-                                                  15,
-                                                ),
-                                                vertical:
-                                                    getProportionateScreenHeight(
-                                                  10,
-                                                ),
-                                              ),
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  color: Colors.white,
-                                                  boxShadow: [
-                                                    BoxShadow(
-                                                      offset: Offset(0, 2),
-                                                      blurRadius: 1,
-                                                      color: Colors.grey
-                                                          .withOpacity(0.23),
-                                                    )
-                                                  ],
-                                                  borderRadius:
-                                                      BorderRadius.circular(15),
-                                                ),
-                                                child: FlatButton(
-                                                  padding: EdgeInsets.all(
-                                                    getProportionateScreenWidth(
-                                                        20),
-                                                  ),
-                                                  onPressed: () {
-                                                    Navigator.push(
-                                                      context,
-                                                      MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            SubYouthCouncil(
-                                                                item: item),
-                                                      ),
-                                                    );
-                                                  },
-                                                  child: Row(
-                                                    children: [
-                                                      item.logo != null
-                                                          ? Container(
-                                                              child:
-                                                                  CachedNetworkImage(
-                                                                imageUrl:
-                                                                    baseUrl +
-                                                                        item.logo,
-                                                                width: 64,
-                                                                height: 64,
-                                                                placeholder: (context,
-                                                                        url) =>
-                                                                    CircularProgressIndicator(),
-                                                                errorWidget: (context,
-                                                                        url,
-                                                                        error) =>
-                                                                    Image
-                                                                        .network(
-                                                                  baseUrl +
-                                                                      "/assets/youth/images/noImage.jpg",
-                                                                  width: 64,
-                                                                ),
-                                                              ),
-                                                            )
-                                                          : Image.network(
-                                                              baseUrl +
-                                                                  "/assets/youth/images/noImage.jpg",
-                                                              width: 64,
-                                                            ),
-                                                      SizedBox(width: 20),
-                                                      Expanded(
-                                                        child: Text(item.name),
-                                                      ),
-                                                      Icon(
-                                                        Icons.arrow_forward_ios,
-                                                        color:
-                                                            Color(0xFF409EFF),
-                                                        size: 15,
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        );
-                                      },
-                                    ).toList(),
-                                  )
+                                    enabledBorder: InputBorder.none,
+                                    focusedBorder: InputBorder.none,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            RaisedButton(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(10),
+                                ),
+                              ),
+                              onPressed: () {
+                                buildShowModalBottomSheet(context, model);
+                              },
+                              padding: EdgeInsets.all(
+                                  getProportionateScreenWidth(14)),
+                              color: Colors.white,
+                              child: Text(
+                                'Байршил',
+                                style: TextStyle(
+                                  color: Theme.of(context).primaryColor,
+                                  fontSize: 14,
+                                ),
+                              ),
+                            )
                           ],
                         ),
                       ),
-              ),
-            ),
-          ],
+                      model.youthCouncilList.length == 0
+                          ? Container(
+                              alignment: Alignment.center,
+                              margin: EdgeInsets.all(15),
+                              padding: EdgeInsets.all(20),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              child: Text('Үр дүн олдсонгүй'),
+                            )
+                          : Column(
+                              children: model.youthCouncilList.map(
+                                (YouthCouncil item) {
+                                  return Column(
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal:
+                                              getProportionateScreenWidth(
+                                            15,
+                                          ),
+                                          vertical:
+                                              getProportionateScreenHeight(
+                                            10,
+                                          ),
+                                        ),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            boxShadow: [
+                                              BoxShadow(
+                                                offset: Offset(0, 2),
+                                                blurRadius: 1,
+                                                color: Colors.grey
+                                                    .withOpacity(0.23),
+                                              )
+                                            ],
+                                            borderRadius:
+                                                BorderRadius.circular(15),
+                                          ),
+                                          child: FlatButton(
+                                            padding: EdgeInsets.all(
+                                              getProportionateScreenWidth(20),
+                                            ),
+                                            onPressed: () {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      SubYouthCouncil(
+                                                          item: item),
+                                                ),
+                                              );
+                                            },
+                                            child: Row(
+                                              children: [
+                                                item.logo != null
+                                                    ? Container(
+                                                        child:
+                                                            CachedNetworkImage(
+                                                          imageUrl: baseUrl +
+                                                              item.logo,
+                                                          width: 64,
+                                                          height: 64,
+                                                          placeholder: (context,
+                                                                  url) =>
+                                                              CircularProgressIndicator(),
+                                                          errorWidget: (context,
+                                                                  url, error) =>
+                                                              Image.network(
+                                                            baseUrl +
+                                                                "/assets/youth/images/noImage.jpg",
+                                                            width: 64,
+                                                          ),
+                                                        ),
+                                                      )
+                                                    : Image.network(
+                                                        baseUrl +
+                                                            "/assets/youth/images/noImage.jpg",
+                                                        width: 64,
+                                                      ),
+                                                SizedBox(width: 20),
+                                                Expanded(
+                                                  child: Text(item.name),
+                                                ),
+                                                Icon(
+                                                  Icons.arrow_forward_ios,
+                                                  color: Color(0xFF409EFF),
+                                                  size: 15,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              ).toList(),
+                            )
+                    ],
+                  ),
+                ),
         ),
       ),
     );
@@ -434,7 +419,7 @@ class _YouthCouncilPageState extends State<YouthCouncilPage> {
                             return GestureDetector(
                               onTap: () {
                                 yModel.getYouthList(
-                                    aimagId, soumId, bagKhoroo.id,
+                                    1, aimagId, soumId, bagKhoroo.id,
                                     action: 'selected');
                                 Navigator.pop(context);
                               },

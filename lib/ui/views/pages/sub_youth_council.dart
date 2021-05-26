@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:youth/core/models/youth_council.dart';
 import 'package:youth/ui/components/default_sliver_app_bar.dart';
 import 'package:youth/ui/components/sub_button.dart';
-import 'package:youth/ui/views/pages/subYouthCouncil/introduction.dart';
+import 'package:youth/ui/views/pages/subYouthCouncil/youth_introduction.dart';
 import 'package:youth/ui/views/pages/subYouthCouncil/youth_volunteer.dart';
 import 'package:youth/ui/views/pages/subCouncil/news_list.dart';
 import 'package:youth/ui/views/pages/subCouncil/report_list.dart';

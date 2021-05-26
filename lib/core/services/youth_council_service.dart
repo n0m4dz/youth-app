@@ -4,11 +4,13 @@ import 'api.dart';
 
 class YouthCouncilService {
   Api api = locator<Api>();
+  int _page = 1;
 
   int _aimagId = 1;
   int _soumId = 1;
   int _bkhId = 1;
 
+  int get page => _page;
   int get aimagId => _aimagId;
   int get soumId => _soumId;
   int get bkhId => _bkhId;
@@ -21,7 +23,7 @@ class YouthCouncilService {
 
   List<YouthCouncil> get youthCouncilList => _youthCounchils;
 
-  Future<void> getYouthCouncil(aimagId, soumId, bkhId,
+  Future<void> getYouthCouncil(page, aimagId, soumId, bkhId,
       {bool isForced = false}) async {
     if (isForced) {
       _youthCounchils = new List();
@@ -31,17 +33,26 @@ class YouthCouncilService {
     _aimagId = aimagId;
     _soumId = soumId;
     _bkhId = bkhId;
+    _page = page;
 
-    _youthCounchils = await api.getYouthCouncil(aimagId, soumId, bkhId);
-    _allYouthCounchils = await api.getYouthCouncil(aimagId, soumId, bkhId);
+    _youthCounchils = await api.getYouthCouncil(page, aimagId, soumId, bkhId);
+    _allYouthCounchils =
+        await api.getYouthCouncil(page, aimagId, soumId, bkhId);
 
-    if (isForced) {
+    if (_hasData) {
+      if (page == 1 && _youthCounchils.length > 0) {
+        return;
+      }
       List<YouthCouncil> data =
-          await api.getYouthCouncil(aimagId, soumId, bkhId);
-
-      _youthCounchils = _youthCounchils + data;
+          await api.getYouthCouncil(page, aimagId, soumId, bkhId);
+      if (data.length == 0) {
+        _hasData = false;
+      } else {
+        _youthCounchils = _youthCounchils + data;
+      }
     } else {
-      List<YouthCouncil> data = await api.getYouthCouncil(null, null, null);
+      List<YouthCouncil> data =
+          await api.getYouthCouncil(page, null, null, null);
       _youthCounchils = _youthCounchils + data;
     }
   }
