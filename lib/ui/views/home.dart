@@ -22,11 +22,13 @@ import 'package:youth/ui/views/pages/eLearnHome.dart';
 import 'package:youth/ui/views/pages/event/event_page.dart';
 import 'package:youth/ui/views/pages/knowLedge.dart';
 import 'package:youth/ui/views/pages/law.dart';
-import 'package:youth/ui/views/pages/national_council.dart';
+
 import 'package:youth/ui/views/pages/partTimeJob.dart';
-import 'package:youth/ui/views/pages/volunteerWork.dart';
 import 'package:youth/ui/views/settings.dart';
 import 'package:youth/ui/views/sidebar.dart';
+
+import 'package:youth/ui/views/pages/national_council.dart';
+import 'package:youth/ui/views/pages/YouthCouncil/youth_council_page.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -200,7 +202,7 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisCount: 2,
             mainAxisSpacing: 13,
             crossAxisSpacing: 13,
-            childAspectRatio: (itemWidth / 195),
+            childAspectRatio: (itemWidth / 185),
             physics: new NeverScrollableScrollPhysics(),
             controller: new ScrollController(keepScrollOffset: false),
             shrinkWrap: true,
@@ -216,7 +218,15 @@ class _HomeScreenState extends State<HomeScreen> {
               //   primaryTitle: "Залуучууд хөгжлийн зөвлөл",
               // ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          YouthCouncilPage(title: 'Залуучууд Хөгжлийн зөвлөл'),
+                    ),
+                  );
+                },
                 child: Container(
                   height: 90,
                   padding: EdgeInsets.all(5),

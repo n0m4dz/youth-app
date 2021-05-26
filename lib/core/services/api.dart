@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:youth/core/models/event.dart';
+import 'package:youth/core/models/bag_khoroo.dart';
 import 'package:youth/core/models/soum.dart';
 import 'package:youth/core/models/aimag.dart';
 import 'package:youth/core/models/aimag_news.dart';
@@ -11,6 +12,7 @@ import 'package:youth/core/models/faq.dart';
 import 'package:youth/core/models/job.dart';
 import 'package:youth/core/models/movie.dart';
 import 'package:youth/core/models/national_council.dart';
+import 'package:youth/core/models/youth_council.dart';
 import 'package:youth/core/models/resolution.dart';
 import 'package:youth/core/models/staff.dart';
 import 'package:youth/core/models/video.dart';
@@ -216,8 +218,6 @@ class Api {
   /* NB */
 
   Future<List<NationalCouncil>> getNationalCouncil(aimagId, soumId) async {
-    print(aimagId);
-    print(soumId);
     var data = new List<NationalCouncil>();
     final response = await _http.postRaw('/api/mobile/zxvz', {
       "search": "",
@@ -229,6 +229,19 @@ class Api {
 
     for (var d in parsed) {
       data.add(NationalCouncil.fromJson(d));
+    }
+    return data;
+  }
+
+  Future<List<YouthCouncil>> getYouthCouncil(aimagId, soumId, bkhId) async {
+    var data = new List<YouthCouncil>();
+    final response = await _http.post('/api/mobile/zxz?page=1',
+        {"search": "", "aimag": aimagId, "soum": soumId, "bag-khoroo": bkhId});
+
+    var parsed = response.data as List<dynamic>;
+
+    for (var y in parsed) {
+      data.add(YouthCouncil.fromJson(y));
     }
     return data;
   }
@@ -255,6 +268,20 @@ class Api {
 
     for (var item in parsed) {
       data.add(Soum.fromJson(item));
+    }
+
+    return data;
+  }
+
+  Future<List<BagKhoroo>> getBagKhorooList(int soumId) async {
+    var data = new List<BagKhoroo>();
+
+    final response =
+        await _http.getRaw('/api/mobile/bag-khoroo/' + soumId.toString());
+    var parsed = response.data as List<dynamic>;
+
+    for (var b in parsed) {
+      data.add(BagKhoroo.fromJson(b));
     }
 
     return data;
@@ -314,7 +341,6 @@ class Api {
 
     final response =
         await _http.get('/api/mobile/get-volunteers/1?page=' + page.toString());
-    //print(response.data['volunteers']['data']);
 
     var parsed = response.data['volunteers']['data'] as List<dynamic>;
 
@@ -330,7 +356,6 @@ class Api {
 
     final response =
         await _http.get('/api/mobile/get-events/1?page=' + page.toString());
-    print(response.data['data']);
 
     var parsed = response.data['data'] as List<dynamic>;
 

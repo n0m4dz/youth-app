@@ -1,38 +1,38 @@
-class Soum {
+class BagKhoroo {
   int id;
   String ner;
   String code;
-  int aimagId;
+  int sumDuuregId;
   int oldId;
-  String lat;
-  String lng;
+  int aimagId;
   int square;
-  int duureg;
-  int deletedAt;
+  String deletedAt;
+  String createdAt;
+  String updatedAt;
 
-  Soum(
+  BagKhoroo(
       {this.id,
       this.ner,
       this.code,
-      this.aimagId,
+      this.sumDuuregId,
       this.oldId,
-      this.lat,
-      this.lng,
+      this.aimagId,
       this.square,
-      this.duureg,
-      this.deletedAt});
+      this.deletedAt,
+      this.createdAt,
+      this.updatedAt});
 
-  Soum.fromJson(Map<String, dynamic> json) {
+  BagKhoroo.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     ner = json['ner'];
     code = json['code'];
-    aimagId = json['aimag_id'];
+    sumDuuregId = json['sum_duureg_id'];
     oldId = json['old_id'];
-    lat = json['lat'];
-    lng = json['lng'];
+    aimagId = json['aimag_id'];
     square = json['square'];
-    duureg = json['duureg'];
     deletedAt = json['deleted_at'];
+    createdAt = json['created_at'];
+    updatedAt = json['updated_at'];
   }
 
   Map<String, dynamic> toJson() {
@@ -40,13 +40,13 @@ class Soum {
     data['id'] = this.id;
     data['ner'] = this.ner;
     data['code'] = this.code;
-    data['aimag_id'] = this.aimagId;
+    data['sum_duureg_id'] = this.sumDuuregId;
     data['old_id'] = this.oldId;
-    data['lat'] = this.lat;
-    data['lng'] = this.lng;
+    data['aimag_id'] = this.aimagId;
     data['square'] = this.square;
-    data['duureg'] = this.duureg;
     data['deleted_at'] = this.deletedAt;
+    data['created_at'] = this.createdAt;
+    data['updated_at'] = this.updatedAt;
     return data;
   }
 }

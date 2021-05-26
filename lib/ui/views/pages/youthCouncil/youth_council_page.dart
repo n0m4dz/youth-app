@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:youth/core/contants/values.dart';
 import 'package:youth/core/models/aimag.dart';
-import 'package:youth/core/models/national_council.dart';
+import 'package:youth/core/models/bag_khoroo.dart';
+import 'package:youth/core/models/youth_council.dart';
 import 'package:youth/core/models/soum.dart';
 import 'package:youth/core/viewmodels/aimag_model.dart';
-import 'package:youth/core/viewmodels/national_council_model.dart';
+import 'package:youth/core/viewmodels/youth_council_model.dart';
 import 'package:youth/core/viewmodels/soum_model.dart';
+import 'package:youth/core/viewmodels/bag_khoroo_model.dart';
 import 'package:youth/size_config.dart';
 import 'package:youth/ui/components/default_sliver_app_bar.dart';
 import 'package:youth/ui/components/loader.dart';
@@ -16,18 +18,18 @@ import 'dart:ui';
 import 'package:flutter/rendering.dart';
 import 'package:youth/ui/views/pages/sub_council.dart';
 
-import '../base_view.dart';
+import '../../base_view.dart';
 
-class NationalCouncilPage extends StatefulWidget {
+class YouthCouncilPage extends StatefulWidget {
   final title;
 
-  const NationalCouncilPage({Key key, this.title}) : super(key: key);
+  const YouthCouncilPage({Key key, this.title}) : super(key: key);
 
   @override
-  _NationalCouncilPageState createState() => _NationalCouncilPageState();
+  _YouthCouncilPageState createState() => _YouthCouncilPageState();
 }
 
-class _NationalCouncilPageState extends State<NationalCouncilPage> {
+class _YouthCouncilPageState extends State<YouthCouncilPage> {
   TextEditingController _editingController;
   RefreshController _refreshController =
       RefreshController(initialRefresh: false);
@@ -55,7 +57,7 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
             DefaultSliverAppBar(
               title: widget.title,
               size: size,
-              color: Color(0xFF409EFF),
+              color: Color(0xFFfa983a),
               svgData: "assets/images/svg/page-heading-legal.svg",
             ),
           ];
@@ -63,9 +65,9 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
         body: Column(
           children: [
             Expanded(
-              child: BaseView<NationalCouncilModel>(
+              child: BaseView<YouthCouncilModel>(
                 onModelReady: (model) {
-                  model.getNationalList(0, 0);
+                  model.getYouthList(0, 0, 0);
                 },
                 builder: (context, model, child) => model.loading
                     ? Loader()
@@ -88,12 +90,12 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
                         ),
                         controller: _refreshController,
                         onRefresh: () async {
-                          await model.getNationalList(0, 0, action: "refresh");
+                          await model.getYouthList(0, 0, 0, action: "refresh");
                           await Future.delayed(Duration(milliseconds: 1000));
                           _refreshController.refreshCompleted();
                         },
                         onLoading: () async {
-                          await model.getNationalList(0, 0, action: "more");
+                          await model.getYouthList(0, 0, 0, action: "more");
                           await Future.delayed(Duration(milliseconds: 1000));
                           _refreshController.loadComplete();
                         },
@@ -166,7 +168,7 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
                                 ],
                               ),
                             ),
-                            model.nationalCouncilList.length == 0
+                            model.youthCouncilList.length == 0
                                 ? Container(
                                     alignment: Alignment.center,
                                     margin: EdgeInsets.all(15),
@@ -178,8 +180,8 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
                                     child: Text('Үр дүн олдсонгүй'),
                                   )
                                 : Column(
-                                    children: model.nationalCouncilList.map(
-                                      (NationalCouncil item) {
+                                    children: model.youthCouncilList.map(
+                                      (YouthCouncil item) {
                                         return Column(
                                           children: [
                                             Padding(
@@ -213,14 +215,14 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
                                                         20),
                                                   ),
                                                   onPressed: () {
-                                                    Navigator.push(
-                                                      context,
-                                                      MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            SubCouncil(
-                                                                item: item),
-                                                      ),
-                                                    );
+                                                    // Navigator.push(
+                                                    //   context,
+                                                    //   MaterialPageRoute(
+                                                    //     builder: (context) =>
+                                                    //         SubCouncil(
+                                                    //             item: item),
+                                                    //   ),
+                                                    // );
                                                   },
                                                   child: Row(
                                                     children: [
@@ -284,7 +286,7 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
   }
 
   Future<dynamic> buildShowModalBottomSheet(
-      BuildContext context, NationalCouncilModel nModel) {
+      BuildContext context, YouthCouncilModel yModel) {
     return showModalBottomSheet(
       context: context,
       builder: (context) {
@@ -309,7 +311,7 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
                               onTap: () {
                                 Navigator.pop(context);
                                 buildShowModalSoumBottomSheet(
-                                    context, aimag.id, nModel);
+                                    context, aimag.id, yModel);
                               },
                               child: Container(
                                 margin: EdgeInsets.symmetric(
@@ -346,7 +348,7 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
   }
 
   Future<dynamic> buildShowModalSoumBottomSheet(
-      BuildContext context, aimagId, NationalCouncilModel nModel) {
+      BuildContext context, aimagId, YouthCouncilModel yModel) {
     return showModalBottomSheet(
       context: context,
       builder: (context) {
@@ -369,9 +371,9 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
                           (Soum soum) {
                             return GestureDetector(
                               onTap: () {
-                                nModel.getNationalList(aimagId, soum.id,
-                                    action: 'selected');
                                 Navigator.pop(context);
+                                buildShowModalBagKhorooBottomSheet(
+                                    context, aimagId, soum.id, yModel);
                               },
                               child: Container(
                                 margin: EdgeInsets.symmetric(
@@ -406,71 +408,67 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
       },
     );
   }
+
+  Future<dynamic> buildShowModalBagKhorooBottomSheet(
+      BuildContext context, aimagId, soumId, YouthCouncilModel yModel) {
+    return showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              child: Text('Баг Хороо сонгох'),
+            ),
+            Expanded(
+              child: BaseView<BagKhorooModel>(
+                onModelReady: (model) {
+                  model.getBagKhoroolList(soumId);
+                },
+                builder: (context, model, child) => model.loading
+                    ? Loader()
+                    : ListView(
+                        children: model.bagKhorooList.map(
+                          (BagKhoroo bagKhoroo) {
+                            return GestureDetector(
+                              onTap: () {
+                                yModel.getYouthList(
+                                    aimagId, soumId, bagKhoroo.id,
+                                    action: 'selected');
+                                Navigator.pop(context);
+                              },
+                              child: Container(
+                                margin: EdgeInsets.symmetric(
+                                    horizontal: 20, vertical: 10),
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 20, vertical: 15),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      child: Text(bagKhoroo.ner),
+                                    ),
+                                    Icon(
+                                      Icons.arrow_forward_ios,
+                                      color: Color(0xFF000000).withOpacity(.5),
+                                      size: 15,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        ).toList(),
+                      ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
 }
-
-// class _Search extends StatefulWidget {
-//   _Search({Key key}) : super(key: key);
-
-//   @override
-//   __SearchState createState() => __SearchState();
-// }
-
-// class __SearchState extends State<_Search> {
-//   TextEditingController _editingController;
-
-//   @override
-//   void initState() {
-//     super.initState();
-//     _editingController = TextEditingController();
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Padding(
-//       padding: const EdgeInsets.only(left: 20, right: 5),
-//       child: Row(
-//         crossAxisAlignment: CrossAxisAlignment.center,
-//         mainAxisAlignment: MainAxisAlignment.center,
-//         children: [
-//           Expanded(
-//             child: TextField(
-//               controller: _editingController,
-//               onChanged: (value) => setState(
-//                 () => {},
-//               ),
-//               decoration: InputDecoration(
-//                 hintText: 'Хайх',
-//                 hintStyle: TextStyle(
-//                   color: Theme.of(context).primaryColor,
-//                 ),
-//                 enabledBorder: InputBorder.none,
-//                 focusedBorder: InputBorder.none,
-//               ),
-//             ),
-//           ),
-//           _editingController.text.trim().isEmpty
-//               ? IconButton(
-//                   icon: Icon(
-//                     Icons.search,
-//                     color: Theme.of(context).primaryColor,
-//                   ),
-//                   onPressed: () {},
-//                 )
-//               : IconButton(
-//                   highlightColor: Colors.transparent,
-//                   splashColor: Colors.transparent,
-//                   icon: Icon(
-//                     Icons.clear,
-//                     color: Theme.of(context).primaryColor,
-//                   ),
-//                   onPressed: () => setState(
-//                     () {
-//                       _editingController.clear();
-//                     },
-//                   ),
-//                 ),
-//         ],
-//       ),
-//     );
-//   }
-// }
