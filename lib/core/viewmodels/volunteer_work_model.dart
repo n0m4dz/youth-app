@@ -12,21 +12,22 @@ class VolunteerWorkModel extends BaseModel {
 
   List<VolunteerWork> get volunteerWorkList => _api.volunteerWorkList;
 
-  Future<void> getVolunteerModelWorkList(int page, {String action}) async {
+  Future<void> getVolunteerModelWorkList(int aimagId, int page,
+      {String action}) async {
     switch (action) {
       case 'refresh':
         setLoading(true);
-        await _api.getVolunteerServiceWorkList(page, isForced: true);
+        await _api.getVolunteerServiceWorkList(aimagId, page, isForced: true);
         notifyListeners();
         setLoading(false);
         break;
       case 'more':
-        await _api.getVolunteerServiceWorkList(page);
+        await _api.getVolunteerServiceWorkList(aimagId, page);
         notifyListeners();
         break;
       default:
         setLoading(true);
-        await _api.getVolunteerServiceWorkList(1);
+        await _api.getVolunteerServiceWorkList(aimagId, 1);
         setLoading(false);
 
         break;

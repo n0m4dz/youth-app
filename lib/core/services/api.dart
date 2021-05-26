@@ -336,11 +336,13 @@ class Api {
     return data;
   }
 
-  Future<List<VolunteerWork>> getVolunteerWorks(int page) async {
+  Future<List<VolunteerWork>> getVolunteerWorks(int aimagId, int page) async {
     var data = new List<VolunteerWork>();
 
-    final response =
-        await _http.get('/api/mobile/get-volunteers/1?page=' + page.toString());
+    final response = await _http.get('/api/mobile/get-volunteers/' +
+        aimagId.toString() +
+        '?page=' +
+        page.toString());
 
     var parsed = response.data['volunteers']['data'] as List<dynamic>;
 
@@ -351,11 +353,13 @@ class Api {
     return data;
   }
 
-  Future<List<Event>> getApiEvents(int page) async {
+  Future<List<Event>> getApiEvents(int aimagId, int page) async {
     var data = new List<Event>();
 
-    final response =
-        await _http.get('/api/mobile/get-events/1?page=' + page.toString());
+    final response = await _http.get('/api/mobile/get-events/' +
+        aimagId.toString() +
+        '?page=' +
+        page.toString());
 
     var parsed = response.data['data'] as List<dynamic>;
 

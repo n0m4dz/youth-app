@@ -14,7 +14,7 @@ class VolunteerWorkService {
   List<VolunteerWork> _volunteerWorks = new List();
   List<VolunteerWork> get volunteerWorkList => _volunteerWorks;
 
-  Future<void> getVolunteerServiceWorkList(page,
+  Future<void> getVolunteerServiceWorkList(aimagId, page,
       {bool isForced = false}) async {
     if (isForced) {
       _volunteerWorks = new List();
@@ -26,7 +26,7 @@ class VolunteerWorkService {
       if (page == 1 && _volunteerWorks.length > 0) {
         return;
       }
-      List<VolunteerWork> data = await api.getVolunteerWorks(page);
+      List<VolunteerWork> data = await api.getVolunteerWorks(aimagId, page);
       if (data.length == 0) {
         _hasData = false;
       } else {

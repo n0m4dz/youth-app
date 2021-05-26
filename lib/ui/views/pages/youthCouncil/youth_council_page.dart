@@ -16,7 +16,7 @@ import 'package:youth/ui/components/default_sliver_app_bar.dart';
 import 'package:youth/ui/components/loader.dart';
 import 'dart:ui';
 import 'package:flutter/rendering.dart';
-import 'package:youth/ui/views/pages/sub_council.dart';
+import 'package:youth/ui/views/pages/sub_youth_council.dart';
 
 import '../../base_view.dart';
 
@@ -215,14 +215,14 @@ class _YouthCouncilPageState extends State<YouthCouncilPage> {
                                                         20),
                                                   ),
                                                   onPressed: () {
-                                                    // Navigator.push(
-                                                    //   context,
-                                                    //   MaterialPageRoute(
-                                                    //     builder: (context) =>
-                                                    //         SubCouncil(
-                                                    //             item: item),
-                                                    //   ),
-                                                    // );
+                                                    Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            SubYouthCouncil(
+                                                                item: item),
+                                                      ),
+                                                    );
                                                   },
                                                   child: Row(
                                                     children: [

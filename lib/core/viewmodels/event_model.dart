@@ -12,21 +12,21 @@ class EventModel extends BaseModel {
 
   List<Event> get eventList => _api.eventList;
 
-  Future<void> getEventList(int page, {String action}) async {
+  Future<void> getEventList(int aimagId, int page, {String action}) async {
     switch (action) {
       case 'refresh':
         setLoading(true);
-        await _api.getEventList(page, isForced: true);
+        await _api.getEventList(aimagId, page, isForced: true);
         notifyListeners();
         setLoading(false);
         break;
       case 'more':
-        await _api.getEventList(page);
+        await _api.getEventList(aimagId, page);
         notifyListeners();
         break;
       default:
         setLoading(true);
-        await _api.getEventList(1);
+        await _api.getEventList(aimagId, 1);
         setLoading(false);
 
         break;

@@ -14,7 +14,7 @@ class EventService {
   List<Event> _events = new List();
   List<Event> get eventList => _events;
 
-  Future<void> getEventList(page, {bool isForced = false}) async {
+  Future<void> getEventList(aimagId, page, {bool isForced = false}) async {
     if (isForced) {
       _events = new List();
       _hasData = true;
@@ -26,7 +26,7 @@ class EventService {
       if (page == 1 && _events.length > 0) {
         return;
       }
-      List<Event> data = await api.getApiEvents(page);
+      List<Event> data = await api.getApiEvents(aimagId, page);
       if (data.length == 0) {
         _hasData = false;
       } else {
