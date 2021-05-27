@@ -13,6 +13,7 @@ import 'package:youth/ui/styles/_colors.dart';
 
 import '../../../../size_config.dart';
 import '../../base_view.dart';
+import 'youth_volunteer_detail.dart';
 
 class YouthVolunteerWorks extends StatefulWidget {
   final int aimagId;
@@ -94,7 +95,16 @@ class _VolunteerWorksState extends State<YouthVolunteerWorks> {
                     children: model.volunteerWorkList.map(
                       (VolunteerWork item) {
                         return InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => YouthVolunteerDetail(
+                                  item: item,
+                                ),
+                              ),
+                            );
+                          },
                           child: Container(
                             margin: EdgeInsets.only(top: 15),
                             decoration: BoxDecoration(

@@ -1,57 +1,49 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:youth/core/contants/values.dart';
-import 'package:youth/core/models/event.dart';
-import 'package:youth/core/viewmodels/event_model.dart';
+import 'package:youth/core/models/resolution.dart';
+import 'package:youth/core/viewmodels/resolution_model.dart';
 import 'package:youth/ui/components/default_sliver_app_bar.dart';
 import 'package:youth/ui/components/loader.dart';
-import 'package:youth/ui/styles/_colors.dart';
-import 'package:youth/ui/views/pages/subYouthCouncil/youth_event_detail.dart';
+import 'package:youth/ui/views/pages/subCouncil/report_detail.dart';
+import 'package:youth/ui/views/pages/subYouthCouncil/youth_plan_detail.dart';
 
 import '../../../../size_config.dart';
 import '../../base_view.dart';
 
-class YouthEventPage extends StatefulWidget {
+class YouthPlan extends StatefulWidget {
   final int aimagId;
 
-  const YouthEventPage({Key key, this.aimagId}) : super(key: key);
+  const YouthPlan({Key key, this.aimagId}) : super(key: key);
   @override
-  _YouthEventPageState createState() => _YouthEventPageState();
+  _YouthPlanState createState() => _YouthPlanState();
 }
 
-class _YouthEventPageState extends State<YouthEventPage> {
+class _YouthPlanState extends State<YouthPlan> {
   RefreshController _refreshController =
       RefreshController(initialRefresh: false);
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    SizeConfig().init(context);
-
+    var size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.grey[100],
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
             DefaultSliverAppBar(
-              title: 'Эвэнт',
+              title: "Төлөвлөгөө",
               size: size,
-              color: eventColor,
-              svgData: "assets/images/svg/page-heading-event.svg",
+              color: Color(0xFF409EFF),
+              svgData: "assets/images/svg/page-heading-legal.svg",
             ),
           ];
         },
-        body: BaseView<EventModel>(
+        body: BaseView<ResolutionModel>(
           onModelReady: (model) {
-            model.getEventList(widget.aimagId, 1, action: "refresh");
+            model.getResolutionList(widget.aimagId, 80, 1, action: 'refresh');
           },
           builder: (context, model, child) => model.loading
               ? Loader()
@@ -74,27 +66,28 @@ class _YouthEventPageState extends State<YouthEventPage> {
                   ),
                   controller: _refreshController,
                   onRefresh: () async {
-                    await model.getEventList(widget.aimagId, 1,
+                    await model.getResolutionList(widget.aimagId, 81, 1,
                         action: "refresh");
                     await Future.delayed(Duration(milliseconds: 1000));
                     _refreshController.refreshCompleted();
                   },
                   onLoading: () async {
-                    await model.getEventList(widget.aimagId, model.page + 1,
+                    await model.getResolutionList(
+                        widget.aimagId, 81, model.page + 1,
                         action: "more");
                     await Future.delayed(Duration(milliseconds: 1000));
                     _refreshController.loadComplete();
                   },
                   child: ListView(
                     padding: EdgeInsets.only(left: 15, right: 15, bottom: 30),
-                    children: model.eventList.map(
-                      (Event item) {
+                    children: model.resolutionList.map(
+                      (Resolution item) {
                         return InkWell(
                           onTap: () {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => YouthEventDetail(
+                                builder: (context) => YouthPlanDetail(
                                   item: item,
                                 ),
                               ),
@@ -121,9 +114,9 @@ class _YouthEventPageState extends State<YouthEventPage> {
                                     children: <Widget>[
                                       ClipRRect(
                                         borderRadius: BorderRadius.circular(4),
-                                        child: item.banner != null
+                                        child: item.thumb != null
                                             ? CachedNetworkImage(
-                                                imageUrl: baseUrl + item.banner,
+                                                imageUrl: baseUrl + item.thumb,
                                                 imageBuilder:
                                                     (context, imageProvider) =>
                                                         Container(
@@ -144,20 +137,16 @@ class _YouthEventPageState extends State<YouthEventPage> {
                                                 ),
                                                 errorWidget:
                                                     (context, url, error) =>
-                                                        Image.network(
-                                                  baseUrl +
-                                                      "/assets/youth/images/noImage.jpg",
-                                                  width: double.infinity,
-                                                  fit: BoxFit.fitWidth,
-                                                ),
+                                                        Icon(Icons.error),
                                               )
                                             : Container(
-                                                height: 136,
-                                                child: Image.network(
-                                                  baseUrl +
-                                                      "/assets/youth/images/noImage.jpg",
-                                                  width: double.infinity,
-                                                  fit: BoxFit.fitWidth,
+                                                decoration: BoxDecoration(
+                                                  image: DecorationImage(
+                                                      image: NetworkImage(
+                                                        baseUrl +
+                                                            "/assets/youth/images/noImage.jpg",
+                                                      ),
+                                                      fit: BoxFit.cover),
                                                 ),
                                               ),
                                       ),
@@ -166,7 +155,7 @@ class _YouthEventPageState extends State<YouthEventPage> {
                                         top: 20,
                                         child: Container(
                                           decoration: BoxDecoration(
-                                            color: eventColor.withOpacity(.7),
+                                            color: Colors.blue.withOpacity(.7),
                                             borderRadius: BorderRadius.only(
                                               bottomRight: Radius.circular(4.0),
                                               topRight: Radius.circular(4.0),

@@ -14,6 +14,11 @@ class NationalCouncil {
   String createdAt;
   String updatedAt;
   int secrataryId;
+  int status;
+  int viewed;
+  String description;
+  int memberCount;
+  String qr;
 
   NationalCouncil(
       {this.id,
@@ -30,7 +35,12 @@ class NationalCouncil {
       this.zuvlulType,
       this.createdAt,
       this.updatedAt,
-      this.secrataryId});
+      this.secrataryId,
+      this.status,
+      this.viewed,
+      this.description,
+      this.memberCount,
+      this.qr});
 
   NationalCouncil.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -48,6 +58,11 @@ class NationalCouncil {
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
     secrataryId = json['secratary_id'];
+    status = json['status'];
+    viewed = json['viewed'];
+    description = json['description'];
+    memberCount = json['memberCount'];
+    qr = json['qr'];
   }
 
   Map<String, dynamic> toJson() {
@@ -67,6 +82,11 @@ class NationalCouncil {
     data['created_at'] = this.createdAt;
     data['updated_at'] = this.updatedAt;
     data['secratary_id'] = this.secrataryId;
+    data['status'] = this.status;
+    data['viewed'] = this.viewed;
+    data['description'] = this.description;
+    data['memberCount'] = this.memberCount;
+    data['qr'] = this.qr;
     return data;
   }
 }

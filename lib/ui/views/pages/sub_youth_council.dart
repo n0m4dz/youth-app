@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 import 'package:youth/core/models/youth_council.dart';
 import 'package:youth/ui/components/default_sliver_app_bar.dart';
 import 'package:youth/ui/components/sub_button.dart';
 import 'package:youth/ui/views/pages/subYouthCouncil/youth_introduction.dart';
+import 'package:youth/ui/views/pages/subYouthCouncil/youth_plan.dart';
+import 'package:youth/ui/views/pages/subYouthCouncil/youth_tips.dart';
 import 'package:youth/ui/views/pages/subYouthCouncil/youth_volunteer.dart';
 import 'package:youth/ui/views/pages/subCouncil/news_list.dart';
 import 'package:youth/ui/views/pages/subCouncil/report_list.dart';
@@ -114,12 +117,30 @@ class _SubCouncilState extends State<SubYouthCouncil> {
                   ),
                   SubButton(
                     title: "Төлөвлөгөө",
-                    press: () {},
+                    press: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => YouthPlan(
+                            aimagId: widget.item.id,
+                          ),
+                        ),
+                      );
+                    },
                     icon: FontAwesomeIcons.clipboardList,
                   ),
                   SubButton(
                     title: "Зөвлөмж",
-                    press: () {},
+                    press: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => YouthTips(
+                            aimagId: widget.item.id,
+                          ),
+                        ),
+                      );
+                    },
                     icon: FontAwesomeIcons.solidNewspaper,
                   ),
                   SubButton(
@@ -136,6 +157,27 @@ class _SubCouncilState extends State<SubYouthCouncil> {
                     },
                     icon: FontAwesomeIcons.arrowDown,
                   ),
+                  SizedBox(height: 20),
+                  Container(
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(15),
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(0, 2),
+                          blurRadius: 1,
+                          color: Colors.grey.withOpacity(0.23),
+                        )
+                      ],
+                    ),
+                    child: QrImage(
+                      data: widget.item.qr,
+                      version: QrVersions.auto,
+                      size: 180.0,
+                    ),
+                  ),
+                  SizedBox(height: 20),
                 ],
               ),
             ),
