@@ -45,6 +45,27 @@ class _SubCouncilState extends State<SubYouthCouncil> {
               padding: const EdgeInsets.all(15),
               child: Column(
                 children: [
+                  Container(
+                    width: double.infinity,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(15),
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(0, 2),
+                          blurRadius: 1,
+                          color: Colors.grey.withOpacity(0.23),
+                        )
+                      ],
+                    ),
+                    child: QrImage(
+                      data: widget.item.qr,
+                      version: QrVersions.auto,
+                      size: 150.0,
+                    ),
+                  ),
+                  SizedBox(height: 10),
                   SubButton(
                     title: "Танилцуулга",
                     press: () {
@@ -156,26 +177,6 @@ class _SubCouncilState extends State<SubYouthCouncil> {
                       );
                     },
                     icon: FontAwesomeIcons.arrowDown,
-                  ),
-                  SizedBox(height: 20),
-                  Container(
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(15),
-                      boxShadow: [
-                        BoxShadow(
-                          offset: Offset(0, 2),
-                          blurRadius: 1,
-                          color: Colors.grey.withOpacity(0.23),
-                        )
-                      ],
-                    ),
-                    child: QrImage(
-                      data: widget.item.qr,
-                      version: QrVersions.auto,
-                      size: 180.0,
-                    ),
                   ),
                   SizedBox(height: 20),
                 ],
