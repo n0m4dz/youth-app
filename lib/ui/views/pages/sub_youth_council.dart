@@ -32,10 +32,10 @@ class _SubCouncilState extends State<SubYouthCouncil> {
         width: double.infinity,
         decoration: BoxDecoration(
           color: Color(0xFF54a0ff),
-          // image: DecorationImage(
-          //   image: AssetImage("assets/images/ux_big.png"),
-          //   alignment: Alignment.topRight,
-          // ),
+          image: DecorationImage(
+            image: AssetImage("assets/images/ux_big.png"),
+            alignment: Alignment.topRight,
+          ),
         ),
         child: Column(
           children: [
