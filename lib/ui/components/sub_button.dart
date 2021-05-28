@@ -24,20 +24,20 @@ class SubButton extends StatelessWidget {
       ),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              offset: Offset(0, 2),
-              blurRadius: 1,
-              color: Colors.grey.withOpacity(0.23),
-            )
-          ],
-          borderRadius: BorderRadius.circular(
-            getProportionateScreenWidth(8),
-          ),
-        ),
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                offset: Offset(0, 2),
+                blurRadius: 1,
+                color: Colors.grey.withOpacity(0.23),
+              )
+            ],
+            borderRadius: BorderRadius.circular(
+              getProportionateScreenWidth(8),
+            ),
+            border: Border.all(color: Color(0xFF409EFF))),
         child: FlatButton(
-          padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+          padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
           onPressed: press,
           child: Row(
             children: [
@@ -50,7 +50,10 @@ class SubButton extends StatelessWidget {
               Expanded(
                 child: Text(
                   title.toUpperCase(),
-                  style: TextStyle(color: kTextColor),
+                  style: TextStyle(
+                    color: kTextColor,
+                    fontSize: 12,
+                  ),
                 ),
               ),
               Icon(

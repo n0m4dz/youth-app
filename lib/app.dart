@@ -51,7 +51,8 @@ class _AppState extends State<App> {
         debugShowCheckedModeBanner: false,
         title: 'ZEUS Signal',
         theme: ThemeData(
-          fontFamily: "Roboto-Condensed",
+          fontFamily: "Nunito",
+          //fontFamily: "Roboto-Condensed",
           canvasColor: Color(0xfff2f3fa),
         ),
         initialRoute: '/',

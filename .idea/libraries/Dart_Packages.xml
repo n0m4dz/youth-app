@@ -479,6 +479,20 @@
             </list>
           </value>
         </entry>
+        <entry key="qr">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../../src/flutter/.pub-cache/hosted/pub.dartlang.org/qr-2.0.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="qr_flutter">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../../src/flutter/.pub-cache/hosted/pub.dartlang.org/qr_flutter-4.0.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="quiver">
           <value>
             <list>
@@ -849,6 +863,8 @@
       <root url="file://$PROJECT_DIR$/../../src/flutter/.pub-cache/hosted/pub.dartlang.org/process-3.0.13/lib" />
       <root url="file://$PROJECT_DIR$/../../src/flutter/.pub-cache/hosted/pub.dartlang.org/provider-5.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../../src/flutter/.pub-cache/hosted/pub.dartlang.org/pull_to_refresh-1.6.5/lib" />
+      <root url="file://$PROJECT_DIR$/../../src/flutter/.pub-cache/hosted/pub.dartlang.org/qr-2.0.0/lib" />
+      <root url="file://$PROJECT_DIR$/../../src/flutter/.pub-cache/hosted/pub.dartlang.org/qr_flutter-4.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../../src/flutter/.pub-cache/hosted/pub.dartlang.org/quiver-2.1.5/lib" />
       <root url="file://$PROJECT_DIR$/../../src/flutter/.pub-cache/hosted/pub.dartlang.org/rxdart-0.25.0/lib" />
       <root url="file://$PROJECT_DIR$/../../src/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.5.12+4/lib" />

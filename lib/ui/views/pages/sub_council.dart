@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:qr_flutter/qr_flutter.dart';
-import 'package:youth/core/contants/values.dart';
 import 'package:youth/core/models/national_council.dart';
 import 'package:youth/ui/components/default_sliver_app_bar.dart';
 import 'package:youth/ui/components/sub_button.dart';
@@ -11,8 +9,6 @@ import 'package:youth/ui/views/pages/subCouncil/news_list.dart';
 import 'package:youth/ui/views/pages/subCouncil/report_list.dart';
 import 'package:youth/ui/views/pages/subCouncil/resolution_list.dart';
 import 'package:youth/ui/views/pages/subCouncil/staff_list.dart';
-
-import '../../../size_config.dart';
 
 class SubCouncil extends StatefulWidget {
   final NationalCouncil item;
@@ -28,119 +24,155 @@ class _SubCouncilState extends State<SubCouncil> {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      body: NestedScrollView(
-        physics: NeverScrollableScrollPhysics(),
-        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-          return <Widget>[
-            DefaultSliverAppBar(
-              title: widget.item.name,
-              size: size,
-              color: Color(0xFF409EFF),
-              svgData: "assets/images/svg/page-heading-legal.svg",
-            ),
-          ];
-        },
-        body: SingleChildScrollView(
-          child: Container(
-            child: Padding(
-              padding: const EdgeInsets.all(15),
+      body: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: Color(0xFF54a0ff),
+          // image: DecorationImage(
+          //   image: AssetImage("assets/images/ux_big.png"),
+          //   alignment: Alignment.topRight,
+          // ),
+        ),
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(left: 20, top: 40, right: 20),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SubButton(
-                    title: "Танилцуулга",
-                    press: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Introduction(
-                            item: widget.item,
-                          ),
-                        ),
-                      );
-                    },
-                    icon: FontAwesomeIcons.addressBook,
-                  ),
-                  SubButton(
-                    title: "Гишүүд",
-                    press: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => StaffList(
-                            aimagId: widget.item.id,
-                          ),
-                        ),
-                      );
-                    },
-                    icon: FontAwesomeIcons.users,
-                  ),
-                  SubButton(
-                    title: "Мэдээ",
-                    press: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => NewsList(
-                            aimagId: widget.item.id,
-                          ),
-                        ),
-                      );
-                    },
-                    icon: FontAwesomeIcons.newspaper,
-                  ),
-                  SubButton(
-                    title: "Тогтоол",
-                    press: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ResolutionList(
-                            aimagId: widget.item.id,
-                          ),
-                        ),
-                      );
-                    },
-                    icon: FontAwesomeIcons.solidNewspaper,
-                  ),
-                  SubButton(
-                    title: "Тайлан",
-                    press: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ReportList(
-                            aimagId: widget.item.id,
-                          ),
-                        ),
-                      );
-                    },
-                    icon: FontAwesomeIcons.arrowDown,
-                  ),
                   SizedBox(height: 20),
-                  Container(
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(15),
-                      boxShadow: [
-                        BoxShadow(
-                          offset: Offset(0, 2),
-                          blurRadius: 1,
-                          color: Colors.grey.withOpacity(0.23),
-                        )
-                      ],
-                    ),
-                    child: QrImage(
-                      data: widget.item.qr,
-                      version: QrVersions.auto,
-                      size: 180.0,
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Icon(
+                          Icons.arrow_back_ios,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Expanded(
+                        child: Text(
+                          widget.item.name,
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 10),
+                        child: QrImage(
+                          backgroundColor: Colors.white,
+                          data: widget.item.qr,
+                          version: QrVersions.auto,
+                          size: 80.0,
+                        ),
+                      )
+                    ],
                   ),
-                  SizedBox(height: 20),
                 ],
               ),
             ),
-          ),
+            SizedBox(height: 20),
+            Expanded(
+              child: Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.white,
+                ),
+                child: Stack(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: SingleChildScrollView(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SubButton(
+                              title: "Танилцуулга",
+                              press: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Introduction(
+                                      item: widget.item,
+                                    ),
+                                  ),
+                                );
+                              },
+                              icon: FontAwesomeIcons.addressBook,
+                            ),
+                            SubButton(
+                              title: "Гишүүд",
+                              press: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => StaffList(
+                                      aimagId: widget.item.id,
+                                    ),
+                                  ),
+                                );
+                              },
+                              icon: FontAwesomeIcons.users,
+                            ),
+                            SubButton(
+                              title: "Мэдээ",
+                              press: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => NewsList(
+                                      aimagId: widget.item.id,
+                                    ),
+                                  ),
+                                );
+                              },
+                              icon: FontAwesomeIcons.newspaper,
+                            ),
+                            SubButton(
+                              title: "Тогтоол",
+                              press: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => ResolutionList(
+                                      aimagId: widget.item.id,
+                                    ),
+                                  ),
+                                );
+                              },
+                              icon: FontAwesomeIcons.solidNewspaper,
+                            ),
+                            SubButton(
+                              title: "Тайлан",
+                              press: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => ReportList(
+                                      aimagId: widget.item.id,
+                                    ),
+                                  ),
+                                );
+                              },
+                              icon: FontAwesomeIcons.arrowDown,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

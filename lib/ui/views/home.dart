@@ -112,7 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     'Залуу хүн',
                     style: TextStyle(
                       fontSize: 22,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w700,
                       color: primaryColor,
                     ),
                   ),
@@ -232,7 +232,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: EdgeInsets.all(5),
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(20),
                     boxShadow: [shadow],
                   ),
                   child: Stack(
@@ -258,26 +258,26 @@ class _HomeScreenState extends State<HomeScreen> {
                             padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
                               color: Color(0xFFfa983a),
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(15),
                             ),
                             child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
                                 Text(
                                   'ЗХЗ',
                                   style: TextStyle(
-                                    fontSize: 14.3,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.w600,
                                     color: Colors.white,
                                   ),
                                 ),
-                                Text(
-                                  'Залуучууд хөгжлийн зөвлөл',
-                                  style: TextStyle(
-                                    fontSize: 10.2,
-                                    color: Colors.white,
-                                  ),
-                                )
+                                // Text(
+                                //   'Залуучууд хөгжлийн зөвлөл',
+                                //   style: TextStyle(
+                                //     fontSize: 10.2,
+                                //     color: Colors.white,
+                                //   ),
+                                // )
                               ],
                             ),
                           ),
@@ -302,7 +302,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: EdgeInsets.all(5),
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(20),
                     boxShadow: [shadow],
                   ),
                   child: Stack(
@@ -328,26 +328,26 @@ class _HomeScreenState extends State<HomeScreen> {
                             padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
                               color: Color(0xFF409EFF),
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(15),
                             ),
                             child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
                                 Text(
                                   'ЗХҮЗ',
                                   style: TextStyle(
-                                    fontSize: 14.3,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.w600,
                                     color: Colors.white,
                                   ),
                                 ),
-                                Text(
-                                  'салбар зөвлөл',
-                                  style: TextStyle(
-                                    fontSize: 10.7,
-                                    color: Colors.white,
-                                  ),
-                                )
+                                // Text(
+                                //   'салбар зөвлөл',
+                                //   style: TextStyle(
+                                //     fontSize: 10.7,
+                                //     color: Colors.white,
+                                //   ),
+                                // )
                               ],
                             ),
                           ),
@@ -373,7 +373,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: EdgeInsets.all(5),
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(20),
                     boxShadow: [shadow],
                   ),
                   child: Stack(
@@ -399,24 +399,24 @@ class _HomeScreenState extends State<HomeScreen> {
                             padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
                               color: Color(0xFF55438c),
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(15),
                             ),
                             child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
                                 Text(
                                   'Сайн дурын ажил',
                                   style: TextStyle(
-                                    fontSize: 14.3,
+                                    fontSize: 13.8,
                                     fontWeight: FontWeight.w600,
                                     color: Colors.white,
                                   ),
                                 ),
-                                Text(
-                                  '5 сайн дурын ажил байна',
-                                  style: TextStyle(
-                                      fontSize: 10.7, color: Colors.white),
-                                )
+                                // Text(
+                                //   '5 сайн дурын ажил байна',
+                                //   style: TextStyle(
+                                //       fontSize: 10.7, color: Colors.white),
+                                // )
                               ],
                             ),
                           ),
@@ -441,7 +441,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: EdgeInsets.all(5),
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(20),
                     boxShadow: [shadow],
                   ),
                   child: Stack(
@@ -467,7 +467,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
                               color: Color(0xFF02b557),
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(15),
                             ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -475,18 +475,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Text(
                                   'Цагийн ажил',
                                   style: TextStyle(
-                                    fontSize: 14.3,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.w600,
                                     color: Colors.white,
                                   ),
                                 ),
-                                Text(
-                                  '120+ ажлын зар байна',
-                                  style: TextStyle(
-                                    fontSize: 10.7,
-                                    color: Colors.white,
-                                  ),
-                                )
+                                // Text(
+                                //   '120+ ажлын зар байна',
+                                //   style: TextStyle(
+                                //     fontSize: 10.7,
+                                //     color: Colors.white,
+                                //   ),
+                                // )
                               ],
                             ),
                           ),
@@ -511,7 +511,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: EdgeInsets.all(5),
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(20),
                     boxShadow: [shadow],
                   ),
                   child: Stack(
@@ -537,7 +537,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
                               color: Color(0xFF7068fc),
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(15),
                             ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -545,18 +545,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Text(
                                   'Цахим хичээл',
                                   style: TextStyle(
-                                    fontSize: 14.3,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.w600,
                                     color: Colors.white,
                                   ),
                                 ),
-                                Text(
-                                  'Их сургуулийн тэтгэлэг',
-                                  style: TextStyle(
-                                    fontSize: 10.7,
-                                    color: Colors.white,
-                                  ),
-                                )
+                                // Text(
+                                //   'Их сургуулийн тэтгэлэг',
+                                //   style: TextStyle(
+                                //     fontSize: 10.7,
+                                //     color: Colors.white,
+                                //   ),
+                                // )
                               ],
                             ),
                           ),
@@ -580,7 +580,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: EdgeInsets.all(5),
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(20),
                     boxShadow: [shadow],
                   ),
                   child: Stack(
@@ -606,7 +606,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
                               color: Color(0xFFd63e49),
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(15),
                             ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -614,18 +614,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Text(
                                   'Хууль',
                                   style: TextStyle(
-                                    fontSize: 14.3,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.w600,
                                     color: Colors.white,
                                   ),
                                 ),
-                                Text(
-                                  '10+ сургалтын зар байна',
-                                  style: TextStyle(
-                                    fontSize: 10.7,
-                                    color: Colors.white,
-                                  ),
-                                )
+                                // Text(
+                                //   '10+ сургалтын зар байна',
+                                //   style: TextStyle(
+                                //     fontSize: 10.7,
+                                //     color: Colors.white,
+                                //   ),
+                                // )
                               ],
                             ),
                           ),
@@ -650,7 +650,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: EdgeInsets.all(5),
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(20),
                     boxShadow: [shadow],
                   ),
                   child: Stack(
@@ -676,7 +676,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
                               color: Color(0xFF7e8c9c),
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(15),
                             ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -684,18 +684,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Text(
                                   'Мэдээ',
                                   style: TextStyle(
-                                    fontSize: 14.3,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.w600,
                                     color: Colors.white,
                                   ),
                                 ),
-                                Text(
-                                  'Хууль эрх зүйн мэдлэг',
-                                  style: TextStyle(
-                                    fontSize: 10.7,
-                                    color: Colors.white,
-                                  ),
-                                )
+                                // Text(
+                                //   'Хууль эрх зүйн мэдлэг',
+                                //   style: TextStyle(
+                                //     fontSize: 10.7,
+                                //     color: Colors.white,
+                                //   ),
+                                // )
                               ],
                             ),
                           ),
@@ -721,7 +721,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: EdgeInsets.all(5),
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(20),
                     boxShadow: [shadow],
                   ),
                   child: Stack(
@@ -747,7 +747,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
                               color: Color(0xFFd9bc4c),
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(15),
                             ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -755,18 +755,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Text(
                                   'Эвэнт',
                                   style: TextStyle(
-                                    fontSize: 14.3,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.w600,
                                     color: Colors.white,
                                   ),
                                 ),
-                                Text(
-                                  'Эрүүл мэнд, гэр бүл',
-                                  style: TextStyle(
-                                    fontSize: 10.7,
-                                    color: Colors.white,
-                                  ),
-                                )
+                                // Text(
+                                //   'Эрүүл мэнд, гэр бүл',
+                                //   style: TextStyle(
+                                //     fontSize: 10.7,
+                                //     color: Colors.white,
+                                //   ),
+                                // )
                               ],
                             ),
                           ),
