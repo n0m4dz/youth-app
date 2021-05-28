@@ -49,7 +49,7 @@ class DefaultSliverAppBar extends StatelessWidget {
               child: Text(
                 title.toUpperCase(),
                 style: TextStyle(
-                  fontSize: getProportionateScreenWidth(15),
+                  fontSize: getProportionateScreenWidth(13),
                 ),
                 textAlign: TextAlign.center,
               ),
