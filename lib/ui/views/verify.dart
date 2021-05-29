@@ -1,14 +1,16 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:youth/core/models/user.dart';
-import 'package:youth/core/viewmodels/user_model.dart';
+//import 'package:assistant/core/models/user.dart';
+//import 'package:assistant/core/viewmodels/user_model.dart';
 import 'package:lambda/plugins/progress_dialog/progress_dialog.dart';
 import 'package:lambda/plugins/verify_input/verify_input.dart';
 import 'package:lambda/modules/network_util.dart';
 import 'package:lambda/modules/responseModel.dart';
 import 'package:provider/provider.dart';
 import 'package:toast/toast.dart';
+import 'package:youth/core/models/user.dart';
+import 'package:youth/core/viewmodels/user_model.dart';
 
 class VerifyPage extends StatefulWidget {
   final String verify;
@@ -34,7 +36,7 @@ class _VerifyPageState extends State<VerifyPage> {
     super.dispose();
   }
 
-  doVerify() async {
+  doVerify(BuildContext context) async {
     ProgressDialog pr = new ProgressDialog(context, ProgressDialogType.Normal);
     FocusScope.of(context).requestFocus(new FocusNode());
     await Future.delayed(Duration(milliseconds: 300));
@@ -42,25 +44,56 @@ class _VerifyPageState extends State<VerifyPage> {
     pr.setMessage('Түр хүлээнэ үү...');
     pr.show();
 
-    final state = Provider.of<UserModel>(context);
+    final state = Provider.of<UserModel>(context, listen: false);
     User user = state.getUser;
 
-    ResponseModel response = await _netUtil.post('/api/m/verify',
+    ResponseModel response = await _netUtil.post('/api/mobile/verify',
         {"code": code, "user": user.id, "verify": widget.verify});
 
     if (response.status) {
       User user = new User.fromJson(response.data);
-      final state = Provider.of<UserModel>(context);
+      final state = Provider.of<UserModel>(context, listen: false);
       state.setUser(user);
 
       pr.update(message: response.msg, type: 'success');
       await new Future.delayed(const Duration(seconds: 1));
       pr.hide();
       if (widget.verify == 'register') {
-        Navigator.pushNamed(context, '/main');
+        Navigator.pushNamed(context, '/register');
       } else {
         Navigator.pushNamed(context, '/reset');
       }
+    } else {
+      pr.update(message: response.msg, type: 'error');
+      await new Future.delayed(const Duration(milliseconds: 1500));
+      pr.hide();
+    }
+  }
+
+  getVerifyKode(BuildContext context) async {
+    ProgressDialog pr = new ProgressDialog(context, ProgressDialogType.Normal);
+    FocusScope.of(context).requestFocus(new FocusNode());
+    await Future.delayed(Duration(milliseconds: 300));
+
+    pr.setMessage('Түр хүлээнэ үү...');
+    pr.show();
+
+    final state = Provider.of<UserModel>(context, listen: false);
+    User user = state.getUser;
+
+    ResponseModel response =
+        await _netUtil.post('/api/mobile/resend-sms', {"user": user.id});
+
+    if (response.status) {
+      User user = new User.fromJson(response.data);
+      final state = Provider.of<UserModel>(context, listen: false);
+      state.setUser(user);
+      setState(() {
+        code = '';
+      });
+      pr.update(message: response.msg, type: 'success');
+      await new Future.delayed(const Duration(seconds: 1));
+      pr.hide();
     } else {
       pr.update(message: response.msg, type: 'error');
       await new Future.delayed(const Duration(milliseconds: 1500));
@@ -154,7 +187,7 @@ class _VerifyPageState extends State<VerifyPage> {
                                   final form = this._verifyFormKey.currentState;
                                   if (form.validate()) {
                                     form.save();
-                                    this.doVerify();
+                                    this.doVerify(context);
                                   }
                                 }
                               },
@@ -170,11 +203,43 @@ class _VerifyPageState extends State<VerifyPage> {
             Container(
               margin: EdgeInsets.only(top: 10, bottom: 20, left: 22, right: 22),
               child: Text(
-                'Таны имэйл хаяг руу илгээсэн баталгаажуулах кодыг оруулна уу!',
+                'Таны утасруу илгээсэн баталгаажуулах кодыг оруулна уу!',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 18, color: Color(0xff34495e)),
               ),
             ),
+            Container(
+              alignment: Alignment.center,
+              margin: EdgeInsets.only(top: 18, right: 20),
+              child: Row(
+                // crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Expanded(
+                    child: Container(
+                      alignment: Alignment.centerLeft,
+                      margin: EdgeInsets.only(left: 8, right: 0, bottom: 15),
+                      height: 18,
+                      child: FlatButton(
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: Center(
+                              child: Text(
+                                'Баталгаажуулах код дахин авах бол энд дарна уу',
+                                style: TextStyle(
+                                    color: Color(0xff34495e),
+                                    fontSize: 13.5,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ),
+                          ),
+                          onPressed: () {
+                            this.getVerifyKode(context);
+                          }),
+                    ),
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),

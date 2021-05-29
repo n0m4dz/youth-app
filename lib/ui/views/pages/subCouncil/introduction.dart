@@ -20,79 +20,112 @@ class _Introduction extends State<Introduction> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+
     return Scaffold(
-      body: NestedScrollView(
-        physics: NeverScrollableScrollPhysics(),
-        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-          return <Widget>[
-            DefaultSliverAppBar(
-              title: widget.item.name,
-              size: size,
-              color: Color(0xFF409EFF),
-              svgData: "assets/images/svg/page-heading-legal.svg",
-            ),
-          ];
-        },
-        body: widget.item.introduction != null
-            ? Padding(
-                padding: EdgeInsets.all(
-                  getProportionateScreenWidth(15),
-                ),
-                child: Container(
-                  padding: EdgeInsets.all(
-                    getProportionateScreenWidth(15),
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        offset: Offset(0, 2),
-                        blurRadius: 1,
-                        color: Colors.grey.withOpacity(0.23),
-                      )
-                    ],
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Html(
-                    data: widget.item.introduction.toString(),
-                    style: {
-                      "p": Style(
-                        color: kTextColor,
-                        fontSize: FontSize(14),
+      backgroundColor: Colors.grey[200],
+      body: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: Color(0xFF54a0ff),
+          image: DecorationImage(
+            image: AssetImage("assets/images/ux_big.png"),
+            alignment: Alignment.topRight,
+          ),
+        ),
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(left: 20, top: 40, right: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Icon(
+                          Icons.arrow_back_ios,
+                          color: Colors.white,
+                        ),
                       ),
-                    },
-                  ),
-                ),
-              )
-            : Padding(
-                padding: EdgeInsets.all(
-                  getProportionateScreenWidth(15),
-                ),
-                child: Container(
-                  alignment: Alignment.center,
-                  padding: EdgeInsets.all(
-                    getProportionateScreenWidth(15),
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(15),
-                    boxShadow: [
-                      BoxShadow(
-                        offset: Offset(0, 2),
-                        blurRadius: 1,
-                        color: Colors.grey.withOpacity(0.23),
-                      )
+                      Expanded(
+                        child: Text(
+                          'Танилцуулга',
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
                     ],
                   ),
-                  child: Text(
-                    'Мэдээлэл байхгүй байна.',
-                    style: TextStyle(
-                      color: kTextColor,
-                      fontSize: 18,
-                    ),
+                ],
+              ),
+            ),
+            SizedBox(height: 20),
+            Expanded(
+              child: Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  //borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(15),
+                    topRight: Radius.circular(15),
                   ),
+                  color: Colors.white,
+                ),
+                child: Stack(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(
+                        getProportionateScreenWidth(15),
+                      ),
+                      child: widget.item.introduction != null
+                          ? Column(
+                              children: [
+                                Text(
+                                  widget.item.name,
+                                  style: TextStyle(fontSize: 18),
+                                  textAlign: TextAlign.center,
+                                ),
+                                Html(
+                                  data: widget.item.introduction.toString(),
+                                  style: {
+                                    "p": Style(
+                                      color: kTextColor,
+                                      fontSize: FontSize(14),
+                                      textAlign: TextAlign.justify,
+                                    ),
+                                  },
+                                ),
+                              ],
+                            )
+                          : Container(
+                              alignment: Alignment.center,
+                              padding: EdgeInsets.all(
+                                getProportionateScreenWidth(15),
+                              ),
+                              child: Text(
+                                'Мэдээлэл байхгүй байна.',
+                                style: TextStyle(
+                                  color: kTextColor,
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ),
+                    )
+                  ],
                 ),
               ),
+            ),
+          ],
+        ),
       ),
     );
   }

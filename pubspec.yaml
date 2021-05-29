@@ -34,6 +34,7 @@ dependencies:
   flutter_plugin_android_lifecycle: ^1.0.11
   font_awesome_flutter: ^8.2.0
   qr_flutter: ^4.0.0
+  custom_fade_animation: ^0.0.2
 
 dev_dependencies:
   flutter_test:
@@ -87,17 +88,17 @@ flutter:
 
   # custom fonts
   fonts:
-    # - family: Roboto-Condensed
-    #   fonts:
-    #     - asset: assets/fonts/Roboto_Condensed/RobotoCondensed-Light.ttf
-    #       weight: 300
-    #     - asset: assets/fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf
-    #       weight: 400
-    #     - asset: assets/fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf
-    #       weight: 700
-    #     - asset: assets/fonts/Roboto_Condensed/RobotoCondensed-BoldItalic.ttf
-    #       weight: 700
-    #       style: italic
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto_Condensed/RobotoCondensed-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Roboto_Condensed/RobotoCondensed-BoldItalic.ttf
+          weight: 700
+          style: italic
     - family: Nunito
       fonts:
         - asset: assets/fonts/Nunito/Nunito-Light.ttf

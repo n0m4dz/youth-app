@@ -24,18 +24,19 @@ class SubButton extends StatelessWidget {
       ),
       child: Container(
         decoration: BoxDecoration(
-            color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                offset: Offset(0, 2),
-                blurRadius: 1,
-                color: Colors.grey.withOpacity(0.23),
-              )
-            ],
-            borderRadius: BorderRadius.circular(
-              getProportionateScreenWidth(8),
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              offset: Offset(0, 1),
+              blurRadius: 4,
+              spreadRadius: 2,
+              color: Colors.grey.withOpacity(.25),
             ),
-            border: Border.all(color: Color(0xFF409EFF))),
+          ],
+          borderRadius: BorderRadius.circular(
+            getProportionateScreenWidth(8),
+          ),
+        ),
         child: FlatButton(
           padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
           onPressed: press,

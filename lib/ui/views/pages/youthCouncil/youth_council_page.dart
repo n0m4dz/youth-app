@@ -51,7 +51,7 @@ class _YouthCouncilPageState extends State<YouthCouncilPage> {
 
     // TODO: implement build
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: Colors.white,
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
@@ -113,10 +113,11 @@ class _YouthCouncilPageState extends State<YouthCouncilPage> {
                                 color: Colors.white,
                                 boxShadow: [
                                   BoxShadow(
-                                    offset: Offset(0, 2),
-                                    blurRadius: 1,
-                                    color: Colors.grey.withOpacity(0.23),
-                                  )
+                                    offset: Offset(0, 1),
+                                    blurRadius: 4,
+                                    spreadRadius: 2,
+                                    color: Colors.grey.withOpacity(.25),
+                                  ),
                                 ],
                               ),
                               padding: const EdgeInsets.only(
@@ -193,11 +194,12 @@ class _YouthCouncilPageState extends State<YouthCouncilPage> {
                                             color: Colors.white,
                                             boxShadow: [
                                               BoxShadow(
-                                                offset: Offset(0, 2),
-                                                blurRadius: 1,
+                                                offset: Offset(0, 1),
+                                                blurRadius: 4,
+                                                spreadRadius: 2,
                                                 color: Colors.grey
-                                                    .withOpacity(0.23),
-                                              )
+                                                    .withOpacity(.25),
+                                              ),
                                             ],
                                             borderRadius:
                                                 BorderRadius.circular(15),
@@ -308,10 +310,11 @@ class _YouthCouncilPageState extends State<YouthCouncilPage> {
                                   borderRadius: BorderRadius.circular(10),
                                   boxShadow: [
                                     BoxShadow(
-                                      offset: Offset(0, 2),
-                                      blurRadius: 1,
-                                      color: Colors.grey.withOpacity(0.23),
-                                    )
+                                      offset: Offset(0, 1),
+                                      blurRadius: 4,
+                                      spreadRadius: 2,
+                                      color: Colors.grey.withOpacity(.25),
+                                    ),
                                   ],
                                 ),
                                 child: Row(
@@ -377,10 +380,11 @@ class _YouthCouncilPageState extends State<YouthCouncilPage> {
                                   borderRadius: BorderRadius.circular(10),
                                   boxShadow: [
                                     BoxShadow(
-                                      offset: Offset(0, 2),
-                                      blurRadius: 1,
-                                      color: Colors.grey.withOpacity(0.23),
-                                    )
+                                      offset: Offset(0, 1),
+                                      blurRadius: 4,
+                                      spreadRadius: 2,
+                                      color: Colors.grey.withOpacity(.25),
+                                    ),
                                   ],
                                 ),
                                 child: Row(
@@ -447,10 +451,11 @@ class _YouthCouncilPageState extends State<YouthCouncilPage> {
                                   borderRadius: BorderRadius.circular(10),
                                   boxShadow: [
                                     BoxShadow(
-                                      offset: Offset(0, 2),
-                                      blurRadius: 1,
-                                      color: Colors.grey.withOpacity(0.23),
-                                    )
+                                      offset: Offset(0, 1),
+                                      blurRadius: 4,
+                                      spreadRadius: 2,
+                                      color: Colors.grey.withOpacity(.25),
+                                    ),
                                   ],
                                 ),
                                 child: Row(

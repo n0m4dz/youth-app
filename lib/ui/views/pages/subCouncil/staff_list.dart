@@ -145,7 +145,7 @@ class _StaffListState extends State<StaffList> {
                                         item.lastname + "\n" + item.firstname,
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
-                                          fontSize: 18,
+                                          fontSize: 16,
                                           color: primaryColor,
                                         ),
                                       ),
@@ -154,13 +154,12 @@ class _StaffListState extends State<StaffList> {
                                       height: 10,
                                     ),
                                     Container(
-                                      height: 50,
                                       child: Text(
                                         item.appointment != null
                                             ? item.appointment
                                             : '',
                                         textAlign: TextAlign.center,
-                                        style: TextStyle(fontSize: 12.5),
+                                        style: TextStyle(fontSize: 12),
                                       ),
                                     ),
                                     SizedBox(
@@ -171,7 +170,7 @@ class _StaffListState extends State<StaffList> {
                                         Text(
                                           'Зөвлөлийн албан тушаал:',
                                           style: TextStyle(
-                                            fontSize: 12.5,
+                                            fontSize: 12,
                                             color: primaryColor,
                                           ),
                                         ),

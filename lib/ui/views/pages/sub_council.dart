@@ -57,11 +57,11 @@ class _SubCouncilState extends State<SubCouncil> {
                         child: Text(
                           widget.item.name,
                           style: TextStyle(
-                            fontSize: 18,
+                            fontSize: 14,
                             color: Colors.white,
                             fontWeight: FontWeight.w600,
                           ),
-                          textAlign: TextAlign.center,
+                          textAlign: TextAlign.right,
                         ),
                       ),
                       Padding(
@@ -70,9 +70,9 @@ class _SubCouncilState extends State<SubCouncil> {
                           backgroundColor: Colors.white,
                           data: widget.item.qr,
                           version: QrVersions.auto,
-                          size: 80.0,
+                          size: 70.0,
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ],
@@ -83,7 +83,10 @@ class _SubCouncilState extends State<SubCouncil> {
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(15),
+                    topRight: Radius.circular(15),
+                  ),
                   color: Colors.white,
                 ),
                 child: Stack(
