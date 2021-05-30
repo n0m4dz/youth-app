@@ -16,6 +16,7 @@ import 'package:youth/ui/components/default_sliver_app_bar.dart';
 import 'package:youth/ui/components/loader.dart';
 import 'dart:ui';
 import 'package:flutter/rendering.dart';
+import 'package:youth/ui/styles/_colors.dart';
 import 'package:youth/ui/views/pages/sub_youth_council.dart';
 
 import '../../base_view.dart';
@@ -51,14 +52,14 @@ class _YouthCouncilPageState extends State<YouthCouncilPage> {
 
     // TODO: implement build
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey[200],
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
             DefaultSliverAppBar(
               title: widget.title,
               size: size,
-              color: Color(0xFFfa983a),
+              color: Color(0xFF409EFF),
               svgData: "assets/images/svg/page-heading-legal.svg",
             ),
           ];
@@ -111,14 +112,7 @@ class _YouthCouncilPageState extends State<YouthCouncilPage> {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
                                 color: Colors.white,
-                                boxShadow: [
-                                  BoxShadow(
-                                    offset: Offset(0, 1),
-                                    blurRadius: 4,
-                                    spreadRadius: 2,
-                                    color: Colors.grey.withOpacity(.25),
-                                  ),
-                                ],
+                                boxShadow: [shadow],
                               ),
                               padding: const EdgeInsets.only(
                                 left: 20,
@@ -192,15 +186,7 @@ class _YouthCouncilPageState extends State<YouthCouncilPage> {
                                         child: Container(
                                           decoration: BoxDecoration(
                                             color: Colors.white,
-                                            boxShadow: [
-                                              BoxShadow(
-                                                offset: Offset(0, 1),
-                                                blurRadius: 4,
-                                                spreadRadius: 2,
-                                                color: Colors.grey
-                                                    .withOpacity(.25),
-                                              ),
-                                            ],
+                                            boxShadow: [shadow],
                                             borderRadius:
                                                 BorderRadius.circular(15),
                                           ),
@@ -308,14 +294,7 @@ class _YouthCouncilPageState extends State<YouthCouncilPage> {
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(10),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      offset: Offset(0, 1),
-                                      blurRadius: 4,
-                                      spreadRadius: 2,
-                                      color: Colors.grey.withOpacity(.25),
-                                    ),
-                                  ],
+                                  boxShadow: [shadow],
                                 ),
                                 child: Row(
                                   children: [
@@ -378,14 +357,7 @@ class _YouthCouncilPageState extends State<YouthCouncilPage> {
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(10),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      offset: Offset(0, 1),
-                                      blurRadius: 4,
-                                      spreadRadius: 2,
-                                      color: Colors.grey.withOpacity(.25),
-                                    ),
-                                  ],
+                                  boxShadow: [shadow],
                                 ),
                                 child: Row(
                                   children: [
@@ -449,14 +421,7 @@ class _YouthCouncilPageState extends State<YouthCouncilPage> {
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(10),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      offset: Offset(0, 1),
-                                      blurRadius: 4,
-                                      spreadRadius: 2,
-                                      color: Colors.grey.withOpacity(.25),
-                                    ),
-                                  ],
+                                  boxShadow: [shadow],
                                 ),
                                 child: Row(
                                   children: [

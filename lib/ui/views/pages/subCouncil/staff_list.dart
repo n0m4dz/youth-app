@@ -43,7 +43,7 @@ class _StaffListState extends State<StaffList> {
             DefaultSliverAppBar(
               title: "Зөвлөлийн гишүүд",
               size: size,
-              color: Color(0xFF409EFF),
+              color: primaryColor,
               svgData: "assets/images/svg/page-heading-legal.svg",
             ),
           ];
@@ -59,8 +59,8 @@ class _StaffListState extends State<StaffList> {
                 : GridView.count(
                     padding: EdgeInsets.all(0),
                     crossAxisCount: 2,
-                    mainAxisSpacing: 13,
-                    crossAxisSpacing: 11,
+                    mainAxisSpacing: 10,
+                    crossAxisSpacing: 12,
                     childAspectRatio: (itemWidth / 400),
                     physics: new NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
@@ -72,13 +72,7 @@ class _StaffListState extends State<StaffList> {
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(5),
-                            boxShadow: [
-                              BoxShadow(
-                                offset: Offset(0, 2),
-                                blurRadius: 1,
-                                color: Colors.grey.withOpacity(0.23),
-                              )
-                            ],
+                            boxShadow: [shadow],
                           ),
                           child: Column(
                             children: <Widget>[
@@ -88,7 +82,7 @@ class _StaffListState extends State<StaffList> {
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   border: Border.all(
-                                    color: Colors.blue,
+                                    color: primaryColor,
                                     width: 2,
                                   ),
                                   borderRadius: BorderRadius.circular(60),
@@ -114,7 +108,8 @@ class _StaffListState extends State<StaffList> {
                                               Container(
                                             child: Center(
                                               child: CircularProgressIndicator(
-                                                  strokeWidth: 2),
+                                                strokeWidth: 2,
+                                              ),
                                             ),
                                           ),
                                           errorWidget: (context, url, error) =>
@@ -146,7 +141,8 @@ class _StaffListState extends State<StaffList> {
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                           fontSize: 16,
-                                          color: primaryColor,
+                                          color: Color(0xFFfcb040),
+                                          fontWeight: FontWeight.w600,
                                         ),
                                       ),
                                     ),
@@ -165,26 +161,17 @@ class _StaffListState extends State<StaffList> {
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Column(
-                                      children: [
-                                        Text(
-                                          'Зөвлөлийн албан тушаал:',
-                                          style: TextStyle(
-                                            fontSize: 12,
-                                            color: primaryColor,
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          height: 5,
-                                        ),
-                                        Text(
-                                          item.positionName,
-                                          style: TextStyle(fontSize: 12.5),
-                                        ),
-                                      ],
+                                    Text(
+                                      'Зөвлөлийн албан тушаал:',
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: primaryColor,
+                                        fontWeight: FontWeight.w100,
+                                      ),
                                     ),
-                                    SizedBox(
-                                      height: 15,
+                                    Text(
+                                      item.positionName,
+                                      style: TextStyle(fontSize: 12),
                                     ),
                                   ],
                                 ),

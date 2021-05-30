@@ -1,104 +1,140 @@
+import 'dart:io';
+
 class User {
-  int id;
-  String sessionId;
-  String type;
-  String rank;
-  String xp;
-  String nickname;
-  String lastname;
-  String name;
-  String email;
-  String phone;
-  String image;
-  String rememberToken;
-  int role;
-  String image1;
-  int gender;
-  String age;
-  String address;
-  String account;
-  String paydate;
-  String payexpire;
-  String fbid;
-  String login;
-  int coin;
+  int _id;
+  String _name;
+  String _phone;
+  String _email;
+  bool _is_active;
+  String _first_name;
+  String _last_name;
+  String _facebook;
+  String _google;
+  int _gender;
+  String _bio;
+  String _age;
+  String _avatar;
 
-  User(
-      {this.id,
-      this.sessionId,
-      this.type,
-      this.rank,
-      this.xp,
-      this.nickname,
-      this.lastname,
-      this.name,
-      this.email,
-      this.phone,
-      this.image,
-      this.rememberToken,
-      this.role,
-      this.image1,
-      this.gender,
-      this.age,
-      this.address,
-      this.account,
-      this.paydate,
-      this.payexpire,
-      this.fbid,
-      this.login,
-      this.coin});
+  int _point;
+  int _xp;
+  int _spent;
+  int _trans;
 
-  User.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    sessionId = json['session_id'];
-    type = json['type'].toString();
-    rank = json['rank'].toString();
-    xp = json['xp'].toString();
-    nickname = json['nickname'];
-    lastname = json['lastname'];
-    name = json['name'];
-    email = json['email'];
-    phone = json['phone'];
-    image = json['image'];
-    rememberToken = json['remember_token'];
-    role = json['role'];
-    image1 = json['image1'];
-    gender = json['gender'] == null ? 0 : int.tryParse(json['gender']);
-    age = json['age'] == null ? '0' : json['age'].toString();
-    address = json['address'].toString();
-    account = json['account'].toString();
-    paydate = json['paydate'].toString();
-    payexpire = json['payexpire'].toString();
-    fbid = json['fbid'].toString();
-    login = json['login'].toString();
-    coin = json['coin'];
+  User.fromJson(Map<String, dynamic> parsedJson) {
+    _id = parsedJson['id'];
+    _name = parsedJson['name'];
+    _phone = parsedJson['phone'];
+    _email = parsedJson['email'];
+    _is_active = parsedJson['is_active'] == 0 ? false : true;
+    _first_name = parsedJson['first_name'];
+    _last_name = parsedJson['last_name'];
+    _facebook = parsedJson['facebook'].toString();
+    _google = parsedJson['google'].toString();
+    _gender = parsedJson['gender'] == "0" ? 0 : 1;
+    _bio = parsedJson['bio'];
+    _age = parsedJson['age'].toString();
+    _avatar = parsedJson['avatar'];
+
+    _point = parsedJson['point'] ?? 0;
+    _xp = parsedJson['xp'] ?? 0;
+    _spent = parsedJson['spent'] ?? 0;
+    _trans = parsedJson['trans'] ?? 0;
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['session_id'] = this.sessionId;
-    data['type'] = this.type;
-    data['rank'] = this.rank;
-    data['xp'] = this.xp;
-    data['nickname'] = this.nickname;
-    data['lastname'] = this.lastname;
-    data['name'] = this.name;
-    data['email'] = this.email;
-    data['phone'] = this.phone;
-    data['image'] = this.image;
-    data['remember_token'] = this.rememberToken;
-    data['role'] = this.role;
-    data['image1'] = this.image1;
-    data['gender'] = this.gender;
-    data['age'] = this.age;
-    data['address'] = this.address;
-    data['account'] = this.account;
-    data['paydate'] = this.paydate;
-    data['payexpire'] = this.payexpire;
-    data['fbid'] = this.fbid;
-    data['login'] = this.login;
-    data['coin'] = this.coin;
+    data['id'] = _id;
+    data['name'] = _name;
+    data['phone'] = _phone;
+    data['email'] = _email;
+    data['is_active'] = _is_active;
+    data['first_name'] = _first_name;
+    data['last_name'] = _last_name;
+    data['facebook'] = _facebook;
+    data['google'] = _google;
+    data['gender'] = _gender;
+    data['bio'] = _bio;
+    data['age'] = _age;
+    data['avatar'] = _avatar;
+
+    data['point'] = _point;
+    data['xp'] = _xp;
+    data['spent'] = _spent;
+    data['trans'] = _trans;
     return data;
+  }
+
+  int get id => _id;
+
+  String get name => _name;
+
+  String get phone => _phone;
+
+  String get email => _email;
+
+  bool get is_active => _is_active;
+
+  String get first_name => _first_name;
+
+  String get last_name => _last_name;
+
+  String get facebook => _facebook;
+
+  String get google => _google;
+
+  String get bio => _bio;
+
+  int get gender => _gender;
+
+  String get age => _age;
+
+  String get avatar => _avatar;
+
+  int get point => _point;
+
+  int get xp => _xp;
+
+  int get spend => _spent;
+
+  int get trans => _trans;
+
+  void setPoint(int val) {
+    _point = val;
+  }
+
+  void setXp(int val) {
+    _xp = xp;
+  }
+
+  void setSpend(int val) {
+    _spent = xp;
+  }
+
+  void setTrans(int val) {
+    _trans = xp;
+  }
+
+  void setImage(File img) {
+    _avatar = img.path;
+  }
+
+  void setFirstName(String val) {
+    _first_name = val;
+  }
+
+  void setLastName(String val) {
+    _last_name = val;
+  }
+
+  void setPhone(String val) {
+    _phone = val;
+  }
+
+  void setGender(int val) {
+    _gender = val;
+  }
+
+  void setAge(String val) {
+    _age = val;
   }
 }

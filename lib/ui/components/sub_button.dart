@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:youth/core/contants/values.dart';
+import 'package:youth/ui/styles/_colors.dart';
 
 import '../../size_config.dart';
 
@@ -25,14 +26,7 @@ class SubButton extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              offset: Offset(0, 1),
-              blurRadius: 4,
-              spreadRadius: 2,
-              color: Colors.grey.withOpacity(.25),
-            ),
-          ],
+          boxShadow: [shadow],
           borderRadius: BorderRadius.circular(
             getProportionateScreenWidth(8),
           ),

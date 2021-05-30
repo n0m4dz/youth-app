@@ -138,13 +138,13 @@ class _RegisterPageState extends State<RegisterPage> {
                 Icon(
                   Icons.circle,
                   size: 10,
-                  color: secondaryColor.withOpacity(0.6),
+                  color: Color(0xff0079FF).withOpacity(0.7),
                 ),
                 SizedBox(width: 10),
                 Text(
                   city["ner"],
                   style: TextStyle(
-                    color: Color.fromRGBO(147, 157, 186, .78),
+                    color: Colors.black,
                     fontSize: 15,
                     //fontWeight: FontWeight.w400,
                   ),
@@ -173,13 +173,13 @@ class _RegisterPageState extends State<RegisterPage> {
                 Icon(
                   Icons.circle,
                   size: 10,
-                  color: secondaryColor.withOpacity(0.6),
+                  color: Color(0xff0079FF).withOpacity(0.7),
                 ),
                 SizedBox(width: 10),
                 Text(
                   city["ner"],
                   style: TextStyle(
-                    color: Color.fromRGBO(147, 157, 186, .78),
+                    color: Colors.black,
                     fontSize: 15,
                     //fontWeight: FontWeight.w500,
                   ),
@@ -270,8 +270,8 @@ class _RegisterPageState extends State<RegisterPage> {
                                   onChanged: changedDropDownItemAimag,
                                   isExpanded: true,
                                   iconSize: 30.0,
-                                  style: TextStyle(color: Colors.lightBlue),
-                                  dropdownColor: Colors.blue.withOpacity(0.9),
+                                  //style: TextStyle(color: Colors.lightBlue),
+                                  dropdownColor: Colors.white,
                                 ),
                               ),
                             ),
@@ -321,8 +321,8 @@ class _RegisterPageState extends State<RegisterPage> {
                                 onChanged: changedDropDownItemSum,
                                 isExpanded: true,
                                 iconSize: 30.0,
-                                style: TextStyle(color: Colors.lightBlue),
-                                dropdownColor: Colors.blue.withOpacity(0.9),
+                                //style: TextStyle(color: Colors.lightBlue),
+                                dropdownColor: Colors.white,
                               )),
                             ),
                           ),

@@ -35,21 +35,20 @@ class _SubCouncilState extends State<SubCouncil> {
         ),
         child: Column(
           children: [
-            Padding(
-              padding: EdgeInsets.only(left: 20, top: 40, right: 20),
+            Container(
+              height: 180,
+              padding: EdgeInsets.only(top: 60, right: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(height: 20),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                        child: Icon(
-                          Icons.arrow_back_ios,
+                      IconButton(
+                        onPressed: () => Navigator.of(context).pop(false),
+                        icon: Icon(
+                          Icons.arrow_back,
                           color: Colors.white,
                         ),
                       ),
@@ -75,6 +74,7 @@ class _SubCouncilState extends State<SubCouncil> {
                       ),
                     ],
                   ),
+                  SizedBox(height: 20),
                 ],
               ),
             ),
@@ -87,7 +87,7 @@ class _SubCouncilState extends State<SubCouncil> {
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15),
                   ),
-                  color: Colors.white,
+                  color: Colors.grey[100],
                 ),
                 child: Stack(
                   children: [

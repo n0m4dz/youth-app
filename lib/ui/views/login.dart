@@ -506,9 +506,9 @@ class _LoginPageState extends State<LoginPage> {
                               ],
                             ),
                             onPressed: () {
-                              Navigator.pushNamed(
-                                  context, '/register_by_phone');
-                              //Navigator.pushNamed(context, '/register');
+                              // Navigator.pushNamed(
+                              //     context, '/register_by_phone');
+                              Navigator.pushNamed(context, '/register');
                             }),
                       ),
                     ),

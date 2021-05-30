@@ -92,7 +92,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     super.initState();
     SchedulerBinding.instance.addPostFrameCallback((_) {
       setState(() {
-        gender = user.gender;
+        gender = user.gender as int;
         //avatarPath = user.image;
       });
     });
