@@ -70,6 +70,7 @@ flutter:
     - assets/images/job.png
     - assets/images/ux_big.png
     - assets/images/bg-blue.jpg
+    - assets/images/bg-wh.jpg
     - assets/images/svg/arrow-left.svg
     - assets/images/svg/page-heading-part-time.svg
     - assets/images/svg/icon-part-time.svg
@@ -86,6 +87,7 @@ flutter:
     - assets/images/svg/menu-event.svg
     - assets/images/svg/menu-zxvz.svg
     - assets/images/svg/menu-zxz.svg
+    - assets/images/svg/bg-wh.svg
 
   # custom fonts
   fonts:

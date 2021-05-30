@@ -244,7 +244,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           'assets/images/svg/menu-zxz.svg',
                           width: 70,
                           height: 70,
-                          color: Color(0xFFfa983a),
+                          color: Color(0xFFb8b8b8),
                         ),
                       ),
                       Positioned(
@@ -257,7 +257,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Container(
                             padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
-                              color: Color(0xFFfa983a),
+                              color: Color(0xFFb8b8b8),
                               borderRadius: BorderRadius.circular(15),
                             ),
                             child: Column(
@@ -314,7 +314,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           'assets/images/svg/menu-zxvz.svg',
                           width: 70,
                           height: 70,
-                          color: Color(0xFF409EFF),
+                          color: Color(0xFF0084b5),
                         ),
                       ),
                       Positioned(
@@ -327,7 +327,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Container(
                             padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
-                              color: Color(0xFF409EFF),
+                              color: Color(0xFF0084b5),
                               borderRadius: BorderRadius.circular(15),
                             ),
                             child: Column(

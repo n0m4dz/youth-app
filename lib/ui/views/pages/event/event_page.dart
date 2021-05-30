@@ -39,6 +39,20 @@ class _EventPageState extends State<EventPage> {
     Size size = MediaQuery.of(context).size;
     SizeConfig().init(context);
 
-    return Scaffold();
+    return Scaffold(
+      backgroundColor: Colors.grey[100],
+      body: NestedScrollView(
+          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+            return <Widget>[
+              DefaultSliverAppBar(
+                title: widget.title,
+                size: size,
+                color: Color(0xFFcba822),
+                svgData: "assets/images/svg/page-heading-event.svg",
+              ),
+            ];
+          },
+          body: Container()),
+    );
   }
 }

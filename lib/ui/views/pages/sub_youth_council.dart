@@ -5,6 +5,7 @@ import 'package:qr_flutter/qr_flutter.dart';
 import 'package:youth/core/models/youth_council.dart';
 import 'package:youth/ui/components/default_sliver_app_bar.dart';
 import 'package:youth/ui/components/sub_button.dart';
+import 'package:youth/ui/styles/_colors.dart';
 import 'package:youth/ui/views/pages/subYouthCouncil/youth_introduction.dart';
 import 'package:youth/ui/views/pages/subYouthCouncil/youth_plan.dart';
 import 'package:youth/ui/views/pages/subYouthCouncil/youth_tips.dart';
@@ -33,52 +34,52 @@ class _SubCouncilState extends State<SubYouthCouncil> {
         decoration: BoxDecoration(
           color: Color(0xFF54a0ff),
           image: DecorationImage(
-            image: AssetImage("assets/images/ux_big.png"),
+            image: AssetImage("assets/images/bg-wh.jpg"),
             alignment: Alignment.topRight,
           ),
         ),
         child: Column(
           children: [
-            Padding(
-              padding: EdgeInsets.only(left: 20, top: 40, right: 20),
+            Container(
+              height: 180,
+              padding: EdgeInsets.only(top: 60, right: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 20),
+                  //SizedBox(height: 20),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                        child: Icon(
-                          Icons.arrow_back_ios,
-                          color: Colors.white,
+                      IconButton(
+                        onPressed: () => Navigator.of(context).pop(false),
+                        icon: Icon(
+                          Icons.arrow_back,
+                          color: primaryColor,
                         ),
                       ),
                       Expanded(
                         child: Text(
                           widget.item.name,
                           style: TextStyle(
-                            fontSize: 14,
-                            color: Colors.white,
+                            fontSize: 16,
+                            color: primaryColor,
                             fontWeight: FontWeight.w600,
                           ),
                           textAlign: TextAlign.center,
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(left: 15),
+                        padding: EdgeInsets.only(left: 10),
                         child: QrImage(
                           backgroundColor: Colors.white,
                           data: widget.item.qr,
                           version: QrVersions.auto,
                           size: 70.0,
                         ),
-                      )
+                      ),
                     ],
                   ),
+                  //SizedBox(height: 20),
                 ],
               ),
             ),
@@ -91,8 +92,8 @@ class _SubCouncilState extends State<SubYouthCouncil> {
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15),
                   ),
-                  //color: Colors.grey[200],
-                  color: Colors.white,
+                  color: Colors.grey[200],
+                  //color: Colors.white,
                 ),
                 child: Stack(
                   children: [

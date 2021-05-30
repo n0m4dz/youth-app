@@ -49,25 +49,18 @@ class DefaultSliverAppBar extends StatelessWidget {
               child: Text(
                 title.toUpperCase(),
                 style: TextStyle(
-                  fontSize: getProportionateScreenWidth(13),
+                  fontSize: getProportionateScreenWidth(14),
                 ),
                 textAlign: TextAlign.center,
               ),
             ),
           ],
         ),
-        background: Stack(
-          children: [
-            Positioned(
-              right: getProportionateScreenWidth(-50),
-              bottom: 0,
-              child: SvgPicture.asset(
-                svgData,
-                width: size.width,
-                height: size.height * getProportionateScreenWidth(.13),
-              ),
-            ),
-          ],
+        background: SvgPicture.asset(
+          svgData,
+          width: size.width,
+          height: size.height,
+          fit: BoxFit.fitHeight,
         ),
       ),
       actions: [
