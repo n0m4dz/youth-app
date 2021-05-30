@@ -56,13 +56,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
     form.save();
 
     FormData formData = new FormData.fromMap({
-      "avatar": user.image,
+      //"avatar": user.image,
       "nickname": nickname,
       "phone": phone,
       "gender": gender,
       "age": age,
       "file": image.path != null
-          ? await MultipartFile.fromFile(image.path, filename: "${user.id}-avatar.jpg")
+          ? await MultipartFile.fromFile(image.path,
+              filename: "${user.id}-avatar.jpg")
           : null,
     });
 
@@ -92,7 +93,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     SchedulerBinding.instance.addPostFrameCallback((_) {
       setState(() {
         gender = user.gender;
-        avatarPath = user.image;
+        //avatarPath = user.image;
       });
     });
   }
@@ -225,13 +226,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   child: Center(
                                     child: Stack(
                                       children: <Widget>[
-                                        (user.image == null || user.image == '')
-                                            ? CircleAvatar(
-                                                radius: 70,
-                                                backgroundImage: AssetImage(
-                                                    'assets/images/avatar2.png'),
-                                              )
-                                            : getAvatarThumb(),
+                                        // (user.image == null || user.image == '')
+                                        //     ? CircleAvatar(
+                                        //         radius: 70,
+                                        //         backgroundImage: AssetImage(
+                                        //             'assets/images/avatar2.png'),
+                                        //       )
+                                        //     : getAvatarThumb(),
                                         Positioned(
                                           bottom: 0,
                                           right: 0,
@@ -283,7 +284,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       ),
                                       Container(
                                         child: TextFormField(
-                                          initialValue: user.nickname ?? '',
+                                          //initialValue: user.nickname ?? '',
                                           decoration: InputDecoration(
                                               border: InputBorder.none,
                                               hintStyle: TextStyle(

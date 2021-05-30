@@ -14,6 +14,8 @@ import 'package:lambda/modules/agent/agent_state.dart';
 import 'package:lambda/modules/agent/agent_util.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:youth/core/models/user.dart';
+import 'package:youth/core/viewmodels/user_model.dart';
 import 'package:youth/ui/styles/_colors.dart';
 
 import '../../locator.dart';
@@ -38,9 +40,9 @@ class _LoginPageState extends State<LoginPage> {
     if (isAuth) {
       prefs = await SharedPreferences.getInstance();
       String userData = prefs.getString('user');
-      //final userState = Provider.of<UserModel>(context,listen:false);
-      //User user = new User.fromJson(jsonDecode(userData));
-      //userState.setUser(user);
+      final userState = Provider.of<UserModel>(context, listen: false);
+      User user = new User.fromJson(jsonDecode(userData));
+      userState.setUser(user);
       Navigator.of(context).pushReplacementNamed('/main');
     }
 
@@ -70,10 +72,10 @@ class _LoginPageState extends State<LoginPage> {
         context, '/api/mobile/login', login.text, password.text);
     if (isAuth) {
       var prefs = await SharedPreferences.getInstance();
-      //final userState = Provider.of<UserModel>(context, listen: false);
-      //String userData = prefs.getString('user');
-      //User user = new User.fromJson(jsonDecode(userData));
-      //userState.setUser(user);
+      final userState = Provider.of<UserModel>(context, listen: false);
+      String userData = prefs.getString('user');
+      User user = new User.fromJson(jsonDecode(userData));
+      userState.setUser(user);
       Navigator.pushReplacementNamed(context, '/main');
     }
   }
@@ -202,10 +204,11 @@ class _LoginPageState extends State<LoginPage> {
                                             fontSize: 14,
                                             color: Colors.white70),
                                         enabledBorder: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(20.0),
-                                            borderSide: BorderSide(
-                                                color: Colors.white54)),
+                                          borderRadius:
+                                              BorderRadius.circular(20.0),
+                                          borderSide:
+                                              BorderSide(color: Colors.white54),
+                                        ),
                                         hintStyle: TextStyle(
                                             color: Color(0xff666666),
                                             fontSize: 14,
@@ -377,14 +380,12 @@ class _LoginPageState extends State<LoginPage> {
                                                       textAlign:
                                                           TextAlign.center,
                                                       style: TextStyle(
-                                                          color: Color.fromRGBO(
-                                                              255,
-                                                              255,
-                                                              255,
-                                                              .8),
-                                                          fontSize: 16,
-                                                          fontWeight:
-                                                              FontWeight.w400),
+                                                        color: Color.fromRGBO(
+                                                            255, 255, 255, .8),
+                                                        fontSize: 16,
+                                                        fontWeight:
+                                                            FontWeight.w400,
+                                                      ),
                                                     ),
                                                   ),
                                                 ],
@@ -505,9 +506,9 @@ class _LoginPageState extends State<LoginPage> {
                               ],
                             ),
                             onPressed: () {
-                              // Navigator.pushNamed(
-                              //     context, '/register_by_phone');
-                              Navigator.pushNamed(context, '/register');
+                              Navigator.pushNamed(
+                                  context, '/register_by_phone');
+                              //Navigator.pushNamed(context, '/register');
                             }),
                       ),
                     ),

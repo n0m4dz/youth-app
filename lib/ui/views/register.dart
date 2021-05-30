@@ -32,6 +32,9 @@ class _RegisterPageState extends State<RegisterPage> {
   String lastname = '';
   String firstname = '';
   String password = '';
+  int aimag_id = 0;
+  int soum_id = 0;
+
   NetworkUtil _netUtil = new NetworkUtil();
   GlobalKey key = new GlobalKey();
   List _aimagList = [];
@@ -92,6 +95,8 @@ class _RegisterPageState extends State<RegisterPage> {
       "firstname": firstname,
       "lastname": lastname,
       "email": email,
+      "aimag_id": _currentAimag,
+      "soum_id": _currentSum,
       "password": password,
     });
 
@@ -158,30 +163,34 @@ class _RegisterPageState extends State<RegisterPage> {
   List<DropdownMenuItem<String>> getDropDownMenuSum() {
     print('getDropDownMenuSum');
     List<DropdownMenuItem<String>> items = new List();
-    _sumList.forEach((city) {
-      items.add(new DropdownMenuItem(
-        value: city["id"].toString(),
-        child: Row(
-          children: [
-            Icon(
-              Icons.circle,
-              size: 10,
-              color: secondaryColor.withOpacity(0.6),
+    _sumList.forEach(
+      (city) {
+        items.add(
+          new DropdownMenuItem(
+            value: city["id"].toString(),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.circle,
+                  size: 10,
+                  color: secondaryColor.withOpacity(0.6),
+                ),
+                SizedBox(width: 10),
+                Text(
+                  city["ner"],
+                  style: TextStyle(
+                    color: Color.fromRGBO(147, 157, 186, .78),
+                    fontSize: 15,
+                    //fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
             ),
-            SizedBox(width: 10),
-            Text(
-              city["ner"],
-              style: TextStyle(
-                color: Color.fromRGBO(147, 157, 186, .78),
-                fontSize: 15,
-                //fontWeight: FontWeight.w500,
-              ),
-            ),
-          ],
-        ),
-        // child: new Text(city["ner"])
-      ));
-    });
+            // child: new Text(city["ner"])
+          ),
+        );
+      },
+    );
 
     return items;
   }
@@ -321,6 +330,86 @@ class _RegisterPageState extends State<RegisterPage> {
                             height: 15.0,
                           ),
                           TextFormField(
+                            initialValue: lastname,
+                            decoration: InputDecoration(
+                              contentPadding: EdgeInsets.all(2),
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide(width: 1),
+                                borderRadius: BorderRadius.circular(25),
+                              ),
+                              labelText: 'Овог',
+                              hintStyle: TextStyle(
+                                color: Color.fromRGBO(147, 157, 186, .78),
+                                fontSize: 18,
+                                //fontWeight: FontWeight.w400,
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(25),
+                                borderSide: BorderSide(width: 1),
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(25),
+                                borderSide:
+                                    BorderSide(width: 1, color: Colors.red),
+                              ),
+                              prefixIcon: Padding(
+                                padding: EdgeInsets.all(0.0),
+                                child: Icon(
+                                  Icons.account_circle,
+                                  color: Color.fromRGBO(147, 157, 186, .78),
+                                  size: 22,
+                                ),
+                              ),
+                            ),
+                            validator: (val) {
+                              return val.isEmpty ? 'Овог оо оруулна уу!' : null;
+                            },
+                            onSaved: (val) => lastname = val,
+                          ),
+                          SizedBox(
+                            height: 14.0,
+                          ),
+                          TextFormField(
+                            initialValue: firstname,
+                            decoration: InputDecoration(
+                              contentPadding: EdgeInsets.all(2),
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide(width: 1),
+                                borderRadius: BorderRadius.circular(25),
+                              ),
+                              labelText: 'Нэр',
+                              hintStyle: TextStyle(
+                                color: Color.fromRGBO(147, 157, 186, .78),
+                                fontSize: 18,
+                                //fontWeight: FontWeight.w400,
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(25),
+                                borderSide: BorderSide(width: 1),
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(25),
+                                borderSide:
+                                    BorderSide(width: 1, color: Colors.red),
+                              ),
+                              prefixIcon: Padding(
+                                padding: EdgeInsets.all(0.0),
+                                child: Icon(
+                                  Icons.account_circle,
+                                  color: Color.fromRGBO(147, 157, 186, .78),
+                                  size: 22,
+                                ),
+                              ),
+                            ),
+                            validator: (val) {
+                              return val.isEmpty ? 'Нэрээ оруулна уу!' : null;
+                            },
+                            onSaved: (val) => firstname = val,
+                          ),
+                          SizedBox(
+                            height: 14.0,
+                          ),
+                          TextFormField(
                             initialValue: email,
                             decoration: InputDecoration(
                               contentPadding: EdgeInsets.all(2),
@@ -358,123 +447,6 @@ class _RegisterPageState extends State<RegisterPage> {
                                   : null;
                             },
                             onSaved: (val) => email = val,
-                          ),
-                          SizedBox(
-                            height: 14.0,
-                          ),
-                          // TextFormField(
-                          //   initialValue: lastname,
-                          //   decoration: InputDecoration(
-                          //     contentPadding: EdgeInsets.all(2),
-                          //     border: OutlineInputBorder(
-                          //       borderSide: BorderSide(width: 1),
-                          //       borderRadius: BorderRadius.circular(25),
-                          //     ),
-                          //     labelText: 'Овог',
-                          //     hintStyle: TextStyle(
-                          //       color: Color.fromRGBO(147, 157, 186, .78),
-                          //       fontSize: 18,
-                          //       //fontWeight: FontWeight.w400,
-                          //     ),
-                          //     focusedBorder: OutlineInputBorder(
-                          //       borderRadius: BorderRadius.circular(25),
-                          //       borderSide: BorderSide(width: 1),
-                          //     ),
-                          //     focusedErrorBorder: OutlineInputBorder(
-                          //       borderRadius: BorderRadius.circular(25),
-                          //       borderSide:
-                          //           BorderSide(width: 1, color: Colors.red),
-                          //     ),
-                          //     prefixIcon: Padding(
-                          //       padding: EdgeInsets.all(0.0),
-                          //       child: Icon(
-                          //         Icons.account_circle,
-                          //         color: Color.fromRGBO(147, 157, 186, .78),
-                          //         size: 22,
-                          //       ),
-                          //     ),
-                          //   ),
-                          //   validator: (val) {
-                          //     return val.isEmpty ? 'Овог оо оруулна уу!' : null;
-                          //   },
-                          //   onSaved: (val) => lastname = val,
-                          // ),
-                          // SizedBox(
-                          //   height: 14.0,
-                          // ),
-                          // TextFormField(
-                          //   initialValue: firstname,
-                          //   decoration: InputDecoration(
-                          //     contentPadding: EdgeInsets.all(2),
-                          //     border: OutlineInputBorder(
-                          //       borderSide: BorderSide(width: 1),
-                          //       borderRadius: BorderRadius.circular(25),
-                          //     ),
-                          //     labelText: 'Нэр',
-                          //     hintStyle: TextStyle(
-                          //       color: Color.fromRGBO(147, 157, 186, .78),
-                          //       fontSize: 18,
-                          //       //fontWeight: FontWeight.w400,
-                          //     ),
-                          //     focusedBorder: OutlineInputBorder(
-                          //       borderRadius: BorderRadius.circular(25),
-                          //       borderSide: BorderSide(width: 1),
-                          //     ),
-                          //     focusedErrorBorder: OutlineInputBorder(
-                          //       borderRadius: BorderRadius.circular(25),
-                          //       borderSide:
-                          //           BorderSide(width: 1, color: Colors.red),
-                          //     ),
-                          //     prefixIcon: Padding(
-                          //       padding: EdgeInsets.all(0.0),
-                          //       child: Icon(
-                          //         Icons.account_circle,
-                          //         color: Color.fromRGBO(147, 157, 186, .78),
-                          //         size: 22,
-                          //       ),
-                          //     ),
-                          //   ),
-                          //   validator: (val) {
-                          //     return val.isEmpty ? 'Нэрээ оруулна уу!' : null;
-                          //   },
-                          //   onSaved: (val) => firstname = val,
-                          // ),
-                          // SizedBox(
-                          //   height: 14.0,
-                          // ),
-                          TextFormField(
-                            initialValue: password,
-                            obscureText: true,
-                            decoration: InputDecoration(
-                              contentPadding: EdgeInsets.all(2),
-                              border: OutlineInputBorder(
-                                  borderSide: BorderSide(width: 1),
-                                  borderRadius: BorderRadius.circular(25)),
-                              labelText: 'Нууц үг',
-                              hintStyle: TextStyle(
-                                color: Color.fromRGBO(147, 157, 186, .78),
-                                fontSize: 18,
-                                //fontWeight: FontWeight.w400,
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(25),
-                                  borderSide: BorderSide(width: 1)),
-                              focusedErrorBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(25),
-                                  borderSide:
-                                      BorderSide(width: 1, color: Colors.red)),
-                              prefixIcon: Icon(
-                                Icons.lock,
-                                color: Color.fromRGBO(147, 157, 186, .78),
-                                size: 22,
-                              ),
-                            ),
-                            onSaved: (val) => password = val,
-                            validator: (val) {
-                              return val.isEmpty
-                                  ? 'Нууц үгээ оруулна уу!'
-                                  : null;
-                            },
                           ),
                           SizedBox(
                             height: 14.0,
@@ -530,7 +502,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                   children: <Widget>[
                                     Center(
                                       child: Text(
-                                        'Бүртгүүлэх'.toUpperCase(),
+                                        'Бүртгүүлэх',
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                           color:

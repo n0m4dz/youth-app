@@ -14,7 +14,7 @@ class UserService {
       '/api/m/update/profile/${user.id}',
       {
         "avatar": avatar.toString(),
-        "nickname": user.nickname,
+        //"nickname": user.nickname,
         "phone": user.phone,
         "gender": user.gender,
         "age": user.age,

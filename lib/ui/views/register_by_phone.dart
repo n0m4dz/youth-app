@@ -99,8 +99,10 @@ class _RegisterPageState extends State<RegisterByPhonePage> {
                           },
                           itemDecoration: BoxDecoration(
                             border: Border(
-                              bottom:
-                                  BorderSide(width: .7, color: Colors.black54),
+                              bottom: BorderSide(
+                                width: .7,
+                                color: Colors.black54,
+                              ),
                             ),
                           ),
                         ),
@@ -154,30 +156,31 @@ class _RegisterPageState extends State<RegisterByPhonePage> {
             child: Container(
               height: 46,
               child: FlatButton(
-                  padding: EdgeInsets.only(top: 15, left: 20),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      Icon(
-                        //Icons.ios_arrow_back,
-                        FontAwesomeIcons.arrowLeft,
+                padding: EdgeInsets.only(top: 15, left: 20),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Icon(
+                      //Icons.ios_arrow_back,
+                      FontAwesomeIcons.arrowLeft,
+                      color: Color(0xff0079FF),
+                      size: 16,
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text(
+                      'Буцах',
+                      style: TextStyle(
                         color: Color(0xff0079FF),
-                        size: 21,
+                        fontSize: 17,
+                        fontWeight: FontWeight.w500,
                       ),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Text(
-                        'Буцах',
-                        style: TextStyle(
-                          color: Color(0xff0079FF),
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ],
-                  ),
-                  onPressed: () => Navigator.pop(context)),
+                    ),
+                  ],
+                ),
+                onPressed: () => Navigator.pop(context),
+              ),
             ),
           ),
         ],

@@ -78,10 +78,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             'Миний булан'.toUpperCase(),
             textAlign: TextAlign.start,
             style: TextStyle(
-                color: primaryColor,
-                fontWeight: FontWeight.w600,
-                fontSize: 18
-            ),
+                color: primaryColor, fontWeight: FontWeight.w600, fontSize: 18),
           ),
           leading: FlatButton(
             padding: EdgeInsets.all(0),
@@ -116,35 +113,41 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           top: 30, bottom: 0, right: 10, left: 10),
                       child: Column(
                         children: <Widget>[
-                          user != null ? CircleAvatar(
-                            radius: 44,
-                            backgroundImage: user.image != null ? AssetImage(user.image) : AssetImage('assets/images/avatar2.png'),
-                          ) :
-                          CircleAvatar(
-                            radius: 44,
-                            backgroundImage: AssetImage('assets/images/avatar2.png'),
-                          ),
+                          user != null
+                              ? CircleAvatar(
+                                  radius: 44,
+                                  //backgroundImage: user.image != null ? AssetImage(user.image) : AssetImage('assets/images/avatar2.png'),
+                                )
+                              : CircleAvatar(
+                                  radius: 44,
+                                  backgroundImage:
+                                      AssetImage('assets/images/avatar2.png'),
+                                ),
                           SizedBox(
                             height: 11,
                           ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
-                              user != null ?  Text(
-                                user.email != null ? user.email : 'Хэрэглэгчийн и мэйл бүртгэлгүй байна',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 18,
-                                  color: Color(0xff7a7e8b),
-                                ),
-                              ) : Text(
-                                'Хэрэглэгч нэвтрээгүй',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 18,
-                                  color: Color(0xff7a7e8b),
-                                ),
-                              ),
+                              user != null
+                                  ? Text(
+                                      user.email != null
+                                          ? user.email
+                                          : 'Хэрэглэгчийн и мэйл бүртгэлгүй байна',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 18,
+                                        color: Color(0xff7a7e8b),
+                                      ),
+                                    )
+                                  : Text(
+                                      'Хэрэглэгч нэвтрээгүй',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 18,
+                                        color: Color(0xff7a7e8b),
+                                      ),
+                                    ),
                               SizedBox(
                                 height: 4,
                               ),
@@ -220,8 +223,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   // ),
                   Container(
                     height: 48,
-                    margin:
-                    EdgeInsets.only(bottom: 20, left: 20, right: 20, top: 40),
+                    margin: EdgeInsets.only(
+                        bottom: 20, left: 20, right: 20, top: 40),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                     ),
@@ -259,9 +262,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
             ),
           ],
-        )
-    );
-
+        ));
   }
 
   void _pointModalBottomSheet(context) {
