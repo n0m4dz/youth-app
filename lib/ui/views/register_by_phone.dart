@@ -93,9 +93,11 @@ class _RegisterPageState extends State<RegisterByPhonePage> {
                           itemSize: 35,
                           keyboardType: TextInputType.numberWithOptions(),
                           onCompleted: (val) {
-                            setState(() {
-                              phone = val;
-                            });
+                            setState(
+                              () {
+                                phone = val;
+                              },
+                            );
                           },
                           itemDecoration: BoxDecoration(
                             border: Border(

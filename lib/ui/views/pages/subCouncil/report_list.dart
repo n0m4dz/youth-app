@@ -8,6 +8,7 @@ import 'package:youth/core/models/resolution.dart';
 import 'package:youth/core/viewmodels/resolution_model.dart';
 import 'package:youth/ui/components/default_sliver_app_bar.dart';
 import 'package:youth/ui/components/loader.dart';
+import 'package:youth/ui/styles/_colors.dart';
 import 'package:youth/ui/views/pages/subCouncil/report_detail.dart';
 
 import '../../../../size_config.dart';
@@ -35,7 +36,7 @@ class _ReportListState extends State<ReportList> {
             DefaultSliverAppBar(
               title: "Тайлан",
               size: size,
-              color: Color(0xFF409EFF),
+              color: Color(0xFF0084b5),
               svgData: "assets/images/svg/page-heading-legal.svg",
             ),
           ];
@@ -77,151 +78,178 @@ class _ReportListState extends State<ReportList> {
                     await Future.delayed(Duration(milliseconds: 1000));
                     _refreshController.loadComplete();
                   },
-                  child: ListView(
-                    padding: EdgeInsets.only(left: 15, right: 15, bottom: 30),
-                    children: model.resolutionList.map(
-                      (Resolution item) {
-                        return InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ReportDetail(
-                                  item: item,
-                                ),
-                              ),
-                            );
-                          },
-                          child: Container(
-                            margin: EdgeInsets.only(top: 15),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              boxShadow: [
-                                BoxShadow(
-                                  offset: Offset(0, 2),
-                                  blurRadius: 1,
-                                  color: Colors.grey.withOpacity(0.23),
-                                )
-                              ],
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            child: Column(
-                              children: <Widget>[
-                                Container(
-                                  height: 136,
-                                  child: Stack(
-                                    children: <Widget>[
-                                      ClipRRect(
-                                        borderRadius: BorderRadius.circular(4),
-                                        child: item.thumb != null
-                                            ? CachedNetworkImage(
-                                                imageUrl: baseUrl + item.thumb,
-                                                imageBuilder:
-                                                    (context, imageProvider) =>
-                                                        Container(
-                                                  decoration: BoxDecoration(
-                                                    image: DecorationImage(
-                                                      image: imageProvider,
-                                                      fit: BoxFit.cover,
-                                                    ),
-                                                  ),
-                                                ),
-                                                placeholder: (context, url) =>
-                                                    Center(
-                                                  child:
-                                                      CircularProgressIndicator(
-                                                    strokeWidth: 2,
-                                                    backgroundColor: Colors.red,
-                                                  ),
-                                                ),
-                                                errorWidget:
-                                                    (context, url, error) =>
-                                                        Icon(Icons.error),
-                                              )
-                                            : Container(
-                                                decoration: BoxDecoration(
-                                                  image: DecorationImage(
-                                                      image: NetworkImage(
-                                                        baseUrl +
-                                                            "/assets/youth/images/noImage.jpg",
-                                                      ),
-                                                      fit: BoxFit.cover),
-                                                ),
-                                              ),
+                  child: model.resolutionList.length != 0
+                      ? ListView(
+                          padding:
+                              EdgeInsets.only(left: 15, right: 15, bottom: 30),
+                          children: model.resolutionList.map(
+                            (Resolution item) {
+                              return InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => ReportDetail(
+                                        item: item,
                                       ),
-                                      Positioned(
-                                        left: 0,
-                                        top: 20,
-                                        child: Container(
-                                          decoration: BoxDecoration(
-                                            color: Colors.blue.withOpacity(.7),
-                                            borderRadius: BorderRadius.only(
-                                              bottomRight: Radius.circular(4.0),
-                                              topRight: Radius.circular(4.0),
+                                    ),
+                                  );
+                                },
+                                child: Container(
+                                  margin: EdgeInsets.only(top: 15),
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        offset: Offset(0, 2),
+                                        blurRadius: 1,
+                                        color: Colors.grey.withOpacity(0.23),
+                                      )
+                                    ],
+                                    borderRadius: BorderRadius.circular(5),
+                                  ),
+                                  child: Column(
+                                    children: <Widget>[
+                                      Container(
+                                        height: 136,
+                                        child: Stack(
+                                          children: <Widget>[
+                                            ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(4),
+                                              child: item.thumb != null
+                                                  ? CachedNetworkImage(
+                                                      imageUrl:
+                                                          baseUrl + item.thumb,
+                                                      imageBuilder: (context,
+                                                              imageProvider) =>
+                                                          Container(
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          image:
+                                                              DecorationImage(
+                                                            image:
+                                                                imageProvider,
+                                                            fit: BoxFit.cover,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      placeholder:
+                                                          (context, url) =>
+                                                              Center(
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          strokeWidth: 2,
+                                                          backgroundColor:
+                                                              Colors.red,
+                                                        ),
+                                                      ),
+                                                      errorWidget: (context,
+                                                              url, error) =>
+                                                          Icon(Icons.error),
+                                                    )
+                                                  : Container(
+                                                      decoration: BoxDecoration(
+                                                        image: DecorationImage(
+                                                            image: NetworkImage(
+                                                              baseUrl +
+                                                                  "/assets/youth/images/noImage.jpg",
+                                                            ),
+                                                            fit: BoxFit.cover),
+                                                      ),
+                                                    ),
                                             ),
-                                          ),
-                                          padding: EdgeInsets.only(
-                                            top: 3,
-                                            bottom: 3,
-                                            right: 10,
-                                            left: 10,
-                                          ),
-                                          child: Wrap(
-                                            children: <Widget>[
-                                              Icon(
-                                                FontAwesomeIcons.clock,
-                                                color: Colors.white,
-                                                size: 13,
-                                              ),
-                                              SizedBox(width: 5),
-                                              Text(
-                                                item.createdAt
-                                                    .toString()
-                                                    .substring(0, 10),
-                                                textAlign: TextAlign.left,
-                                                style: TextStyle(
-                                                  fontWeight: FontWeight.w500,
-                                                  fontSize: 13,
-                                                  color: Colors.white,
+                                            Positioned(
+                                              left: 0,
+                                              top: 20,
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                  color: Colors.blue
+                                                      .withOpacity(.7),
+                                                  borderRadius:
+                                                      BorderRadius.only(
+                                                    bottomRight:
+                                                        Radius.circular(4.0),
+                                                    topRight:
+                                                        Radius.circular(4.0),
+                                                  ),
+                                                ),
+                                                padding: EdgeInsets.only(
+                                                  top: 3,
+                                                  bottom: 3,
+                                                  right: 10,
+                                                  left: 10,
+                                                ),
+                                                child: Wrap(
+                                                  children: <Widget>[
+                                                    Icon(
+                                                      FontAwesomeIcons.clock,
+                                                      color: Colors.white,
+                                                      size: 13,
+                                                    ),
+                                                    SizedBox(width: 5),
+                                                    Text(
+                                                      item.createdAt
+                                                          .toString()
+                                                          .substring(0, 10),
+                                                      textAlign: TextAlign.left,
+                                                      style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        fontSize: 13,
+                                                        color: Colors.white,
+                                                      ),
+                                                    ),
+                                                  ],
                                                 ),
                                               ),
-                                            ],
-                                          ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      Container(
+                                        padding: EdgeInsets.all(10),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: <Widget>[
+                                            Text(
+                                              item.title.length > 75
+                                                  ? item.title
+                                                          .toUpperCase()
+                                                          .substring(0, 75) +
+                                                      "..."
+                                                  : item.title.toUpperCase(),
+                                              textAlign: TextAlign.left,
+                                              style: TextStyle(fontSize: 13),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     ],
                                   ),
                                 ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Container(
-                                  padding: EdgeInsets.all(10),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(
-                                        item.title.length > 75
-                                            ? item.title
-                                                    .toUpperCase()
-                                                    .substring(0, 75) +
-                                                "..."
-                                            : item.title.toUpperCase(),
-                                        textAlign: TextAlign.left,
-                                        style: TextStyle(fontSize: 13),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
+                              );
+                            },
+                          ).toList(),
+                        )
+                      : Container(
+                          height: 100,
+                          alignment: Alignment.center,
+                          margin: EdgeInsets.all(15),
+                          padding: EdgeInsets.all(20),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(15),
+                            boxShadow: [shadow],
                           ),
-                        );
-                      },
-                    ).toList(),
-                  ),
+                          child: Text('Үр дүн олдсонгүй'),
+                        ),
                 ),
         ),
       ),

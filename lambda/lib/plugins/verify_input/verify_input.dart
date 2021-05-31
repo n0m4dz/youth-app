@@ -34,6 +34,7 @@ class _VerifyInputState extends State<VerifyInput> {
 
   @override
   void initState() {
+    super.initState();
     if (_listFocusNode.isEmpty) {
       for (var i = 0; i < widget.length; i++) {
         _listFocusNode.add(new FocusNode());
@@ -41,7 +42,6 @@ class _VerifyInputState extends State<VerifyInput> {
         _code.add(' ');
       }
     }
-    super.initState();
   }
 
   String _getInputVerify() {
@@ -118,6 +118,7 @@ class _VerifyInputState extends State<VerifyInput> {
       setState(() {
         _currentIdex = index + 1;
       });
+
       FocusScope.of(context).requestFocus(_listFocusNode[index + 1]);
     }
   }

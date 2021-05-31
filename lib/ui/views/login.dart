@@ -262,11 +262,12 @@ class _LoginPageState extends State<LoginPage> {
                                             borderRadius:
                                                 BorderRadius.circular(20)),
                                         enabledBorder: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(20.0),
-                                            borderSide: BorderSide(
-                                              color: Colors.white70,
-                                            )),
+                                          borderRadius:
+                                              BorderRadius.circular(20.0),
+                                          borderSide: BorderSide(
+                                            color: Colors.white70,
+                                          ),
+                                        ),
                                         labelText: 'Нууц үг',
                                         labelStyle: TextStyle(
                                             fontSize: 14,
@@ -381,7 +382,11 @@ class _LoginPageState extends State<LoginPage> {
                                                           TextAlign.center,
                                                       style: TextStyle(
                                                         color: Color.fromRGBO(
-                                                            255, 255, 255, .8),
+                                                          255,
+                                                          255,
+                                                          255,
+                                                          .8,
+                                                        ),
                                                         fontSize: 16,
                                                         fontWeight:
                                                             FontWeight.w400,
@@ -506,9 +511,9 @@ class _LoginPageState extends State<LoginPage> {
                               ],
                             ),
                             onPressed: () {
-                              // Navigator.pushNamed(
-                              //     context, '/register_by_phone');
-                              Navigator.pushNamed(context, '/register');
+                              Navigator.pushNamed(
+                                  context, '/register_by_phone');
+                              //Navigator.pushNamed(context, '/register');
                             }),
                       ),
                     ),

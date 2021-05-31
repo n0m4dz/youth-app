@@ -43,7 +43,7 @@ class _StaffListState extends State<StaffList> {
             DefaultSliverAppBar(
               title: "Зөвлөлийн гишүүд",
               size: size,
-              color: primaryColor,
+              color: Color(0xFF0084b5),
               svgData: "assets/images/svg/page-heading-legal.svg",
             ),
           ];
@@ -61,7 +61,7 @@ class _StaffListState extends State<StaffList> {
                     crossAxisCount: 2,
                     mainAxisSpacing: 10,
                     crossAxisSpacing: 12,
-                    childAspectRatio: (itemWidth / 400),
+                    childAspectRatio: (itemWidth / 410),
                     physics: new NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     children: model.staffList.map(
@@ -126,7 +126,7 @@ class _StaffListState extends State<StaffList> {
                                             baseUrl +
                                                 "/assets/youth/images/noImage.jpg",
                                             width: 200,
-                                            fit: BoxFit.fitWidth,
+                                            fit: BoxFit.cover,
                                           ),
                                         ),
                                 ),
@@ -140,7 +140,7 @@ class _StaffListState extends State<StaffList> {
                                         item.lastname + "\n" + item.firstname,
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
-                                          fontSize: 16,
+                                          fontSize: 15,
                                           color: Color(0xFFfcb040),
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -164,8 +164,8 @@ class _StaffListState extends State<StaffList> {
                                     Text(
                                       'Зөвлөлийн албан тушаал:',
                                       style: TextStyle(
-                                        fontSize: 12,
-                                        color: primaryColor,
+                                        fontSize: 11,
+                                        color: Color(0xFFfcb040),
                                         fontWeight: FontWeight.w100,
                                       ),
                                     ),

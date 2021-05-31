@@ -28,7 +28,7 @@ class _Introduction extends State<Introduction> {
         decoration: BoxDecoration(
           color: Color(0xFF54a0ff),
           image: DecorationImage(
-            image: AssetImage("assets/images/ux_big.png"),
+            image: AssetImage("assets/images/bg-blue.jpg"),
             alignment: Alignment.topRight,
           ),
         ),
