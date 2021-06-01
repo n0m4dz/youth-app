@@ -10,6 +10,7 @@ import 'package:youth/core/contants/values.dart';
 import 'package:youth/core/models/aimag_news.dart';
 import 'package:youth/core/viewmodels/aimag_news_model.dart';
 import 'package:youth/ui/components/default_sliver_app_bar.dart';
+import 'package:youth/ui/components/empty_items.dart';
 import 'package:youth/ui/components/loader.dart';
 import 'package:youth/ui/styles/_colors.dart';
 import 'package:youth/ui/views/pages/subCouncil/news_detail.dart';
@@ -313,18 +314,7 @@ class _NewsListState extends State<NewsList> {
                                     },
                                   ).toList(),
                                 )
-                              : Container(
-                                  height: 100,
-                                  alignment: Alignment.center,
-                                  margin: EdgeInsets.all(15),
-                                  padding: EdgeInsets.all(20),
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(15),
-                                    boxShadow: [shadow],
-                                  ),
-                                  child: Text('Мэдээлэл оруулаагүй байна.'),
-                                ),
+                              : EmptyItems(),
                         ),
                 ),
               ),

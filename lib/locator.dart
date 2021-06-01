@@ -10,27 +10,20 @@ import 'package:youth/core/viewmodels/aimag_news_model.dart';
 import 'package:youth/core/viewmodels/resolution_model.dart';
 import 'package:youth/core/viewmodels/volunteer_work_model.dart';
 import 'core/services/aimag_service.dart';
-import 'core/services/faq_service.dart';
-import 'core/services/home_service.dart';
-import 'core/services/movie_service.dart';
 import 'core/services/national_council_service.dart';
 import 'core/services/youth_council_service.dart';
 import 'core/services/soum_service.dart';
 import 'core/services/bag_khoroo_service.dart';
 import 'core/services/staff_service.dart';
 import 'core/services/user_service.dart';
-import 'core/services/video_service.dart';
 import 'core/services/api.dart';
 import 'core/viewmodels/aimag_model.dart';
 import 'core/viewmodels/base_model.dart';
-import 'core/viewmodels/faq_model.dart';
 import 'core/viewmodels/job_model.dart';
-import 'core/viewmodels/slide_model.dart';
 import 'core/viewmodels/soum_model.dart';
 import 'core/viewmodels/bag_khoroo_model.dart';
 import 'core/viewmodels/staff_model.dart';
 import 'core/viewmodels/user_model.dart';
-import 'core/viewmodels/video_model.dart';
 import 'core/viewmodels/national_council_model.dart';
 import 'core/viewmodels/youth_council_model.dart';
 import 'core/viewmodels/event_model.dart';
@@ -45,10 +38,6 @@ void setupLocator() {
 
   //App services for data fetch
   locator.registerLazySingleton(() => Api());
-  locator.registerLazySingleton(() => MovieService());
-  locator.registerLazySingleton(() => VideoService());
-  locator.registerLazySingleton(() => HomeService());
-  locator.registerLazySingleton(() => FaqService());
   locator.registerLazySingleton(() => UserService());
   locator.registerLazySingleton(() => NationalCouncilService());
   locator.registerLazySingleton(() => YouthCouncilService());
@@ -63,9 +52,6 @@ void setupLocator() {
 
   //App view models for busines logic
   locator.registerFactory(() => BaseModel());
-  locator.registerFactory(() => VideoModel());
-  locator.registerFactory(() => FaqModel());
-  locator.registerFactory(() => SlidesModel());
   locator.registerFactory(() => UserModel());
   locator.registerFactory(() => JobModel());
   locator.registerFactory(() => NationalCouncilModel());

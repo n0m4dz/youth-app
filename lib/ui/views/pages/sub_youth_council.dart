@@ -214,7 +214,7 @@ class _SubCouncilState extends State<SubYouthCouncil> {
                                   ),
                                 );
                               },
-                              icon: FontAwesomeIcons.arrowDown,
+                              icon: FontAwesomeIcons.copy,
                             ),
                           ],
                         ),

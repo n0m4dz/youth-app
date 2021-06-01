@@ -7,8 +7,6 @@ import 'package:flutter_html/style.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:lambda/modules/network_util.dart';
 import 'package:youth/core/contants/values.dart';
-import 'package:youth/core/models/faq.dart';
-import 'package:youth/core/viewmodels/faq_model.dart';
 import 'package:youth/ui/styles/_colors.dart';
 import '../components/loader.dart';
 import 'package:youth/ui/views/base_view.dart';
@@ -19,13 +17,12 @@ class PrivacyScreen extends StatefulWidget {
 }
 
 class PrivacyScreenState extends State<PrivacyScreen> {
-
-  Map<String, dynamic>  item;
+  Map<String, dynamic> item;
   NetworkUtil _http = new NetworkUtil();
   // final DateFormat formatter = DateFormat('yyyy-MM-dd');
 
   Future getItemList() async {
-    var url  = baseUrl + '/mobile/api/getOtherPage/5';
+    var url = baseUrl + '/mobile/api/getOtherPage/5';
     var response = await _http.get(url);
     item = jsonDecode(response.toString());
 
@@ -51,10 +48,7 @@ class PrivacyScreenState extends State<PrivacyScreen> {
           item == null ? '' : item['title'].toUpperCase(),
           textAlign: TextAlign.start,
           style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w600,
-              fontSize: 18
-          ),
+              color: Colors.white, fontWeight: FontWeight.w600, fontSize: 18),
         ),
         leading: FlatButton(
           padding: EdgeInsets.all(0),
@@ -82,17 +76,9 @@ class PrivacyScreenState extends State<PrivacyScreen> {
             child: Html(
               data: item == null ? '' : item['body'],
               style: {
-                "h1": Style(
-                  color: textColor,
-                  fontSize: FontSize.larger
-                ),
-                "p": Style(
-                  color: textColor
-                ),
-                "li": Style(
-                    color: textColor,
-                  fontSize: FontSize.large
-                ),
+                "h1": Style(color: textColor, fontSize: FontSize.larger),
+                "p": Style(color: textColor),
+                "li": Style(color: textColor, fontSize: FontSize.large),
               },
             ),
           ),

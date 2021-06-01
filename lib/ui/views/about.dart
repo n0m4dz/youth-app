@@ -7,8 +7,6 @@ import 'package:flutter_html/style.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:lambda/modules/network_util.dart';
 import 'package:youth/core/contants/values.dart';
-import 'package:youth/core/models/faq.dart';
-import 'package:youth/core/viewmodels/faq_model.dart';
 import 'package:youth/ui/styles/_colors.dart';
 import '../components/loader.dart';
 import 'package:youth/ui/views/base_view.dart';

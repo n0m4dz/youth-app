@@ -8,6 +8,7 @@ import 'package:youth/core/contants/values.dart';
 import 'package:youth/core/models/volunteer_work.dart';
 import 'package:youth/core/viewmodels/volunteer_work_model.dart';
 import 'package:youth/ui/components/default_sliver_app_bar.dart';
+import 'package:youth/ui/components/empty_items.dart';
 import 'package:youth/ui/components/loader.dart';
 import 'package:youth/ui/styles/_colors.dart';
 
@@ -39,19 +40,35 @@ class _VolunteerWorksState extends State<VolunteerWorks> {
     SizeConfig().init(context);
 
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: Colors.grey[200],
       body: NestedScrollView(
-          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-            return <Widget>[
-              DefaultSliverAppBar(
-                title: widget.title,
-                size: size,
-                color: volunteerColor,
-                svgData: "assets/images/svg/page-heading-legal.svg",
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          return <Widget>[
+            DefaultSliverAppBar(
+              title: widget.title,
+              size: size,
+              color: volunteerColor,
+              svgData: "assets/images/svg/page-heading-legal.svg",
+            ),
+          ];
+        },
+        body: Column(
+          children: [
+            Container(
+              height: 200,
+              alignment: Alignment.center,
+              margin: EdgeInsets.all(15),
+              padding: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(15),
+                boxShadow: [shadow],
               ),
-            ];
-          },
-          body: Container()),
+              child: Text('Тун удахгүй'),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

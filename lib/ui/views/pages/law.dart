@@ -64,17 +64,33 @@ class LawPageState extends State<LawPage> {
     return Scaffold(
       backgroundColor: Colors.grey[100],
       body: NestedScrollView(
-          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-            return <Widget>[
-              DefaultSliverAppBar(
-                title: widget.title,
-                size: size,
-                color: lawColor,
-                svgData: "assets/images/svg/page-heading-law.svg",
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          return <Widget>[
+            DefaultSliverAppBar(
+              title: widget.title,
+              size: size,
+              color: lawColor,
+              svgData: "assets/images/svg/page-heading-law.svg",
+            ),
+          ];
+        },
+        body: Column(
+          children: [
+            Container(
+              height: 200,
+              alignment: Alignment.center,
+              margin: EdgeInsets.all(15),
+              padding: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(15),
+                boxShadow: [shadow],
               ),
-            ];
-          },
-          body: Container()),
+              child: Text('Тун удахгүй'),
+            ),
+          ],
+        ),
+      ),
     );
     // return Scaffold(
     //   backgroundColor: Colors.grey[100],

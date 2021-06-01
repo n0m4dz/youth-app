@@ -1,17 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:youth/core/contants/values.dart';
 import 'package:youth/core/models/resolution.dart';
 import 'package:youth/core/viewmodels/resolution_model.dart';
-import 'package:youth/ui/components/default_sliver_app_bar.dart';
+import 'package:youth/ui/components/empty_items.dart';
 import 'package:youth/ui/components/loader.dart';
-import 'package:youth/ui/styles/_colors.dart';
 import 'package:youth/ui/views/pages/subCouncil/report_detail.dart';
 
-import '../../../../size_config.dart';
 import '../../base_view.dart';
 
 class ReportList extends StatefulWidget {
@@ -314,18 +311,7 @@ class _ReportListState extends State<ReportList> {
                                     },
                                   ).toList(),
                                 )
-                              : Container(
-                                  height: 100,
-                                  alignment: Alignment.center,
-                                  margin: EdgeInsets.all(15),
-                                  padding: EdgeInsets.all(20),
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(15),
-                                    boxShadow: [shadow],
-                                  ),
-                                  child: Text('Мэдээлэл оруулаагүй байна.'),
-                                ),
+                              : EmptyItems(),
                         ),
                 ),
               ),
