@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_html/style.dart';
@@ -5,6 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:youth/core/contants/values.dart';
 import 'package:youth/core/models/national_council.dart';
 import 'package:youth/ui/components/default_sliver_app_bar.dart';
+import 'package:youth/ui/styles/_colors.dart';
 
 import '../../../../size_config.dart';
 
@@ -35,7 +37,11 @@ class _Introduction extends State<Introduction> {
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.only(left: 20, top: 40, right: 20),
+              padding: EdgeInsets.only(
+                left: 20,
+                top: 40,
+                right: 20,
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -43,15 +49,14 @@ class _Introduction extends State<Introduction> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                        child: Icon(
-                          Icons.arrow_back_ios,
-                          color: Colors.white,
-                        ),
-                      ),
+                      IconButton(
+                          icon: Icon(
+                            Icons.arrow_back,
+                            color: Colors.white,
+                          ),
+                          onPressed: () {
+                            Navigator.pop(context);
+                          }),
                       Expanded(
                         child: Text(
                           'Танилцуулга',
@@ -91,7 +96,8 @@ class _Introduction extends State<Introduction> {
                               children: [
                                 Text(
                                   widget.item.name,
-                                  style: TextStyle(fontSize: 18),
+                                  style: TextStyle(
+                                      fontSize: 18, color: primaryColor),
                                   textAlign: TextAlign.center,
                                 ),
                                 Html(
@@ -108,11 +114,18 @@ class _Introduction extends State<Introduction> {
                             )
                           : Container(
                               alignment: Alignment.center,
+                              height: 150,
+                              //color: Colors.white,
                               padding: EdgeInsets.all(
                                 getProportionateScreenWidth(15),
                               ),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(15),
+                                boxShadow: [shadow],
+                              ),
                               child: Text(
-                                'Мэдээлэл байхгүй байна.',
+                                'Мэдээлэл оруулаагүй байна.',
                                 style: TextStyle(
                                   color: kTextColor,
                                   fontSize: 18,

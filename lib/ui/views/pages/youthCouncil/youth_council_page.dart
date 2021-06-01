@@ -224,7 +224,7 @@ class _YouthCouncilPageState extends State<YouthCouncilPage> {
                                         color: Colors.white,
                                         borderRadius: BorderRadius.circular(15),
                                       ),
-                                      child: Text('Үр дүн олдсонгүй'),
+                                      child: Text('Мэдээлэл оруулаагүй байна.'),
                                     )
                                   : Column(
                                       children: model.youthCouncilList.map(

@@ -48,10 +48,6 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
     SizeConfig().init(context);
     // TODO: implement build
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: Color(0xFF008bc0),
-      //   elevation: 0,
-      // ),
       backgroundColor: Colors.grey[200],
       body: Container(
         width: double.infinity,
@@ -63,16 +59,6 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
             //fit: BoxFit.fitWidth,
           ),
         ),
-        /*headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-          return <Widget>[
-            DefaultSliverAppBar(
-              title: widget.title,
-              size: size,
-              color: Color(0xFF409EFF),
-              svgData: "assets/images/svg/page-heading-legal.svg",
-            ),
-          ];
-        },*/
         child: Column(
           children: [
             Container(

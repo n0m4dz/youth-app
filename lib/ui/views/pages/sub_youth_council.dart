@@ -15,6 +15,8 @@ import 'package:youth/ui/views/pages/subCouncil/report_list.dart';
 import 'package:youth/ui/views/pages/subYouthCouncil/youth_event.dart';
 import 'package:youth/ui/views/pages/subCouncil/staff_list.dart';
 
+import 'subYouthCouncil/youth_staff_list.dart';
+
 class SubYouthCouncil extends StatefulWidget {
   final YouthCouncil item;
 
@@ -32,7 +34,6 @@ class _SubCouncilState extends State<SubYouthCouncil> {
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-          color: Color(0xFF54a0ff),
           image: DecorationImage(
             image: AssetImage("assets/images/bg-wh.jpg"),
             alignment: Alignment.topRight,
@@ -123,7 +124,7 @@ class _SubCouncilState extends State<SubYouthCouncil> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => StaffList(
+                                    builder: (context) => YouthStaffList(
                                       aimagId: widget.item.id,
                                     ),
                                   ),

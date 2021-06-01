@@ -165,7 +165,7 @@ class _SubCouncilState extends State<SubCouncil> {
                                   ),
                                 );
                               },
-                              icon: FontAwesomeIcons.arrowDown,
+                              icon: FontAwesomeIcons.copy,
                             ),
                           ],
                         ),

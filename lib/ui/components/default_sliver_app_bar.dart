@@ -18,11 +18,13 @@ class DefaultSliverAppBar extends StatelessWidget {
     this.color,
     this.svgData,
     this.title,
+    this.titleColor,
   }) : super(key: key);
 
   final String title;
   final Size size;
   final Color color;
+  final Color titleColor;
   final String svgData;
 
   @override
@@ -50,6 +52,7 @@ class DefaultSliverAppBar extends StatelessWidget {
                 title.toUpperCase(),
                 style: TextStyle(
                   fontSize: getProportionateScreenWidth(14),
+                  color: titleColor,
                 ),
                 textAlign: TextAlign.center,
               ),
