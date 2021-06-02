@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:youth/core/viewmodels/user_model.dart';
+import 'package:youth/ui/styles/_colors.dart';
 import 'package:youth/ui/views/verify.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lambda/modules/network_util.dart';
@@ -70,90 +71,99 @@ class _RegisterPageState extends State<RegisterByPhonePage> {
       body: Stack(
         children: <Widget>[
           Center(
-              child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Container(
-                  child: Image.asset(
-                    'assets/images/register.png',
-                    height: 150,
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  // Container(
+                  //   height: MediaQuery.of(context).size.height / 2.8,
+                  //   child: Center(
+                  //     child: Container(
+                  //       height: 70,
+                  //       margin: EdgeInsets.only(bottom: 20),
+                  //       child: Image.asset("assets/images/logo.png"),
+                  //     ),
+                  //   ),
+                  // ),
+                  Text(
+                    'Утасны дугаараа оруулна уу',
+                    style: TextStyle(color: primaryColor),
                   ),
-                ),
-                Container(
-                  padding:
-                      EdgeInsets.only(top: 50, left: 35, right: 35, bottom: 30),
-                  child: Form(
-                    key: _registerFormKey,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        VerifyInput(
-                          length: 8,
-                          itemSize: 35,
-                          keyboardType: TextInputType.numberWithOptions(),
-                          onCompleted: (val) {
-                            setState(
-                              () {
-                                phone = val;
-                              },
-                            );
-                          },
-                          itemDecoration: BoxDecoration(
-                            border: Border(
-                              bottom: BorderSide(
-                                width: .7,
-                                color: Colors.black54,
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 14.0,
-                        ),
-                        Container(
-                          height: 46,
-                          margin: EdgeInsets.only(top: 13),
-                          decoration: BoxDecoration(
-                            color: Color(0xff0079FF),
-                            borderRadius: new BorderRadius.circular(50.0),
-                          ),
-                          child: FlatButton(
-                            child: Container(
-                              child: Stack(
-                                fit: StackFit.expand,
-                                children: <Widget>[
-                                  Center(
-                                    child: Text(
-                                      'Илгээх'.toUpperCase(),
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color:
-                                            Color.fromRGBO(255, 255, 255, .8),
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                            onPressed: () {
-                              final form = this._registerFormKey.currentState;
-                              if (form.validate()) {
-                                form.save();
-                                this.doRegister(context);
-                              }
+                  Container(
+                    padding: EdgeInsets.only(
+                        top: 50, left: 35, right: 35, bottom: 30),
+                    child: Form(
+                      key: _registerFormKey,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          VerifyInput(
+                            length: 8,
+                            itemSize: 35,
+                            keyboardType: TextInputType.numberWithOptions(),
+                            onCompleted: (val) {
+                              setState(
+                                () {
+                                  phone = val;
+                                },
+                              );
                             },
+                            itemDecoration: BoxDecoration(
+                              border: Border(
+                                bottom: BorderSide(
+                                  width: .7,
+                                  color: Colors.black54,
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                      ],
+                          SizedBox(
+                            height: 14.0,
+                          ),
+                          Container(
+                            height: 46,
+                            margin: EdgeInsets.only(top: 13),
+                            decoration: BoxDecoration(
+                              color: primaryColor,
+                              borderRadius: new BorderRadius.circular(50.0),
+                            ),
+                            child: FlatButton(
+                              child: Container(
+                                child: Stack(
+                                  fit: StackFit.expand,
+                                  children: <Widget>[
+                                    Center(
+                                      child: Text(
+                                        'Илгээх'.toUpperCase(),
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          color:
+                                              Color.fromRGBO(255, 255, 255, .8),
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                              onPressed: () {
+                                final form = this._registerFormKey.currentState;
+                                if (form.validate()) {
+                                  form.save();
+                                  this.doRegister(context);
+                                }
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          )),
+          ),
           SafeArea(
             child: Container(
               height: 46,
@@ -165,7 +175,7 @@ class _RegisterPageState extends State<RegisterByPhonePage> {
                     Icon(
                       //Icons.ios_arrow_back,
                       FontAwesomeIcons.arrowLeft,
-                      color: Color(0xff0079FF),
+                      color: primaryColor,
                       size: 16,
                     ),
                     SizedBox(
@@ -174,7 +184,7 @@ class _RegisterPageState extends State<RegisterByPhonePage> {
                     Text(
                       'Буцах',
                       style: TextStyle(
-                        color: Color(0xff0079FF),
+                        color: primaryColor,
                         fontSize: 17,
                         fontWeight: FontWeight.w500,
                       ),

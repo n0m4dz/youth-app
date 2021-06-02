@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/ionicons.dart';
 import 'package:youth/core/viewmodels/user_model.dart';
+import 'package:youth/ui/styles/_colors.dart';
 import 'package:youth/ui/views/verify.dart';
 import 'package:lambda/modules/network_util.dart';
 import 'package:lambda/modules/responseModel.dart';
@@ -34,15 +35,16 @@ class _ResetPageState extends State<ResetPage> {
     pr.setMessage('Түр хүлээнэ үү...');
     pr.show();
 
-    final state = Provider.of<UserModel>(context);
+    final state = Provider.of<UserModel>(context, listen: false);
     User user = state.getUser;
 
-    ResponseModel response = await _netUtil
-        .post('/api/m/reset/password', {"password": password, 'user': user.id});
-
+    ResponseModel response = await _netUtil.post(
+        '/api/mobile/reset/password', {'user': user.id, 'password': password});
+    //print(user.id);
+    //print(password);
     if (response.status) {
       User user = new User.fromJson(response.data);
-      final state = Provider.of<UserModel>(context);
+      final state = Provider.of<UserModel>(context, listen: false);
       state.setUser(user);
 
       pr.update(message: response.msg, type: 'success');
@@ -65,130 +67,120 @@ class _ResetPageState extends State<ResetPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff141B31),
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: primaryColor),
+        // title: const Text(
+        //   'Мэдэгдэл',
+        //   style: TextStyle(color: primaryColor),
+        // ),
+        backgroundColor: Color(0xfff2f3fa),
+        elevation: 0,
+      ),
+      backgroundColor: Color(0xfff2f3fa),
       body: Stack(
         children: <Widget>[
           Center(
-              child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Container(
-                  child: Image.asset(
-                    'lib/apps/youth/assets/images/register.png',
-                    height: 150,
-                  ),
-                ),
-                Container(
-                  padding:
-                      EdgeInsets.only(top: 50, left: 35, right: 35, bottom: 30),
-                  child: Form(
-                    key: _registerFormKey,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        TextFormField(
-                          initialValue: password,
-                          obscureText: true,
-                          decoration: InputDecoration(
-                            contentPadding: EdgeInsets.all(2),
-                            border: OutlineInputBorder(
-                                borderSide: BorderSide(width: 1),
-                                borderRadius: BorderRadius.circular(25)),
-                            labelText: 'Шинэ нууц үг',
-                            hintStyle: TextStyle(
-                                color: Color.fromRGBO(147, 157, 186, .78),
-                                fontSize: 18,
-                                fontWeight: FontWeight.w400),
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(25),
-                                borderSide: BorderSide(width: 1)),
-                            focusedErrorBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(25),
-                                borderSide:
-                                    BorderSide(width: 1, color: Colors.red)),
-                            prefixIcon: Icon(
-                              Icons.lock,
-                              color: Color.fromRGBO(147, 157, 186, .78),
-                              size: 22,
-                            ),
-                          ),
-                          onSaved: (val) => password = val,
-                          validator: (val) {
-                            return val.isEmpty ? 'Нууц үгээ оруулна уу!' : null;
-                          },
-                        ),
-                        SizedBox(
-                          height: 25.0,
-                        ),
-                        Container(
-                          height: 46,
-                          margin: EdgeInsets.only(top: 13),
-                          decoration: BoxDecoration(
-                            color: Color(0xff0079FF),
-                            borderRadius: new BorderRadius.circular(50.0),
-                          ),
-                          child: FlatButton(
-                            child: Container(
-                              child: Stack(
-                                fit: StackFit.expand,
-                                children: <Widget>[
-                                  Center(
-                                    child: Text(
-                                      'Нууц үг солих'.toUpperCase(),
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          color:
-                                              Color.fromRGBO(255, 255, 255, .8),
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w400),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                            onPressed: () {
-                              final form = this._registerFormKey.currentState;
-                              if (form.validate()) {
-                                form.save();
-                                this.doReset();
-                              }
-                            },
-                          ),
-                        ),
-                      ],
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    child: Image.asset(
+                      'assets/images/register.png',
+                      height: 150,
                     ),
                   ),
-                ),
-              ],
-            ),
-          )),
-          SafeArea(
-            child: Container(
-              height: 36,
-              child: FlatButton(
-                  padding: EdgeInsets.only(top: 15, left: 20),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      Icon(
-                        Ionicons.getIconData('ios-arrow-back'),
-                        color: Color(0xff0079FF),
-                        size: 22,
+                  Container(
+                    padding: EdgeInsets.only(
+                        top: 50, left: 35, right: 35, bottom: 30),
+                    child: Form(
+                      key: _registerFormKey,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          TextFormField(
+                            initialValue: password,
+                            obscureText: true,
+                            decoration: InputDecoration(
+                              contentPadding: EdgeInsets.all(2),
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide(width: 1),
+                                borderRadius: BorderRadius.circular(25),
+                              ),
+                              labelText: 'Шинэ нууц үг',
+                              hintStyle: TextStyle(
+                                color: primaryColor,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w400,
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(25),
+                                borderSide: BorderSide(width: 1),
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(25),
+                                borderSide: BorderSide(
+                                  width: 1,
+                                  color: Colors.red,
+                                ),
+                              ),
+                              prefixIcon: Icon(
+                                Icons.lock,
+                                color: primaryColor,
+                                size: 22,
+                              ),
+                            ),
+                            onSaved: (val) => password = val,
+                            validator: (val) {
+                              return val.isEmpty
+                                  ? 'Нууц үгээ оруулна уу!'
+                                  : null;
+                            },
+                          ),
+                          SizedBox(
+                            height: 25.0,
+                          ),
+                          Container(
+                            height: 46,
+                            margin: EdgeInsets.only(top: 13),
+                            decoration: BoxDecoration(
+                              color: primaryColor,
+                              borderRadius: new BorderRadius.circular(50.0),
+                            ),
+                            child: FlatButton(
+                              child: Container(
+                                child: Stack(
+                                  fit: StackFit.expand,
+                                  children: <Widget>[
+                                    Center(
+                                      child: Text(
+                                        'Нууц үг солих'.toUpperCase(),
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                            color: Color.fromRGBO(
+                                                255, 255, 255, .8),
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w400),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                              onPressed: () {
+                                final form = this._registerFormKey.currentState;
+                                if (form.validate()) {
+                                  form.save();
+                                  this.doReset();
+                                }
+                              },
+                            ),
+                          ),
+                        ],
                       ),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Text(
-                        'Буцах',
-                        style: TextStyle(
-                            color: Color(0xff0079FF),
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500),
-                      ),
-                    ],
+                    ),
                   ),
-                  onPressed: () => Navigator.pop(context)),
+                ],
+              ),
             ),
           ),
         ],

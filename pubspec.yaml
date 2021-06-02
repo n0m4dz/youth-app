@@ -90,7 +90,10 @@ flutter:
     - assets/images/svg/menu-zxvz.svg
     - assets/images/svg/menu-zxz.svg
     - assets/images/svg/bg-wh.svg
-
+    - assets/images/svg/Bell.svg
+    - assets/images/svg/Settings.svg
+    - assets/images/svg/Log out.svg
+    - assets/images/svg/Camera Icon.svg
   # custom fonts
   fonts:
     - family: Roboto

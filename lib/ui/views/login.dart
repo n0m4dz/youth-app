@@ -94,6 +94,14 @@ class _LoginPageState extends State<LoginPage> {
 
     return Scaffold(
       //backgroundColor: Colors.grey[600],
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: primaryColor),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        elevation: 0,
+      ),
       body: GestureDetector(
         onTap: () {
           FocusScope.of(context).requestFocus(new FocusNode());
@@ -104,8 +112,8 @@ class _LoginPageState extends State<LoginPage> {
               begin: Alignment.topCenter,
               end: Alignment(1.9, 1.0),
               colors: [
-                const Color(0xff00337f),
-                const Color(0xff00337f)
+                const Color(0xffffffff),
+                const Color(0xffffffff)
               ], // red to yellow
             ),
           ),
@@ -130,10 +138,12 @@ class _LoginPageState extends State<LoginPage> {
                       padding: EdgeInsets.only(
                           top: 30.0, right: 30.0, bottom: 0.0, left: 30.0),
                       decoration: BoxDecoration(
-                          // color: Colors.white,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(30),
-                              topRight: Radius.circular(30))),
+                        // color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(30),
+                          topRight: Radius.circular(30),
+                        ),
+                      ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
@@ -187,8 +197,11 @@ class _LoginPageState extends State<LoginPage> {
                                     height: 42,
                                     child: TextFormField(
                                       controller: login,
-                                      style:
-                                          new TextStyle(color: Colors.white70),
+                                      keyboardType: TextInputType.number,
+                                      style: new TextStyle(
+                                        color: primaryColor,
+                                        fontSize: 14,
+                                      ),
                                       decoration: InputDecoration(
                                         contentPadding: EdgeInsets.all(0),
                                         border: OutlineInputBorder(
@@ -201,37 +214,44 @@ class _LoginPageState extends State<LoginPage> {
                                         ),
                                         labelText: 'Утасны дугаар',
                                         labelStyle: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white70),
+                                          fontSize: 14,
+                                          color: primaryColor,
+                                        ),
                                         enabledBorder: OutlineInputBorder(
                                           borderRadius:
                                               BorderRadius.circular(20.0),
-                                          borderSide:
-                                              BorderSide(color: Colors.white54),
+                                          borderSide: BorderSide(
+                                            color: primaryColor,
+                                          ),
                                         ),
                                         hintStyle: TextStyle(
-                                            color: Color(0xff666666),
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w400),
+                                          color: Color(0xff666666),
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w400,
+                                        ),
                                         focusedBorder: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(20),
-                                            borderSide: BorderSide(
-                                              width: 1,
-                                              color: Color(0xffffffff),
-                                            )),
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          borderSide: BorderSide(
+                                            width: 1,
+                                            color: primaryColor,
+                                          ),
+                                        ),
                                         focusedErrorBorder: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(20),
-                                            borderSide: BorderSide(
-                                                width: 1, color: Colors.red)),
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          borderSide: BorderSide(
+                                            width: 1,
+                                            color: Colors.red,
+                                          ),
+                                        ),
                                         errorStyle: TextStyle(height: 0),
                                         prefixIcon: Padding(
                                           padding: EdgeInsets.all(0.0),
                                           child: Icon(
                                             //Feather.user,
                                             FontAwesomeIcons.user,
-                                            color: Colors.white70,
+                                            color: primaryColor,
                                             size: 18,
                                           ),
                                         ),
@@ -250,8 +270,9 @@ class _LoginPageState extends State<LoginPage> {
                                     child: TextFormField(
                                       controller: password,
                                       obscureText: true,
-                                      style:
-                                          new TextStyle(color: Colors.white70),
+                                      style: new TextStyle(
+                                        color: primaryColor,
+                                      ),
                                       decoration: InputDecoration(
                                         contentPadding: EdgeInsets.all(0),
                                         border: OutlineInputBorder(
@@ -265,35 +286,45 @@ class _LoginPageState extends State<LoginPage> {
                                           borderRadius:
                                               BorderRadius.circular(20.0),
                                           borderSide: BorderSide(
-                                            color: Colors.white70,
+                                            color: primaryColor,
                                           ),
                                         ),
                                         labelText: 'Нууц үг',
                                         labelStyle: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white70),
+                                          fontSize: 14,
+                                          color: primaryColor,
+                                        ),
                                         hintStyle: TextStyle(
-                                            color: Color.fromRGBO(
-                                                147, 157, 186, .78),
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w400),
+                                          color: Color.fromRGBO(
+                                            147,
+                                            157,
+                                            186,
+                                            .78,
+                                          ),
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w400,
+                                        ),
                                         focusedBorder: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(20),
-                                            borderSide: BorderSide(
-                                              width: 1,
-                                              color: Colors.white70,
-                                            )),
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          borderSide: BorderSide(
+                                            width: 1,
+                                            color: primaryColor,
+                                          ),
+                                        ),
                                         focusedErrorBorder: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(20),
-                                            borderSide: BorderSide(
-                                                width: 1, color: Colors.red)),
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          borderSide: BorderSide(
+                                            width: 1,
+                                            color: Colors.red,
+                                          ),
+                                        ),
                                         errorStyle: TextStyle(height: 0),
                                         prefixIcon: Icon(
                                           //Feather.lock,
                                           FontAwesomeIcons.lock,
-                                          color: Colors.white70,
+                                          color: primaryColor,
                                           size: 18,
                                         ),
                                       ),
@@ -319,13 +350,14 @@ class _LoginPageState extends State<LoginPage> {
                                             //print('working ${value}');
                                             agentUtil.handleRemember(value);
                                           },
-                                          activeColor: Colors.white,
+                                          activeColor: primaryColor,
                                         ),
                                         Text(
                                           'Сануулах',
                                           style: TextStyle(
-                                              color: Colors.white70,
-                                              fontSize: 14),
+                                            color: primaryColor,
+                                            fontSize: 14,
+                                          ),
                                         ),
                                         Expanded(
                                           child: Container(
@@ -339,10 +371,11 @@ class _LoginPageState extends State<LoginPage> {
                                                     Text(
                                                       'Нууц үгээ мартсан?',
                                                       style: TextStyle(
-                                                          color: Colors.white70,
-                                                          fontSize: 14.5,
-                                                          fontWeight:
-                                                              FontWeight.w400),
+                                                        color: primaryColor,
+                                                        fontSize: 14.5,
+                                                        fontWeight:
+                                                            FontWeight.w400,
+                                                      ),
                                                     ),
                                                   ],
                                                 ),
@@ -489,24 +522,25 @@ class _LoginPageState extends State<LoginPage> {
                         margin: EdgeInsets.only(left: 8, right: 0, bottom: 15),
                         height: 18,
                         child: FlatButton(
-                            padding: EdgeInsets.only(left: 0, right: 60),
+                            padding: EdgeInsets.only(left: 0, right: 10),
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
                                 Text(
                                   'Та шинээр бүртгүүлэх бол ',
                                   style: TextStyle(
-                                      color: Colors.white70,
+                                      color: primaryColor,
                                       fontSize: 13.5,
                                       fontWeight: FontWeight.w400),
                                 ),
                                 Text(
                                   'энд дарна уу',
                                   style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 13.5,
-                                      fontWeight: FontWeight.w500),
+                                    color: primaryColor,
+                                    fontSize: 13.5,
+                                    fontWeight: FontWeight.w700,
+                                  ),
                                 ),
                               ],
                             ),

@@ -24,50 +24,54 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      backgroundColor: bgColor,
+        backgroundColor: bgColor,
+        // appBar: AppBar(
+        //   titleSpacing: 0,
+        //   backgroundColor: primaryColor,
+        //   centerTitle: false,
+        //   title: Text(
+        //     'Мэдэгдэл'.toUpperCase(),
+        //     textAlign: TextAlign.start,
+        //     style: TextStyle(
+        //         color: Colors.white,
+        //         fontWeight: FontWeight.w600,
+        //         fontSize: 18
+        //     ),
+        //   ),
+        //   leading: FlatButton(
+        //     padding: EdgeInsets.all(0),
+        //     onPressed: () {
+        //       print('working back btn');
+        //       Navigator.pop(context);
+        //     },
+        //     child: Container(
+        //       height: 30,
+        //       width: 30,
+        //       child: Icon(
+        //         Ionicons.getIconData('ios-arrow-back'),
+        //         color: Colors.white,
+        //       ),
+        //     ),
+        //   ),
+        //   elevation: 0,
+        // ),
         appBar: AppBar(
-          titleSpacing: 0,
-          backgroundColor: primaryColor,
-          centerTitle: false,
-          title: Text(
-            'Мэдэгдэл'.toUpperCase(),
-            textAlign: TextAlign.start,
-            style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w600,
-                fontSize: 18
-            ),
+          iconTheme: IconThemeData(color: primaryColor),
+          title: const Text(
+            'Мэдэгдэл',
+            style: TextStyle(color: primaryColor),
           ),
-          leading: FlatButton(
-            padding: EdgeInsets.all(0),
-            onPressed: () {
-              print('working back btn');
-              Navigator.pop(context);
-            },
-            child: Container(
-              height: 30,
-              width: 30,
-              child: Icon(
-                Ionicons.getIconData('ios-arrow-back'),
-                color: Colors.white,
-              ),
-            ),
-          ),
+          backgroundColor: Color(0xfff2f3fa),
           elevation: 0,
         ),
-      body: Container(
-        child: Center(
+        body: Container(
+            child: Center(
           child: Text(
             'Мэдэгдэл ирээгүй байна.',
-            style: TextStyle(
-              color: primaryColor
-            ),
+            style: TextStyle(color: primaryColor),
           ),
-        )
-      )
-    );
+        )));
 
     return Scaffold(
         body: Stack(

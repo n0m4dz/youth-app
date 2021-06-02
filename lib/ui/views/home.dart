@@ -24,6 +24,7 @@ import 'package:youth/ui/views/pages/knowLedge.dart';
 import 'package:youth/ui/views/pages/law.dart';
 
 import 'package:youth/ui/views/pages/partTimeJob.dart';
+import 'package:youth/ui/views/profile.dart';
 import 'package:youth/ui/views/settings.dart';
 import 'package:youth/ui/views/sidebar.dart';
 
@@ -178,7 +179,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           Navigator.push(
                             context,
                             CupertinoPageRoute(
-                              builder: (context) => SettingsScreen(),
+                              //builder: (context) => SettingsScreen(),
+                              builder: (context) => ProfileScreen(),
                             ),
                           );
                         }
@@ -235,53 +237,26 @@ class _HomeScreenState extends State<HomeScreen> {
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [shadow],
                   ),
-                  child: Stack(
-                    children: <Widget>[
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
                       Container(
-                        margin: EdgeInsets.only(top: 20),
-                        alignment: Alignment.topCenter,
-                        child: SvgPicture.asset(
-                          'assets/images/svg/menu-zxz.svg',
-                          width: 70,
-                          height: 70,
-                          color: Color(0xFFb8b8b8),
+                        width: 100,
+                        height: 100,
+                        child: Image.network(
+                          baseUrl + "/assets/youth/splash/logo-zhz.jpg",
+                          alignment: Alignment.topCenter,
                         ),
                       ),
-                      Positioned(
-                        bottom: 0,
-                        left: 0,
-                        right: 0,
-                        child: Container(
-                          padding: EdgeInsets.only(
-                              top: 4, bottom: 4, right: 3, left: 4),
-                          child: Container(
-                            padding: EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              color: Color(0xFFb8b8b8),
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: <Widget>[
-                                Text(
-                                  'ЗХЗ',
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                // Text(
-                                //   'Залуучууд хөгжлийн зөвлөл',
-                                //   style: TextStyle(
-                                //     fontSize: 10.2,
-                                //     color: Colors.white,
-                                //   ),
-                                // )
-                              ],
-                            ),
-                          ),
+                      SizedBox(height: 10),
+                      Text(
+                        'Залуучууд Хөгжлийн Зөвлөл',
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xFFa01e66),
                         ),
+                        textAlign: TextAlign.center,
                       ),
                     ],
                   ),
@@ -299,64 +274,39 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
                 child: Container(
                   height: 90,
-                  padding: EdgeInsets.all(5),
+                  //padding: EdgeInsets.all(5),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [shadow],
                   ),
-                  child: Stack(
-                    children: <Widget>[
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(height: 10),
                       Container(
-                        margin: EdgeInsets.only(top: 20),
-                        alignment: Alignment.topCenter,
-                        child: SvgPicture.asset(
-                          'assets/images/svg/menu-zxvz.svg',
-                          width: 70,
-                          height: 70,
-                          color: Color(0xFF0084b5),
+                        width: 90,
+                        height: 90,
+                        child: Image.network(
+                          baseUrl + "/assets/youth/splash/logo-uz-ok.jpg",
+                          alignment: Alignment.topCenter,
                         ),
                       ),
-                      Positioned(
-                        bottom: 0,
-                        left: 0,
-                        right: 0,
-                        child: Container(
-                          padding: EdgeInsets.only(
-                              top: 4, bottom: 4, right: 3, left: 4),
-                          child: Container(
-                            padding: EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              color: Color(0xFF0084b5),
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: <Widget>[
-                                Text(
-                                  'ЗХҮЗ',
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                // Text(
-                                //   'салбар зөвлөл',
-                                //   style: TextStyle(
-                                //     fontSize: 10.7,
-                                //     color: Colors.white,
-                                //   ),
-                                // )
-                              ],
-                            ),
-                          ),
+                      SizedBox(height: 10),
+                      Text(
+                        'Залуучууд Хөгжлийн Үндэсний зөвлөл',
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xFF283890),
                         ),
+                        textAlign: TextAlign.center,
                       ),
                     ],
                   ),
                 ),
               ),
+
               GestureDetector(
                 onTap: () {
                   Navigator.push(

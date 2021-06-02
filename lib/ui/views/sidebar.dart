@@ -41,229 +41,265 @@ class _SidebarScreenState extends State<SidebarScreen> {
           child: Stack(
         children: [
           Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter,
-                  stops: [0.1, .9],
-                  colors: [
-                    Color.fromRGBO(20, 27, 49, .98),
-                    Color.fromRGBO(39, 60, 117, .75),
-                  ],
-                ),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter,
+                stops: [0.1, .9],
+                colors: [
+                  // Color.fromRGBO(20, 27, 49, .98),
+                  // Color.fromRGBO(39, 60, 117, .75),
+                  Colors.white,
+                  Colors.white
+                ],
               ),
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    padding: EdgeInsets.only(
-                        left: 20, right: 80.0, top: 50, bottom: 20),
-                    child: Container(
-                      height: 80,
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                        image: new DecorationImage(
-                          image: new AssetImage("assets/images/logo.png"),
-                          fit: BoxFit.contain,
-                        ),
+            ),
+            child: Column(
+              children: <Widget>[
+                Container(
+                  padding: EdgeInsets.only(
+                    left: 20,
+                    right: 80.0,
+                    top: 50,
+                    bottom: 20,
+                  ),
+                  child: Container(
+                    height: 80,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      image: new DecorationImage(
+                        image: new AssetImage("assets/images/logo.png"),
+                        fit: BoxFit.contain,
                       ),
                     ),
                   ),
-                  Expanded(
-                    child: Container(
-                      child: ListView(
-                        children: <Widget>[
-                          Container(
-                            height: 34,
-                            child: FlatButton(
-                              onPressed: () {
-                                Navigator.pop(context);
-                                Navigator.push(
-                                    context,
-                                    CupertinoPageRoute(
-                                        builder: (context) => AboutScreen()));
-                              },
-                              child: Row(
-                                children: <Widget>[
-                                  Icon(Icons.home_outlined,
-                                      color: secondaryColor),
-                                  SizedBox(
-                                    width: 10,
+                ),
+                Expanded(
+                  child: Container(
+                    child: ListView(
+                      children: <Widget>[
+                        Container(
+                          height: 34,
+                          child: FlatButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                              Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                  builder: (context) => AboutScreen(),
+                                ),
+                              );
+                            },
+                            child: Row(
+                              children: <Widget>[
+                                Icon(
+                                  Icons.home_outlined,
+                                  color: primaryColor,
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  'Бидний тухай',
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    color: primaryColor,
+                                    fontWeight: FontWeight.w500,
                                   ),
-                                  Text('Бидний тухай',
-                                      style: TextStyle(
-                                          fontSize: 17,
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w500))
-                                ],
-                              ),
+                                )
+                              ],
                             ),
                           ),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Container(
-                            height: 34,
-                            child: FlatButton(
-                              onPressed: () {
-                                Navigator.pop(context);
-                                Navigator.push(
-                                    context,
-                                    CupertinoPageRoute(
-                                        builder: (context) => PrivacyScreen()));
-                              },
-                              child: Row(
-                                children: <Widget>[
-                                  Icon(Icons.lock_outline,
-                                      color: secondaryColor),
-                                  SizedBox(
-                                    width: 10,
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Container(
+                          height: 34,
+                          child: FlatButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                              Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                  builder: (context) => PrivacyScreen(),
+                                ),
+                              );
+                            },
+                            child: Row(
+                              children: <Widget>[
+                                Icon(Icons.lock_outline, color: primaryColor),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  'Нууцлал хамгаалал',
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    color: primaryColor,
+                                    fontWeight: FontWeight.w500,
                                   ),
-                                  Text('Нууцлал хамгаалал',
-                                      style: TextStyle(
-                                          fontSize: 17,
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w500))
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Container(
-                            height: 34,
-                            child: FlatButton(
-                              onPressed: () {
-                                Navigator.pop(context);
-                                Navigator.push(
-                                    context,
-                                    CupertinoPageRoute(
-                                        builder: (context) => TermsScreen()));
-                              },
-                              child: Row(
-                                children: <Widget>[
-                                  Icon(Icons.check_circle_outline,
-                                      color: secondaryColor),
-                                  SizedBox(
-                                    width: 10,
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Container(
+                          height: 34,
+                          child: FlatButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                              Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                  builder: (context) => TermsScreen(),
+                                ),
+                              );
+                            },
+                            child: Row(
+                              children: <Widget>[
+                                Icon(Icons.check_circle_outline,
+                                    color: primaryColor),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  'Үйлчилгээний нөхцөл',
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    color: primaryColor,
+                                    fontWeight: FontWeight.w500,
                                   ),
-                                  Text('Үйлчилгээний нөхцөл',
-                                      style: TextStyle(
-                                          fontSize: 17,
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w500))
-                                ],
-                              ),
+                                )
+                              ],
                             ),
                           ),
-                          Container(
-                              padding: EdgeInsets.only(left: 20, top: 70),
-                              child: Column(
-                                children: <Widget>[
-                                  Container(
-                                    padding: EdgeInsets.only(bottom: 5),
-                                    margin: EdgeInsets.only(right: 30),
-                                    decoration: BoxDecoration(
-                                        border: Border(
-                                      bottom: BorderSide(
-                                        color: secondaryColor,
-                                        width: 1.4,
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(left: 20, top: 70),
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                padding: EdgeInsets.only(bottom: 5),
+                                margin: EdgeInsets.only(right: 30),
+                                decoration: BoxDecoration(
+                                    border: Border(
+                                  bottom: BorderSide(
+                                    color: primaryColor,
+                                    width: 1.4,
+                                  ),
+                                )),
+                                child: Row(
+                                  children: <Widget>[
+                                    Text(
+                                      'Холбоо барих'.toUpperCase(),
+                                      style: TextStyle(
+                                        fontSize: 17,
+                                        color: primaryColor,
+                                        fontWeight: FontWeight.w700,
                                       ),
-                                    )),
-                                    child: Row(
-                                      children: <Widget>[
-                                        Text('Холбоо барих'.toUpperCase(),
-                                            style: TextStyle(
-                                                fontSize: 17,
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.w700))
-                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                height: 15,
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Icon(
+                                    Icons.phone_callback_outlined,
+                                    size: 17,
+                                    color: primaryColor,
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Container(
+                                    width: 190,
+                                    child: Text(
+                                      widget.contact == null
+                                          ? ''
+                                          : widget.contact['phone'],
+                                      style: TextStyle(
+                                        fontSize: 14,
+                                        color: primaryColor,
+                                        fontWeight: FontWeight.w500,
+                                      ),
                                     ),
                                   ),
-                                  SizedBox(
-                                    height: 15,
-                                  ),
-                                  Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Icon(Icons.phone_callback_outlined,
-                                          size: 17, color: secondaryColor),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Container(
-                                          width: 190,
-                                          child: Text(
-                                              widget.contact == null
-                                                  ? ''
-                                                  : widget.contact['phone'],
-                                              style: TextStyle(
-                                                  fontSize: 14,
-                                                  color: Colors.white,
-                                                  fontWeight:
-                                                      FontWeight.w500))),
-                                    ],
+                                ],
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Icon(
+                                    Icons.mail_outline_outlined,
+                                    size: 17,
+                                    color: primaryColor,
                                   ),
                                   SizedBox(
-                                    height: 10,
+                                    width: 10,
                                   ),
-                                  Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Icon(Icons.mail_outline_outlined,
-                                          size: 17, color: secondaryColor),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Text(
-                                        widget.contact == null
-                                            ? ''
-                                            : widget.contact['email'],
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w500),
-                                      )
-                                    ],
+                                  Text(
+                                    widget.contact == null
+                                        ? ''
+                                        : widget.contact['email'],
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: primaryColor,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  )
+                                ],
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Icon(
+                                    Icons.location_on_outlined,
+                                    size: 17,
+                                    color: primaryColor,
                                   ),
                                   SizedBox(
-                                    height: 10,
+                                    width: 10,
                                   ),
-                                  Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Icon(Icons.location_on_outlined,
-                                          size: 17, color: secondaryColor),
-                                      SizedBox(
-                                        width: 10,
+                                  Container(
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.6,
+                                    child: Text(
+                                      widget.contact == null
+                                          ? ''
+                                          : widget.contact['address'],
+                                      style: TextStyle(
+                                        fontSize: 14,
+                                        color: primaryColor,
+                                        fontWeight: FontWeight.w500,
                                       ),
-                                      Container(
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              0.6,
-                                          child: Text(
-                                            widget.contact == null
-                                                ? ''
-                                                : widget.contact['address'],
-                                            style: TextStyle(
-                                                fontSize: 14,
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.w500),
-                                          ))
-                                    ],
+                                    ),
                                   ),
                                 ],
-                              )),
-                        ],
-                      ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                ],
-              )),
+                ),
+              ],
+            ),
+          ),
           Positioned(
             bottom: 0,
             left: 0,
@@ -276,9 +312,10 @@ class _SidebarScreenState extends State<SidebarScreen> {
                   child: Text(
                     'Copyright © 2020 ГБХЗХГ \n developed by Bitsoft LLC',
                     style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12,
-                        fontWeight: FontWeight.w500),
+                      color: primaryColor,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 )),
           )

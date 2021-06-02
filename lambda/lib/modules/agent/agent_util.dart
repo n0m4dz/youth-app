@@ -30,7 +30,7 @@ class AgentUtil {
   ProgressDialog pr;
 
   Future<void> init(context) async {
-    _agent = Provider.of<AgentState>(context);
+    _agent = Provider.of<AgentState>(context, listen: false);
     pr = new ProgressDialog(context, ProgressDialogType.Normal);
     bool hasBio = await this.checkBioMetric();
 
@@ -204,6 +204,7 @@ class AgentUtil {
     );
 
     await new Future.delayed(const Duration(seconds: 1));
+    _agent = Provider.of<AgentState>(context, listen: false);
 
     if (response.status) {
       _agent.setStatus(true);
