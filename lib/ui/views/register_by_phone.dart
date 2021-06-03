@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:verify_code_input/verify_code_input.dart';
 import 'package:youth/core/viewmodels/user_model.dart';
 import 'package:youth/ui/styles/_colors.dart';
 import 'package:youth/ui/views/verify.dart';
@@ -19,8 +20,9 @@ class RegisterByPhonePage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterByPhonePage> {
   final GlobalKey<FormState> _registerFormKey = GlobalKey<FormState>();
+  TextEditingController phone = new TextEditingController();
   bool loading = false;
-  String phone = '';
+
   NetworkUtil _netUtil = new NetworkUtil();
 
   @override
@@ -37,7 +39,7 @@ class _RegisterPageState extends State<RegisterByPhonePage> {
     pr.show();
 
     ResponseModel response = await _netUtil.post('/api/mobile/register', {
-      "phone": phone,
+      "phone": phone.text,
     });
 
     if (response.status) {
@@ -97,24 +99,72 @@ class _RegisterPageState extends State<RegisterByPhonePage> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          VerifyInput(
-                            length: 8,
-                            itemSize: 35,
-                            keyboardType: TextInputType.numberWithOptions(),
-                            onCompleted: (val) {
-                              setState(
-                                () {
-                                  phone = val;
-                                },
-                              );
+                          // VerifyInput(
+                          //   length: 8,
+                          //   itemSize: 35,
+                          //   keyboardType: TextInputType.numberWithOptions(),
+                          //   onCompleted: (val) {
+                          //     setState(
+                          //       () {
+                          //         phone = val;
+                          //       },
+                          //     );
+                          //   },
+                          //   itemDecoration: BoxDecoration(
+                          //     border: Border(
+                          //       bottom: BorderSide(
+                          //         width: .7,
+                          //         color: Colors.black54,
+                          //       ),
+                          //     ),
+                          //   ),
+                          // ),
+                          /*VerifyCodeInput(
+                            onComplete: (String value) {
+                              print('Your input code is : $value');
+                              phone = value;
                             },
-                            itemDecoration: BoxDecoration(
-                              border: Border(
-                                bottom: BorderSide(
-                                  width: .7,
-                                  color: Colors.black54,
+                          ),*/
+                          Container(
+                            padding: EdgeInsets.all(2.0),
+                            alignment: Alignment.center,
+                            height: 48,
+                            decoration: BoxDecoration(
+                              //color: secondaryLighten.withAlpha(16),
+                              border: Border.all(
+                                color: primaryColor,
+                                width: 1,
+                              ),
+                              borderRadius: new BorderRadius.circular(50.0),
+                            ),
+                            child: TextFormField(
+                              controller: phone,
+                              keyboardType: TextInputType.number,
+                              decoration: InputDecoration(
+                                border: InputBorder.none,
+                                hintText: 'Утасны дугаараа оруулна уу',
+                                hintStyle: TextStyle(
+                                  color: Color.fromRGBO(147, 157, 186, .78),
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                                prefixIcon: Padding(
+                                  padding: EdgeInsets.all(0.0),
+                                  child: Icon(
+                                    FontAwesomeIcons.mobileAlt,
+                                    color: primaryColor,
+                                    size: 18,
+                                  ),
+                                ),
+                                focusedErrorBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                  borderSide: BorderSide(
+                                    width: 1,
+                                    color: Colors.red,
+                                  ),
                                 ),
                               ),
+                              style: TextStyle(color: primaryColor),
                             ),
                           ),
                           SizedBox(

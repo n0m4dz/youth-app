@@ -9,6 +9,7 @@ import 'package:lambda/modules/network_util.dart';
 import 'package:lambda/modules/responseModel.dart';
 import 'package:provider/provider.dart';
 import 'package:toast/toast.dart';
+import 'package:verify_code_input/verify_code_input.dart';
 import 'package:youth/core/models/user.dart';
 import 'package:youth/core/viewmodels/user_model.dart';
 import 'package:youth/ui/styles/_colors.dart';
@@ -129,22 +130,13 @@ class _VerifyPageState extends State<VerifyPage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    VerifyInput(
-                      length: 6,
-                      itemSize: 40,
-                      keyboardType: TextInputType.numberWithOptions(),
-                      onCompleted: (val) {
-                        setState(
-                          () {
-                            code = val;
-                          },
-                        );
+                    VerifyCodeInput(
+                      onComplete: (String value) {
+                        print('Your input code is : $value');
+                        setState(() {
+                          code = value;
+                        });
                       },
-                      itemDecoration: BoxDecoration(
-                        border: Border(
-                          bottom: BorderSide(width: .7, color: Colors.black54),
-                        ),
-                      ),
                     ),
                     SizedBox(
                       height: 14.0,
