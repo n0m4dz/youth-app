@@ -47,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
   NetworkUtil _http = new NetworkUtil();
 
   Future getContactList() async {
-    var url = baseUrl + '/mobile/api/getContact';
+    var url = baseUrl + '/api/mobile/getContact';
     var response = await _http.get(url);
     contact = json.decode(response.toString());
     print(contact);
