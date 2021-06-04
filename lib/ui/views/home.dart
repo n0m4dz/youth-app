@@ -335,7 +335,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           'assets/images/svg/menu-volunteer.svg',
                           width: 70,
                           height: 70,
-                          color: Color(0xFF4323a7),
+                          color: volunteerColor,
                         ),
                       ),
                       Positioned(
@@ -348,7 +348,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Container(
                             padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
-                              color: Color(0xFF55438c),
+                              color: volunteerColor,
                               borderRadius: BorderRadius.circular(15),
                             ),
                             child: Column(
@@ -403,7 +403,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           'assets/images/svg/menu-parttime.svg',
                           width: 70,
                           height: 70,
-                          color: Color(0xFF128348),
+                          color: partTimeColor,
                         ),
                       ),
                       Positioned(
@@ -612,7 +612,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           'assets/images/svg/menu-news.svg',
                           width: 70,
                           height: 70,
-                          color: Color(0xFF576574),
+                          color: knowLedgeColor,
                         ),
                       ),
                       Positioned(
@@ -625,7 +625,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Container(
                             padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
-                              color: Color(0xFF7e8c9c),
+                              color: knowLedgeColor,
                               borderRadius: BorderRadius.circular(15),
                             ),
                             child: Column(
@@ -683,7 +683,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           'assets/images/svg/menu-event.svg',
                           width: 70,
                           height: 70,
-                          color: Color(0xFFcba822),
+                          color: eventColor,
                         ),
                       ),
                       Positioned(
@@ -696,7 +696,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Container(
                             padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
-                              color: Color(0xFFd9bc4c),
+                              color: eventColor,
                               borderRadius: BorderRadius.circular(15),
                             ),
                             child: Column(
