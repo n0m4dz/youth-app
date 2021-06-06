@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:youth/core/models/event.dart';
 import 'package:youth/core/models/bag_khoroo.dart';
+import 'package:youth/core/models/law.dart';
 import 'package:youth/core/models/soum.dart';
 import 'package:youth/core/models/aimag.dart';
 import 'package:youth/core/models/aimag_news.dart';
@@ -220,6 +221,25 @@ class Api {
 
     for (var r in parsed) {
       data.add(Event.fromJson(r));
+    }
+
+    return data;
+  }
+
+  Future<List<Law>> getApiLaws(int page) async {
+    var data = new List<Law>();
+
+    final response =
+        await _http.get('/api/mobile/getLegals?page=' + page.toString());
+
+    print('-------------------------------------------');
+    print(response.data['data']['data']);
+    print('-------------------------------------------');
+
+    var parsed = response.data['data']['data'] as List<dynamic>;
+
+    for (var r in parsed) {
+      data.add(Law.fromJson(r));
     }
 
     return data;

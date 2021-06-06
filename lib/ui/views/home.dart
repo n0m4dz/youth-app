@@ -21,14 +21,14 @@ import 'package:youth/ui/views/pages/VolunteerWork/volunteer_work.dart';
 import 'package:youth/ui/views/pages/eLearnHome.dart';
 import 'package:youth/ui/views/pages/event/event_page.dart';
 import 'package:youth/ui/views/pages/knowLedge.dart';
-import 'package:youth/ui/views/pages/law.dart';
+import 'package:youth/ui/views/pages/lawPage/law.dart';
 
 import 'package:youth/ui/views/pages/partTimeJob.dart';
 import 'package:youth/ui/views/profile.dart';
 import 'package:youth/ui/views/settings.dart';
 import 'package:youth/ui/views/sidebar.dart';
 
-import 'package:youth/ui/views/pages/national_council.dart';
+import 'package:youth/ui/views/pages/nationalCouncil/national_council.dart';
 import 'package:youth/ui/views/pages/YouthCouncil/youth_council_page.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -243,9 +243,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       Container(
                         width: 100,
                         height: 100,
-                        child: Image.network(
-                          baseUrl + "/assets/youth/splash/logo-zhz.jpg",
-                          alignment: Alignment.topCenter,
+                        child: Image.asset(
+                          'assets/images/logo-zhz.jpg',
                         ),
                       ),
                       SizedBox(height: 10),
@@ -287,9 +286,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       Container(
                         width: 90,
                         height: 90,
-                        child: Image.network(
-                          baseUrl + "/assets/youth/splash/logo-uz-ok.jpg",
-                          alignment: Alignment.topCenter,
+                        child: Image.asset(
+                          'assets/images/logo-uz-ok.jpg',
                         ),
                       ),
                       SizedBox(height: 10),

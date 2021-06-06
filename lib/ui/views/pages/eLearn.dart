@@ -12,12 +12,11 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:youth/ui/views/pages/eLearnDetail.dart';
 import 'package:youth/ui/views/pages/knowLedgeDetail.dart';
-import 'package:youth/ui/views/pages/lawDetail.dart';
+import 'package:youth/ui/views/pages/lawPage/lawDetail.dart';
 import 'package:youth/ui/views/pages/partTimeJobDetail.dart';
 import 'package:youth/ui/views/pages/volunteerWorkDetail.dart';
 
-class ELearnPage extends StatefulWidget{
-
+class ELearnPage extends StatefulWidget {
   final title;
 
   const ELearnPage({Key key, this.title}) : super(key: key);
@@ -26,24 +25,24 @@ class ELearnPage extends StatefulWidget{
   ELearnPageState createState() => ELearnPageState();
 }
 
-class ELearnPageState extends State<ELearnPage>{
-
+class ELearnPageState extends State<ELearnPage> {
   RefreshController _refreshController =
-  RefreshController(initialRefresh: false);
+      RefreshController(initialRefresh: false);
   List<dynamic> jobs = new List();
   NetworkUtil _http = new NetworkUtil();
   int page = 1;
   // final DateFormat formatter = DateFormat('yyyy-MM-dd');
 
   Future getItemList() async {
-    var url  = baseUrl + '/mobile/api/getLessons?page=' + page.toString();
+    var url = baseUrl + '/mobile/api/getLessons?page=' + page.toString();
     var response = await _http.get(url);
     var response_data = response.data['data'];
     var totalPage;
 
-    totalPage = (response_data['total'] / response_data['per_page']).round() + 1;
+    totalPage =
+        (response_data['total'] / response_data['per_page']).round() + 1;
 
-    if (totalPage>= page) {
+    if (totalPage >= page) {
       var parsed = response_data['data'] as List<dynamic>;
       for (var item in parsed) {
         jobs.add(item);
@@ -59,7 +58,6 @@ class ELearnPageState extends State<ELearnPage>{
 
   @override
   Widget build(BuildContext context) {
-
     Size size = MediaQuery.of(context).size;
     int index = 0;
 
@@ -75,7 +73,7 @@ class ELearnPageState extends State<ELearnPage>{
               left: 0,
               child: Container(
                 height: size.height * 0.7,
-                child:  SmartRefresher(
+                child: SmartRefresher(
                   enablePullDown: true,
                   enablePullUp: true,
                   header: WaterDropHeader(
@@ -107,19 +105,22 @@ class ELearnPageState extends State<ELearnPage>{
                     await Future.delayed(Duration(milliseconds: 1000));
                     _refreshController.loadComplete();
                   },
-                  child:  ListView(
+                  child: ListView(
                     controller: new ScrollController(keepScrollOffset: false),
                     shrinkWrap: true,
                     children: jobs.map(
-                          (item) {
+                      (item) {
                         index = index + 1;
                         return Container(
                             width: size.width - 40,
-                            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                            margin: EdgeInsets.symmetric(
+                                horizontal: 20, vertical: 20),
                             decoration: BoxDecoration(
-                                border: Border.all(color: podCastColor.withOpacity(0.3), width: 1, style: BorderStyle.solid),
-                                borderRadius: BorderRadius.circular(8)
-                            ),
+                                border: Border.all(
+                                    color: podCastColor.withOpacity(0.3),
+                                    width: 1,
+                                    style: BorderStyle.solid),
+                                borderRadius: BorderRadius.circular(8)),
                             child: Stack(
                               children: [
                                 Column(
@@ -131,152 +132,242 @@ class ELearnPageState extends State<ELearnPage>{
                                             border: Border(
                                                 bottom: BorderSide(
                                                     color: podCastColor,
-                                                    width: 1
-                                                )
-                                            )
-                                        ),
+                                                    width: 1))),
                                         child: ClipRRect(
-                                          borderRadius: BorderRadius.only(topRight: Radius.circular(8), topLeft: Radius.circular(8)),
+                                          borderRadius: BorderRadius.only(
+                                              topRight: Radius.circular(8),
+                                              topLeft: Radius.circular(8)),
                                           child: Image.network(
-                                            item['thumb'] == null ? baseUrl + "/assets/youth/images/noImage.jpg" :  baseUrl + item['thumb'].toString(),
-                                            height: MediaQuery.of(context).size.height,
+                                            item['thumb'] == null
+                                                ? baseUrl +
+                                                    "/assets/youth/images/noImage.jpg"
+                                                : baseUrl +
+                                                    item['thumb'].toString(),
+                                            height: MediaQuery.of(context)
+                                                .size
+                                                .height,
                                             width: size.width,
-                                            fit:BoxFit.cover,
+                                            fit: BoxFit.cover,
                                           ),
-                                        )
-                                    ),
+                                        )),
                                     Container(
                                       width: size.width - 40,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
-                                        borderRadius: BorderRadius.only(bottomRight: Radius.circular(8), bottomLeft: Radius.circular(8)),
+                                        borderRadius: BorderRadius.only(
+                                            bottomRight: Radius.circular(8),
+                                            bottomLeft: Radius.circular(8)),
                                       ),
                                       child: Column(
                                         children: [
                                           Container(
-                                            padding: EdgeInsets.only(left: 10, top: 10, right: 10),
+                                            padding: EdgeInsets.only(
+                                                left: 10, top: 10, right: 10),
                                             alignment: Alignment.centerLeft,
                                             child: Flex(
                                               direction: Axis.horizontal,
                                               children: [
                                                 Flexible(
                                                   child: Text(
-                                                    item['title'] == null ? '' : item['title'],
-                                                    overflow: TextOverflow.ellipsis,
+                                                    item['title'] == null
+                                                        ? ''
+                                                        : item['title'],
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
                                                     maxLines: 3,
                                                     softWrap: false,
-                                                    style: TextStyle(color: podCastColor, fontWeight: FontWeight.bold, fontSize: 18),
+                                                    style: TextStyle(
+                                                        color: podCastColor,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontSize: 18),
                                                   ),
                                                 ),
                                               ],
                                             ),
                                           ),
                                           Container(
-                                            padding: EdgeInsets.only(left: 10,),
-                                            margin: EdgeInsets.only(left: 10, top: 10, right: 10),
+                                            padding: EdgeInsets.only(
+                                              left: 10,
+                                            ),
+                                            margin: EdgeInsets.only(
+                                                left: 10, top: 10, right: 10),
                                             alignment: Alignment.centerLeft,
                                             decoration: BoxDecoration(
                                                 border: Border(
                                                     left: BorderSide(
                                                         color: secondaryColor,
-                                                        width: 2
-                                                    )
-                                                )
-                                            ),
+                                                        width: 2))),
                                             child: Flex(
                                               direction: Axis.horizontal,
                                               children: [
                                                 Flexible(
                                                   child: Text(
-                                                    item['headline'] == null ? '' : item['headline'],
-                                                    overflow: TextOverflow.ellipsis,
+                                                    item['headline'] == null
+                                                        ? ''
+                                                        : item['headline'],
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
                                                     maxLines: 3,
                                                     softWrap: false,
-                                                    style: TextStyle(color: Colors.black87, fontWeight: FontWeight.w500, fontSize: 16),
+                                                    style: TextStyle(
+                                                        color: Colors.black87,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        fontSize: 16),
                                                   ),
                                                 ),
                                               ],
                                             ),
                                           ),
                                           Container(
-                                            margin: EdgeInsets.only(left: 10, right: 10, top: 30, bottom: 10),
+                                            margin: EdgeInsets.only(
+                                                left: 10,
+                                                right: 10,
+                                                top: 30,
+                                                bottom: 10),
                                             decoration: BoxDecoration(
                                                 border: Border(
                                                     top: BorderSide(
                                                         color: Colors.grey,
-                                                        width: 1
-                                                    )
-                                                )
-                                            ),
+                                                        width: 1))),
                                             child: Column(
                                               children: [
                                                 Container(
-                                                    padding: EdgeInsets.only(top: 10, bottom: 10),
-                                                    width: MediaQuery.of(context).size.width - 25,
+                                                    padding: EdgeInsets.only(
+                                                        top: 10, bottom: 10),
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .width -
+                                                            25,
                                                     child: Row(
                                                       children: [
                                                         Icon(
-                                                            Icons.calendar_today,
+                                                            Icons
+                                                                .calendar_today,
                                                             color: podCastColor,
                                                             size: 14.0),
                                                         SizedBox(width: 5),
                                                         Text(
                                                           'Шинэчилсэн огноо: ',
-                                                          style: TextStyle(color: Colors.black54, fontWeight: FontWeight.w500, fontSize: 14),
+                                                          style: TextStyle(
+                                                              color: Colors
+                                                                  .black54,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              fontSize: 14),
                                                         ),
                                                         Text(
-                                                          item['updated_at'] == null ? '' : DateFormat("y/MM/dd").format(DateTime.parse(item['updated_at'])).toString(),
-                                                          style: TextStyle(color: podCastColor, fontWeight: FontWeight.w500, fontSize: 14),
+                                                          item['updated_at'] ==
+                                                                  null
+                                                              ? ''
+                                                              : DateFormat(
+                                                                      "y/MM/dd")
+                                                                  .format(DateTime
+                                                                      .parse(item[
+                                                                          'updated_at']))
+                                                                  .toString(),
+                                                          style: TextStyle(
+                                                              color:
+                                                                  podCastColor,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              fontSize: 14),
                                                         ),
                                                       ],
-                                                    )
-                                                ),
+                                                    )),
                                                 Container(
-                                                    padding: EdgeInsets.only(top: 0, bottom: 10),
-                                                    width: MediaQuery.of(context).size.width - 25,
+                                                    padding: EdgeInsets.only(
+                                                        top: 0, bottom: 10),
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .width -
+                                                            25,
                                                     child: Row(
                                                       children: [
-                                                        Icon(
-                                                            Icons.access_time,
+                                                        Icon(Icons.access_time,
                                                             color: podCastColor,
                                                             size: 14.0),
                                                         SizedBox(width: 5),
                                                         Text(
                                                           'Нэмсэн огноо: ',
-                                                          style: TextStyle(color: Colors.black54, fontWeight: FontWeight.w500, fontSize: 14),
+                                                          style: TextStyle(
+                                                              color: Colors
+                                                                  .black54,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              fontSize: 14),
                                                         ),
                                                         Text(
-                                                          item['created_at'] == null ? '' : DateFormat("y/MM/dd").format(DateTime.parse(item['created_at'])).toString(),
-                                                          style: TextStyle(color: podCastColor, fontWeight: FontWeight.w500, fontSize: 14),
+                                                          item['created_at'] ==
+                                                                  null
+                                                              ? ''
+                                                              : DateFormat(
+                                                                      "y/MM/dd")
+                                                                  .format(DateTime
+                                                                      .parse(item[
+                                                                          'created_at']))
+                                                                  .toString(),
+                                                          style: TextStyle(
+                                                              color:
+                                                                  podCastColor,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              fontSize: 14),
                                                         ),
                                                       ],
-                                                    )
-                                                ),
+                                                    )),
                                                 Container(
-                                                    padding: EdgeInsets.only(top: 0, bottom: 10),
-                                                    width: MediaQuery.of(context).size.width - 25,
+                                                    padding: EdgeInsets.only(
+                                                        top: 0, bottom: 10),
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .width -
+                                                            25,
                                                     child: Row(
                                                       children: [
                                                         Icon(
-                                                            Icons.supervised_user_circle,
+                                                            Icons
+                                                                .supervised_user_circle,
                                                             color: podCastColor,
                                                             size: 14.0),
                                                         SizedBox(width: 5),
                                                         Text(
                                                           'Бэлтгэсэн багш: ',
-                                                          style: TextStyle(color: Colors.black54, fontWeight: FontWeight.w500, fontSize: 14),
+                                                          style: TextStyle(
+                                                              color: Colors
+                                                                  .black54,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              fontSize: 14),
                                                         ),
                                                         Text(
-                                                          item['teachername'] == null ? '__' : item['teachername'].toString(),
-                                                          style: TextStyle(color: podCastColor, fontWeight: FontWeight.w500, fontSize: 14),
+                                                          item['teachername'] ==
+                                                                  null
+                                                              ? '__'
+                                                              : item['teachername']
+                                                                  .toString(),
+                                                          style: TextStyle(
+                                                              color:
+                                                                  podCastColor,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              fontSize: 14),
                                                         ),
                                                       ],
-                                                    )
-                                                ),
+                                                    )),
                                               ],
                                             ),
                                           ),
-
                                         ],
                                       ),
                                     )
@@ -286,81 +377,92 @@ class ELearnPageState extends State<ELearnPage>{
                                     bottom: 5,
                                     right: 10,
                                     child: GestureDetector(
-                                        onTap: (){
+                                        onTap: () {
                                           Navigator.push(
                                               context,
-                                              MaterialPageRoute(builder: (context) => ELearnDetailPage(
-                                                title: item['title'],
-                                                thumb: item['thumb'],
-                                                description: item['headline'],
-                                                body: item['body'],
-                                                teachername: item['teachername'],
-                                                updated_at: item['updated_at'],
-                                                created_at: item['created_at'],
-                                              ))
-                                          );
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      ELearnDetailPage(
+                                                        title: item['title'],
+                                                        thumb: item['thumb'],
+                                                        description:
+                                                            item['headline'],
+                                                        body: item['body'],
+                                                        teachername:
+                                                            item['teachername'],
+                                                        updated_at:
+                                                            item['updated_at'],
+                                                        created_at:
+                                                            item['created_at'],
+                                                      )));
                                         },
                                         child: Row(
                                           children: [
                                             Container(
                                               padding: EdgeInsets.only(
-                                                bottom: 3, // space between underline and text
+                                                bottom:
+                                                    3, // space between underline and text
                                               ),
                                               decoration: BoxDecoration(
-                                                  border: Border(bottom: BorderSide(
-                                                    color: secondaryColor,  // Text colour here
-                                                    width: 2.0, // Underline width
-                                                  ))
-                                              ),
+                                                  border: Border(
+                                                      bottom: BorderSide(
+                                                color:
+                                                    secondaryColor, // Text colour here
+                                                width: 2.0, // Underline width
+                                              ))),
                                               child: Text(
                                                 'Ца'.toUpperCase(),
-                                                style: TextStyle(color: podCastColor, fontSize: 14),
+                                                style: TextStyle(
+                                                    color: podCastColor,
+                                                    fontSize: 14),
                                               ),
                                             ),
                                             Container(
                                               padding: EdgeInsets.only(
-                                                bottom: 3, // space between underline and text
+                                                bottom:
+                                                    3, // space between underline and text
                                               ),
                                               decoration: BoxDecoration(
-                                                  border: Border(bottom: BorderSide(
-                                                    color: Colors.white,  // Text colour here
-                                                    width: 2.0, // Underline width
-                                                  ))
-                                              ),
+                                                  border: Border(
+                                                      bottom: BorderSide(
+                                                color: Colors
+                                                    .white, // Text colour here
+                                                width: 2.0, // Underline width
+                                              ))),
                                               child: Text(
                                                 'аш үзэх'.toUpperCase(),
-                                                style: TextStyle(color: podCastColor, fontSize: 14),
+                                                style: TextStyle(
+                                                    color: podCastColor,
+                                                    fontSize: 14),
                                               ),
                                             ),
                                             Container(
                                                 padding: EdgeInsets.only(
-                                                  bottom: 3, // space between underline and text
+                                                  bottom:
+                                                      3, // space between underline and text
                                                 ),
                                                 decoration: BoxDecoration(
-                                                    border: Border(bottom: BorderSide(
-                                                      color: Colors.white,  // Text colour here
-                                                      width: 2.0, // Underline width
-                                                    ))
-                                                ),
+                                                    border: Border(
+                                                        bottom: BorderSide(
+                                                  color: Colors
+                                                      .white, // Text colour here
+                                                  width: 2.0, // Underline width
+                                                ))),
                                                 child: Icon(
-                                                  FontAwesome.getIconData('angle-double-right'),
+                                                  FontAwesome.getIconData(
+                                                      'angle-double-right'),
                                                   color: podCastColor,
                                                   size: 18.0,
-                                                )
-                                            ),
+                                                )),
                                           ],
-                                        )
-                                    )
-                                ),
+                                        ))),
                               ],
-                            )
-                        );
+                            ));
                       },
                     ).toList(),
                   ),
                 ),
-              )
-          ),
+              )),
         ],
       ),
     );
@@ -386,4 +488,3 @@ class CurvePainter extends CustomPainter {
     return true;
   }
 }
-

@@ -12,7 +12,7 @@ import 'dart:ui';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:youth/ui/views/pages/knowLedgeDetail.dart';
-import 'package:youth/ui/views/pages/lawDetail.dart';
+import 'package:youth/ui/views/pages/lawPage/lawDetail.dart';
 import 'package:youth/ui/views/pages/partTimeJobDetail.dart';
 import 'package:youth/ui/views/pages/volunteerWorkDetail.dart';
 

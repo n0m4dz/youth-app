@@ -10,6 +10,7 @@ import 'package:youth/core/viewmodels/aimag_news_model.dart';
 import 'package:youth/core/viewmodels/resolution_model.dart';
 import 'package:youth/core/viewmodels/volunteer_work_model.dart';
 import 'core/services/aimag_service.dart';
+import 'core/services/law_service.dart';
 import 'core/services/national_council_service.dart';
 import 'core/services/youth_council_service.dart';
 import 'core/services/soum_service.dart';
@@ -20,6 +21,7 @@ import 'core/services/api.dart';
 import 'core/viewmodels/aimag_model.dart';
 import 'core/viewmodels/base_model.dart';
 import 'core/viewmodels/job_model.dart';
+import 'core/viewmodels/law_model.dart';
 import 'core/viewmodels/soum_model.dart';
 import 'core/viewmodels/bag_khoroo_model.dart';
 import 'core/viewmodels/staff_model.dart';
@@ -49,6 +51,7 @@ void setupLocator() {
   locator.registerLazySingleton(() => ResolutionService());
   locator.registerLazySingleton(() => VolunteerWorkService());
   locator.registerLazySingleton(() => EventService());
+  locator.registerLazySingleton(() => LawService());
 
   //App view models for busines logic
   locator.registerFactory(() => BaseModel());
@@ -64,4 +67,5 @@ void setupLocator() {
   locator.registerFactory(() => ResolutionModel());
   locator.registerFactory(() => VolunteerWorkModel());
   locator.registerFactory(() => EventModel());
+  locator.registerFactory(() => LawModel());
 }

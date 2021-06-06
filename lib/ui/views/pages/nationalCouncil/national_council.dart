@@ -17,7 +17,7 @@ import 'package:flutter/rendering.dart';
 import 'package:youth/ui/styles/_colors.dart';
 import 'package:youth/ui/views/pages/sub_council.dart';
 
-import '../base_view.dart';
+import '../../base_view.dart';
 
 class NationalCouncilPage extends StatefulWidget {
   final title;

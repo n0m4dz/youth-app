@@ -74,6 +74,8 @@ flutter:
     - assets/images/bg-wh.jpg
     - assets/images/bg-purple.jpg
     - assets/images/bg-green.jpg
+    - assets/images/logo-zhz.jpg
+    - assets/images/logo-uz-ok.jpg
     - assets/images/svg/arrow-left.svg
     - assets/images/svg/page-heading-part-time.svg
     - assets/images/svg/icon-part-time.svg
