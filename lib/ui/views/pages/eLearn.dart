@@ -34,7 +34,7 @@ class ELearnPageState extends State<ELearnPage> {
   // final DateFormat formatter = DateFormat('yyyy-MM-dd');
 
   Future getItemList() async {
-    var url = baseUrl + '/mobile/api/getLessons?page=' + page.toString();
+    var url = baseUrl + '/api/mobile/getLessons?page=' + page.toString();
     var response = await _http.get(url);
     var response_data = response.data['data'];
     var totalPage;

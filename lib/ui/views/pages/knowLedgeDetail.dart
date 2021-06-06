@@ -7,6 +7,7 @@ import 'package:flutter_icons/font_awesome.dart';
 import 'package:lambda/modules/network_util.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:youth/core/contants/values.dart';
+import 'package:youth/core/models/knowledge.dart';
 import 'package:youth/ui/styles/_colors.dart';
 import 'package:intl/intl.dart';
 import 'dart:ui';
@@ -14,22 +15,12 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class KnowLedgeDetailPage extends StatefulWidget {
-  final title;
-  final thumb;
-  final content;
-  final type;
-  final views;
-  final created_at;
+  final KnowLedge item;
 
-  const KnowLedgeDetailPage(
-      {Key key,
-      this.title,
-      this.thumb,
-      this.created_at,
-      this.content,
-      this.type,
-      this.views})
-      : super(key: key);
+  const KnowLedgeDetailPage({
+    Key key,
+    this.item,
+  }) : super(key: key);
 
   @override
   KnowLedgeDetailPageState createState() => KnowLedgeDetailPageState();
@@ -55,9 +46,9 @@ class KnowLedgeDetailPageState extends State<KnowLedgeDetailPage> {
                 backgroundColor: primaryColor.withOpacity(0.9),
                 flexibleSpace: FlexibleSpaceBar(
                     background: Image.network(
-                  widget.thumb == null
+                  widget.item.thumb == null
                       ? baseUrl + "/assets/youth/images/noImage.jpg"
-                      : baseUrl + widget.thumb.toString(),
+                      : baseUrl + widget.item.thumb.toString(),
                   fit: BoxFit.cover,
                 )),
               ),
@@ -69,7 +60,7 @@ class KnowLedgeDetailPageState extends State<KnowLedgeDetailPage> {
               scrollDirection: Axis.vertical,
               children: [
                 Text(
-                  widget.title == null ? '' : widget.title,
+                  widget.item.title == null ? '' : widget.item.title,
                   style: TextStyle(
                       color: Colors.black87,
                       fontSize: 18,
@@ -79,7 +70,7 @@ class KnowLedgeDetailPageState extends State<KnowLedgeDetailPage> {
                   height: 15,
                 ),
                 Container(
-                  child: Html(data: widget.content),
+                  child: Html(data: widget.item.content),
                 ),
                 Container(
                   height: 90,
@@ -106,11 +97,12 @@ class KnowLedgeDetailPageState extends State<KnowLedgeDetailPage> {
                                     fontSize: 14),
                               ),
                               Text(
-                                widget.created_at == null
+                                widget.item.createdAt == null
                                     ? ''
                                     : DateFormat("y/MM/dd")
                                         .format(
-                                            DateTime.parse(widget.created_at))
+                                          DateTime.parse(widget.item.createdAt),
+                                        )
                                         .toString(),
                                 style: TextStyle(
                                     color: knowLedgeColor,

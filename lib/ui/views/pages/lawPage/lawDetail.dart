@@ -10,6 +10,7 @@ import 'package:lambda/modules/network_util.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:youth/core/contants/values.dart';
+import 'package:youth/core/models/law.dart';
 import 'package:youth/ui/styles/_colors.dart';
 import 'package:intl/intl.dart';
 import 'dart:ui';
@@ -19,7 +20,7 @@ import 'package:webview_flutter/webview_flutter.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
 class LawDetailPage extends StatefulWidget {
-  final item;
+  final Law item;
 
   const LawDetailPage({Key key, this.item}) : super(key: key);
 
@@ -49,48 +50,90 @@ class LawDetailPageState extends State<LawDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Stack(
-      children: [
-        NestedScrollView(
-            headerSliverBuilder:
-                (BuildContext context, bool innerBoxIsScrolled) {
-              return <Widget>[
-                SliverAppBar(
-                  expandedHeight: 50.0,
-                  floating: false,
-                  pinned: true,
-                  backgroundColor: podCastColor.withOpacity(0.9),
-                  flexibleSpace: FlexibleSpaceBar(
-                      background: Image.network(
-                    widget.item.thumb == null
-                        ? baseUrl + "/assets/youth/images/noImage.jpg"
-                        : baseUrl + widget.item.thumb.toString(),
-                    fit: BoxFit.cover,
-                  )),
-                ),
-              ];
-            },
-            body: Container(
-              width: MediaQuery.of(context).size.width,
-              child: WebView(
-                key: _key,
-                initialUrl: widget.item.link,
-                javascriptMode: JavascriptMode.unrestricted,
-                gestureRecognizers: gestureRecognizers,
-                onWebViewCreated: (webViewCreate) {
-                  webController = webViewCreate;
-//                    webController.evaluateJavascript('document.cookie = "token=$token}"; path=/');
-                  _controller.complete(webViewCreate);
-                },
-                onPageFinished: (finish) {
-                  setState(() {
-                    _isLoadingPage = false;
-                  });
-                },
+      body: NestedScrollView(
+          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+            return <Widget>[
+              SliverAppBar(
+                expandedHeight: 200.0,
+                floating: false,
+                pinned: true,
+                backgroundColor: primaryColor.withOpacity(0.9),
+                flexibleSpace: FlexibleSpaceBar(
+                    background: Image.network(
+                  widget.item.thumb == null
+                      ? baseUrl + "/assets/youth/images/noImage.jpg"
+                      : baseUrl + widget.item.thumb.toString(),
+                  fit: BoxFit.cover,
+                )),
               ),
-            )),
-      ],
-    ));
+            ];
+          },
+          body: Padding(
+            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            child: ListView(
+              scrollDirection: Axis.vertical,
+              children: [
+                Text(
+                  widget.item.title == null ? '' : widget.item.title,
+                  style: TextStyle(
+                      color: Colors.black87,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Container(
+                  child: widget.item.body != null
+                      ? Html(data: widget.item.body)
+                      : '',
+                ),
+                Container(
+                  height: 90,
+                  margin:
+                      EdgeInsets.only(left: 10, right: 10, top: 30, bottom: 10),
+                  decoration: BoxDecoration(
+                      border: Border(
+                          top: BorderSide(color: Colors.grey, width: 1))),
+                  child: Column(
+                    children: [
+                      Container(
+                          padding: EdgeInsets.only(top: 10, bottom: 10),
+                          width: MediaQuery.of(context).size.width - 25,
+                          child: Row(
+                            children: [
+                              Icon(Icons.access_time,
+                                  color: knowLedgeColor, size: 14.0),
+                              SizedBox(width: 5),
+                              Text(
+                                'Нэмсэн огноо: ',
+                                style: TextStyle(
+                                    color: Colors.black54,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 14),
+                              ),
+                              Text(
+                                widget.item.createdAt == null
+                                    ? ''
+                                    : DateFormat("y/MM/dd")
+                                        .format(
+                                          DateTime.parse(widget.item.createdAt),
+                                        )
+                                        .toString(),
+                                style: TextStyle(
+                                    color: knowLedgeColor,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 14),
+                              ),
+                            ],
+                          )),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          )),
+    );
 
     return Scaffold(
         body: Stack(

@@ -34,7 +34,7 @@ class PodCastPageState extends State<PodCastPage> {
   // final DateFormat formatter = DateFormat('yyyy-MM-dd');
 
   Future getItemList() async {
-    var url = baseUrl + '/mobile/api/getPodCasts?page=' + page.toString();
+    var url = baseUrl + '/api/mobile/getPodCasts?page=' + page.toString();
     var response = await _http.get(url);
     var response_data = response.data['data'];
     var totalPage;
@@ -374,21 +374,21 @@ class PodCastPageState extends State<PodCastPage> {
                                     child: GestureDetector(
                                         onTap: () {
                                           Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      PodCastDetailPage(
-                                                        title: item['title'],
-                                                        img: item['img'],
-                                                        content:
-                                                            item['description'],
-                                                        guest: item['guest'],
-                                                        embed: item['embed'],
-                                                        link: item['link'],
-                                                        views: item['views'],
-                                                        created_at:
-                                                            item['created_at'],
-                                                      )));
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  PodCastDetailPage(
+                                                title: item['title'],
+                                                img: item['img'],
+                                                content: item['description'],
+                                                guest: item['guest'],
+                                                embed: item['embed'],
+                                                link: item['link'],
+                                                views: item['views'],
+                                                created_at: item['created_at'],
+                                              ),
+                                            ),
+                                          );
                                         },
                                         child: Row(
                                           children: [

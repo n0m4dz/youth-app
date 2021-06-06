@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:youth/core/models/event.dart';
 import 'package:youth/core/models/bag_khoroo.dart';
+import 'package:youth/core/models/knowledge.dart';
 import 'package:youth/core/models/law.dart';
 import 'package:youth/core/models/soum.dart';
 import 'package:youth/core/models/aimag.dart';
@@ -195,12 +196,12 @@ class Api {
   Future<List<VolunteerWork>> getVolunteerWorks(int aimagId, int page) async {
     var data = new List<VolunteerWork>();
 
-    final response = await _http.get('/api/mobile/get-volunteers/' +
+    final response = await _http.get('/api/mobile/getVolunteers/' +
         aimagId.toString() +
         '?page=' +
         page.toString());
 
-    var parsed = response.data['volunteers']['data'] as List<dynamic>;
+    var parsed = response.data['data']['data'] as List<dynamic>;
 
     for (var r in parsed) {
       data.add(VolunteerWork.fromJson(r));
@@ -212,12 +213,12 @@ class Api {
   Future<List<Event>> getApiEvents(int aimagId, int page) async {
     var data = new List<Event>();
 
-    final response = await _http.get('/api/mobile/get-events/' +
+    final response = await _http.get('/api/mobile/getEvents/' +
         aimagId.toString() +
         '?page=' +
         page.toString());
 
-    var parsed = response.data['data'] as List<dynamic>;
+    var parsed = response.data['data']['data'] as List<dynamic>;
 
     for (var r in parsed) {
       data.add(Event.fromJson(r));
@@ -232,14 +233,25 @@ class Api {
     final response =
         await _http.get('/api/mobile/getLegals?page=' + page.toString());
 
-    print('-------------------------------------------');
-    print(response.data['data']['data']);
-    print('-------------------------------------------');
-
     var parsed = response.data['data']['data'] as List<dynamic>;
 
     for (var r in parsed) {
       data.add(Law.fromJson(r));
+    }
+
+    return data;
+  }
+
+  Future<List<KnowLedge>> getApiKnowLedge(int page) async {
+    var data = new List<KnowLedge>();
+
+    final response =
+        await _http.get('/api/mobile/getKnowLedges?page=' + page.toString());
+
+    var parsed = response.data['data']['data'] as List<dynamic>;
+
+    for (var k in parsed) {
+      data.add(KnowLedge.fromJson(k));
     }
 
     return data;
