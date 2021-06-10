@@ -179,7 +179,7 @@ class _SidebarScreenState extends State<SidebarScreen> {
                           ),
                         ),
                         Container(
-                          padding: EdgeInsets.only(left: 20, top: 70),
+                          padding: EdgeInsets.only(left: 20, top: 90),
                           child: Column(
                             children: <Widget>[
                               Container(

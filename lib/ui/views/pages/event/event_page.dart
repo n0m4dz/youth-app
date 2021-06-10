@@ -47,7 +47,6 @@ class _EventPageState extends State<EventPage> {
           return <Widget>[
             DefaultSliverAppBar(
               title: widget.title,
-              size: size,
               color: Color(0xFFcba822),
               svgData: "assets/images/svg/page-heading-event.svg",
             ),

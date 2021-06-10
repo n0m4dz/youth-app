@@ -75,7 +75,6 @@ class KnowLedgePageState extends State<KnowLedgePage> {
           return <Widget>[
             DefaultSliverAppBar(
               title: widget.title,
-              size: size,
               color: Color(0xFF576574),
               svgData: "assets/images/svg/page-heading-legal.svg",
             ),

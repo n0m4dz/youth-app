@@ -42,7 +42,6 @@ class _YouthStaffListState extends State<YouthStaffList> {
           return <Widget>[
             DefaultSliverAppBar(
               title: "Зөвлөлийн гишүүд",
-              size: size,
               color: Color(0xFFb8b8b8),
               svgData: "assets/images/svg/page-heading-legal.svg",
               titleColor: primaryColor,

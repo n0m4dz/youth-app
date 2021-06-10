@@ -14,7 +14,6 @@ import '../../size_config.dart';
 class DefaultSliverAppBar extends StatelessWidget {
   const DefaultSliverAppBar({
     Key key,
-    @required this.size,
     this.color,
     this.svgData,
     this.title,
@@ -22,7 +21,6 @@ class DefaultSliverAppBar extends StatelessWidget {
   }) : super(key: key);
 
   final String title;
-  final Size size;
   final Color color;
   final Color titleColor;
   final String svgData;
@@ -61,9 +59,7 @@ class DefaultSliverAppBar extends StatelessWidget {
         ),
         background: SvgPicture.asset(
           svgData,
-          width: size.width,
-          height: size.height,
-          fit: BoxFit.fitHeight,
+          fit: BoxFit.cover,
         ),
       ),
       actions: [
@@ -78,8 +74,11 @@ class DefaultSliverAppBar extends StatelessWidget {
                 ),
               );
             },
-            child: Icon(Ionicons.getIconData('ios-notifications-outline'),
-                size: 31, color: Colors.white),
+            child: Icon(
+              Ionicons.getIconData('ios-notifications-outline'),
+              size: 31,
+              color: Colors.white,
+            ),
           ),
         ),
         Padding(
@@ -116,8 +115,11 @@ class DefaultSliverAppBar extends StatelessWidget {
                 }
               }
             },
-            child: Icon(Ionicons.getIconData('ios-contact'),
-                size: 31, color: Colors.white),
+            child: Icon(
+              Ionicons.getIconData('ios-contact'),
+              size: 31,
+              color: Colors.white,
+            ),
           ),
         ),
       ],

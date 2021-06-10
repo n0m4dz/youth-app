@@ -42,7 +42,6 @@ class _StaffListState extends State<StaffList> {
           return <Widget>[
             DefaultSliverAppBar(
               title: "Зөвлөлийн гишүүд",
-              size: size,
               color: Color(0xFF0084b5),
               svgData: "assets/images/svg/page-heading-legal.svg",
             ),

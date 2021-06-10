@@ -53,7 +53,6 @@ class LawPageState extends State<LawPage> {
           return <Widget>[
             DefaultSliverAppBar(
               title: widget.title,
-              size: size,
               color: lawColor,
               svgData: "assets/images/svg/page-heading-law.svg",
             ),

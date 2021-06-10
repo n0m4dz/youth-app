@@ -88,9 +88,6 @@ class Api {
 
   Future<List<YouthCouncil>> getYouthCouncil(
       page, aimagId, soumId, bkhId) async {
-    print('<-------------------------------------------->');
-    print(page);
-    print('<-------------------------------------------->');
     var data = new List<YouthCouncil>();
     final response = await _http.post('/api/mobile/zxz?page=' + page.toString(),
         {"search": "", "aimag": aimagId, "soum": soumId, "bag-khoroo": bkhId});

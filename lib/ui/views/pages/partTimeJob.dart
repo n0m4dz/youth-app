@@ -68,7 +68,6 @@ class PartTimeJobPageState extends State<PartTimeJobPage> {
           return <Widget>[
             DefaultSliverAppBar(
               title: widget.title,
-              size: size,
               color: partTimeColor,
               svgData: "assets/images/svg/page-heading-part-time.svg",
             ),

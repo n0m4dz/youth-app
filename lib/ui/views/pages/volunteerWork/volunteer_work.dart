@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:youth/core/contants/values.dart';
 import 'package:youth/core/models/volunteer_work.dart';
 import 'package:youth/core/viewmodels/volunteer_work_model.dart';
 import 'package:youth/ui/components/default_sliver_app_bar.dart';
 import 'package:youth/ui/components/empty_items.dart';
 import 'package:youth/ui/components/loader.dart';
 import 'package:youth/ui/styles/_colors.dart';
-import 'package:youth/ui/views/pages/subYouthCouncil/youth_volunteer_detail.dart';
 
 import '../../../../size_config.dart';
 import '../../base_view.dart';
+import 'components/item_image.dart';
+import 'volunteer_work_detail.dart';
 
 class VolunteerWorks extends StatefulWidget {
   final String title;
@@ -37,17 +36,15 @@ class _VolunteerWorksState extends State<VolunteerWorks> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     SizeConfig().init(context);
 
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      backgroundColor: bgColor,
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
             DefaultSliverAppBar(
               title: widget.title,
-              size: size,
               color: volunteerColor,
               svgData: "assets/images/svg/page-heading-legal.svg",
             ),
@@ -112,7 +109,7 @@ class _VolunteerWorksState extends State<VolunteerWorks> {
                                         context,
                                         MaterialPageRoute(
                                           builder: (context) =>
-                                              YouthVolunteerDetail(
+                                              VolunteerWorkDetail(
                                             item: item,
                                           ),
                                         ),
@@ -141,60 +138,7 @@ class _VolunteerWorksState extends State<VolunteerWorks> {
                                             ),
                                             child: Stack(
                                               children: <Widget>[
-                                                ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(4),
-                                                  child: item.image != null
-                                                      ? CachedNetworkImage(
-                                                          imageUrl: baseUrl +
-                                                              item.image,
-                                                          imageBuilder: (context,
-                                                                  imageProvider) =>
-                                                              Container(
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              image:
-                                                                  DecorationImage(
-                                                                image:
-                                                                    imageProvider,
-                                                                fit: BoxFit
-                                                                    .cover,
-                                                              ),
-                                                            ),
-                                                          ),
-                                                          placeholder:
-                                                              (context, url) =>
-                                                                  Center(
-                                                            child:
-                                                                CircularProgressIndicator(
-                                                              strokeWidth: 2,
-                                                              backgroundColor:
-                                                                  Colors.red,
-                                                            ),
-                                                          ),
-                                                          errorWidget: (context,
-                                                                  url, error) =>
-                                                              Image.network(
-                                                            baseUrl +
-                                                                "/assets/youth/images/noImage.jpg",
-                                                            width:
-                                                                double.infinity,
-                                                            fit:
-                                                                BoxFit.fitWidth,
-                                                          ),
-                                                        )
-                                                      : Container(
-                                                          height: 136,
-                                                          child: Image.network(
-                                                            baseUrl +
-                                                                "/assets/youth/images/noImage.jpg",
-                                                            width:
-                                                                double.infinity,
-                                                            fit:
-                                                                BoxFit.fitWidth,
-                                                          ),
-                                                        ),
-                                                ),
+                                                ItemImage(item: item),
                                                 Positioned(
                                                   left: 0,
                                                   top: 20,
