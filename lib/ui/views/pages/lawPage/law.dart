@@ -1,9 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/font_awesome.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:lambda/modules/network_util.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:youth/core/contants/values.dart';
 import 'package:youth/core/models/law.dart';
@@ -12,12 +10,9 @@ import 'package:youth/ui/components/default_sliver_app_bar.dart';
 import 'package:youth/ui/components/empty_items.dart';
 import 'package:youth/ui/components/loader.dart';
 import 'package:youth/ui/styles/_colors.dart';
-import 'package:intl/intl.dart';
 import 'dart:ui';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:youth/ui/views/pages/lawPage/lawDetail.dart';
-import 'package:youth/ui/views/pages/partTimeJobDetail.dart';
 
 import '../../../../size_config.dart';
 import '../../base_view.dart';

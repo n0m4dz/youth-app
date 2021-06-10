@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_html/style.dart';
@@ -29,8 +30,7 @@ class _VolunteerWorkDetailState extends State<VolunteerWorkDetail> {
       ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-        child: ListView(
-          scrollDirection: Axis.vertical,
+        child: Column(
           children: [
             Text(
               widget.item.name == null ? '' : widget.item.name,
@@ -40,6 +40,37 @@ class _VolunteerWorkDetailState extends State<VolunteerWorkDetail> {
                 fontWeight: FontWeight.bold,
               ),
             ),
+            widget.item.image != null
+                ? CachedNetworkImage(
+                    imageUrl: baseUrl + widget.item.image,
+                    imageBuilder: (context, imageProvider) => Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: imageProvider,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    placeholder: (context, url) => Center(
+                      child: CircularProgressIndicator(
+                        strokeWidth: 2,
+                        backgroundColor: Colors.red,
+                      ),
+                    ),
+                    errorWidget: (context, url, error) => Image.network(
+                      baseUrl + "/assets/youth/images/noImage.jpg",
+                      width: double.infinity,
+                      fit: BoxFit.fitWidth,
+                    ),
+                  )
+                : Container(
+                    height: 136,
+                    child: Image.network(
+                      baseUrl + "/assets/youth/images/noImage.jpg",
+                      width: double.infinity,
+                      fit: BoxFit.fitWidth,
+                    ),
+                  ),
             SizedBox(
               height: 15,
             ),
