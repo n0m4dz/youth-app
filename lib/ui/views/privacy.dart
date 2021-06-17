@@ -6,7 +6,7 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_html/style.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:lambda/modules/network_util.dart';
-import 'package:youth/core/contants/values.dart';
+import 'package:youth/core/constants/values.dart';
 import 'package:youth/ui/styles/_colors.dart';
 import '../components/loader.dart';
 import 'package:youth/ui/views/base_view.dart';

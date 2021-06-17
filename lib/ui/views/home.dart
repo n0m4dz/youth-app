@@ -9,7 +9,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lambda/modules/network_util.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:youth/core/contants/values.dart';
+import 'package:youth/core/constants/values.dart';
 import 'package:youth/core/models/user.dart';
 import 'package:youth/core/viewmodels/user_model.dart';
 import 'package:youth/ui/components/dynamic_flexible_spacebar_title.dart';

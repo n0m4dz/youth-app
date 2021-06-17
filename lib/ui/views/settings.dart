@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:provider/provider.dart';
-import 'package:youth/core/contants/values.dart';
+import 'package:youth/core/constants/values.dart';
 import 'package:youth/core/models/user.dart';
 import 'package:youth/core/viewmodels/user_model.dart';
 import 'package:youth/ui/components/bottom_modal.dart';

@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:lambda/modules/network_util.dart';
-import 'package:youth/core/contants/values.dart';
+import 'package:youth/core/constants/values.dart';
 import 'package:youth/ui/views/about.dart';
 import 'package:youth/ui/views/privacy.dart';
 import 'package:flutter/cupertino.dart';

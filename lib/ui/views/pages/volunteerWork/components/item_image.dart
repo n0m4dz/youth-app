@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:youth/core/contants/values.dart';
+import 'package:youth/core/constants/values.dart';
 import 'package:youth/core/models/volunteer_work.dart';
 
 class ItemImage extends StatelessWidget {

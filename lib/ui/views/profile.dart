@@ -8,7 +8,7 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lambda/modules/agent/agent_util.dart';
-import 'package:youth/core/contants/values.dart';
+import 'package:youth/core/constants/values.dart';
 import 'package:youth/core/models/user.dart';
 import 'package:youth/ui/components/bottom_modal.dart';
 import 'package:lambda/modules/network_util.dart';

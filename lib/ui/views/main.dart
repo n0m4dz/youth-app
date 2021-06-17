@@ -9,7 +9,7 @@ import 'package:flutter/rendering.dart';
 import 'package:lambda/modules/network_util.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:youth/core/contants/values.dart';
+import 'package:youth/core/constants/values.dart';
 import 'package:youth/core/models/user.dart';
 import 'package:youth/core/viewmodels/user_model.dart';
 import 'package:youth/ui/styles/_colors.dart' as prefix0;
@@ -55,7 +55,7 @@ class _MainScreenState extends State<MainScreen> {
   ];
 
   Future getContactList() async {
-    var url  = baseUrl + '/mobile/api/getContact';
+    var url = baseUrl + '/mobile/api/getContact';
     var response = await _http.get(url);
     contact = json.decode(response.toString());
     print(contact);
@@ -224,4 +224,3 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 }
-

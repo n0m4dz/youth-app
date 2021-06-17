@@ -3,30 +3,29 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/font_awesome.dart';
 import 'package:lambda/modules/network_util.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:youth/core/contants/values.dart';
+import 'package:youth/core/constants/values.dart';
 import 'package:youth/ui/styles/_colors.dart';
 import 'package:intl/intl.dart';
 import 'dart:ui';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class PartTimeJobDetailPage extends StatefulWidget{
-
+class PartTimeJobDetailPage extends StatefulWidget {
   final title;
   final description;
   final date;
 
-  const PartTimeJobDetailPage({Key key, this.title, this.description, this.date}) : super(key: key);
+  const PartTimeJobDetailPage(
+      {Key key, this.title, this.description, this.date})
+      : super(key: key);
 
   @override
   PartTimeJobPageDetailState createState() => PartTimeJobPageDetailState();
 }
 
-class PartTimeJobPageDetailState extends State<PartTimeJobDetailPage>{
-
+class PartTimeJobPageDetailState extends State<PartTimeJobDetailPage> {
   @override
   Widget build(BuildContext context) {
-
     Size size = MediaQuery.of(context).size;
     int index = 0;
 
@@ -41,31 +40,35 @@ class PartTimeJobPageDetailState extends State<PartTimeJobDetailPage>{
               bottom: 0,
               left: 0,
               child: Container(
-                height: size.height * 0.7,
-                padding: EdgeInsets.symmetric(horizontal: 20.0),
-                child: Column(
-                  children: [
-                    Text(
-                      widget.title == null ? '' : widget.title,
-                      style: TextStyle(color: Colors.black87, fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Text(
-                        widget.description == null ? '' : widget.description
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Text(
-                      widget.date == null ? '' : DateFormat("y/MM/dd").format(DateTime.parse(widget.date)).toString(),
-                      style: TextStyle(color: secondaryColor),
-                    )
-                  ],
-                )
-              )
-          ),
+                  height: size.height * 0.7,
+                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Column(
+                    children: [
+                      Text(
+                        widget.title == null ? '' : widget.title,
+                        style: TextStyle(
+                            color: Colors.black87,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Text(
+                          widget.description == null ? '' : widget.description),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Text(
+                        widget.date == null
+                            ? ''
+                            : DateFormat("y/MM/dd")
+                                .format(DateTime.parse(widget.date))
+                                .toString(),
+                        style: TextStyle(color: secondaryColor),
+                      )
+                    ],
+                  ))),
           Positioned(
             top: 0.0,
             left: 0.0,
@@ -89,8 +92,7 @@ class PartTimeJobPageDetailState extends State<PartTimeJobDetailPage>{
                   semanticsLabel: 'A red up arrow',
                   fit: BoxFit.cover,
                 ),
-              )
-          ),
+              )),
           Positioned(
               top: 47.0,
               right: 20,
@@ -99,13 +101,8 @@ class PartTimeJobPageDetailState extends State<PartTimeJobDetailPage>{
                   alignment: Alignment.topRight,
                   child: Text(
                     'Цагийн ажлын зар'.toUpperCase(),
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20
-                    ),
-                  )
-              )
-          ),
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ))),
           Positioned(
               top: 40.0,
               left: 20.0,
@@ -127,7 +124,6 @@ class PartTimeJobPageDetailState extends State<PartTimeJobDetailPage>{
                       ))))
         ],
       ),
-
     );
   }
 }

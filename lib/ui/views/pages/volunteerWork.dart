@@ -5,7 +5,7 @@ import 'package:flutter_icons/font_awesome.dart';
 import 'package:flutter_icons/simple_line_icons.dart';
 import 'package:lambda/modules/network_util.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:youth/core/contants/values.dart';
+import 'package:youth/core/constants/values.dart';
 import 'package:youth/ui/components/loader.dart';
 import 'package:youth/ui/styles/_colors.dart';
 import 'package:intl/intl.dart';

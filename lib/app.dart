@@ -4,7 +4,7 @@ import 'package:lambda/modules/gcm/notify.dart';
 import 'package:lambda/modules/network_util.dart';
 import 'package:lambda/modules/agent/agent_state.dart';
 import 'package:provider/provider.dart';
-import 'core/contants/values.dart';
+import 'core/constants/values.dart';
 import 'core/viewmodels/user_model.dart';
 import 'locator.dart';
 import 'router.dart';

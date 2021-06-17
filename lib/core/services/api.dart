@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:youth/core/models/event.dart';
 import 'package:youth/core/models/bag_khoroo.dart';
 import 'package:youth/core/models/knowledge.dart';
@@ -7,18 +5,12 @@ import 'package:youth/core/models/law.dart';
 import 'package:youth/core/models/soum.dart';
 import 'package:youth/core/models/aimag.dart';
 import 'package:youth/core/models/aimag_news.dart';
-import 'package:youth/core/models/anime.dart';
-import 'package:youth/core/models/branch.dart';
-import 'package:youth/core/models/episode.dart';
 import 'package:youth/core/models/job.dart';
-import 'package:youth/core/models/movie.dart';
 import 'package:youth/core/models/national_council.dart';
 import 'package:youth/core/models/youth_council.dart';
 import 'package:youth/core/models/resolution.dart';
 import 'package:youth/core/models/staff.dart';
-import 'package:youth/core/models/video.dart';
 import 'package:lambda/modules/network_util.dart';
-import 'package:youth/core/models/slide.dart';
 import 'package:youth/core/models/volunteer_work.dart';
 
 class Api {
@@ -27,30 +19,6 @@ class Api {
   Future<String> getPaymentInfo() async {
     var response = await _http.get('/api/m/payment');
     return response.data["body"];
-  }
-
-  //Hentai
-  Future<List<Anime>> getHentaiAnimes(int page) async {
-    var data = List<Anime>();
-    var response = await _http.get('/api/m/hentai?page=${page}');
-    var parsed = response.data['data'] as List<dynamic>;
-
-    for (var anime in parsed) {
-      data.add(Anime.fromJson(anime));
-    }
-    return data;
-  }
-
-  Future<List<Episode>> getHentaiEpisodes(int page) async {
-    var data = List<Episode>();
-
-    final response = await _http.get('/api/m/hentai/episodes?page=${page}');
-    var parsed = response.data['data'] as List<dynamic>;
-
-    for (var item in parsed) {
-      data.add(Episode.fromJson(item));
-    }
-    return data;
   }
 
   //Job
