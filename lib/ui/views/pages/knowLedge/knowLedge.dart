@@ -17,7 +17,7 @@ import 'dart:ui';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:youth/ui/views/base_view.dart';
-import 'package:youth/ui/views/pages/knowLedgeDetail.dart';
+import 'package:youth/ui/views/pages/knowLedge/knowLedgeDetail.dart';
 import 'package:youth/ui/views/pages/lawPage/lawDetail.dart';
 import 'package:youth/ui/views/pages/partTimeJobDetail.dart';
 import 'package:youth/ui/views/pages/volunteerWorkDetail.dart';
@@ -69,7 +69,7 @@ class KnowLedgePageState extends State<KnowLedgePage> {
 
     //TODO: implement build
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: bgColor,
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[

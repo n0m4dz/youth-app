@@ -45,9 +45,13 @@ class LawDetailPageState extends State<LawDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: bgColor,
       appBar: AppBar(
         backgroundColor: lawColor,
-        title: Text('Хууль'),
+        title: Text(
+          'Хууль'.toUpperCase(),
+          style: TextStyle(fontSize: 14),
+        ),
         centerTitle: true,
       ),
       body: Container(
@@ -66,7 +70,7 @@ class LawDetailPageState extends State<LawDetailPage> {
               height: 15,
             ),
             widget.item.thumb != null
-                ? CachedNetworkImage(
+                ? /*CachedNetworkImage(
                     imageUrl: baseUrl + widget.item.thumb,
                     imageBuilder: (context, imageProvider) => Container(
                       decoration: BoxDecoration(
@@ -87,6 +91,10 @@ class LawDetailPageState extends State<LawDetailPage> {
                       width: double.infinity,
                       fit: BoxFit.fitWidth,
                     ),
+                  )*/
+                Image.network(
+                    baseUrl + widget.item.thumb,
+                    fit: BoxFit.fitWidth,
                   )
                 : Container(
                     height: 136,

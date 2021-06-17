@@ -20,7 +20,7 @@ import 'package:youth/ui/views/notifications.dart';
 import 'package:youth/ui/views/pages/VolunteerWork/volunteer_work.dart';
 import 'package:youth/ui/views/pages/eLearnHome.dart';
 import 'package:youth/ui/views/pages/event/event_page.dart';
-import 'package:youth/ui/views/pages/knowLedge.dart';
+import 'package:youth/ui/views/pages/knowLedge/knowLedge.dart';
 import 'package:youth/ui/views/pages/lawPage/law.dart';
 
 import 'package:youth/ui/views/pages/partTimeJob.dart';

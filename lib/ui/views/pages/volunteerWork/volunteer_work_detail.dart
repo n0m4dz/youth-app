@@ -25,8 +25,10 @@ class _VolunteerWorkDetailState extends State<VolunteerWorkDetail> {
       appBar: AppBar(
         backgroundColor: volunteerColor,
         title: Text(
-          widget.item.name != null ? widget.item.name : 'Сайн дурын ажил',
+          'Сайн дурын ажил'.toUpperCase(),
+          style: TextStyle(fontSize: 14),
         ),
+        centerTitle: true,
       ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),

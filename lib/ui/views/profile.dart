@@ -736,7 +736,7 @@ class ProfileMenu extends StatelessWidget {
           children: [
             SvgPicture.asset(
               icon,
-              width: 22,
+              width: 15,
               color: primaryColor,
             ),
             SizedBox(width: 20),
@@ -746,7 +746,10 @@ class ProfileMenu extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodyText1,
               ),
             ),
-            Icon(Icons.arrow_forward_ios)
+            Icon(
+              Icons.arrow_forward_ios,
+              size: 15,
+            )
           ],
         ),
       ),
