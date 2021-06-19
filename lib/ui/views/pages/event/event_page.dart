@@ -12,6 +12,7 @@ import 'package:youth/ui/components/default_sliver_app_bar.dart';
 import 'package:youth/ui/components/empty_items.dart';
 import 'package:youth/ui/components/loader.dart';
 import 'package:youth/ui/styles/_colors.dart';
+import 'package:youth/ui/views/pages/eventDetail.dart';
 
 import '../../../../size_config.dart';
 import '../../base_view.dart';
@@ -107,15 +108,13 @@ class _EventPageState extends State<EventPage> {
                                     (Event item) {
                                       return InkWell(
                                         onTap: () {
-                                          // Navigator.push(
-                                          //   context,
-                                          //   MaterialPageRoute(
-                                          //     builder: (context) =>
-                                          //         YouthEventDetail(
-                                          //           item: item,
-                                          //         ),
-                                          //   ),
-                                          // );
+                                          /*Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  EventDetailPage(event: item),
+                                            ),
+                                          );*/
                                         },
                                         child: Container(
                                           margin: EdgeInsets.only(top: 15),

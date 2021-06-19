@@ -24,7 +24,7 @@ class _Introduction extends State<Introduction> {
     var size = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      backgroundColor: bgColor,
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -78,12 +78,11 @@ class _Introduction extends State<Introduction> {
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  //borderRadius: BorderRadius.circular(10),
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15),
                   ),
-                  color: Colors.white,
+                  color: bgColor,
                 ),
                 child: Stack(
                   children: [
