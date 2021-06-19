@@ -1,3 +1,4 @@
+import 'package:youth/core/models/Elearn.dart';
 import 'package:youth/core/models/event.dart';
 import 'package:youth/core/models/bag_khoroo.dart';
 import 'package:youth/core/models/knowledge.dart';
@@ -217,6 +218,21 @@ class Api {
 
     for (var k in parsed) {
       data.add(KnowLedge.fromJson(k));
+    }
+
+    return data;
+  }
+
+  Future<List<Elearn>> getApiElearn(int page) async {
+    var data = new List<Elearn>();
+
+    final response =
+        await _http.get('/api/mobile/getLessons?page=' + page.toString());
+
+    var parsed = response.data['data']['data'] as List<dynamic>;
+
+    for (var k in parsed) {
+      data.add(Elearn.fromJson(k));
     }
 
     return data;
