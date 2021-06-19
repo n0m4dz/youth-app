@@ -25,6 +25,7 @@ class KnowLedgePage extends StatefulWidget {
 }
 
 class _KnowLedgePageState extends State<KnowLedgePage> {
+  final GlobalKey<FormState> _scaffoldKey = GlobalKey<FormState>();
   RefreshController _refreshController =
       RefreshController(initialRefresh: false);
 
@@ -36,6 +37,7 @@ class _KnowLedgePageState extends State<KnowLedgePage> {
   Widget build(BuildContext context) {
     //TODO: implement build
     return Scaffold(
+      key: _scaffoldKey,
       backgroundColor: bgColor,
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {

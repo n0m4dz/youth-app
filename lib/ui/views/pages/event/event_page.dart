@@ -2,17 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:youth/core/constants/values.dart';
 import 'package:youth/core/models/event.dart';
-import 'package:youth/core/models/volunteer_work.dart';
 import 'package:youth/core/viewmodels/event_model.dart';
 import 'package:youth/ui/components/default_sliver_app_bar.dart';
 import 'package:youth/ui/components/empty_items.dart';
 import 'package:youth/ui/components/loader.dart';
 import 'package:youth/ui/styles/_colors.dart';
-import 'package:youth/ui/views/pages/eventDetail.dart';
+import 'package:youth/ui/views/pages/event/event_detail.dart';
 
 import '../../../../size_config.dart';
 import '../../base_view.dart';
@@ -48,7 +46,7 @@ class _EventPageState extends State<EventPage> {
           return <Widget>[
             DefaultSliverAppBar(
               title: widget.title,
-              color: Color(0xFFcba822),
+              color: eventColor,
               svgData: "assets/images/svg/page-heading-event.svg",
             ),
           ];
@@ -108,13 +106,13 @@ class _EventPageState extends State<EventPage> {
                                     (Event item) {
                                       return InkWell(
                                         onTap: () {
-                                          /*Navigator.push(
+                                          Navigator.push(
                                             context,
                                             MaterialPageRoute(
                                               builder: (context) =>
-                                                  EventDetailPage(event: item),
+                                                  EventDetailPage(item: item),
                                             ),
-                                          );*/
+                                          );
                                         },
                                         child: Container(
                                           margin: EdgeInsets.only(top: 15),
