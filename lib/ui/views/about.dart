@@ -22,9 +22,13 @@ class AboutScreenState extends State<AboutScreen> {
   // final DateFormat formatter = DateFormat('yyyy-MM-dd');
 
   Future getItemList() async {
-    var url = baseUrl + '/mobile/api/getOtherPage/1';
-    var response = await _http.get(url);
+    var url = baseUrl + '/api/mobile/getOtherPage/1';
+    var response = await _http.getRaw(url);
     item = jsonDecode(response.toString());
+
+    print('-------------');
+    print(response);
+    print('-------------');
 
     setState(() {});
   }
@@ -45,7 +49,7 @@ class AboutScreenState extends State<AboutScreen> {
         backgroundColor: primaryColor,
         centerTitle: false,
         title: Text(
-          item == null ? '' : item['title'].toUpperCase(),
+          item == null ? '' : item['title'],
           textAlign: TextAlign.start,
           style: TextStyle(
             color: Colors.white,

@@ -1,4 +1,5 @@
 import 'package:youth/core/models/Elearn.dart';
+import 'package:youth/core/models/PodCast.dart';
 import 'package:youth/core/models/event.dart';
 import 'package:youth/core/models/bag_khoroo.dart';
 import 'package:youth/core/models/knowledge.dart';
@@ -228,11 +229,25 @@ class Api {
 
     final response =
         await _http.get('/api/mobile/getLessons?page=' + page.toString());
-
     var parsed = response.data['data']['data'] as List<dynamic>;
 
     for (var k in parsed) {
       data.add(Elearn.fromJson(k));
+    }
+
+    return data;
+  }
+
+  Future<List<PodCast>> getApiPodCast(int page) async {
+    var data = new List<PodCast>();
+
+    final response =
+        await _http.get('/api/mobile/getPodCasts?page=' + page.toString());
+
+    var parsed = response.data['data']['data'] as List<dynamic>;
+
+    for (var p in parsed) {
+      data.add(PodCast.fromJson(p));
     }
 
     return data;

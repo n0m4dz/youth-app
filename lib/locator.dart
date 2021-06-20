@@ -3,10 +3,14 @@ import 'package:lambda/modules/agent/agent_util.dart';
 import 'package:lambda/modules/gcm/notify.dart';
 import 'package:lambda/modules/network_util.dart';
 import 'package:youth/core/services/aimag_news_service.dart';
+import 'package:youth/core/services/elearn_service.dart';
 import 'package:youth/core/services/event_service.dart';
+import 'package:youth/core/services/podcast_service.dart';
 import 'package:youth/core/services/resolution_service.dart';
 import 'package:youth/core/services/volunteer_work_service.dart';
 import 'package:youth/core/viewmodels/aimag_news_model.dart';
+import 'package:youth/core/viewmodels/elearn_model.dart';
+import 'package:youth/core/viewmodels/podcast_model.dart';
 import 'package:youth/core/viewmodels/resolution_model.dart';
 import 'package:youth/core/viewmodels/volunteer_work_model.dart';
 import 'core/services/aimag_service.dart';
@@ -55,6 +59,8 @@ void setupLocator() {
   locator.registerLazySingleton(() => EventService());
   locator.registerLazySingleton(() => LawService());
   locator.registerLazySingleton(() => KnowLedgeService());
+  locator.registerLazySingleton(() => ElearnService());
+  locator.registerLazySingleton(() => PodCastService());
 
   //App view models for busines logic
   locator.registerFactory(() => BaseModel());
@@ -72,4 +78,6 @@ void setupLocator() {
   locator.registerFactory(() => EventModel());
   locator.registerFactory(() => LawModel());
   locator.registerFactory(() => KnowLedgeModel());
+  locator.registerFactory(() => ElearnModel());
+  locator.registerFactory(() => PodCastModel());
 }

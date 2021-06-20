@@ -3,12 +3,12 @@ class Elearn {
   String title;
   String headline;
   String teachername;
-  Null files;
+  String files;
   String thumb;
   String body;
   String createdAt;
   String updatedAt;
-  Null deletedAt;
+  String deletedAt;
   int views;
   int type;
 
