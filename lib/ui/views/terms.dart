@@ -22,7 +22,7 @@ class TermsScreenState extends State<TermsScreen> {
   // final DateFormat formatter = DateFormat('yyyy-MM-dd');
 
   Future getItemList() async {
-    var url = baseUrl + '/mobile/api/getOtherPage/4';
+    var url = baseUrl + '/api/mobile/getOtherPage/4';
     var response = await _http.get(url);
     item = jsonDecode(response.toString());
 
