@@ -24,7 +24,8 @@ class TermsScreenState extends State<TermsScreen> {
   Future getItemList() async {
     var url = baseUrl + '/api/mobile/getOtherPage/4';
     var response = await _http.get(url);
-    item = jsonDecode(response.toString());
+
+    item = response.data['data'];
 
     setState(() {});
   }

@@ -23,12 +23,9 @@ class AboutScreenState extends State<AboutScreen> {
 
   Future getItemList() async {
     var url = baseUrl + '/api/mobile/getOtherPage/1';
-    var response = await _http.getRaw(url);
-    item = jsonDecode(response.toString());
+    var response = await _http.get(url);
 
-    print('-------------');
-    print(response);
-    print('-------------');
+    item = response.data['data'];
 
     setState(() {});
   }
