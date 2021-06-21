@@ -31,7 +31,7 @@ class PartTimeJobPageDetailState extends State<PartTimeJobDetailPage> {
 
     // TODO: implement build
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: bgColor,
       body: Stack(
         children: <Widget>[
           Positioned(

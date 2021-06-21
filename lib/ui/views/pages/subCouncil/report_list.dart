@@ -7,6 +7,7 @@ import 'package:youth/core/models/resolution.dart';
 import 'package:youth/core/viewmodels/resolution_model.dart';
 import 'package:youth/ui/components/empty_items.dart';
 import 'package:youth/ui/components/loader.dart';
+import 'package:youth/ui/styles/_colors.dart';
 import 'package:youth/ui/views/pages/subCouncil/report_detail.dart';
 
 import '../../base_view.dart';
@@ -26,7 +27,7 @@ class _ReportListState extends State<ReportList> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: bgColor,
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -81,7 +82,7 @@ class _ReportListState extends State<ReportList> {
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15),
                   ),
-                  color: Colors.grey[200],
+                  color: bgColor,
                 ),
                 child: BaseView<ResolutionModel>(
                   onModelReady: (model) {

@@ -47,7 +47,6 @@ class _SubCouncilState extends State<SubYouthCouncil> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  //SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -93,7 +92,7 @@ class _SubCouncilState extends State<SubYouthCouncil> {
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15),
                   ),
-                  color: Colors.grey[200],
+                  color: bgColor,
                   //color: Colors.white,
                 ),
                 child: Stack(

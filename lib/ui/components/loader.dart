@@ -11,7 +11,7 @@ class Loader extends StatelessWidget {
       height: double.infinity,
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Colors.grey[100],
+        color: bgColor,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

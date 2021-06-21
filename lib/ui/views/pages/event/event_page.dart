@@ -40,7 +40,7 @@ class _EventPageState extends State<EventPage> {
     SizeConfig().init(context);
 
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: bgColor,
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[

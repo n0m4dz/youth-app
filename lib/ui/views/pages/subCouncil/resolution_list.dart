@@ -29,7 +29,7 @@ class _ResolutionListState extends State<ResolutionList> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: bgColor,
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -84,7 +84,7 @@ class _ResolutionListState extends State<ResolutionList> {
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15),
                   ),
-                  color: Colors.grey[200],
+                  color: bgColor,
                 ),
                 child: BaseView<ResolutionModel>(
                   onModelReady: (model) {

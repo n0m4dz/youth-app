@@ -63,16 +63,6 @@ class _YouthCouncilPageState extends State<YouthCouncilPage> {
             //fit: BoxFit.fitWidth,
           ),
         ),
-        // headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-        //   return <Widget>[
-        //     DefaultSliverAppBar(
-        //       title: widget.title,
-        //       size: size,
-        //       color: Color(0xFF409EFF),
-        //       svgData: "assets/images/svg/page-heading-legal.svg",
-        //     ),
-        //   ];
-        // },
         child: Column(
           children: [
             Container(
@@ -117,7 +107,7 @@ class _YouthCouncilPageState extends State<YouthCouncilPage> {
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15),
                   ),
-                  color: Colors.grey[100],
+                  color: bgColor,
                 ),
                 child: BaseView<YouthCouncilModel>(
                   onModelReady: (model) {
