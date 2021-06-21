@@ -48,7 +48,7 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
     SizeConfig().init(context);
     // TODO: implement build
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      backgroundColor: bgColor,
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -103,7 +103,7 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15),
                   ),
-                  color: Colors.grey[200],
+                  color: bgColor,
                 ),
                 child: BaseView<NationalCouncilModel>(
                   onModelReady: (model) {

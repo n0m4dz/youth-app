@@ -36,7 +36,7 @@ class _YouthStaffListState extends State<YouthStaffList> {
     final double itemWidth = size.width / 2;
 
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: bgColor,
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[

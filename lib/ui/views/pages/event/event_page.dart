@@ -61,7 +61,7 @@ class _EventPageState extends State<EventPage> {
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15),
                   ),
-                  color: Colors.grey[200],
+                  color: bgColor,
                 ),
                 child: BaseView<EventModel>(
                   onModelReady: (model) {

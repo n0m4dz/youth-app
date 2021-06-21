@@ -41,7 +41,7 @@ class _VolunteerWorksState extends State<YouthVolunteerWorks> {
     SizeConfig().init(context);
 
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: bgColor,
       body: Container(
         decoration: BoxDecoration(
           color: Color(0xFF008bc0),
@@ -94,7 +94,7 @@ class _VolunteerWorksState extends State<YouthVolunteerWorks> {
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15),
                   ),
-                  color: Colors.grey[200],
+                  color: bgColor,
                 ),
                 child: BaseView<VolunteerWorkModel>(
                   onModelReady: (model) {

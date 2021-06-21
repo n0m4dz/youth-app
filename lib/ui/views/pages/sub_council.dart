@@ -4,6 +4,7 @@ import 'package:qr_flutter/qr_flutter.dart';
 import 'package:youth/core/models/national_council.dart';
 import 'package:youth/ui/components/default_sliver_app_bar.dart';
 import 'package:youth/ui/components/sub_button.dart';
+import 'package:youth/ui/styles/_colors.dart';
 import 'package:youth/ui/views/pages/subCouncil/introduction.dart';
 import 'package:youth/ui/views/pages/subCouncil/news_list.dart';
 import 'package:youth/ui/views/pages/subCouncil/report_list.dart';
@@ -23,7 +24,7 @@ class _SubCouncilState extends State<SubCouncil> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      backgroundColor: bgColor,
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -87,7 +88,7 @@ class _SubCouncilState extends State<SubCouncil> {
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15),
                   ),
-                  color: Colors.grey[100],
+                  color: bgColor,
                 ),
                 child: Stack(
                   children: [

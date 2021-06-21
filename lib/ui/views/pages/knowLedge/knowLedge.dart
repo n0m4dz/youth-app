@@ -59,7 +59,7 @@ class _KnowLedgePageState extends State<KnowLedgePage> {
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15),
                   ),
-                  color: Colors.grey[200],
+                  color: bgColor,
                 ),
                 child: BaseView<KnowLedgeModel>(
                   onModelReady: (model) {

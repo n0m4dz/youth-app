@@ -58,7 +58,7 @@ class _VolunteerWorksState extends State<VolunteerWorks> {
                 topLeft: Radius.circular(15),
                 topRight: Radius.circular(15),
               ),
-              color: Colors.grey[200],
+              color: bgColor,
             ),
             child: BaseView<VolunteerWorkModel>(
               onModelReady: (model) {

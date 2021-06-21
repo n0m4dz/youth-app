@@ -31,7 +31,6 @@ class _YouthPlanState extends State<YouthPlan> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.grey[100],
       body: Container(
         decoration: BoxDecoration(
           color: Color(0xFF981d5e),
@@ -85,7 +84,7 @@ class _YouthPlanState extends State<YouthPlan> {
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15),
                   ),
-                  color: Colors.grey[200],
+                  color: bgColor,
                 ),
                 child: BaseView<ResolutionModel>(
                   onModelReady: (model) {

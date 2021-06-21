@@ -304,7 +304,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-
               GestureDetector(
                 onTap: () {
                   Navigator.push(

@@ -72,7 +72,7 @@ class _YouthEventDetailState extends State<YouthEventDetail> {
                       topLeft: Radius.circular(15),
                       topRight: Radius.circular(15),
                     ),
-                    color: Colors.grey[200],
+                    color: bgColor,
                   ),
                   child: ListView(
                     scrollDirection: Axis.vertical,

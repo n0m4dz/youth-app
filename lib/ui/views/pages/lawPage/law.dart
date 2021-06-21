@@ -42,7 +42,7 @@ class LawPageState extends State<LawPage> {
     SizeConfig().init(context);
 
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: bgColor,
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
@@ -63,7 +63,7 @@ class LawPageState extends State<LawPage> {
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15),
                   ),
-                  color: Colors.grey[200],
+                  color: bgColor,
                 ),
                 child: BaseView<LawModel>(
                   onModelReady: (model) {
@@ -307,7 +307,6 @@ class LawPageState extends State<LawPage> {
       ),
     );
     // return Scaffold(
-    //   backgroundColor: Colors.grey[100],
     //   body: NestedScrollView(
     //     headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
     //       return <Widget>[

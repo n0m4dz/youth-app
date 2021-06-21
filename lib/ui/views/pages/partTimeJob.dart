@@ -62,7 +62,7 @@ class PartTimeJobPageState extends State<PartTimeJobPage> {
     SizeConfig().init(context);
     // TODO: implement build
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: bgColor,
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
@@ -92,7 +92,6 @@ class PartTimeJobPageState extends State<PartTimeJobPage> {
       ),
     );
     //return Scaffold(
-    //backgroundColor: Colors.grey[100],
     //   body: NestedScrollView(
     //     headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
     //       return <Widget>[

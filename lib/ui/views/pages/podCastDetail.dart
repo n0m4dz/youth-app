@@ -110,7 +110,6 @@ class PodCastDetailPageState extends State<PodCastDetailPage> {
     );
 
     return Scaffold(
-      backgroundColor: Colors.grey[100],
       body: Stack(
         children: <Widget>[
           Positioned(

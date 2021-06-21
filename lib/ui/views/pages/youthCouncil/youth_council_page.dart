@@ -52,7 +52,6 @@ class _YouthCouncilPageState extends State<YouthCouncilPage> {
 
     // TODO: implement build
     return Scaffold(
-      //backgroundColor: Colors.grey[200],
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(

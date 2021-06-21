@@ -63,7 +63,6 @@ class KnowLedgePageState extends State<KnowLedgePage> {
     return Scaffold();
     // TODO: implement build
     // return Scaffold(
-    //   backgroundColor: Colors.grey[100],
     //   body: Stack(
     //     children: <Widget>[
     //       Container(

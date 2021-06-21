@@ -85,7 +85,7 @@ class LawDetailPageState extends State<LawDetailPage> {
                       topLeft: Radius.circular(15),
                       topRight: Radius.circular(15),
                     ),
-                    color: Colors.grey[200],
+                    color: bgColor,
                   ),
                   child: Column(
                     children: [
