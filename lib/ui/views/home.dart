@@ -209,16 +209,16 @@ class _HomeScreenState extends State<HomeScreen> {
             controller: new ScrollController(keepScrollOffset: false),
             shrinkWrap: true,
             children: [
-              // HomeCategoryItem(
-              //   primaryColor: Color(0xFF409EFF),
-              //   primaryIcon: "assets/images/svg/menu-zxz.svg",
-              //   primaryTitle: "Залуучууд хөгжлийн үндэсний зөвлөл",
-              // ),
-              // HomeCategoryItem(
-              //   primaryColor: Color(0xFFfa983a),
-              //   primaryIcon: "assets/images/svg/menu-zxz.svg",
-              //   primaryTitle: "Залуучууд хөгжлийн зөвлөл",
-              // ),
+              /*HomeCategoryItem(
+                primaryColor: partTimeColor,
+                primaryIcon: "assets/images/svg/menu-parttime.svg",
+                primaryTitle: "Цагийн ажил",
+              ),
+              HomeCategoryItem(
+                primaryColor: Color(0xFFfa983a),
+                primaryIcon: "assets/images/svg/menu-zxz.svg",
+                primaryTitle: "Залуучууд хөгжлийн зөвлөл",
+              ),*/
               GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -754,9 +754,10 @@ class _HomeCategoryItemState extends State<HomeCategoryItem> {
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-              color: widget.primaryColor.withOpacity(0.4),
-              blurRadius: 10,
-              offset: Offset(0.0, 6))
+            color: widget.primaryColor.withOpacity(0.4),
+            blurRadius: 10,
+            offset: Offset(0.0, 6),
+          )
         ],
         color: widget.primaryColor,
         borderRadius: BorderRadius.circular(10),
@@ -777,7 +778,7 @@ class _HomeCategoryItemState extends State<HomeCategoryItem> {
                   children: <Widget>[
                     SvgPicture.asset(
                       widget.primaryIcon,
-                      height: 50,
+                      height: 60,
                       color: Colors.white,
                     ),
                     Container(
@@ -787,7 +788,7 @@ class _HomeCategoryItemState extends State<HomeCategoryItem> {
                         widget.primaryTitle,
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
-                          fontSize: 14,
+                          fontSize: 16,
                           color: Colors.white,
                         ),
                       ),

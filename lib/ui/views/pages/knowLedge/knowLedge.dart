@@ -16,7 +16,7 @@ import 'package:youth/ui/views/base_view.dart';
 import 'package:youth/ui/views/pages/knowLedge/knowLedgeDetail.dart';
 
 class KnowLedgePage extends StatefulWidget {
-  final title;
+  final String title;
 
   const KnowLedgePage({Key key, this.title}) : super(key: key);
 
@@ -25,10 +25,10 @@ class KnowLedgePage extends StatefulWidget {
 }
 
 class _KnowLedgePageState extends State<KnowLedgePage> {
-  final GlobalKey<FormState> _scaffoldKey = GlobalKey<FormState>();
   RefreshController _refreshController =
       RefreshController(initialRefresh: false);
 
+  @override
   void initState() {
     super.initState();
   }
@@ -37,22 +37,21 @@ class _KnowLedgePageState extends State<KnowLedgePage> {
   Widget build(BuildContext context) {
     //TODO: implement build
     return Scaffold(
-      key: _scaffoldKey,
       backgroundColor: bgColor,
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
-            DefaultSliverAppBar(
+            /*DefaultSliverAppBar(
               title: widget.title,
               color: knowLedgeColor,
-              svgData: "assets/images/svg/page-heading-legal.svg",
-            ),
+              svgData: "assets/images/svg/page-heading-knowledge.svg",
+            ),*/
           ];
         },
-        body: Column(
-          children: [
-            Expanded(
-              child: Container(
+        body: Expanded(
+          child: Column(
+            children: [
+              Container(
                 decoration: BoxDecoration(
                   //borderRadius: BorderRadius.circular(10),
                   borderRadius: BorderRadius.only(
@@ -297,8 +296,8 @@ class _KnowLedgePageState extends State<KnowLedgePage> {
                         ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

@@ -18,7 +18,7 @@ const Color knowLedgeColor = Color(0xFF576574);
 const Color eLearnColor = Color(0xFF5f58CC);
 const Color podCastColor = Color.fromRGBO(0, 144, 140, 1);
 const Color eventColor = Color.fromRGBO(234, 185, 83, 1);
-const Color partTimeColor = Color.fromRGBO(51, 142, 108, 0.9);
+const Color partTimeColor = Color(0xFF02b557);
 
 const Color volunteerWorkColor = Color(0xFF4323a7);
 
