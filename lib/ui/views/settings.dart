@@ -71,13 +71,40 @@ class _SettingsScreenState extends State<SettingsScreen> {
     user = userState.getUser;
 
     return Scaffold(
-      appBar: AppBar(
+      /*appBar: AppBar(
         iconTheme: IconThemeData(color: primaryColor),
         title: const Text(
-          'Тохиргоо',
+          'Тохиргоо 123',
           style: TextStyle(color: primaryColor),
         ),
         backgroundColor: Color(0xfff2f3fa),
+        elevation: 0,
+      ),*/
+      appBar: AppBar(
+        titleSpacing: 0,
+        backgroundColor: primaryColor,
+        centerTitle: false,
+        title: Text(
+          'Тохиргоо',
+          textAlign: TextAlign.start,
+          style: TextStyle(
+              color: Colors.white, fontWeight: FontWeight.w600, fontSize: 18),
+        ),
+        leading: FlatButton(
+          padding: EdgeInsets.all(0),
+          onPressed: () {
+            print('working back btn');
+            Navigator.pop(context);
+          },
+          child: Container(
+            height: 30,
+            width: 30,
+            child: Icon(
+              Ionicons.getIconData('ios-arrow-back'),
+              color: Colors.white,
+            ),
+          ),
+        ),
         elevation: 0,
       ),
       body: SizedBox(

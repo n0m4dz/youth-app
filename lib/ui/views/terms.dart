@@ -46,7 +46,7 @@ class TermsScreenState extends State<TermsScreen> {
         backgroundColor: primaryColor,
         centerTitle: false,
         title: Text(
-          item == null ? '' : item['title'].toUpperCase(),
+          item == null ? '' : item['title'],
           textAlign: TextAlign.start,
           style: TextStyle(
               color: Colors.white, fontWeight: FontWeight.w600, fontSize: 18),

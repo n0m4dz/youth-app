@@ -136,13 +136,43 @@ class _ProfileScreenState extends State<ProfileScreen> {
     user = userState.getUser;
 
     return Scaffold(
-      appBar: AppBar(
+      /*appBar: AppBar(
         iconTheme: IconThemeData(color: primaryColor),
         title: const Text(
           'Миний булан',
           style: TextStyle(color: primaryColor),
         ),
         backgroundColor: Color(0xfff2f3fa),
+        elevation: 0,
+      ),*/
+      appBar: AppBar(
+        titleSpacing: 0,
+        backgroundColor: primaryColor,
+        centerTitle: false,
+        title: Text(
+          'Миний булан',
+          textAlign: TextAlign.start,
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w600,
+            fontSize: 18,
+          ),
+        ),
+        leading: FlatButton(
+          padding: EdgeInsets.all(0),
+          onPressed: () {
+            print('working back btn');
+            Navigator.pop(context);
+          },
+          child: Container(
+            height: 30,
+            width: 30,
+            child: Icon(
+              Ionicons.getIconData('ios-arrow-back'),
+              color: Colors.white,
+            ),
+          ),
+        ),
         elevation: 0,
       ),
       body: Container(
@@ -193,7 +223,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   children: [
                     SvgPicture.asset(
                       "assets/images/svg/Log out.svg",
-                      width: 22,
+                      width: 15,
                       color: primaryColor,
                     ),
                     SizedBox(width: 20),
@@ -203,7 +233,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         style: Theme.of(context).textTheme.bodyText1,
                       ),
                     ),
-                    Icon(Icons.arrow_forward_ios)
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      size: 15,
+                    )
                   ],
                 ),
               ),

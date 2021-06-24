@@ -26,43 +26,31 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: bgColor,
-        // appBar: AppBar(
-        //   titleSpacing: 0,
-        //   backgroundColor: primaryColor,
-        //   centerTitle: false,
-        //   title: Text(
-        //     'Мэдэгдэл'.toUpperCase(),
-        //     textAlign: TextAlign.start,
-        //     style: TextStyle(
-        //         color: Colors.white,
-        //         fontWeight: FontWeight.w600,
-        //         fontSize: 18
-        //     ),
-        //   ),
-        //   leading: FlatButton(
-        //     padding: EdgeInsets.all(0),
-        //     onPressed: () {
-        //       print('working back btn');
-        //       Navigator.pop(context);
-        //     },
-        //     child: Container(
-        //       height: 30,
-        //       width: 30,
-        //       child: Icon(
-        //         Ionicons.getIconData('ios-arrow-back'),
-        //         color: Colors.white,
-        //       ),
-        //     ),
-        //   ),
-        //   elevation: 0,
-        // ),
         appBar: AppBar(
-          iconTheme: IconThemeData(color: primaryColor),
-          title: const Text(
+          titleSpacing: 0,
+          backgroundColor: primaryColor,
+          centerTitle: false,
+          title: Text(
             'Мэдэгдэл',
-            style: TextStyle(color: primaryColor),
+            textAlign: TextAlign.start,
+            style: TextStyle(
+                color: Colors.white, fontWeight: FontWeight.w600, fontSize: 18),
           ),
-          backgroundColor: Color(0xfff2f3fa),
+          leading: FlatButton(
+            padding: EdgeInsets.all(0),
+            onPressed: () {
+              print('working back btn');
+              Navigator.pop(context);
+            },
+            child: Container(
+              height: 30,
+              width: 30,
+              child: Icon(
+                Ionicons.getIconData('ios-arrow-back'),
+                color: Colors.white,
+              ),
+            ),
+          ),
           elevation: 0,
         ),
         body: Container(

@@ -41,17 +41,17 @@ class _KnowLedgePageState extends State<KnowLedgePage> {
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
-            /*DefaultSliverAppBar(
+            DefaultSliverAppBar(
               title: widget.title,
               color: knowLedgeColor,
-              svgData: "assets/images/svg/page-heading-knowledge.svg",
-            ),*/
+              svgData: "assets/images/svg/page-heading-legal.svg",
+            ),
           ];
         },
-        body: Expanded(
-          child: Column(
-            children: [
-              Container(
+        body: Column(
+          children: [
+            Expanded(
+              child: Container(
                 decoration: BoxDecoration(
                   //borderRadius: BorderRadius.circular(10),
                   borderRadius: BorderRadius.only(
@@ -296,8 +296,8 @@ class _KnowLedgePageState extends State<KnowLedgePage> {
                         ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
