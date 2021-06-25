@@ -136,15 +136,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     user = userState.getUser;
 
     return Scaffold(
-      /*appBar: AppBar(
-        iconTheme: IconThemeData(color: primaryColor),
-        title: const Text(
-          'Миний булан',
-          style: TextStyle(color: primaryColor),
-        ),
-        backgroundColor: Color(0xfff2f3fa),
-        elevation: 0,
-      ),*/
+      backgroundColor: bgColor,
       appBar: AppBar(
         titleSpacing: 0,
         backgroundColor: primaryColor,

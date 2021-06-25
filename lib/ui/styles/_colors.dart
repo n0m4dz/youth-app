@@ -47,5 +47,5 @@ const BoxShadow shadow = BoxShadow(
   color: Color(0x12222222),
   blurRadius: 10.0,
   spreadRadius: .7,
-  offset: Offset(3.0, 3.0),
+  offset: Offset(3.0, 5.0),
 );

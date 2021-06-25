@@ -113,15 +113,20 @@ class ELearnPageState extends State<ELearnPage> {
                             (Elearn item) {
                               return InkWell(
                                 onTap: () {
-                                  // Navigator.push(
-                                  //   context,
-                                  //   MaterialPageRoute(
-                                  //     builder: (context) =>
-                                  //         YouthTipsDetail(
-                                  //       item: item,
-                                  //     ),
-                                  //   ),
-                                  // );
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => ELearnDetailPage(
+                                        title: item.title,
+                                        thumb: item.thumb,
+                                        description: item.headline,
+                                        body: item.body,
+                                        teachername: item.teachername,
+                                        updated_at: item.updatedAt,
+                                        created_at: item.createdAt,
+                                      ),
+                                    ),
+                                  );
                                 },
                                 child: Container(
                                   margin: EdgeInsets.only(top: 15),

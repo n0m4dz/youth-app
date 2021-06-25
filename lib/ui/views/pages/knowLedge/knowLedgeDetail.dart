@@ -114,37 +114,34 @@ class _KnowLedgeDetailPageState extends State<KnowLedgeDetailPage> {
                                   child: Stack(
                                     children: <Widget>[
                                       ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(4),
-                                          child: CachedNetworkImage(
-                                            imageUrl:
-                                                baseUrl + widget.item.thumb,
-                                            imageBuilder:
-                                                (context, imageProvider) =>
-                                                    Container(
-                                              decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                  image: imageProvider,
-                                                  fit: BoxFit.cover,
-                                                ),
+                                        borderRadius: BorderRadius.circular(4),
+                                        child: CachedNetworkImage(
+                                          imageUrl: baseUrl + widget.item.thumb,
+                                          imageBuilder:
+                                              (context, imageProvider) =>
+                                                  Container(
+                                            decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                                image: imageProvider,
+                                                fit: BoxFit.cover,
                                               ),
                                             ),
-                                            placeholder: (context, url) =>
-                                                Center(
-                                              child: CircularProgressIndicator(
-                                                strokeWidth: 2,
-                                                backgroundColor: Colors.red,
-                                              ),
+                                          ),
+                                          placeholder: (context, url) => Center(
+                                            child: CircularProgressIndicator(
+                                              strokeWidth: 2,
+                                              backgroundColor: Colors.red,
                                             ),
-                                            errorWidget:
-                                                (context, url, error) =>
-                                                    Image.network(
-                                              baseUrl +
-                                                  "/assets/youth/images/noImage.jpg",
-                                              width: double.infinity,
-                                              fit: BoxFit.fitWidth,
-                                            ),
-                                          )),
+                                          ),
+                                          errorWidget: (context, url, error) =>
+                                              Image.network(
+                                            baseUrl +
+                                                "/assets/youth/images/noImage.jpg",
+                                            width: double.infinity,
+                                            fit: BoxFit.fitWidth,
+                                          ),
+                                        ),
+                                      ),
                                     ],
                                   ),
                                 )

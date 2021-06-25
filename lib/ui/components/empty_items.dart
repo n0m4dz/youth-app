@@ -11,8 +11,8 @@ class EmptyItems extends StatelessWidget {
     return Container(
       height: 100,
       alignment: Alignment.center,
-      margin: EdgeInsets.all(15),
-      padding: EdgeInsets.all(20),
+      margin: EdgeInsets.all(10),
+      padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(15),

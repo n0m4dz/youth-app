@@ -197,7 +197,8 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ];
         },
-        body: Padding(
+        body: Container(
+          color: bgColor,
           padding: EdgeInsets.symmetric(vertical: 0, horizontal: 0),
           child: GridView.count(
             padding: EdgeInsets.only(top: 0, bottom: 10, left: 15, right: 15),
@@ -209,16 +210,6 @@ class _HomeScreenState extends State<HomeScreen> {
             controller: new ScrollController(keepScrollOffset: false),
             shrinkWrap: true,
             children: [
-              /*HomeCategoryItem(
-                primaryColor: partTimeColor,
-                primaryIcon: "assets/images/svg/menu-parttime.svg",
-                primaryTitle: "Цагийн ажил",
-              ),
-              HomeCategoryItem(
-                primaryColor: Color(0xFFfa983a),
-                primaryIcon: "assets/images/svg/menu-zxz.svg",
-                primaryTitle: "Залуучууд хөгжлийн зөвлөл",
-              ),*/
               GestureDetector(
                 onTap: () {
                   Navigator.push(

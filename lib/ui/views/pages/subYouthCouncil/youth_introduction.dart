@@ -4,6 +4,7 @@ import 'package:flutter_html/style.dart';
 import 'package:youth/core/constants/values.dart';
 import 'package:youth/core/models/youth_council.dart';
 import 'package:youth/ui/components/default_sliver_app_bar.dart';
+import 'package:youth/ui/components/empty_items.dart';
 import 'package:youth/ui/styles/_colors.dart';
 
 import '../../../../size_config.dart';
@@ -112,26 +113,7 @@ class _Introduction extends State<Introduction> {
                                   ),
                                 ],
                               )
-                            : Container(
-                                alignment: Alignment.center,
-                                height: 150,
-                                //color: Colors.white,
-                                padding: EdgeInsets.all(
-                                  getProportionateScreenWidth(15),
-                                ),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(15),
-                                  boxShadow: [shadow],
-                                ),
-                                child: Text(
-                                  'Мэдээлэл оруулаагүй байна.',
-                                  style: TextStyle(
-                                    color: kTextColor,
-                                    fontSize: 18,
-                                  ),
-                                ),
-                              ),
+                            : EmptyItems(),
                       ),
                     )
                   ],

@@ -8,8 +8,7 @@ import 'package:flutter/foundation.dart';
 import 'package:youth/ui/views/pages/eLearn.dart';
 import 'package:youth/ui/views/pages/podCast.dart';
 
-class ELearnHomePage extends StatefulWidget{
-
+class ELearnHomePage extends StatefulWidget {
   final title;
 
   const ELearnHomePage({Key key, this.title}) : super(key: key);
@@ -18,15 +17,14 @@ class ELearnHomePage extends StatefulWidget{
   ELearnHomePageState createState() => ELearnHomePageState();
 }
 
-class ELearnHomePageState extends State<ELearnHomePage> with SingleTickerProviderStateMixin{
-
+class ELearnHomePageState extends State<ELearnHomePage>
+    with SingleTickerProviderStateMixin {
   final List<Tab> tabs = <Tab>[
     new Tab(text: "Цахим хичээл"),
     new Tab(text: "Подкаст сонсох")
   ];
 
   TabController _tabController;
-
 
   @override
   void initState() {
@@ -42,7 +40,6 @@ class ELearnHomePageState extends State<ELearnHomePage> with SingleTickerProvide
 
   @override
   Widget build(BuildContext context) {
-
     // TODO: implement build
     return new Scaffold(
       appBar: new AppBar(
@@ -50,8 +47,9 @@ class ELearnHomePageState extends State<ELearnHomePage> with SingleTickerProvide
           widget.title.toUpperCase(),
           style: TextStyle(
             color: Colors.white,
-            fontSize: 20
-        ),),
+            fontSize: 20,
+          ),
+        ),
         backgroundColor: eLearnColor,
         bottom: new TabBar(
           isScrollable: true,
@@ -72,9 +70,8 @@ class ELearnHomePageState extends State<ELearnHomePage> with SingleTickerProvide
         children: [
           ELearnPage(title: 'Цахим хичээл'),
           PodCastPage(title: 'Подкаст сонсох')
-        ]
+        ],
       ),
     );
   }
 }
-

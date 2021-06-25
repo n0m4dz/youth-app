@@ -112,15 +112,21 @@ class PodCastPageState extends State<PodCastPage> {
                             (PodCast item) {
                               return InkWell(
                                 onTap: () {
-                                  // Navigator.push(
-                                  //   context,
-                                  //   MaterialPageRoute(
-                                  //     builder: (context) =>
-                                  //         YouthTipsDetail(
-                                  //       item: item,
-                                  //     ),
-                                  //   ),
-                                  // );
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => PodCastDetailPage(
+                                        title: item.title,
+                                        img: item.img,
+                                        content: item.description,
+                                        guest: item.guest,
+                                        embed: item.embed,
+                                        link: item.link,
+                                        views: item.views,
+                                        created_at: item.createdAt,
+                                      ),
+                                    ),
+                                  );
                                 },
                                 child: Container(
                                   margin: EdgeInsets.only(top: 15),
