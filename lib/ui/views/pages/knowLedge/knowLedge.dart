@@ -15,6 +15,8 @@ import 'package:flutter/rendering.dart';
 import 'package:youth/ui/views/base_view.dart';
 import 'package:youth/ui/views/pages/knowLedge/knowLedgeDetail.dart';
 
+import '../../../../size_config.dart';
+
 class KnowLedgePage extends StatefulWidget {
   final String title;
 
@@ -35,7 +37,9 @@ class _KnowLedgePageState extends State<KnowLedgePage> {
 
   @override
   Widget build(BuildContext context) {
-    //TODO: implement build
+    Size size = MediaQuery.of(context).size;
+    SizeConfig().init(context);
+
     return Scaffold(
       backgroundColor: bgColor,
       body: NestedScrollView(
@@ -44,7 +48,7 @@ class _KnowLedgePageState extends State<KnowLedgePage> {
             /*DefaultSliverAppBar(
               title: widget.title,
               color: knowLedgeColor,
-              svgData: "assets/images/svg/page-heading-legal.svg",
+              svgData: "assets/images/svg/page-heading-knowledge.svg",
             ),*/
           ];
         },
