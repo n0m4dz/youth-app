@@ -45,11 +45,11 @@ class _KnowLedgePageState extends State<KnowLedgePage> {
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
-            /*DefaultSliverAppBar(
+            DefaultSliverAppBar(
               title: widget.title,
               color: knowLedgeColor,
-              svgData: "assets/images/svg/page-heading-knowledge.svg",
-            ),*/
+              svgData: "assets/images/svg/page-heading-law.svg",
+            ),
           ];
         },
         body: Column(
