@@ -6,6 +6,7 @@ import 'package:youth/core/constants/values.dart';
 import 'package:youth/core/models/staff.dart';
 import 'package:youth/core/viewmodels/staff_model.dart';
 import 'package:youth/ui/components/default_sliver_app_bar.dart';
+import 'package:youth/ui/components/empty_items.dart';
 import 'package:youth/ui/components/header-back.dart';
 import 'package:youth/ui/components/loader.dart';
 import 'package:youth/ui/styles/_colors.dart';
@@ -21,16 +22,6 @@ class YouthStaffList extends StatefulWidget {
 }
 
 class _YouthStaffListState extends State<YouthStaffList> {
-  _launchCall(String phone) async {
-    var url = "tel:$phone";
-
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw "Can't phone that number.";
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -41,30 +32,26 @@ class _YouthStaffListState extends State<YouthStaffList> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(50.0),
         child: HeaderBack(
-          title: 'Зөвлөлийн гишүүд',
+          title: 'Зөвлөлийн Гишүүд',
           reversed: true,
         ),
       ),
-      body: Container(
-        child: NestedScrollView(
-          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-            return <Widget>[];
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: BaseView<StaffModel>(
+          onModelReady: (model) {
+            model.getStaffList(widget.aimagId);
           },
-          body: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-            child: BaseView<StaffModel>(
-              onModelReady: (model) {
-                model.getStaffList(widget.aimagId);
-              },
-              builder: (context, model, child) => model.loading
-                  ? Loader()
-                  : GridView.count(
+          builder: (context, model, child) => model.loading
+              ? Loader()
+              : model.staffList.length > 0
+                  ? GridView.count(
                       padding: EdgeInsets.all(0),
-                      crossAxisCount: model.staffList.length > 0 ? 2 : 1,
-                      mainAxisSpacing: 10,
-                      crossAxisSpacing: 12,
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 13,
+                      crossAxisSpacing: 11,
                       childAspectRatio: (itemWidth / 400),
-                      physics: new NeverScrollableScrollPhysics(),
+                      controller: new ScrollController(keepScrollOffset: false),
                       shrinkWrap: true,
                       children: model.staffList.map(
                         (Staff item) {
@@ -185,9 +172,8 @@ class _YouthStaffListState extends State<YouthStaffList> {
                           );
                         },
                       ).toList(),
-                    ),
-            ),
-          ),
+                    )
+                  : EmptyItems(),
         ),
       ),
     );

@@ -35,61 +35,59 @@ class _Introduction extends State<Introduction> {
           reversed: true,
         ),
       ),
-      body: Container(
-        width: double.infinity,
-        child: Column(
-          children: [
-            Expanded(
-              child: Container(
-                width: double.infinity,
-                child: Stack(
-                  children: [
-                    SingleChildScrollView(
-                      child: Container(
-                        child: widget.item.introduction != null
-                            ? Column(
-                                children: [
-                                  Container(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 15,
-                                      vertical: 10,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      color: primaryColor,
-                                    ),
-                                    child: Text(
-                                      widget.item.name,
-                                      style: TextStyle(
-                                        fontSize: 18,
-                                        color: Colors.white,
+      body: Column(
+        children: [
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(
+              horizontal: 15,
+              vertical: 10,
+            ),
+            decoration: BoxDecoration(
+              color: primaryColor,
+            ),
+            child: Text(
+              widget.item.name,
+              style: TextStyle(
+                fontSize: 18,
+                color: Colors.white,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          Expanded(
+            child: Container(
+              width: double.infinity,
+              child: Stack(
+                children: [
+                  SingleChildScrollView(
+                    child: Container(
+                      child: widget.item.introduction != null
+                          ? Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(15),
+                                  child: Html(
+                                    data: widget.item.introduction.toString(),
+                                    style: {
+                                      "p": Style(
+                                        color: kTextColor,
+                                        fontSize: FontSize(14),
+                                        textAlign: TextAlign.justify,
                                       ),
-                                      textAlign: TextAlign.center,
-                                    ),
+                                    },
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(15),
-                                    child: Html(
-                                      data: widget.item.introduction.toString(),
-                                      style: {
-                                        "p": Style(
-                                          color: kTextColor,
-                                          fontSize: FontSize(14),
-                                          textAlign: TextAlign.justify,
-                                        ),
-                                      },
-                                    ),
-                                  ),
-                                ],
-                              )
-                            : EmptyItems(),
-                      ),
-                    )
-                  ],
-                ),
+                                ),
+                              ],
+                            )
+                          : EmptyItems(),
+                    ),
+                  )
+                ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

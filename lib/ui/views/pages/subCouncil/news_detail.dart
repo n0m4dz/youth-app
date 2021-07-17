@@ -26,7 +26,7 @@ class _NewsDetailState extends State<NewsDetail> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(50.0),
         child: HeaderBack(
-          title: 'Мэдээ Мэдээлэл',
+          title: 'Зөвлөлийн Мэдээ',
           reversed: true,
         ),
       ),

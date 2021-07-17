@@ -55,7 +55,7 @@ class _HeaderBackState extends State<HeaderBack> {
                         Text(
                           widget.title.toUpperCase(),
                           style: TextStyle(
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.bold,
                               color: widget.reversed
                                   ? primaryColor
                                   : Color(0xeefafbfc),

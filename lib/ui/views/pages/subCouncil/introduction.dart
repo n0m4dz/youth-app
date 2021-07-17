@@ -36,6 +36,24 @@ class _Introduction extends State<Introduction> {
       ),
       body: Column(
         children: [
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(
+              horizontal: 15,
+              vertical: 10,
+            ),
+            decoration: BoxDecoration(
+              color: primaryColor,
+            ),
+            child: Text(
+              widget.item.name,
+              style: TextStyle(
+                fontSize: 18,
+                color: Colors.white,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
           Expanded(
             child: Container(
               width: double.infinity,
