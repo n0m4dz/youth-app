@@ -7,6 +7,7 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:youth/core/constants/values.dart';
+import 'package:youth/ui/components/header-back.dart';
 import 'package:youth/ui/styles/_colors.dart';
 import 'package:intl/intl.dart';
 import 'dart:ui';
@@ -58,54 +59,46 @@ class PodCastDetailPageState extends State<PodCastDetailPage> {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      body: NestedScrollView(
-        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-          return <Widget>[
-            SliverAppBar(
-              expandedHeight: 200.0,
-              floating: false,
-              pinned: true,
-              backgroundColor: podCastColor.withOpacity(0.9),
-              flexibleSpace: FlexibleSpaceBar(
-                  background: Image.network(
-                widget.img == null
-                    ? baseUrl + "/assets/youth/images/noImage.jpg"
-                    : baseUrl + widget.img.toString(),
-                fit: BoxFit.cover,
-              )),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(50.0),
+        child: HeaderBack(
+          title: 'Подкаст',
+          reversed: true,
+        ),
+      ),
+      body: ListView(
+        scrollDirection: Axis.vertical,
+        children: [
+          Container(
+            padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: podCastColor,
             ),
-          ];
-        },
-        body: ListView(
-          scrollDirection: Axis.vertical,
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: Text(
-                widget.title == null ? '' : widget.title,
-                style: TextStyle(
-                    color: Colors.black87,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold),
+            child: Text(
+              widget.title,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
               ),
             ),
-            SizedBox(
-              height: 15,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: Text(widget.content),
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Container(
-                width: MediaQuery.of(context).size.width,
-                child: Html(
-                  data: widget.embed,
-                )),
-          ],
-        ),
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: Text(widget.content),
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          Container(
+              width: MediaQuery.of(context).size.width,
+              child: Html(
+                data: widget.embed,
+              )),
+        ],
       ),
     );
 

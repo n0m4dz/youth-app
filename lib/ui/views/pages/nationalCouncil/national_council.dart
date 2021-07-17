@@ -52,7 +52,7 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-          color: Color(0xFF008bc0),
+          color: primaryColor,
           image: DecorationImage(
             image: AssetImage("assets/images/bg-blue.jpg"),
             alignment: Alignment.topRight,
@@ -170,8 +170,7 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
                                           decoration: InputDecoration(
                                             hintText: 'Хайх',
                                             hintStyle: TextStyle(
-                                              color: Theme.of(context)
-                                                  .primaryColor,
+                                              color: primaryColor,
                                             ),
                                             enabledBorder: InputBorder.none,
                                             focusedBorder: InputBorder.none,
@@ -195,7 +194,7 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
                                       child: Text(
                                         'Байршил',
                                         style: TextStyle(
-                                          color: Theme.of(context).primaryColor,
+                                          color: primaryColor,
                                           fontSize: 14,
                                         ),
                                       ),
@@ -293,8 +292,7 @@ class _NationalCouncilPageState extends State<NationalCouncilPage> {
                                                         Icon(
                                                           Icons
                                                               .arrow_forward_ios,
-                                                          color:
-                                                              Color(0xFF409EFF),
+                                                          color: primaryColor,
                                                           size: 15,
                                                         ),
                                                       ],

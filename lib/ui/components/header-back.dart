@@ -35,7 +35,7 @@ class _HeaderBackState extends State<HeaderBack> {
                     child: Container(
                       width: 50.0,
                       child: Icon(
-                        Feather.getIconData('arrow-left'),
+                        Icons.arrow_back,
                         color: primaryColor,
                       ),
                     ),
