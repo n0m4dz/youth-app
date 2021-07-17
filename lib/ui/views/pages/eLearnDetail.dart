@@ -46,8 +46,6 @@ class ELearnDetailPageState extends State<ELearnDetailPage> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
     return Scaffold(
       backgroundColor: bgColor,
       appBar: PreferredSize(
@@ -66,7 +64,7 @@ class ELearnDetailPageState extends State<ELearnDetailPage> {
               color: eLearnColor,
             ),
             child: Text(
-              widget.title == null ? '' : widget.title,
+              widget.title != null ? widget.title : '',
               style: TextStyle(
                 color: Colors.white,
               ),
@@ -87,7 +85,7 @@ class ELearnDetailPageState extends State<ELearnDetailPage> {
                 scrollDirection: Axis.vertical,
                 children: [
                   Container(
-                    child: Html(data: widget.body),
+                    child: Html(data: widget.body != null ? widget.body : ""),
                   ),
                   Container(
                     margin: EdgeInsets.only(
@@ -184,61 +182,34 @@ class ELearnDetailPageState extends State<ELearnDetailPage> {
                                 size: 14.0,
                               ),
                               SizedBox(width: 5),
-                              widget.teachername.length > 25
-                                  ? Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Бэлтгэсэн багш: ',
-                                          style: TextStyle(
-                                            color: Colors.black54,
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 14,
-                                          ),
-                                        ),
-                                        Container(
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              .8,
-                                          child: Text(
-                                            widget.teachername == null
-                                                ? '__'
-                                                : widget.teachername.toString(),
-                                            style: TextStyle(
-                                              color: eLearnColor,
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 14,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    )
-                                  : Row(
-                                      children: [
-                                        Text(
-                                          'Бэлтгэсэн багш: ',
-                                          style: TextStyle(
-                                            color: Colors.black54,
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 14,
-                                          ),
-                                        ),
-                                        Text(
-                                          widget.teachername == null
-                                              ? '__'
-                                              : widget.teachername.toString(),
-                                          style: TextStyle(
-                                            color: eLearnColor,
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 14,
-                                          ),
-                                        ),
-                                      ],
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Бэлтгэсэн багш: ',
+                                    style: TextStyle(
+                                      color: Colors.black54,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 14,
                                     ),
+                                  ),
+                                  Container(
+                                    width:
+                                        MediaQuery.of(context).size.width * .8,
+                                    child: Text(
+                                      widget.teachername == null
+                                          ? ''
+                                          : widget.teachername.toString(),
+                                      style: TextStyle(
+                                        color: eLearnColor,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ],
                           ),
                         ),
