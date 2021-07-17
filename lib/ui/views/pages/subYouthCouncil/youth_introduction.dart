@@ -5,6 +5,8 @@ import 'package:youth/core/constants/values.dart';
 import 'package:youth/core/models/youth_council.dart';
 import 'package:youth/ui/components/default_sliver_app_bar.dart';
 import 'package:youth/ui/components/empty_items.dart';
+import 'package:youth/ui/components/header-back.dart';
+import 'package:youth/ui/components/header.dart';
 import 'package:youth/ui/styles/_colors.dart';
 
 import '../../../../size_config.dart';
@@ -18,98 +20,64 @@ class Introduction extends StatefulWidget {
 }
 
 class _Introduction extends State<Introduction> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
 
     return Scaffold(
       backgroundColor: bgColor,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(50.0),
+        child: HeaderBack(
+          title: 'Танилцуулга',
+          reversed: true,
+        ),
+      ),
       body: Container(
         width: double.infinity,
-        decoration: BoxDecoration(
-          color: Color(0xFF54a0ff),
-          image: DecorationImage(
-            image: AssetImage("assets/images/bg-wh.jpg"),
-            alignment: Alignment.topRight,
-          ),
-        ),
         child: Column(
           children: [
-            Padding(
-              padding: EdgeInsets.only(
-                left: 20,
-                top: 40,
-                right: 20,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      IconButton(
-                        icon: Icon(
-                          Icons.arrow_back,
-                          color: primaryColor,
-                        ),
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                      ),
-                      Expanded(
-                        child: Text(
-                          'Танилцуулга',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: primaryColor,
-                            fontWeight: FontWeight.w600,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 20),
             Expanded(
               child: Container(
                 width: double.infinity,
-                decoration: BoxDecoration(
-                  //borderRadius: BorderRadius.circular(10),
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(15),
-                    topRight: Radius.circular(15),
-                  ),
-                  color: bgColor,
-                ),
                 child: Stack(
                   children: [
                     SingleChildScrollView(
                       child: Container(
-                        padding: EdgeInsets.all(
-                          getProportionateScreenWidth(15),
-                        ),
                         child: widget.item.introduction != null
                             ? Column(
                                 children: [
-                                  Text(
-                                    widget.item.name,
-                                    style: TextStyle(
-                                        fontSize: 18, color: primaryColor),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  Html(
-                                    data: widget.item.introduction.toString(),
-                                    style: {
-                                      "p": Style(
-                                        color: kTextColor,
-                                        fontSize: FontSize(14),
-                                        textAlign: TextAlign.justify,
+                                  Container(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 15,
+                                      vertical: 10,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: primaryColor,
+                                    ),
+                                    child: Text(
+                                      widget.item.name,
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        color: Colors.white,
                                       ),
-                                    },
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(15),
+                                    child: Html(
+                                      data: widget.item.introduction.toString(),
+                                      style: {
+                                        "p": Style(
+                                          color: kTextColor,
+                                          fontSize: FontSize(14),
+                                          textAlign: TextAlign.justify,
+                                        ),
+                                      },
+                                    ),
                                   ),
                                 ],
                               )

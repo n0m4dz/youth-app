@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:youth/ui/styles/_colors.dart';
 
 class HeaderBack extends StatefulWidget {
   final String title;
@@ -35,7 +36,7 @@ class _HeaderBackState extends State<HeaderBack> {
                     width: 50.0,
                     child: Icon(
                       Feather.getIconData('arrow-left'),
-                      color: Color(0xeefafbfc),
+                      color: primaryColor,
                     ),
                   ),
                   onPressed: () {
@@ -46,15 +47,17 @@ class _HeaderBackState extends State<HeaderBack> {
               Expanded(
                 flex: 1,
                 child: Container(
+                  padding: EdgeInsets.only(right: 20),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: <Widget>[
                       Text(
                         widget.title.toUpperCase(),
                         style: TextStyle(
                             fontWeight: FontWeight.w600,
                             color: widget.reversed
-                                ? Colors.white70
+                                ? primaryColor
                                 : Color(0xeefafbfc),
                             fontSize: 18),
                       ),

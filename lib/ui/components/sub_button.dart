@@ -38,7 +38,7 @@ class SubButton extends StatelessWidget {
             children: [
               Icon(
                 icon,
-                color: Color(0xFF409EFF),
+                color: primaryColor,
                 size: 15,
               ),
               SizedBox(width: 10),
@@ -53,7 +53,7 @@ class SubButton extends StatelessWidget {
               ),
               Icon(
                 Icons.arrow_forward_ios,
-                color: Color(0xFF409EFF),
+                color: primaryColor,
                 size: 15,
               ),
             ],
