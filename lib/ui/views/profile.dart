@@ -15,6 +15,7 @@ import 'package:lambda/modules/network_util.dart';
 import 'package:lambda/modules/responseModel.dart';
 import 'package:provider/provider.dart';
 import 'package:youth/core/viewmodels/user_model.dart';
+import 'package:youth/ui/components/header-back.dart';
 import 'package:youth/ui/styles/_colors.dart';
 import 'package:youth/ui/views/settings.dart';
 
@@ -137,35 +138,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
     return Scaffold(
       backgroundColor: bgColor,
-      appBar: AppBar(
-        titleSpacing: 0,
-        backgroundColor: primaryColor,
-        centerTitle: false,
-        title: Text(
-          'Миний булан',
-          textAlign: TextAlign.start,
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.w600,
-            fontSize: 18,
-          ),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(50.0),
+        child: HeaderBack(
+          title: 'Миний булан',
+          reversed: true,
         ),
-        leading: FlatButton(
-          padding: EdgeInsets.all(0),
-          onPressed: () {
-            print('working back btn');
-            Navigator.pop(context);
-          },
-          child: Container(
-            height: 30,
-            width: 30,
-            child: Icon(
-              Ionicons.getIconData('ios-arrow-back'),
-              color: Colors.white,
-            ),
-          ),
-        ),
-        elevation: 0,
       ),
       body: Container(
         margin: EdgeInsets.only(top: 60),
