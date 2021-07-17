@@ -7,6 +7,7 @@ import 'package:youth/core/constants/values.dart';
 import 'package:youth/core/models/national_council.dart';
 import 'package:youth/ui/components/default_sliver_app_bar.dart';
 import 'package:youth/ui/components/empty_items.dart';
+import 'package:youth/ui/components/header-back.dart';
 import 'package:youth/ui/styles/_colors.dart';
 
 import '../../../../size_config.dart';
@@ -26,100 +27,59 @@ class _Introduction extends State<Introduction> {
 
     return Scaffold(
       backgroundColor: bgColor,
-      body: Container(
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: Color(0xFF54a0ff),
-          image: DecorationImage(
-            image: AssetImage("assets/images/bg-blue.jpg"),
-            alignment: Alignment.topRight,
-          ),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(50.0),
+        child: HeaderBack(
+          title: 'Танилцуулга',
+          reversed: true,
         ),
-        child: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.only(
-                left: 20,
-                top: 40,
-                right: 20,
+      ),
+      body: Column(
+        children: [
+          Expanded(
+            child: Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(15),
+                  topRight: Radius.circular(15),
+                ),
+                color: bgColor,
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              child: Stack(
                 children: [
-                  SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      IconButton(
-                          icon: Icon(
-                            Icons.arrow_back,
-                            color: Colors.white,
-                          ),
-                          onPressed: () {
-                            Navigator.pop(context);
-                          }),
-                      Expanded(
-                        child: Text(
-                          'Танилцуулга',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w600,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ],
-                  ),
+                  Container(
+                    padding: EdgeInsets.all(
+                      getProportionateScreenWidth(15),
+                    ),
+                    child: widget.item.introduction != null
+                        ? Column(
+                            children: [
+                              Text(
+                                widget.item.name,
+                                style: TextStyle(
+                                    fontSize: 18, color: primaryColor),
+                                textAlign: TextAlign.center,
+                              ),
+                              Html(
+                                data: widget.item.introduction.toString(),
+                                style: {
+                                  "p": Style(
+                                    color: kTextColor,
+                                    fontSize: FontSize(14),
+                                    textAlign: TextAlign.justify,
+                                  ),
+                                },
+                              ),
+                            ],
+                          )
+                        : EmptyItems(),
+                  )
                 ],
               ),
             ),
-            SizedBox(height: 20),
-            Expanded(
-              child: Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(15),
-                    topRight: Radius.circular(15),
-                  ),
-                  color: bgColor,
-                ),
-                child: Stack(
-                  children: [
-                    Container(
-                      padding: EdgeInsets.all(
-                        getProportionateScreenWidth(15),
-                      ),
-                      child: widget.item.introduction != null
-                          ? Column(
-                              children: [
-                                Text(
-                                  widget.item.name,
-                                  style: TextStyle(
-                                      fontSize: 18, color: primaryColor),
-                                  textAlign: TextAlign.center,
-                                ),
-                                Html(
-                                  data: widget.item.introduction.toString(),
-                                  style: {
-                                    "p": Style(
-                                      color: kTextColor,
-                                      fontSize: FontSize(14),
-                                      textAlign: TextAlign.justify,
-                                    ),
-                                  },
-                                ),
-                              ],
-                            )
-                          : EmptyItems(),
-                    )
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

@@ -7,6 +7,7 @@ import 'package:youth/core/models/event.dart';
 import 'package:youth/core/viewmodels/event_model.dart';
 import 'package:youth/ui/components/default_sliver_app_bar.dart';
 import 'package:youth/ui/components/empty_items.dart';
+import 'package:youth/ui/components/header-back.dart';
 import 'package:youth/ui/components/loader.dart';
 import 'package:youth/ui/styles/_colors.dart';
 import 'package:youth/ui/views/pages/subYouthCouncil/youth_event_detail.dart';
@@ -39,50 +40,16 @@ class _YouthEventPageState extends State<YouthEventPage> {
 
     return Scaffold(
       backgroundColor: bgColor,
-      body: Container(
-        decoration: BoxDecoration(
-          color: Color(0xFF008bc0),
-          image: DecorationImage(
-            image: AssetImage("assets/images/bg-blue.jpg"),
-            alignment: Alignment.topRight,
-            //fit: BoxFit.fitWidth,
-          ),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(50.0),
+        child: HeaderBack(
+          title: 'эвэнт',
+          reversed: true,
         ),
+      ),
+      body: Container(
         child: Column(
           children: [
-            Container(
-              height: 180,
-              padding: EdgeInsets.only(top: 60, right: 20),
-              child: Column(
-                children: [
-                  SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      IconButton(
-                        onPressed: () => Navigator.of(context).pop(false),
-                        icon: Icon(
-                          Icons.arrow_back,
-                          color: Colors.white,
-                        ),
-                      ),
-                      Expanded(
-                        child: Text(
-                          'ЗӨВЛӨЛИЙН ЭВЭНТ',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w600,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 20),
-                ],
-              ),
-            ),
             Expanded(
               child: Container(
                 decoration: BoxDecoration(

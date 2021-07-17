@@ -6,6 +6,7 @@ import 'package:youth/core/constants/values.dart';
 import 'package:youth/core/models/staff.dart';
 import 'package:youth/core/viewmodels/staff_model.dart';
 import 'package:youth/ui/components/default_sliver_app_bar.dart';
+import 'package:youth/ui/components/header-back.dart';
 import 'package:youth/ui/components/loader.dart';
 import 'package:youth/ui/styles/_colors.dart';
 import '../../../../size_config.dart';
@@ -37,15 +38,16 @@ class _StaffListState extends State<StaffList> {
 
     return Scaffold(
       backgroundColor: bgColor,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(50.0),
+        child: HeaderBack(
+          title: 'Гишүүд',
+          reversed: true,
+        ),
+      ),
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-          return <Widget>[
-            DefaultSliverAppBar(
-              title: "Зөвлөлийн гишүүд",
-              color: Color(0xFF0084b5),
-              svgData: "assets/images/svg/page-heading-legal.svg",
-            ),
-          ];
+          return <Widget>[];
         },
         body: Padding(
           padding: const EdgeInsets.all(15),

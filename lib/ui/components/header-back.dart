@@ -20,52 +20,53 @@ class _HeaderBackState extends State<HeaderBack> {
       children: <Widget>[
         Container(
           height: 90,
-          padding: EdgeInsets.only(top: 40),
           decoration: BoxDecoration(
             color: widget.reversed ? Colors.transparent : Color(0xff020D18),
           ),
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Container(
-                width: 50,
-                child: FlatButton(
-                  padding: EdgeInsets.all(0),
+          child: SafeArea(
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  width: 50,
+                  child: FlatButton(
+                    padding: EdgeInsets.all(0),
+                    child: Container(
+                      width: 50.0,
+                      child: Icon(
+                        Feather.getIconData('arrow-left'),
+                        color: primaryColor,
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
                   child: Container(
-                    width: 50.0,
-                    child: Icon(
-                      Feather.getIconData('arrow-left'),
-                      color: primaryColor,
+                    padding: EdgeInsets.only(right: 20),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: <Widget>[
+                        Text(
+                          widget.title.toUpperCase(),
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              color: widget.reversed
+                                  ? primaryColor
+                                  : Color(0xeefafbfc),
+                              fontSize: 16),
+                        ),
+                      ],
                     ),
                   ),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
                 ),
-              ),
-              Expanded(
-                flex: 1,
-                child: Container(
-                  padding: EdgeInsets.only(right: 20),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: <Widget>[
-                      Text(
-                        widget.title.toUpperCase(),
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            color: widget.reversed
-                                ? primaryColor
-                                : Color(0xeefafbfc),
-                            fontSize: 18),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ],

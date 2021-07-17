@@ -7,6 +7,7 @@ import 'package:flutter_html/style.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:lambda/modules/network_util.dart';
 import 'package:youth/core/constants/values.dart';
+import 'package:youth/ui/components/header-back.dart';
 import 'package:youth/ui/styles/_colors.dart';
 import '../components/loader.dart';
 import 'package:youth/ui/views/base_view.dart';
@@ -41,32 +42,12 @@ class TermsScreenState extends State<TermsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        titleSpacing: 0,
-        backgroundColor: primaryColor,
-        centerTitle: false,
-        title: Text(
-          item == null ? '' : item['title'],
-          textAlign: TextAlign.start,
-          style: TextStyle(
-              color: Colors.white, fontWeight: FontWeight.w600, fontSize: 18),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(50.0),
+        child: HeaderBack(
+          title: item == null ? '' : item['title'],
+          reversed: true,
         ),
-        leading: FlatButton(
-          padding: EdgeInsets.all(0),
-          onPressed: () {
-            print('working back btn');
-            Navigator.pop(context);
-          },
-          child: Container(
-            height: 30,
-            width: 30,
-            child: Icon(
-              Ionicons.getIconData('ios-arrow-back'),
-              color: Colors.white,
-            ),
-          ),
-        ),
-        elevation: 0,
       ),
       body: ListView(
         scrollDirection: Axis.vertical,

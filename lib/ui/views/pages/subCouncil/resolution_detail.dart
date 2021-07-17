@@ -2,19 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_html/style.dart';
 import 'package:youth/core/constants/values.dart';
-import 'package:youth/core/models/volunteer_work.dart';
+import 'package:youth/core/models/resolution.dart';
 import 'package:youth/ui/components/header-back.dart';
 import 'package:youth/ui/styles/_colors.dart';
+import 'package:youth/ui/views/pages/subCouncil/report_list.dart';
 
-class YouthVolunteerDetail extends StatefulWidget {
-  final VolunteerWork item;
+class ResolutionDetail extends StatefulWidget {
+  final Resolution item;
 
-  const YouthVolunteerDetail({Key key, this.item}) : super(key: key);
+  const ResolutionDetail({Key key, this.item}) : super(key: key);
   @override
-  _YouthVolunteerDetailState createState() => _YouthVolunteerDetailState();
+  _ResolutionDetailState createState() => _ResolutionDetailState();
 }
 
-class _YouthVolunteerDetailState extends State<YouthVolunteerDetail> {
+class _ResolutionDetailState extends State<ResolutionDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +23,7 @@ class _YouthVolunteerDetailState extends State<YouthVolunteerDetail> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(50.0),
         child: HeaderBack(
-          title: 'Сайн дурын ажил',
+          title: 'Тогтоол',
           reversed: true,
         ),
       ),
@@ -35,7 +36,7 @@ class _YouthVolunteerDetailState extends State<YouthVolunteerDetail> {
               color: primaryColor,
             ),
             child: Text(
-              widget.item.name,
+              widget.item.title,
               style: TextStyle(
                 color: Colors.white,
               ),
@@ -58,15 +59,15 @@ class _YouthVolunteerDetailState extends State<YouthVolunteerDetail> {
                 child: Column(
                   children: [
                     SizedBox(height: 10),
-                    widget.item.image != null
+                    widget.item.thumb != null
                         ? Image.network(
-                            baseUrl + widget.item.image.toString(),
+                            baseUrl + widget.item.thumb.toString(),
                           )
                         : Text(''),
                     SizedBox(height: 10),
-                    widget.item.description != null
+                    widget.item.body != null
                         ? Html(
-                            data: widget.item.description.toString(),
+                            data: widget.item.body.toString(),
                             style: {
                               "p": Style(
                                 color: kTextColor,

@@ -1,9 +1,12 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_html/style.dart';
 import 'package:youth/core/constants/values.dart';
 import 'package:youth/core/models/aimag_news.dart';
 import 'package:youth/ui/components/default_sliver_app_bar.dart';
+import 'package:youth/ui/components/header-back.dart';
 import 'package:youth/ui/styles/_colors.dart';
 import 'package:flutter/rendering.dart';
 
@@ -20,49 +23,28 @@ class _NewsDetailState extends State<NewsDetail> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(50.0),
+        child: HeaderBack(
+          title: 'Мэдээ Мэдээлэл',
+          reversed: true,
+        ),
+      ),
       body: Container(
         width: double.infinity,
-        decoration: BoxDecoration(
-          color: Color(0xFF0a9947),
-          image: DecorationImage(
-            image: AssetImage("assets/images/bg-green.jpg"),
-            alignment: Alignment.topRight,
-            //fit: BoxFit.fitWidth,
-          ),
-        ),
         child: Column(
           children: [
             Container(
-              height: 180,
-              padding: EdgeInsets.only(top: 60, right: 20),
-              child: Column(
-                children: [
-                  SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      IconButton(
-                        onPressed: () => Navigator.of(context).pop(false),
-                        icon: Icon(
-                          Icons.arrow_back,
-                          color: Colors.white,
-                        ),
-                      ),
-                      Expanded(
-                        child: Text(
-                          widget.news.title,
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w600,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 20),
-                ],
+              padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: primaryColor,
+              ),
+              child: Text(
+                widget.news.title,
+                style: TextStyle(
+                  color: Colors.white,
+                ),
               ),
             ),
             Expanded(
@@ -106,7 +88,7 @@ class _NewsDetailState extends State<NewsDetail> {
                         margin: EdgeInsets.only(
                           left: 10,
                           right: 10,
-                          top: 30,
+                          top: 10,
                           bottom: 10,
                         ),
                         decoration: BoxDecoration(
@@ -125,14 +107,14 @@ class _NewsDetailState extends State<NewsDetail> {
                                 children: [
                                   Icon(
                                     Icons.access_time,
-                                    color: Color(0xFF0a9947),
+                                    color: primaryColor,
                                     size: 14.0,
                                   ),
                                   SizedBox(width: 5),
                                   Text(
                                     widget.news.createdAt,
                                     style: TextStyle(
-                                      color: Color(0xFF0a9947),
+                                      color: primaryColor,
                                       fontWeight: FontWeight.w500,
                                       fontSize: 14,
                                     ),
