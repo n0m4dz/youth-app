@@ -45,46 +45,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
   int gender;
   bool isNetworkImage = true;
 
-  Future<void> get updateProfile async {
-    setState(() {
-      loading = true;
-    });
-    final form = this._profileFormKey.currentState;
-    form.save();
-
-    FormData formData = new FormData.fromMap({
-      "avatar": user.avatar,
-      "nickname": nickname,
-      "phone": phone,
-      "gender": gender,
-      "age": age,
-      "file": image.path != null
-          ? await MultipartFile.fromFile(image.path,
-              filename: "${user.id}-avatar.jpg")
-          : null,
-    });
-
-    _response =
-        await _http.post('/api/mobile/update/profile/${user.id}', formData);
-
-    final userState = Provider.of<UserModel>(context);
-    user = new User.fromJson(_response.data);
-    print(_response);
-    userState.setUser(user);
-
-    await Future.delayed(Duration(milliseconds: 1500));
-    setState(() {
-      loading = false;
-      success = true;
-    });
-
-    await Future.delayed(Duration(milliseconds: 1500));
-
-    setState(() {
-      success = false;
-    });
-  }
-
   Future getImage(String type) async {
     // image = await ImagePicker.pickImage(
     //     source: type == 'camera' ? ImageSource.camera : ImageSource.gallery);
@@ -96,27 +56,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
     });
   }
 
-  Future getItemList() async {
+  Future<void> getUserInfo() async {
     var url = baseUrl + '/api/mobile/profile/1608230016';
     var response = await _http.get(url);
-
     item = response.data;
-    print(response.data);
 
     setState(() {});
   }
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    getItemList();
-    SchedulerBinding.instance.addPostFrameCallback((_) {
-      setState(() {
-        gender = user.gender as int;
-        //avatarPath = user.image;
-      });
-    });
+    getUserInfo();
   }
 
   Widget getAvatarThumb() {
@@ -147,8 +98,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final userState = Provider.of<UserModel>(context);
-    user = userState.getUser;
+    /*final userState = Provider.of<UserModel>(context);
+    user = userState.getUser;*/
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -159,80 +110,118 @@ class _ProfileScreenState extends State<ProfileScreen> {
           reversed: true,
         ),
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          margin: EdgeInsets.only(top: 30),
-          child: Column(
-            children: [
-              ProfilePicture(
-                  profilePicture: item['profile_image'] != null
-                      ? baseUrl + item['profile_image']
-                      : baseUrl + "/assets/youth/images/noImage.jpg"),
-              SizedBox(height: 20),
-              ProfileMenu(
-                fieldType: " Ургийн овог:",
-                text: item['surname'] != null ? item['surname'] : '',
+      body: Column(
+        children: [
+          Container(
+            padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+            alignment: Alignment.topRight,
+            //width: double.infinity,
+            child: SizedBox(
+              width: 90,
+              height: 35,
+              child: FlatButton(
+                padding: EdgeInsets.only(left: 10),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                color: primaryColor,
+                onPressed: () {},
+                child: Row(
+                  children: [
+                    SvgPicture.asset(
+                      "assets/images/svg/Log out.svg",
+                      width: 15,
+                      color: Colors.white,
+                    ),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Text(
+                        "Гарах",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              ProfileMenu(
-                fieldType: "Овог:",
-                text: item['last_name'] != null ? item['last_name'] : '',
-              ),
-              ProfileMenu(
-                fieldType: "Нэр:",
-                text: item['first_name'] != null ? item['first_name'] : '',
-              ),
-              ProfileMenu(
-                fieldType: "Нэвтрэх нэр:",
-                text: item['phone'] != null ? item['phone'] : '',
-              ),
-              ProfileMenu(
-                fieldType: "Регистр:",
-                text: item['register'] != null ? item['register'] : '',
-              ),
-              ProfileMenu(
-                fieldType: "Утас:",
-                text: item['phone'] != null ? item['phone'] : '',
-              ),
-
-              // Container(
-              //   padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              //   decoration: BoxDecoration(
-              //     boxShadow: [shadow],
-              //   ),
-              //   child: FlatButton(
-              //     padding: EdgeInsets.all(20),
-              //     shape: RoundedRectangleBorder(
-              //         borderRadius: BorderRadius.circular(15)),
-              //     color: Color(0xFFF5F6F9),
-              //     onPressed: () async {
-              //       await agentUtil.logout();
-              //       Navigator.pushReplacementNamed(context, '/main');
-              //     },
-              //     child: Row(
-              //       children: [
-              //         SvgPicture.asset(
-              //           "assets/images/svg/Log out.svg",
-              //           width: 15,
-              //           color: primaryColor,
-              //         ),
-              //         SizedBox(width: 20),
-              //         Expanded(
-              //           child: Text(
-              //             "Гарах",
-              //             style: Theme.of(context).textTheme.bodyText1,
-              //           ),
-              //         ),
-              //         Icon(
-              //           Icons.arrow_forward_ios,
-              //           size: 15,
-              //         )
-              //       ],
-              //     ),
-              //   ),
-              // ),
-            ],
+            ),
           ),
-        ),
+          SingleChildScrollView(
+            child: Container(
+              margin: EdgeInsets.only(top: 30),
+              child: Column(
+                children: [
+                  ProfilePicture(
+                      profilePicture: item['profile_image'] != null &&
+                              item['profile_image'] != ""
+                          ? baseUrl + item['profile_image']
+                          : baseUrl + "/assets/youth/images/noImage.jpg"),
+                  SizedBox(height: 20),
+                  ProfileMenu(
+                    fieldType: " Ургийн овог:",
+                    text: item['surname'] != null ? item['surname'] : '',
+                  ),
+                  ProfileMenu(
+                    fieldType: "Овог:",
+                    text: item['last_name'] != null ? item['last_name'] : '',
+                  ),
+                  ProfileMenu(
+                    fieldType: "Нэр:",
+                    text: item['first_name'] != null ? item['first_name'] : '',
+                  ),
+                  ProfileMenu(
+                    fieldType: "Нэвтрэх нэр:",
+                    text: item['phone'] != null ? item['phone'] : '',
+                  ),
+                  ProfileMenu(
+                    fieldType: "Регистр:",
+                    text: item['register'] != null ? item['register'] : '',
+                  ),
+                  ProfileMenu(
+                    fieldType: "Утас:",
+                    text: item['phone'] != null ? item['phone'] : '',
+                  ),
+
+                  // Container(
+                  //   padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  //   decoration: BoxDecoration(
+                  //     boxShadow: [shadow],
+                  //   ),
+                  //   child: FlatButton(
+                  //     padding: EdgeInsets.all(20),
+                  //     shape: RoundedRectangleBorder(
+                  //         borderRadius: BorderRadius.circular(15)),
+                  //     color: Color(0xFFF5F6F9),
+                  //     onPressed: () async {
+                  //       await agentUtil.logout();
+                  //       Navigator.pushReplacementNamed(context, '/main');
+                  //     },
+                  //     child: Row(
+                  //       children: [
+                  //         SvgPicture.asset(
+                  //           "assets/images/svg/Log out.svg",
+                  //           width: 15,
+                  //           color: primaryColor,
+                  //         ),
+                  //         SizedBox(width: 20),
+                  //         Expanded(
+                  //           child: Text(
+                  //             "Гарах",
+                  //             style: Theme.of(context).textTheme.bodyText1,
+                  //           ),
+                  //         ),
+                  //         Icon(
+                  //           Icons.arrow_forward_ios,
+                  //           size: 15,
+                  //         )
+                  //       ],
+                  //     ),
+                  //   ),
+                  // ),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -381,7 +370,6 @@ class ProfilePicture extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(profilePicture);
     return SizedBox(
       height: 115,
       width: 115,
@@ -392,23 +380,6 @@ class ProfilePicture extends StatelessWidget {
           CircleAvatar(
             backgroundImage: NetworkImage(profilePicture),
           ),
-          // Positioned(
-          //   bottom: 0,
-          //   right: -12,
-          //   child: SizedBox(
-          //     width: 46,
-          //     height: 46,
-          //     child: FlatButton(
-          //       padding: EdgeInsets.zero,
-          //       shape: RoundedRectangleBorder(
-          //           borderRadius: BorderRadius.circular(50),
-          //           side: BorderSide(color: Colors.white)),
-          //       color: Color(0xFFF5F6F9),
-          //       onPressed: () {},
-          //       child: SvgPicture.asset("assets/images/svg/Camera Icon.svg"),
-          //     ),
-          //   ),
-          // )
         ],
       ),
     );

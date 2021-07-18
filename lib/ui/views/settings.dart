@@ -73,8 +73,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
           : null,
     });
 
-    print(formData);
-
     _response =
         await _http.post('/api/mobile/update/profile/${user.id}', formData);
 
