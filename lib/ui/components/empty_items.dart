@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:youth/ui/styles/_colors.dart';
 
 class EmptyItems extends StatelessWidget {
@@ -18,7 +19,19 @@ class EmptyItems extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
         boxShadow: [shadow],
       ),
-      child: Text('Мэдээлэл оруулаагүй байна.'),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Icon(
+            FontAwesomeIcons.exclamationTriangle,
+            color: primaryColor,
+            size: 20,
+          ),
+          SizedBox(height: 10),
+          Text('Мэдээлэл оруулаагүй байна.'),
+        ],
+      ),
     );
   }
 }

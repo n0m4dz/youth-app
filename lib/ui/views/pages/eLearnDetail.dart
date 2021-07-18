@@ -199,7 +199,7 @@ class ELearnDetailPageState extends State<ELearnDetailPage> {
                                         MediaQuery.of(context).size.width * .8,
                                     child: Text(
                                       widget.teachername == null
-                                          ? 
+                                          ? ""
                                           : widget.teachername.toString(),
                                       style: TextStyle(
                                         color: eLearnColor,

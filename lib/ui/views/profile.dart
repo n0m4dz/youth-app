@@ -32,6 +32,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   NetworkUtil _http = locator<NetworkUtil>();
   ResponseModel _response = ResponseModel.fromError();
   final GlobalKey<FormState> _profileFormKey = GlobalKey<FormState>();
+  Map<String, dynamic> item;
 
   User user;
   bool loading = false;
@@ -44,18 +45,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   int gender;
   bool isNetworkImage = true;
 
-  Future getImage(String type) async {
-    // image = await ImagePicker.pickImage(
-    //     source: type == 'camera' ? ImageSource.camera : ImageSource.gallery);
-
-    setState(() {
-      isNetworkImage = false;
-      this.getAvatarThumb();
-      avatarPath = image.path;
-    });
-  }
-
-  Future<void> updateProfile() async {
+  Future<void> get updateProfile async {
     setState(() {
       loading = true;
     });
@@ -74,10 +64,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
           : null,
     });
 
-    _response = await _http.post('/api/m/update/profile/${user.id}', formData);
+    _response =
+        await _http.post('/api/mobile/update/profile/${user.id}', formData);
 
     final userState = Provider.of<UserModel>(context);
     user = new User.fromJson(_response.data);
+    print(_response);
     userState.setUser(user);
 
     await Future.delayed(Duration(milliseconds: 1500));
@@ -93,10 +85,32 @@ class _ProfileScreenState extends State<ProfileScreen> {
     });
   }
 
+  Future getImage(String type) async {
+    // image = await ImagePicker.pickImage(
+    //     source: type == 'camera' ? ImageSource.camera : ImageSource.gallery);
+
+    setState(() {
+      isNetworkImage = false;
+      this.getAvatarThumb();
+      avatarPath = image.path;
+    });
+  }
+
+  Future getItemList() async {
+    var url = baseUrl + '/api/mobile/profile/1608230016';
+    var response = await _http.get(url);
+
+    item = response.data;
+    print(response.data);
+
+    setState(() {});
+  }
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    getItemList();
     SchedulerBinding.instance.addPostFrameCallback((_) {
       setState(() {
         gender = user.gender as int;
@@ -145,476 +159,82 @@ class _ProfileScreenState extends State<ProfileScreen> {
           reversed: true,
         ),
       ),
-      body: Container(
-        margin: EdgeInsets.only(top: 60),
-        child: Column(
-          children: [
-            ProfilePicture(profilePicture: "assets/images/profile nb.jpg"),
-            SizedBox(height: 20),
-            ProfileMenu(
-              text: "Мэдэгдэл ",
-              icon: "assets/images/svg/Bell.svg",
-              press: () {
-                Navigator.push(
-                  context,
-                  CupertinoPageRoute(
-                    builder: (context) => NotificationsScreen(),
-                  ),
-                );
-              },
-            ),
-            ProfileMenu(
-              text: "Тохиргоо",
-              icon: "assets/images/svg/Settings.svg",
-              press: () {
-                Navigator.push(
-                  context,
-                  CupertinoPageRoute(
-                    builder: (context) => SettingsScreen(),
-                  ),
-                );
-              },
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              decoration: BoxDecoration(
-                boxShadow: [shadow],
+      body: SingleChildScrollView(
+        child: Container(
+          margin: EdgeInsets.only(top: 30),
+          child: Column(
+            children: [
+              ProfilePicture(
+                  profilePicture: item['profile_image'] != null
+                      ? baseUrl + item['profile_image']
+                      : baseUrl + "/assets/youth/images/noImage.jpg"),
+              SizedBox(height: 20),
+              ProfileMenu(
+                fieldType: " Ургийн овог:",
+                text: item['surname'] != null ? item['surname'] : '',
               ),
-              child: FlatButton(
-                padding: EdgeInsets.all(20),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15)),
-                color: Color(0xFFF5F6F9),
-                onPressed: () async {
-                  await agentUtil.logout();
-                  Navigator.pushReplacementNamed(context, '/main');
-                },
-                child: Row(
-                  children: [
-                    SvgPicture.asset(
-                      "assets/images/svg/Log out.svg",
-                      width: 15,
-                      color: primaryColor,
-                    ),
-                    SizedBox(width: 20),
-                    Expanded(
-                      child: Text(
-                        "Гарах",
-                        style: Theme.of(context).textTheme.bodyText1,
-                      ),
-                    ),
-                    Icon(
-                      Icons.arrow_forward_ios,
-                      size: 15,
-                    )
-                  ],
-                ),
+              ProfileMenu(
+                fieldType: "Овог:",
+                text: item['last_name'] != null ? item['last_name'] : '',
               ),
-            ),
-          ],
+              ProfileMenu(
+                fieldType: "Нэр:",
+                text: item['first_name'] != null ? item['first_name'] : '',
+              ),
+              ProfileMenu(
+                fieldType: "Нэвтрэх нэр:",
+                text: item['phone'] != null ? item['phone'] : '',
+              ),
+              ProfileMenu(
+                fieldType: "Регистр:",
+                text: item['register'] != null ? item['register'] : '',
+              ),
+              ProfileMenu(
+                fieldType: "Утас:",
+                text: item['phone'] != null ? item['phone'] : '',
+              ),
+
+              // Container(
+              //   padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              //   decoration: BoxDecoration(
+              //     boxShadow: [shadow],
+              //   ),
+              //   child: FlatButton(
+              //     padding: EdgeInsets.all(20),
+              //     shape: RoundedRectangleBorder(
+              //         borderRadius: BorderRadius.circular(15)),
+              //     color: Color(0xFFF5F6F9),
+              //     onPressed: () async {
+              //       await agentUtil.logout();
+              //       Navigator.pushReplacementNamed(context, '/main');
+              //     },
+              //     child: Row(
+              //       children: [
+              //         SvgPicture.asset(
+              //           "assets/images/svg/Log out.svg",
+              //           width: 15,
+              //           color: primaryColor,
+              //         ),
+              //         SizedBox(width: 20),
+              //         Expanded(
+              //           child: Text(
+              //             "Гарах",
+              //             style: Theme.of(context).textTheme.bodyText1,
+              //           ),
+              //         ),
+              //         Icon(
+              //           Icons.arrow_forward_ios,
+              //           size: 15,
+              //         )
+              //       ],
+              //     ),
+              //   ),
+              // ),
+            ],
+          ),
         ),
       ),
     );
-
-//     return Scaffold(
-//         backgroundColor: Color(0xff020D18),
-//         body: GestureDetector(
-//           onTap: () {
-//             FocusScope.of(context).requestFocus(new FocusNode());
-//           },
-//           child: Column(
-//             children: <Widget>[
-//               SafeArea(
-//                 child: Stack(
-//                   children: <Widget>[
-//                     Container(
-//                       height: 50,
-//                       decoration: BoxDecoration(color: Color(0xff020D18)),
-//                       child: SafeArea(
-//                         child: Row(
-//                           mainAxisSize: MainAxisSize.max,
-//                           children: <Widget>[
-//                             Container(
-//                               width: 50,
-//                               child: InkWell(
-//                                 child: Container(
-//                                   width: 50.0,
-//                                   child: Icon(
-//                                     Ionicons.getIconData('ios-arrow-back'),
-//                                     color: Color(0xFFdedede),
-//                                   ),
-//                                 ),
-//                                 onTap: () {
-//                                   Navigator.pop(context);
-//                                 },
-//                               ),
-//                             ),
-//                             Expanded(
-//                               flex: 1,
-//                               child: Container(
-//                                 margin: EdgeInsets.only(top: 3),
-//                                 child: Row(
-//                                   mainAxisSize: MainAxisSize.max,
-//                                   children: <Widget>[
-//                                     Text(
-//                                       'Хувийн мэдээлэл'.toUpperCase(),
-//                                       style: TextStyle(
-//                                         fontWeight: FontWeight.w600,
-//                                         color: Color(0xFFdedede),
-//                                         fontSize: 18,
-//                                       ),
-//                                     ),
-//                                   ],
-//                                 ),
-//                               ),
-//                             ),
-//                             Container(
-//                               margin: EdgeInsets.only(right: 18),
-//                               child: FlatButton(
-//                                 padding: EdgeInsets.all(0),
-//                                 onPressed: () => this.updateProfile(),
-//                                 child: Container(
-//                                   height: 32,
-//                                   padding: EdgeInsets.only(
-//                                     left: 15,
-//                                     right: 15,
-//                                     top: 9.5,
-//                                   ),
-//                                   decoration: BoxDecoration(
-//                                     color: Color(0xffdd003f),
-//                                     borderRadius: BorderRadius.circular(5),
-//                                   ),
-//                                   child: Text(
-//                                     'Хадгалах'.toUpperCase(),
-//                                     style: TextStyle(
-//                                       color: Colors.white,
-//                                       fontSize: 14,
-//                                       fontWeight: FontWeight.w600,
-//                                     ),
-//                                   ),
-//                                 ),
-//                               ),
-//                             ),
-//                           ],
-//                         ),
-//                       ),
-//                     ),
-//                   ],
-//                 ),
-//               ),
-//               Expanded(
-//                   child: Container(
-//                       padding: EdgeInsets.only(left: 20, right: 20),
-//                       child: Stack(
-//                         children: <Widget>[
-//                           Form(
-//                             key: _profileFormKey,
-//                             child: ListView(
-//                               padding: EdgeInsets.all(0),
-//                               children: <Widget>[
-//                                 Container(
-//                                   height: 140,
-//                                   margin: EdgeInsets.only(bottom: 15),
-//                                   child: Center(
-//                                     child: Stack(
-//                                       children: <Widget>[
-//                                         // (user.image == null || user.image == '')
-//                                         //     ? CircleAvatar(
-//                                         //         radius: 70,
-//                                         //         backgroundImage: AssetImage(
-//                                         //             'assets/images/avatar2.png'),
-//                                         //       )
-//                                         //     : getAvatarThumb(),
-//                                         Positioned(
-//                                           bottom: 0,
-//                                           right: 0,
-//                                           child: Container(
-//                                             child: Center(
-//                                               child: IconButton(
-//                                                 icon: Icon(
-//                                                   Feather.getIconData('camera'),
-//                                                   color: Color(0xffffffff),
-//                                                   size: 18,
-//                                                 ),
-//                                                 onPressed: () => this
-//                                                     .showPickImageModal(
-//                                                         context),
-//                                               ),
-//                                             ),
-//                                             height: 44,
-//                                             width: 44,
-//                                             decoration: BoxDecoration(
-//                                                 color: Color(0xffed1b38),
-//                                                 borderRadius:
-//                                                     BorderRadius.circular(22),
-//                                                 border: Border.all(
-//                                                     width: 3,
-//                                                     color: Color(0xff141B31))),
-//                                           ),
-//                                         ),
-//                                       ],
-//                                     ),
-//                                   ),
-//                                 ),
-//                                 Container(
-//                                   height: 75,
-//                                   margin: EdgeInsets.only(bottom: 10, top: 5),
-//                                   decoration: BoxDecoration(
-//                                     color: Color(0xff141B31),
-//                                     borderRadius: BorderRadius.circular(10),
-//                                   ),
-//                                   padding: EdgeInsets.only(
-//                                       left: 20, right: 10, top: 10, bottom: 0),
-//                                   child: Column(
-//                                     children: <Widget>[
-//                                       Text(
-//                                         'Таны нэр'.toUpperCase(),
-//                                         style: TextStyle(
-//                                             fontSize: 12,
-//                                             fontWeight: FontWeight.w400,
-//                                             color: Color(0xff8899aa)),
-//                                       ),
-//                                       Container(
-//                                         child: TextFormField(
-//                                           //initialValue: user.nickname ?? '',
-//                                           decoration: InputDecoration(
-//                                               border: InputBorder.none,
-//                                               hintStyle: TextStyle(
-//                                                   color: Color.fromRGBO(
-//                                                       147, 157, 186, .88),
-//                                                   fontSize: 20,
-//                                                   fontWeight: FontWeight.w600),
-//                                               errorStyle: TextStyle(height: 0),
-//                                               hintText: ''),
-//                                           style: TextStyle(
-//                                               color: Color(0xff666666),
-//                                               fontSize: 20,
-//                                               fontWeight: FontWeight.w600),
-//                                           onSaved: (val) {
-//                                             setState(() {
-//                                               nickname = val;
-//                                             });
-//                                           },
-//                                         ),
-//                                       ),
-//                                     ],
-//                                     crossAxisAlignment:
-//                                         CrossAxisAlignment.start,
-//                                   ),
-//                                 ),
-//                                 Container(
-//                                   height: 75,
-//                                   margin: EdgeInsets.only(bottom: 10, top: 5),
-//                                   decoration: BoxDecoration(
-//                                     color: Color(0xff141B31),
-//                                     borderRadius: BorderRadius.circular(10),
-//                                   ),
-//                                   padding: EdgeInsets.only(
-//                                       left: 20, right: 10, top: 10, bottom: 0),
-//                                   child: Column(
-//                                     children: <Widget>[
-//                                       Text(
-//                                         'Утасны дугаар'.toUpperCase(),
-//                                         style: TextStyle(
-//                                             fontSize: 12,
-//                                             fontWeight: FontWeight.w400,
-//                                             color: Color(0xff8899aa)),
-//                                       ),
-//                                       Container(
-//                                         child: TextFormField(
-//                                           initialValue: user.phone ?? '',
-//                                           decoration: InputDecoration(
-//                                               border: InputBorder.none,
-//                                               hintStyle: TextStyle(
-//                                                   color: Color.fromRGBO(
-//                                                       147, 157, 186, .88),
-//                                                   fontSize: 20,
-//                                                   fontWeight: FontWeight.w600),
-//                                               errorStyle: TextStyle(height: 0),
-//                                               hintText: ''),
-//                                           style: TextStyle(
-//                                               color: Color(0xff666666),
-//                                               fontSize: 20,
-//                                               fontWeight: FontWeight.w600),
-//                                           onSaved: (val) {
-//                                             setState(() {
-//                                               phone = val;
-//                                             });
-//                                           },
-//                                         ),
-//                                       ),
-//                                     ],
-//                                     crossAxisAlignment:
-//                                         CrossAxisAlignment.start,
-//                                   ),
-//                                 ),
-//                                 Container(
-//                                   height: 75,
-//                                   margin: EdgeInsets.only(bottom: 10, top: 5),
-//                                   decoration: BoxDecoration(
-//                                     color: Color(0xff141B31),
-//                                     borderRadius: BorderRadius.circular(10),
-//                                   ),
-//                                   padding: EdgeInsets.only(
-//                                       left: 20, right: 10, top: 10, bottom: 0),
-//                                   child: Column(
-//                                     children: <Widget>[
-//                                       Text(
-//                                         'Хүйс'.toUpperCase(),
-//                                         style: TextStyle(
-//                                             fontSize: 12,
-//                                             fontWeight: FontWeight.w400,
-//                                             color: Color(0xff8899aa)),
-//                                       ),
-//                                       Container(
-//                                         child: Row(
-//                                           children: <Widget>[
-//                                             new Radio(
-//                                               value: 0,
-//                                               groupValue: gender,
-//                                               activeColor: Color(0xffdd003f),
-//                                               onChanged: (val) {
-//                                                 setState(() {
-//                                                   gender = val;
-//                                                 });
-//                                               },
-//                                             ),
-//                                             new Text(
-//                                               'Эмэгтэй',
-//                                               style:
-//                                                   new TextStyle(fontSize: 16.0),
-//                                             ),
-//                                             new Radio(
-//                                               value: 1,
-//                                               groupValue: gender,
-//                                               activeColor: Color(0xffdd003f),
-//                                               onChanged: (val) {
-//                                                 setState(() {
-//                                                   gender = val;
-//                                                 });
-//                                               },
-//                                             ),
-//                                             new Text(
-//                                               'Эрэгтэй',
-//                                               style: new TextStyle(
-//                                                 fontSize: 16.0,
-//                                               ),
-//                                             ),
-//                                           ],
-//                                         ),
-//                                       ),
-//                                     ],
-//                                     crossAxisAlignment:
-//                                         CrossAxisAlignment.start,
-//                                   ),
-//                                 ),
-//                                 Container(
-//                                   height: 75,
-//                                   margin: EdgeInsets.only(bottom: 10, top: 5),
-//                                   decoration: BoxDecoration(
-//                                     color: Color(0xff141B31),
-//                                     borderRadius: BorderRadius.circular(10),
-//                                   ),
-//                                   padding: EdgeInsets.only(
-//                                       left: 20, right: 10, top: 10, bottom: 0),
-//                                   child: Column(
-//                                     children: <Widget>[
-//                                       Text(
-//                                         'Нас'.toUpperCase(),
-//                                         style: TextStyle(
-//                                             fontSize: 12,
-//                                             fontWeight: FontWeight.w400,
-//                                             color: Color(0xff8899aa)),
-//                                       ),
-//                                       Container(
-//                                         child: TextFormField(
-//                                           initialValue: user.age ?? '0',
-//                                           keyboardType:
-//                                               TextInputType.numberWithOptions(),
-//                                           decoration: InputDecoration(
-//                                               border: InputBorder.none,
-//                                               hintStyle: TextStyle(
-//                                                   color: Color.fromRGBO(
-//                                                       147, 157, 186, .88),
-//                                                   fontSize: 20,
-//                                                   fontWeight: FontWeight.w600),
-//                                               errorStyle: TextStyle(height: 0),
-//                                               hintText: ''),
-//                                           style: TextStyle(
-//                                               color: Color(0xff666666),
-//                                               fontSize: 20,
-//                                               fontWeight: FontWeight.w600),
-//                                           onSaved: (val) {
-//                                             setState(() {
-//                                               age = val;
-//                                             });
-//                                           },
-//                                         ),
-//                                       ),
-//                                     ],
-//                                     crossAxisAlignment:
-//                                         CrossAxisAlignment.start,
-//                                   ),
-//                                 ),
-//                               ],
-//                             ),
-//                           ),
-//                           loading
-//                               ? Container(
-//                                   decoration: BoxDecoration(
-//                                       borderRadius: BorderRadius.circular(25),
-//                                       color: Colors.black45),
-//                                   child: SpinKitRing(
-//                                     color: Color(0xff0079FF),
-//                                     size: 36.0,
-//                                     lineWidth: 2,
-//                                   ))
-//                               : Container(),
-//                           success
-//                               ? Container(
-//                                   width: double.infinity,
-//                                   decoration: BoxDecoration(
-//                                       borderRadius: BorderRadius.circular(25),
-//                                       color: Colors.black45),
-//                                   child: Column(
-//                                     mainAxisAlignment: MainAxisAlignment.center,
-//                                     crossAxisAlignment:
-//                                         CrossAxisAlignment.center,
-//                                     children: <Widget>[
-//                                       Icon(
-//                                         SimpleLineIcons.getIconData('check'),
-//                                         color: Color(0xff2ecc71),
-//                                         size: 30,
-//                                       ),
-//                                       SizedBox(
-//                                         height: 10,
-//                                       ),
-//                                       Text(
-//                                         _response.msg,
-//                                         style: TextStyle(
-//                                           color: Color(0xff2ecc71),
-//                                         ),
-//                                       )
-//                                     ],
-//                                   ))
-//                               : Text('')
-//                         ],
-//                       ))),
-
-// //          loading
-// //              ? Container(
-// //                  alignment: Alignment.bottomCenter,
-// //                  padding: EdgeInsets.all(20),
-// //                  margin:
-// //                      EdgeInsets.only(left: 10, top: 10, right: 10, bottom: 20),
-// //                  decoration: BoxDecoration(
-// //                      borderRadius: BorderRadius.circular(25),
-// //                      color: Colors.white54),
-// //                  child: Loader())
-// //              : Text('')
-//             ],
-//           ),
-//         ));
   }
 
   void showPickImageModal(context) {
@@ -715,13 +335,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
 class ProfileMenu extends StatelessWidget {
   const ProfileMenu({
     Key key,
+    @required this.fieldType,
     @required this.text,
-    @required this.icon,
-    @required this.press,
   }) : super(key: key);
 
-  final String text, icon;
-  final VoidCallback press;
+  final String fieldType, text;
 
   @override
   Widget build(BuildContext context) {
@@ -734,25 +352,18 @@ class ProfileMenu extends StatelessWidget {
         padding: EdgeInsets.all(20),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         color: Color(0xFFF5F6F9),
-        onPressed: press,
+        onPressed: () {},
         child: Row(
           children: [
-            SvgPicture.asset(
-              icon,
-              width: 15,
-              color: primaryColor,
+            Text(
+              fieldType,
+              style: Theme.of(context).textTheme.bodyText1,
             ),
             SizedBox(width: 20),
-            Expanded(
-              child: Text(
-                text,
-                style: Theme.of(context).textTheme.bodyText1,
-              ),
+            Text(
+              text,
+              style: Theme.of(context).textTheme.bodyText1,
             ),
-            Icon(
-              Icons.arrow_forward_ios,
-              size: 15,
-            )
           ],
         ),
       ),
@@ -770,6 +381,7 @@ class ProfilePicture extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(profilePicture);
     return SizedBox(
       height: 115,
       width: 115,
@@ -778,25 +390,25 @@ class ProfilePicture extends StatelessWidget {
         overflow: Overflow.visible,
         children: [
           CircleAvatar(
-            backgroundImage: AssetImage("assets/images/avatar2.png"),
+            backgroundImage: NetworkImage(profilePicture),
           ),
-          Positioned(
-            bottom: 0,
-            right: -12,
-            child: SizedBox(
-              width: 46,
-              height: 46,
-              child: FlatButton(
-                padding: EdgeInsets.zero,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50),
-                    side: BorderSide(color: Colors.white)),
-                color: Color(0xFFF5F6F9),
-                onPressed: () {},
-                child: SvgPicture.asset("assets/images/svg/Camera Icon.svg"),
-              ),
-            ),
-          )
+          // Positioned(
+          //   bottom: 0,
+          //   right: -12,
+          //   child: SizedBox(
+          //     width: 46,
+          //     height: 46,
+          //     child: FlatButton(
+          //       padding: EdgeInsets.zero,
+          //       shape: RoundedRectangleBorder(
+          //           borderRadius: BorderRadius.circular(50),
+          //           side: BorderSide(color: Colors.white)),
+          //       color: Color(0xFFF5F6F9),
+          //       onPressed: () {},
+          //       child: SvgPicture.asset("assets/images/svg/Camera Icon.svg"),
+          //     ),
+          //   ),
+          // )
         ],
       ),
     );

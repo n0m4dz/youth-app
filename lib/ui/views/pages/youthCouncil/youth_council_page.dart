@@ -55,7 +55,7 @@ class _YouthCouncilPageState extends State<YouthCouncilPage> {
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-          color: Color(0xFF008bc0),
+          color: primaryColor,
           image: DecorationImage(
             image: AssetImage("assets/images/bg-wh.jpg"),
             alignment: Alignment.topRight,
@@ -171,8 +171,7 @@ class _YouthCouncilPageState extends State<YouthCouncilPage> {
                                           decoration: InputDecoration(
                                             hintText: 'Хайх',
                                             hintStyle: TextStyle(
-                                              color: Theme.of(context)
-                                                  .primaryColor,
+                                              color: primaryColor,
                                             ),
                                             enabledBorder: InputBorder.none,
                                             focusedBorder: InputBorder.none,
@@ -196,7 +195,7 @@ class _YouthCouncilPageState extends State<YouthCouncilPage> {
                                       child: Text(
                                         'Байршил',
                                         style: TextStyle(
-                                          color: Theme.of(context).primaryColor,
+                                          color: primaryColor,
                                           fontSize: 14,
                                         ),
                                       ),
@@ -292,8 +291,7 @@ class _YouthCouncilPageState extends State<YouthCouncilPage> {
                                                         Icon(
                                                           Icons
                                                               .arrow_forward_ios,
-                                                          color:
-                                                              Color(0xFF409EFF),
+                                                          color: primaryColor,
                                                           size: 15,
                                                         ),
                                                       ],
