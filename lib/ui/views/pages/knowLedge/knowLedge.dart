@@ -69,7 +69,7 @@ class _KnowLedgePageState extends State<KnowLedgePage> {
                     model.getLawModelList(1, action: "refresh");
                   },
                   builder: (context, model, child) => model.loading
-                      ? Loader()
+                      ? Loader(loaderColor: knowLedgeColor)
                       : SmartRefresher(
                           enablePullDown: true,
                           enablePullUp: model.hasData ? true : false,

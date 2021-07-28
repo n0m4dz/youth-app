@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
@@ -17,6 +18,7 @@ import 'package:provider/provider.dart';
 import 'package:youth/core/viewmodels/user_model.dart';
 import 'package:youth/ui/components/header-back.dart';
 import 'package:youth/ui/styles/_colors.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:youth/ui/views/settings.dart';
 
 import '../../locator.dart';
@@ -44,6 +46,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   String age;
   int gender;
   bool isNetworkImage = true;
+  SharedPreferences _prefs;
 
   Future getImage(String type) async {
     // image = await ImagePicker.pickImage(
@@ -56,18 +59,32 @@ class _ProfileScreenState extends State<ProfileScreen> {
     });
   }
 
-  Future<void> getUserInfo() async {
-    var url = baseUrl + '/api/mobile/profile/1608230016';
+  Future<void> getUserInfo(id) async {
+    var url = baseUrl + '/api/mobile/profile/' + id.toString();
     var response = await _http.get(url);
     item = response.data;
 
     setState(() {});
   }
 
+  Future<void> checkAuth(BuildContext context) async {
+    if (_prefs.getBool('is_auth') != null &&
+        _prefs.getBool('is_auth') == true) {
+      final userState = Provider.of<UserModel>(context, listen: false);
+      String userData = _prefs.getString('user');
+      user = new User.fromJson(jsonDecode(userData));
+      //print(user.surname + " surname");
+      getUserInfo(user.id);
+    }
+  }
+
   @override
   void initState() {
     super.initState();
-    getUserInfo();
+    // SchedulerBinding.instance.addPostFrameCallback((_) async {
+    //   _prefs = await SharedPreferences.getInstance();
+    //   await this.checkAuth(context);
+    // });
   }
 
   Widget getAvatarThumb() {
@@ -98,8 +115,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
-    /*final userState = Provider.of<UserModel>(context);
-    user = userState.getUser;*/
+    final userState = Provider.of<UserModel>(context, listen: false);
+    user = userState.getUser;
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -108,77 +125,80 @@ class _ProfileScreenState extends State<ProfileScreen> {
         child: HeaderBack(
           title: 'Миний булан',
           reversed: true,
+          customColor: Colors.grey,
         ),
       ),
-      body: Column(
-        children: [
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-            alignment: Alignment.topRight,
-            //width: double.infinity,
-            child: SizedBox(
-              width: 90,
-              height: 35,
-              child: FlatButton(
-                padding: EdgeInsets.only(left: 10),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                color: primaryColor,
-                onPressed: () {},
-                child: Row(
-                  children: [
-                    SvgPicture.asset(
-                      "assets/images/svg/Log out.svg",
-                      width: 15,
-                      color: Colors.white,
-                    ),
-                    SizedBox(width: 10),
-                    Expanded(
-                      child: Text(
-                        "Гарах",
-                        style: TextStyle(color: Colors.white),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+              alignment: Alignment.topRight,
+              //width: double.infinity,
+              child: SizedBox(
+                width: 90,
+                height: 35,
+                child: FlatButton(
+                  padding: EdgeInsets.only(left: 10),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  color: primaryColor,
+                  onPressed: () {},
+                  child: Row(
+                    children: [
+                      SvgPicture.asset(
+                        "assets/images/svg/Log out.svg",
+                        width: 15,
+                        color: Colors.white,
                       ),
-                    ),
-                  ],
+                      SizedBox(width: 10),
+                      Expanded(
+                        child: Text(
+                          "Гарах",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-          SingleChildScrollView(
-            child: Container(
+            Container(
               margin: EdgeInsets.only(top: 30),
               child: Column(
                 children: [
                   ProfilePicture(
-                      profilePicture: item['profile_image'] != null &&
-                              item['profile_image'] != ""
-                          ? baseUrl + item['profile_image']
-                          : baseUrl + "/assets/youth/images/noImage.jpg"),
+                    profilePicture:
+                        user.profile_image != null && user.profile_image != ""
+                            ? baseUrl + user.profile_image
+                            : baseUrl + "/assets/youth/images/noImage.jpg",
+                  ),
                   SizedBox(height: 20),
                   ProfileMenu(
                     fieldType: " Ургийн овог:",
-                    text: item['surname'] != null ? item['surname'] : '',
+                    text: user.surname != null ? user.surname : '',
                   ),
+
                   ProfileMenu(
                     fieldType: "Овог:",
-                    text: item['last_name'] != null ? item['last_name'] : '',
+                    text: user.last_name != null ? user.last_name : '',
                   ),
                   ProfileMenu(
                     fieldType: "Нэр:",
-                    text: item['first_name'] != null ? item['first_name'] : '',
+                    text: user.first_name != null ? user.first_name : '',
                   ),
                   ProfileMenu(
                     fieldType: "Нэвтрэх нэр:",
-                    text: item['phone'] != null ? item['phone'] : '',
+                    text: user.phone != null ? user.phone : '',
                   ),
                   ProfileMenu(
                     fieldType: "Регистр:",
-                    text: item['register'] != null ? item['register'] : '',
+                    text: user.register != null ? user.register : '',
                   ),
                   ProfileMenu(
                     fieldType: "Утас:",
-                    text: item['phone'] != null ? item['phone'] : '',
+                    text: user.phone != null ? user.phone : '',
                   ),
 
                   // Container(
@@ -220,8 +240,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ],
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

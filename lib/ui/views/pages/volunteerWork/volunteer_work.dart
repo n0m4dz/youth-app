@@ -65,7 +65,7 @@ class _VolunteerWorksState extends State<VolunteerWorks> {
                 model.getVolunteerModelWorkList(22, 1, action: "refresh");
               },
               builder: (context, model, child) => model.loading
-                  ? Loader()
+                  ? Loader(loaderColor: volunteerColor)
                   : SmartRefresher(
                       enablePullDown: true,
                       enablePullUp: model.hasData ? true : false,

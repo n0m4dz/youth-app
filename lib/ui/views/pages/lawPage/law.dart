@@ -70,7 +70,7 @@ class LawPageState extends State<LawPage> {
                     model.getLawModelList(1, action: "refresh");
                   },
                   builder: (context, model, child) => model.loading
-                      ? Loader()
+                      ? Loader(loaderColor: lawColor)
                       : SmartRefresher(
                           enablePullDown: true,
                           enablePullUp: model.hasData ? true : false,

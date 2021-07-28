@@ -68,7 +68,7 @@ class _EventPageState extends State<EventPage> {
                     model.getEventList(22, 1, action: "refresh");
                   },
                   builder: (context, model, child) => model.loading
-                      ? Loader()
+                      ? Loader(loaderColor: eventColor)
                       : SmartRefresher(
                           enablePullDown: true,
                           enablePullUp: model.hasData ? true : false,

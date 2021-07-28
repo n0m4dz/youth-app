@@ -29,6 +29,8 @@ class _EventDetailPageState extends State<EventDetailPage> {
         child: HeaderBack(
           title: 'Арга хэмжээ',
           reversed: true,
+          customColor: eventColor,
+          arrawBackColor: eventColor,
         ),
       ),
       body: Column(

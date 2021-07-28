@@ -29,6 +29,8 @@ class LawDetailPageState extends State<LawDetailPage> {
         child: HeaderBack(
           title: 'Хууль',
           reversed: true,
+          customColor: lawColor,
+          arrawBackColor: lawColor,
         ),
       ),
       body: Column(
@@ -47,88 +49,131 @@ class LawDetailPageState extends State<LawDetailPage> {
             ),
           ),
           Expanded(
-            child: SingleChildScrollView(
-              child: Container(
-                width: double.infinity,
-                height: size.height,
-                padding: EdgeInsets.symmetric(horizontal: 15),
-                decoration: BoxDecoration(
-                  //borderRadius: BorderRadius.circular(10),
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(15),
-                    topRight: Radius.circular(15),
-                  ),
-                  color: bgColor,
+            child: Container(
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(15),
+                  topRight: Radius.circular(15),
                 ),
-                child: Column(
-                  children: [
-                    SizedBox(height: 10),
-                    widget.item.thumb != null
-                        ? Image.network(baseUrl + widget.item.thumb)
-                        : Image.network(
-                            baseUrl + "/assets/youth/images/noImage.jpg"),
-                    SizedBox(height: 10),
-                    Container(
-                      //child: Html(data: widget.news.content),
-                      child: widget.item.body != null
-                          ? Html(
-                              data: widget.item.body.toString(),
-                              style: {
-                                "p": Style(
-                                  color: kTextColor,
-                                  fontSize: FontSize(13),
-                                  fontWeight: FontWeight.normal,
+                color: bgColor,
+              ),
+              child: Stack(
+                children: [
+                  SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        SizedBox(height: 10),
+                        widget.item.thumb != null
+                            ? Container(
+                                height: 450,
+                                decoration: BoxDecoration(
+                                  boxShadow: [shadow],
                                 ),
-                              },
-                            )
-                          : Text(''),
-                    ),
-                    Container(
-                      height: 90,
-                      margin: EdgeInsets.only(
-                        left: 10,
-                        right: 10,
-                        top: 30,
-                        bottom: 10,
-                      ),
-                      decoration: BoxDecoration(
-                        border: Border(
-                          top: BorderSide(
-                            color: Colors.grey,
-                            width: 1,
+                                child: Stack(
+                                  children: <Widget>[
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.circular(4),
+                                      child: CachedNetworkImage(
+                                        imageUrl: baseUrl + widget.item.thumb,
+                                        imageBuilder:
+                                            (context, imageProvider) =>
+                                                Container(
+                                          decoration: BoxDecoration(
+                                            image: DecorationImage(
+                                              image: imageProvider,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                        ),
+                                        placeholder: (context, url) => Center(
+                                          child: CircularProgressIndicator(
+                                            strokeWidth: 2,
+                                            backgroundColor: Colors.red,
+                                          ),
+                                        ),
+                                        errorWidget: (context, url, error) =>
+                                            Image.network(
+                                          baseUrl +
+                                              "/assets/youth/images/noImage.jpg",
+                                          width: double.infinity,
+                                          fit: BoxFit.fitWidth,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            : Container(
+                                height: 136,
+                                child: Image.network(
+                                  baseUrl + "/assets/youth/images/noImage.jpg",
+                                  width: double.infinity,
+                                  fit: BoxFit.fitWidth,
+                                ),
+                              ),
+                        SizedBox(height: 10),
+                        Container(
+                          child: Html(
+                            data: widget.item.body.toString(),
+                            style: {
+                              "p": Style(
+                                color: kTextColor,
+                                fontSize: FontSize(12),
+                                textAlign: TextAlign.justify,
+                              ),
+                            },
                           ),
                         ),
-                      ),
-                      child: Column(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.only(top: 10, bottom: 10),
-                            child: Row(
-                              children: [
-                                Icon(
-                                  Icons.access_time,
-                                  color: lawColor,
-                                  size: 14.0,
-                                ),
-                                SizedBox(width: 5),
-                                Text(
-                                  widget.item.createdAt
-                                      .toString()
-                                      .substring(0, 10),
-                                  style: TextStyle(
-                                    color: lawColor,
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 14,
-                                  ),
-                                ),
-                              ],
+                        Container(
+                          height: 90,
+                          margin: EdgeInsets.only(
+                            left: 10,
+                            right: 10,
+                            top: 30,
+                            bottom: 10,
+                          ),
+                          decoration: BoxDecoration(
+                            border: Border(
+                              top: BorderSide(
+                                color: Colors.grey,
+                                width: 1,
+                              ),
                             ),
                           ),
-                        ],
-                      ),
+                          child: Column(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.only(top: 10, bottom: 10),
+                                child: Row(
+                                  children: [
+                                    Icon(
+                                      Icons.access_time,
+                                      color: knowLedgeColor,
+                                      size: 14.0,
+                                    ),
+                                    SizedBox(width: 5),
+                                    Text(
+                                      widget.item.createdAt
+                                          .toString()
+                                          .substring(0, 10),
+                                      style: TextStyle(
+                                        color: knowLedgeColor,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),

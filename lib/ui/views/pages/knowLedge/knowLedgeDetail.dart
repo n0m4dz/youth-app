@@ -46,6 +46,8 @@ class _KnowLedgeDetailPageState extends State<KnowLedgeDetailPage> {
         child: HeaderBack(
           title: 'Мэдээ Мэдээлэл',
           reversed: true,
+          customColor: knowLedgeColor,
+          arrawBackColor: knowLedgeColor,
         ),
       ),
       body: Container(

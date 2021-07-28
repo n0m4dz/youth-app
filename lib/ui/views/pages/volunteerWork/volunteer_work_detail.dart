@@ -27,6 +27,8 @@ class _VolunteerWorkDetailState extends State<VolunteerWorkDetail> {
         child: HeaderBack(
           title: 'Сайн дурын ажил',
           reversed: true,
+          customColor: volunteerColor,
+          arrawBackColor: volunteerColor,
         ),
       ),
       body: Column(

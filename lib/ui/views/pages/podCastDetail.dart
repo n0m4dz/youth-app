@@ -64,6 +64,8 @@ class PodCastDetailPageState extends State<PodCastDetailPage> {
         child: HeaderBack(
           title: 'Подкаст',
           reversed: true,
+          customColor: podCastColor,
+          arrawBackColor: podCastColor,
         ),
       ),
       body: ListView(

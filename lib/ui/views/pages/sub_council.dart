@@ -38,13 +38,14 @@ class _SubCouncilState extends State<SubCouncil> {
           children: [
             Container(
               height: 180,
-              padding: EdgeInsets.only(top: 60, right: 20),
+              padding: EdgeInsets.only(top: 40, right: 20),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                //crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(height: 20),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       IconButton(
                         onPressed: () => Navigator.of(context).pop(false),
@@ -53,11 +54,12 @@ class _SubCouncilState extends State<SubCouncil> {
                           color: Colors.white,
                         ),
                       ),
+                      SizedBox(width: 20),
                       Expanded(
                         child: Text(
                           widget.item.name,
                           style: TextStyle(
-                            fontSize: 14,
+                            fontSize: 15,
                             color: Colors.white,
                             fontWeight: FontWeight.w600,
                           ),

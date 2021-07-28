@@ -75,7 +75,7 @@ class PodCastPageState extends State<PodCastPage> {
             model.getPodCastList(1, action: 'refresh');
           },
           builder: (context, model, child) => model.loading
-              ? Loader()
+              ? Loader(loaderColor: podCastColor)
               : SmartRefresher(
                   enablePullDown: true,
                   enablePullUp: model.hasData ? true : false,

@@ -76,7 +76,7 @@ class ELearnPageState extends State<ELearnPage> {
             model.getElarnList(1, action: 'refresh');
           },
           builder: (context, model, child) => model.loading
-              ? Loader()
+              ? Loader(loaderColor: eLearnColor)
               : SmartRefresher(
                   enablePullDown: true,
                   enablePullUp: model.hasData ? true : false,

@@ -203,8 +203,8 @@ class _HomeScreenState extends State<HomeScreen> {
           child: GridView.count(
             padding: EdgeInsets.only(top: 0, bottom: 10, left: 15, right: 15),
             crossAxisCount: 2,
-            mainAxisSpacing: 13,
-            crossAxisSpacing: 13,
+            mainAxisSpacing: 12,
+            crossAxisSpacing: 12,
             childAspectRatio: (itemWidth / 185),
             physics: new NeverScrollableScrollPhysics(),
             controller: new ScrollController(keepScrollOffset: false),
@@ -418,13 +418,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                     color: Colors.white,
                                   ),
                                 ),
-                                // Text(
-                                //   '120+ ажлын зар байна',
-                                //   style: TextStyle(
-                                //     fontSize: 10.7,
-                                //     color: Colors.white,
-                                //   ),
-                                // )
                               ],
                             ),
                           ),
@@ -488,13 +481,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                     color: Colors.white,
                                   ),
                                 ),
-                                // Text(
-                                //   'Их сургуулийн тэтгэлэг',
-                                //   style: TextStyle(
-                                //     fontSize: 10.7,
-                                //     color: Colors.white,
-                                //   ),
-                                // )
                               ],
                             ),
                           ),
@@ -557,13 +543,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                     color: Colors.white,
                                   ),
                                 ),
-                                // Text(
-                                //   '10+ сургалтын зар байна',
-                                //   style: TextStyle(
-                                //     fontSize: 10.7,
-                                //     color: Colors.white,
-                                //   ),
-                                // )
                               ],
                             ),
                           ),
@@ -712,79 +691,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-// ignore: must_be_immutable
-class HomeCategoryItem extends StatefulWidget {
-  Color primaryColor;
-  String primaryIcon;
-  String primaryTitle;
-
-  HomeCategoryItem({
-    this.primaryColor,
-    this.primaryIcon,
-    this.primaryTitle,
-  });
-
-  @override
-  _HomeCategoryItemState createState() => _HomeCategoryItemState();
-}
-
-class _HomeCategoryItemState extends State<HomeCategoryItem> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            color: widget.primaryColor.withOpacity(0.4),
-            blurRadius: 10,
-            offset: Offset(0.0, 6),
-          )
-        ],
-        color: widget.primaryColor,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: InkWell(
-        onTap: () {},
-        borderRadius: BorderRadius.circular(10),
-        child: Container(
-          height: 120,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Flexible(
-                flex: 2,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    SvgPicture.asset(
-                      widget.primaryIcon,
-                      height: 60,
-                      color: Colors.white,
-                    ),
-                    Container(
-                      alignment: Alignment.center,
-                      padding: const EdgeInsets.all(10),
-                      child: Text(
-                        widget.primaryTitle,
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 16,
-                          color: Colors.white,
-                        ),
-                      ),
-                    )
-                  ],
                 ),
               ),
             ],

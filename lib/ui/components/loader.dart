@@ -4,6 +4,12 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:youth/ui/styles/_colors.dart';
 
 class Loader extends StatelessWidget {
+  final Color loaderColor;
+  const Loader({
+    Key key,
+    this.loaderColor,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -18,7 +24,7 @@ class Loader extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           SpinKitFadingCube(
-            color: primaryColor,
+            color: loaderColor != null ? loaderColor : primaryColor,
             size: 28.0,
           ),
         ],

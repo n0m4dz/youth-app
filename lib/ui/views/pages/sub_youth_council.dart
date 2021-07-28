@@ -43,12 +43,13 @@ class _SubCouncilState extends State<SubYouthCouncil> {
           children: [
             Container(
               height: 180,
-              padding: EdgeInsets.only(top: 60, right: 20),
+              padding: EdgeInsets.only(top: 40, right: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       IconButton(
                         onPressed: () => Navigator.of(context).pop(false),

@@ -6,8 +6,14 @@ import 'package:youth/ui/styles/_colors.dart';
 class HeaderBack extends StatefulWidget {
   final String title;
   final bool reversed;
+  final Color customColor;
+  final Color arrawBackColor;
 
-  HeaderBack({@required this.title, this.reversed});
+  HeaderBack(
+      {@required this.title,
+      this.reversed,
+      this.customColor = primaryColor,
+      this.arrawBackColor});
 
   @override
   _HeaderBackState createState() => _HeaderBackState();
@@ -36,7 +42,9 @@ class _HeaderBackState extends State<HeaderBack> {
                       width: 50.0,
                       child: Icon(
                         Icons.arrow_back,
-                        color: primaryColor,
+                        color: widget.arrawBackColor != null
+                            ? widget.arrawBackColor
+                            : primaryColor,
                       ),
                     ),
                     onPressed: () {
@@ -56,9 +64,12 @@ class _HeaderBackState extends State<HeaderBack> {
                           widget.title.toUpperCase(),
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              color: widget.reversed
-                                  ? primaryColor
-                                  : Color(0xeefafbfc),
+                              color: widget.customColor != null
+                                  ? widget.customColor
+                                  : primaryColor,
+                              // color: widget.reversed
+                              //     ? primaryColor
+                              //     : Color(0xeefafbfc),
                               fontSize: 16),
                         ),
                       ],

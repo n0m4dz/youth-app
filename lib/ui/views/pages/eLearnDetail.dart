@@ -53,6 +53,8 @@ class ELearnDetailPageState extends State<ELearnDetailPage> {
         child: HeaderBack(
           title: 'Цахим Хичээл',
           reversed: true,
+          customColor: eLearnColor,
+          arrawBackColor: eLearnColor,
         ),
       ),
       body: Column(

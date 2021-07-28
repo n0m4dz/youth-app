@@ -2,12 +2,15 @@ import 'dart:io';
 
 class User {
   int _id;
+  String _surname;
   String _name;
   String _phone;
   String _email;
   bool _is_active;
   String _first_name;
   String _last_name;
+  String _register;
+  String _profile_image;
   String _facebook;
   String _google;
   int _gender;
@@ -22,12 +25,15 @@ class User {
 
   User.fromJson(Map<String, dynamic> parsedJson) {
     _id = parsedJson['id'];
+    _id = parsedJson['surname'];
     _name = parsedJson['name'];
     _phone = parsedJson['phone'];
     _email = parsedJson['email'];
     _is_active = parsedJson['is_active'] == 0 ? false : true;
     _first_name = parsedJson['first_name'];
     _last_name = parsedJson['last_name'];
+    _register = parsedJson['register'];
+    _profile_image = parsedJson['profile_image'];
     _facebook = parsedJson['facebook'].toString();
     _google = parsedJson['google'].toString();
     _gender = parsedJson['gender'] == "0" ? 0 : 1;
@@ -44,12 +50,15 @@ class User {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = _id;
+    data['surname'] = _surname;
     data['name'] = _name;
     data['phone'] = _phone;
     data['email'] = _email;
     data['is_active'] = _is_active;
     data['first_name'] = _first_name;
     data['last_name'] = _last_name;
+    data['profile_image'] = _profile_image;
+    data['register'] = _register;
     data['facebook'] = _facebook;
     data['google'] = _google;
     data['gender'] = _gender;
@@ -66,6 +75,8 @@ class User {
 
   int get id => _id;
 
+  String get surname => _surname;
+
   String get name => _name;
 
   String get phone => _phone;
@@ -77,6 +88,10 @@ class User {
   String get first_name => _first_name;
 
   String get last_name => _last_name;
+
+  String get register => _register;
+
+  String get profile_image => _profile_image;
 
   String get facebook => _facebook;
 
@@ -122,8 +137,20 @@ class User {
     _first_name = val;
   }
 
+  void setSurname(String val) {
+    _surname = val;
+  }
+
   void setLastName(String val) {
     _last_name = val;
+  }
+
+  void setRegister(String val) {
+    _register = val;
+  }
+
+  void setProfileImage(String val) {
+    _profile_image = val;
   }
 
   void setPhone(String val) {
