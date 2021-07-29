@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_icons/ionicons.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:majascan/majascan.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:youth/core/models/user.dart';
 import 'package:youth/ui/styles/_colors.dart';
 import 'package:youth/ui/views/login.dart';
@@ -11,7 +14,7 @@ import 'package:youth/ui/views/settings.dart';
 
 import '../../size_config.dart';
 
-class DefaultSliverAppBar extends StatelessWidget {
+class DefaultSliverAppBar extends StatefulWidget {
   const DefaultSliverAppBar({
     Key key,
     this.color,
@@ -26,6 +29,49 @@ class DefaultSliverAppBar extends StatelessWidget {
   final String svgData;
 
   @override
+  _DefaultSliverAppBarState createState() => _DefaultSliverAppBarState();
+}
+
+class _DefaultSliverAppBarState extends State<DefaultSliverAppBar> {
+  String result = "";
+
+  Future _scanQR() async {
+    try {
+      String qrResult = await MajaScan.startScan(
+          title: "QRcode scanner",
+          titleColor: Colors.amberAccent[700],
+          qRCornerColor: Colors.orange,
+          qRScannerColor: Colors.orange);
+      setState(() {
+        result = qrResult;
+        _launchURL(qrResult);
+      });
+    } on PlatformException catch (ex) {
+      if (ex.code == MajaScan.CameraAccessDenied) {
+        setState(() {
+          result = "Camera permission was denied";
+        });
+      } else {
+        setState(() {
+          result = "Unknown Error $ex";
+        });
+      }
+    } on FormatException {
+      setState(() {
+        result = "You pressed the back button before scanning anything";
+      });
+    } catch (ex) {
+      setState(() {
+        result = "Unknown Error $ex";
+      });
+    }
+  }
+
+  void _launchURL(_url) async => await canLaunch(_url)
+      ? await launch(_url)
+      : throw 'Could not launch $_url';
+
+  @override
   Widget build(BuildContext context) {
     User user;
     SharedPreferences _prefs;
@@ -33,7 +79,7 @@ class DefaultSliverAppBar extends StatelessWidget {
       expandedHeight: getProportionateScreenHeight(200),
       floating: false,
       pinned: true,
-      backgroundColor: color,
+      backgroundColor: widget.color,
       flexibleSpace: FlexibleSpaceBar(
         titlePadding: EdgeInsets.zero,
         centerTitle: true,
@@ -47,10 +93,10 @@ class DefaultSliverAppBar extends StatelessWidget {
             Flexible(
               flex: 1,
               child: Text(
-                title.toUpperCase(),
+                widget.title.toUpperCase(),
                 style: TextStyle(
                   fontSize: getProportionateScreenWidth(14),
-                  color: titleColor,
+                  color: widget.titleColor,
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -58,11 +104,22 @@ class DefaultSliverAppBar extends StatelessWidget {
           ],
         ),
         background: SvgPicture.asset(
-          svgData,
+          widget.svgData,
           fit: BoxFit.cover,
         ),
       ),
       actions: [
+        Padding(
+          padding: EdgeInsets.only(right: 10.0),
+          child: GestureDetector(
+            onTap: _scanQR,
+            child: Icon(
+              Ionicons.getIconData('ios-qr-scanner'),
+              size: 31,
+              color: Colors.white,
+            ),
+          ),
+        ),
         Padding(
           padding: EdgeInsets.only(right: 10.0),
           child: GestureDetector(

@@ -99,5 +99,7 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
+
+        <activity android:name="com.djgeo.majascan.g_scanner.QrCodeScannerActivity"/>
     </application>
 </manifest>

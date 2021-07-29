@@ -4,11 +4,14 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lambda/modules/network_util.dart';
+import 'package:majascan/majascan.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:youth/core/constants/values.dart';
 import 'package:youth/core/models/user.dart';
 import 'package:youth/core/viewmodels/user_model.dart';
@@ -17,6 +20,7 @@ import 'package:youth/ui/styles/_colors.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:youth/ui/views/login.dart';
 import 'package:youth/ui/views/notifications.dart';
+import 'package:youth/ui/views/qrScanner.dart';
 import 'package:youth/ui/views/pages/VolunteerWork/volunteer_work.dart';
 import 'package:youth/ui/views/pages/eLearnHome.dart';
 import 'package:youth/ui/views/pages/event/event_page.dart';
@@ -45,6 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
   SharedPreferences _prefs;
   Map<String, dynamic> contact;
   NetworkUtil _http = new NetworkUtil();
+  String result = "";
 
   Future getContactList() async {
     var url = baseUrl + '/api/mobile/getContact';
@@ -53,6 +58,42 @@ class _HomeScreenState extends State<HomeScreen> {
     print(contact);
     setState(() {});
   }
+
+  Future _scanQR() async {
+    try {
+      String qrResult = await MajaScan.startScan(
+          title: "QRcode scanner",
+          titleColor: Colors.amberAccent[700],
+          qRCornerColor: Colors.orange,
+          qRScannerColor: Colors.orange);
+      setState(() {
+        result = qrResult;
+        _launchURL(qrResult);
+      });
+    } on PlatformException catch (ex) {
+      if (ex.code == MajaScan.CameraAccessDenied) {
+        setState(() {
+          result = "Camera permission was denied";
+        });
+      } else {
+        setState(() {
+          result = "Unknown Error $ex";
+        });
+      }
+    } on FormatException {
+      setState(() {
+        result = "You pressed the back button before scanning anything";
+      });
+    } catch (ex) {
+      setState(() {
+        result = "Unknown Error $ex";
+      });
+    }
+  }
+
+  void _launchURL(_url) async => await canLaunch(_url)
+      ? await launch(_url)
+      : throw 'Could not launch $_url';
 
   @override
   void initState() {
@@ -133,6 +174,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               actions: [
+                Padding(
+                  padding: EdgeInsets.only(right: 10.0),
+                  child: GestureDetector(
+                    onTap: _scanQR,
+                    child: Icon(
+                      Ionicons.getIconData('ios-qr-scanner'),
+                      size: 31,
+                      color: primaryColor,
+                    ),
+                  ),
+                ),
                 Padding(
                   padding: EdgeInsets.only(right: 10.0),
                   child: GestureDetector(
