@@ -114,7 +114,7 @@ class _DefaultSliverAppBarState extends State<DefaultSliverAppBar> {
           child: GestureDetector(
             onTap: _scanQR,
             child: Icon(
-              Ionicons.getIconData('ios-qr-scanner'),
+              Icons.qr_code_scanner_outlined,
               size: 31,
               color: Colors.white,
             ),
