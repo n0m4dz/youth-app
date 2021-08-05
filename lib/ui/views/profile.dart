@@ -144,7 +144,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   color: primaryColor,
-                  onPressed: () {},
+                  onPressed: () async {
+                    await agentUtil.logout;
+                    Navigator.pushReplacementNamed(context, '/main');
+                  },
                   child: Row(
                     children: [
                       SvgPicture.asset(
